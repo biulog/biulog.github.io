@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BiuLog is a baby daily care tracking app for feeding, sleep, diaper, solid food, growth, vaccine reminders, backup, and routine analysis.">
+  <meta name="theme-color" content="#faf7f2">
+  <meta property="og:title" content="BiuLog - Baby Routine Tracker">
+  <meta property="og:description" content="A gentle baby care tracker for feeding, sleep, diapers, solid food, growth, vaccines, backup, and daily routine analysis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biulog.github.io/">
+  <meta property="og:image" content="https://biulog.github.io/assets/biulog-icon.png">
+  <link rel="icon" href="/assets/biulog-icon.png">
+  <title>BiuLog - Baby Routine Tracker</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f2;
+      --surface: #fffdf9;
+      --surface-soft: #f7efe5;
+      --ink: #5c5346;
+      --muted: #8b7e72;
+      --quiet: #b5a89a;
+      --line: #e5ded3;
+      --gold: #d4b896;
+      --gold-deep: #9a8067;
+      --milk: #e8d5c4;
+      --diaper: #d4e2d4;
+      --sleep: #cad5e2;
+      --food: #f5dcc4;
+      --shadow: 0 24px 70px rgba(92, 83, 70, .14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(251, 246, 238, .98), rgba(250, 247, 242, 1) 620px),
+        var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", "Noto Sans", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      box-shadow: 0 12px 30px rgba(92, 83, 70, .16);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .language {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .82);
+    }
+
+    .language button {
+      min-width: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      padding: 10px 11px;
+    }
+
+    .language button.active {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(154, 128, 103, .2);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+      gap: 56px;
+      align-items: center;
+      padding: 56px 0 78px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .78);
+      color: var(--gold-deep);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 6.8vw, 76px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 14px 32px rgba(154, 128, 103, .24);
+    }
+
+    .cta.secondary {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .trust span {
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .72);
+    }
+
+    .showcase {
+      position: relative;
+      min-height: 635px;
+    }
+
+    .phone {
+      width: min(382px, 82vw);
+      margin-left: auto;
+      padding: 13px;
+      border-radius: 42px;
+      background: #1d1c1a;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+
+    .phone-inner {
+      overflow: hidden;
+      border-radius: 32px;
+      background: var(--surface);
+    }
+
+    .phone img,
+    .mini-shot img,
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 946 / 2048;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .mini-shot {
+      position: absolute;
+      width: 188px;
+      overflow: hidden;
+      border: 8px solid #fff;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 18px 44px rgba(92, 83, 70, .16);
+    }
+
+    .mini-shot.one {
+      left: 0;
+      top: 86px;
+      transform: rotate(-5deg);
+    }
+
+    .mini-shot.two {
+      left: 24px;
+      bottom: 30px;
+      transform: rotate(3deg);
+    }
+
+    .section {
+      padding: 58px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      min-height: 216px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 253, 249, .84);
+      box-shadow: 0 16px 42px rgba(92, 83, 70, .06);
+    }
+
+    .feature .mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      color: var(--gold-deep);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 16px 42px rgba(92, 83, 70, .08);
+    }
+
+    .gallery-card:nth-child(even) {
+      margin-top: 26px;
+    }
+
+    .premium {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: 22px;
+      align-items: stretch;
+      padding: 30px;
+      border: 1px solid rgba(212, 184, 150, .48);
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(255, 253, 249, .96), rgba(244, 234, 220, .88));
+      box-shadow: var(--shadow);
+    }
+
+    .premium h2 {
+      margin-bottom: 14px;
+    }
+
+    .premium p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .premium-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .plan-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .free-card {
+      padding: 18px;
+      border: 1px solid rgba(212, 184, 150, .58);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .78);
+      box-shadow: 0 12px 30px rgba(92, 83, 70, .07);
+    }
+
+    .free-card span {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(229, 211, 188, .72);
+      color: var(--brown);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .free-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .free-card p {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .premium-item {
+      padding: 16px;
+      border: 1px solid rgba(229, 222, 211, .86);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .72);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .legal {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .legal a {
+      display: flex;
+      min-height: 104px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      color: var(--gold-deep);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      color: var(--quiet);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .premium {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase {
+        min-height: auto;
+      }
+
+      .phone {
+        margin: 20px auto 0;
+        transform: none;
+      }
+
+      .mini-shot {
+        display: none;
+      }
+
+      .features,
+      .legal {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 28px, 1140px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .language {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .language button {
+        flex: 1;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .features,
+      .gallery,
+      .legal,
+      .premium-list {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card:nth-child(even) {
+        margin-top: 0;
+      }
+
+      .premium {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="/" aria-label="BiuLog home">
+      <img src="/assets/biulog-icon.webp" alt="BiuLog app icon" width="44" height="44">
+      <span>BiuLog</span>
+    </a>
+    <div class="nav-actions">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features" data-i18n="navFeatures">功能</a>
+        <a href="#premium" data-i18n="navPremium">專業版</a>
+        <a href="/biulog-legal/privacy-policy.html" data-i18n="navPrivacy">隱私權政策</a>
+        <a href="mailto:9a6.chihao@gmail.com" data-i18n="navSupport">支援</a>
+      </nav>
+      <div class="language" aria-label="Language selector">
+        <button type="button" data-lang="zh">繁中</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">日本語</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow" data-i18n="eyebrow">寶寶作息紀錄、成長與疫苗提醒</div>
+        <h1 data-i18n="heroTitle">把每天的育兒日常，記得溫柔又清楚。</h1>
+        <p class="lead" data-i18n="heroLead">BiuLog 是給新手爸媽使用的寶寶生活記錄 App。快速記錄喝奶、睡眠、尿布、副食品，並整理成生活作息分析、成長紀錄、疫苗提醒與完整備份。</p>
+        <div class="cta-row">
+          <a class="cta" href="https://apps.apple.com/app/biulog/id6766629143" data-i18n="ctaStore">在 App Store 下載</a>
+          <a class="cta secondary" href="/biulog-legal/" data-i18n="ctaSupport">查看支援資訊</a>
+        </div>
+        <div class="trust">
+          <span data-i18n="trustFree">基礎版功能完善且完全免費</span>
+          <span data-i18n="trustTrial">14 天專業功能試用</span>
+          <span data-i18n="trustPurchase">一次買斷，不是訂閱</span>
+          <span data-i18n="trustLanguages">支援繁中、英文、日文、韓文</span>
+        </div>
+      </div>
+
+      <div class="showcase" aria-label="BiuLog app screenshots">
+        <div class="mini-shot one">
+          <img id="miniOne" data-shot-index="4" src="/assets/screens/zh/screen-4.webp" alt="BiuLog analysis screenshot" loading="lazy" decoding="async">
+        </div>
+        <div class="phone">
+          <div class="phone-inner">
+            <img id="heroShot" data-shot-index="1" src="/assets/screens/zh/screen-1.webp" alt="BiuLog home screenshot" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+        <div class="mini-shot two">
+          <img id="miniTwo" data-shot-index="6" src="/assets/screens/zh/screen-6.webp" alt="BiuLog vaccine screenshot" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="featuresTitle">新手爸媽真正會用到的記錄工具</h2>
+        <p data-i18n="featuresLead">從半夜餵奶到回診打疫苗，BiuLog 把散亂的照護資訊整理成清楚、好看的日常紀錄。</p>
+      </div>
+      <div class="features" id="featureGrid"></div>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="galleryTitle">柔和水彩風格，打開就想記一下</h2>
+        <p data-i18n="galleryLead">畫面保留資訊密度，也維持柔和、乾淨、適合每天使用的視覺感。</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section id="premium" class="wrap section">
+      <div class="premium">
+        <div>
+          <h2 data-i18n="premiumTitle">基礎版免費，專業版體驗 14 天</h2>
+          <p data-i18n="premiumLead">核心記錄功能可免費持續使用；新用戶可體驗專業版 14 天。需要更多寶寶、疫苗提醒、分析圖表、備份與客製化時，再選擇一次買斷升級。</p>
+        </div>
+        <div class="plan-stack">
+          <article class="free-card">
+            <span data-i18n="freeBadge">基礎版免費</span>
+            <strong data-i18n="freeTitle">功能完善且完全免費</strong>
+            <p data-i18n="freeLead">不用付費也能持續記錄喝奶、睡眠、尿布/便便、副食品與每日生活紀錄。想要多寶寶、疫苗提醒、作息分析、完整備份與深度客製化時，再升級專業版。</p>
+          </article>
+          <div class="premium-list" id="premiumList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="supportTitle">支援與法務資訊</h2>
+        <p data-i18n="supportLead">需要聯絡我們、查看隱私權政策或確認 App Store 頁面，可以從這裡前往。</p>
+      </div>
+      <div class="legal">
+        <a href="https://apps.apple.com/app/biulog/id6766629143" data-i18n="linkStore">App Store 頁面</a>
+        <a href="/biulog-legal/privacy-policy.html" data-i18n="linkPrivacy">隱私權政策</a>
+        <a href="/app-ads.txt" data-i18n="linkAds">app-ads.txt</a>
+        <a href="mailto:9a6.chihao@gmail.com" data-i18n="linkContact">聯絡支援</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div data-i18n="footer">© 2026 BiuLog. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const copy = {
+      zh: {
+        htmlLang: "zh-Hant",
+        title: "BiuLog - 寶寶作息紀錄與疫苗提醒",
+        description: "BiuLog 是給新手爸媽使用的寶寶作息紀錄 App，可快速記錄喝奶、睡眠、尿布、副食品、成長、疫苗提醒與備份資料。",
+        navFeatures: "功能",
+        navPremium: "免費 / 專業",
+        navPrivacy: "隱私權政策",
+        navSupport: "支援",
+        eyebrow: "寶寶作息紀錄、成長與疫苗提醒",
+        heroTitle: "把每天的育兒日常，記得溫柔又清楚。",
+        heroLead: "BiuLog 是給新手爸媽使用的寶寶生活記錄 App。快速記錄喝奶、睡眠、尿布、副食品，並整理成生活作息分析、成長紀錄、疫苗提醒與完整備份。",
+        ctaStore: "在 App Store 下載",
+        ctaSupport: "查看支援資訊",
+        trustFree: "基礎版功能完善且完全免費",
+        trustTrial: "專業版體驗 14 天",
+        trustPurchase: "一次買斷，不是訂閱",
+        trustLanguages: "支援繁中、英文、日文、韓文",
+        featuresTitle: "新手爸媽真正會用到的記錄工具",
+        featuresLead: "從半夜餵奶到回診打疫苗，BiuLog 把散亂的照護資訊整理成清楚、好看的日常紀錄。",
+        galleryTitle: "柔和水彩風格，打開就想記一下",
+        galleryLead: "畫面保留資訊密度，也維持柔和、乾淨、適合每天使用的視覺感。",
+        premiumTitle: "基礎版免費，專業版體驗 14 天",
+        premiumLead: "核心記錄功能可免費持續使用；新用戶可體驗專業版 14 天。需要更多寶寶、疫苗提醒、分析圖表、備份與客製化時，再選擇一次買斷升級。",
+        freeBadge: "基礎版免費",
+        freeTitle: "功能完善且完全免費",
+        freeLead: "不用付費也能持續記錄喝奶、睡眠、尿布/便便、副食品與每日生活紀錄。想要多寶寶、疫苗提醒、作息分析、完整備份與深度客製化時，再升級專業版。",
+        supportTitle: "支援與法務資訊",
+        supportLead: "需要聯絡我們、查看隱私權政策或確認 App Store 頁面，可以從這裡前往。",
+        linkStore: "App Store 頁面",
+        linkPrivacy: "隱私權政策",
+        linkAds: "app-ads.txt",
+        linkContact: "聯絡支援",
+        footer: "© 2026 BiuLog. All rights reserved.",
+        features: [
+          ["單手快速記錄", "短按快速新增，長按補登過去時間。瓶餵、親餵、睡眠、尿布與副食品都能快速完成。"],
+          ["作息分析圖表", "查看最近 7 天、14 天、30 天的生活模式，托嬰、保母與家人交接更清楚。"],
+          ["疫苗紀錄提醒", "內建多國疫苗時程參考，可標記完成、追蹤下一劑，降低漏打預防針的風險。"],
+          ["成長與里程碑", "記錄身高、體重、頭圍，以及翻身、爬行、長牙等值得保存的第一次。"],
+          ["高自由度客製化", "自訂按鈕文字、顏色、圖示、照片與首頁風格，打造屬於自己家庭的育兒介面。"],
+          ["完整備份與匯出", "支援 CSV 匯出與 JSON 完整備份，包含寶寶資料、記錄、圖片、設定與自訂按鈕。"]
+        ],
+        premiumItems: ["移除廣告", "多寶寶管理", "疫苗紀錄與提醒", "作息分析圖表", "自訂按鈕與圖片", "CSV 與 JSON 備份"]
+      },
+      en: {
+        htmlLang: "en",
+        title: "BiuLog - Baby Routine Tracker",
+        description: "BiuLog is a gentle baby care tracker for feeding, sleep, diapers, solid food, growth, vaccines, backup, and daily routine analysis.",
+        navFeatures: "Features",
+        navPremium: "Free / Premium",
+        navPrivacy: "Privacy",
+        navSupport: "Support",
+        eyebrow: "Baby routine, growth, and vaccine reminders",
+        heroTitle: "Keep every baby care moment clear, calm, and beautifully organized.",
+        heroLead: "BiuLog helps parents record feeding, sleep, diapers, solid food, growth, vaccines, and backups with a gentle interface made for real daily care.",
+        ctaStore: "Download on the App Store",
+        ctaSupport: "Support information",
+        trustFree: "Full basic plan, completely free",
+        trustTrial: "14-day premium experience",
+        trustPurchase: "One-time purchase, no subscription",
+        trustLanguages: "Traditional Chinese, English, Japanese, Korean",
+        featuresTitle: "A practical tracker for everyday parenting",
+        featuresLead: "From midnight feeding to vaccine visits, BiuLog turns scattered care notes into clean daily records and useful patterns.",
+        galleryTitle: "Soft watercolor design, built for daily use",
+        galleryLead: "A gentle visual style with enough structure for repeated logging, reviewing, and handoff.",
+        premiumTitle: "Free basic plan, 14-day premium experience",
+        premiumLead: "Core daily tracking stays free. New users can experience premium for 14 days, then upgrade with a one-time purchase when they want multiple babies, vaccine reminders, charts, backup, and customization.",
+        freeBadge: "Free basic plan",
+        freeTitle: "Complete core features, completely free",
+        freeLead: "Keep tracking feeding, sleep, diapers, solids, and daily records without paying. Upgrade only when you want multiple babies, vaccine reminders, routine charts, full backup, and deeper customization.",
+        supportTitle: "Support and legal information",
+        supportLead: "Find the App Store page, privacy policy, and contact information here.",
+        linkStore: "App Store page",
+        linkPrivacy: "Privacy policy",
+        linkAds: "app-ads.txt",
+        linkContact: "Contact support",
+        footer: "© 2026 BiuLog. All rights reserved.",
+        features: [
+          ["Fast one-hand logging", "Quick tap to log now, long press to add past records. Bottle feeding, nursing, sleep, diapers, and solid food stay simple."],
+          ["Routine analysis", "Review 7-day, 14-day, and 30-day patterns to make handoff with family, babysitters, or daycare clearer."],
+          ["Vaccine tracking", "Built-in vaccine schedule references help you mark completed shots and keep an eye on the next dose."],
+          ["Growth and milestones", "Track height, weight, head circumference, and meaningful first moments as your baby grows."],
+          ["Highly customizable", "Customize button text, colors, icons, photos, and home screen style for your own family routine."],
+          ["Backup and export", "Export CSV and create full JSON backups including babies, records, photos, settings, and custom buttons."]
+        ],
+        premiumItems: ["Remove ads", "Multiple babies", "Vaccine records", "Routine charts", "Custom buttons and images", "CSV and JSON backup"]
+      },
+      ja: {
+        htmlLang: "ja",
+        title: "BiuLog - 育児記録と予防接種スケジュール",
+        description: "BiuLogは授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップを記録できる育児記録アプリです。",
+        navFeatures: "機能",
+        navPremium: "無料 / プレミアム",
+        navPrivacy: "プライバシー",
+        navSupport: "サポート",
+        eyebrow: "育児記録、成長、予防接種スケジュール",
+        heroTitle: "毎日の育児記録を、やさしく、見やすく。",
+        heroLead: "BiuLogは、授乳・睡眠・おむつ・離乳食・成長・予防接種・バックアップをまとめて管理できる、忙しいママとパパのための育児記録アプリです。",
+        ctaStore: "App Storeで見る",
+        ctaSupport: "サポート情報",
+        trustFree: "基本機能は充実、完全無料",
+        trustTrial: "プレミアム版を14日間体験",
+        trustPurchase: "買い切り型、サブスクなし",
+        trustLanguages: "繁体字中国語・英語・日本語・韓国語対応",
+        featuresTitle: "毎日の育児で本当に使いやすい記録ツール",
+        featuresLead: "夜中の授乳から予防接種の予定まで、BiuLogは育児の記録をすっきり整理します。",
+        galleryTitle: "やさしい水彩デザインで、毎日使いやすく",
+        galleryLead: "かわいさだけでなく、記録・確認・共有がしやすい画面設計を大切にしています。",
+        premiumTitle: "基本版は無料、プレミアム版は14日間体験",
+        premiumLead: "毎日の基本記録は無料で使い続けられます。新規ユーザーはプレミアム版を14日間体験でき、複数の赤ちゃん、予防接種、グラフ、バックアップ、カスタマイズが必要なときに買い切りでアップグレードできます。",
+        freeBadge: "基本版無料",
+        freeTitle: "基本機能は充実、完全無料",
+        freeLead: "授乳、睡眠、おむつ、離乳食、毎日の記録は無料で続けられます。複数の赤ちゃん、予防接種リマインダー、生活リズムグラフ、バックアップ、カスタマイズが必要なときだけアップグレードできます。",
+        supportTitle: "サポートと法務情報",
+        supportLead: "App Storeページ、プライバシーポリシー、問い合わせ先はこちらから確認できます。",
+        linkStore: "App Storeページ",
+        linkPrivacy: "プライバシーポリシー",
+        linkAds: "app-ads.txt",
+        linkContact: "サポートに連絡",
+        footer: "© 2026 BiuLog. All rights reserved.",
+        features: [
+          ["片手でかんたん記録", "タップで今すぐ記録、長押しで過去の記録を追加。授乳、睡眠、おむつ、離乳食をすばやく入力できます。"],
+          ["生活リズム分析", "7日・14日・30日の記録をグラフで確認し、家族や保育者との共有にも役立ちます。"],
+          ["予防接種の管理", "接種スケジュールの参考情報を確認し、完了記録や次回予定を管理できます。"],
+          ["成長とマイルストーン", "身長、体重、頭囲、寝返りや歯が生えた日など、大切な成長の記録を残せます。"],
+          ["自由にカスタマイズ", "ボタンの文字、色、アイコン、写真、ホーム画面の雰囲気を自分好みに設定できます。"],
+          ["バックアップと書き出し", "CSV書き出しとJSON完全バックアップに対応。記録、写真、設定、カスタムボタンも保存できます。"]
+        ],
+        premiumItems: ["広告削除", "複数の赤ちゃん", "予防接種記録", "生活リズムグラフ", "カスタムボタンと画像", "CSV・JSONバックアップ"]
+      },
+      ko: {
+        htmlLang: "ko",
+        title: "BiuLog - 아기 일과 기록과 예방접종 관리",
+        description: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업을 정리하는 아기 생활 기록 앱입니다.",
+        navFeatures: "기능",
+        navPremium: "무료 / 프리미엄",
+        navPrivacy: "개인정보",
+        navSupport: "지원",
+        eyebrow: "아기 일과 기록, 성장, 예방접종 관리",
+        heroTitle: "매일의 육아 기록을 부드럽고 선명하게 정리하세요.",
+        heroLead: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업까지 한곳에서 관리할 수 있는 감성 육아 기록 앱입니다.",
+        ctaStore: "App Store에서 보기",
+        ctaSupport: "지원 정보 보기",
+        trustFree: "기본 기능 충실, 완전 무료",
+        trustTrial: "프리미엄 14일 체험",
+        trustPurchase: "구독 없는 일시불 구매",
+        trustLanguages: "중국어 번체, 영어, 일본어, 한국어 지원",
+        featuresTitle: "초보 엄마 아빠에게 필요한 실전 기록 도구",
+        featuresLead: "새벽 수유부터 예방접종 일정까지, BiuLog가 흩어진 육아 기록을 보기 좋게 정리해 줍니다.",
+        galleryTitle: "매일 열고 싶은 부드러운 수채화 스타일",
+        galleryLead: "감성적인 화면과 반복 사용에 필요한 정보 구조를 함께 담았습니다.",
+        premiumTitle: "기본판 무료, 프리미엄 14일 체험",
+        premiumLead: "매일 쓰는 기본 기록은 무료로 계속 사용할 수 있습니다. 신규 사용자는 프리미엄을 14일 동안 체험하고, 여러 아기 관리, 예방접종, 차트, 백업, 커스터마이징이 필요할 때 일시불로 업그레이드할 수 있습니다.",
+        freeBadge: "기본판 무료",
+        freeTitle: "기본 기능 충실, 완전 무료",
+        freeLead: "수유, 수면, 기저귀, 이유식, 하루 기록은 결제 없이 계속 사용할 수 있습니다. 여러 아기 관리, 예방접종 알림, 생활 패턴 차트, 백업, 커스터마이징이 필요할 때만 업그레이드하면 됩니다.",
+        supportTitle: "지원 및 법적 정보",
+        supportLead: "App Store 페이지, 개인정보 처리방침, 문의 정보를 여기에서 확인할 수 있습니다.",
+        linkStore: "App Store 페이지",
+        linkPrivacy: "개인정보 처리방침",
+        linkAds: "app-ads.txt",
+        linkContact: "지원 문의",
+        footer: "© 2026 BiuLog. All rights reserved.",
+        features: [
+          ["한 손으로 빠른 기록", "짧게 눌러 바로 기록하고 길게 눌러 과거 기록을 추가하세요. 수유, 수면, 기저귀, 이유식을 빠르게 남길 수 있습니다."],
+          ["생활 패턴 분석", "최근 7일, 14일, 30일 기록을 그래프로 확인해 가족이나 돌봄 담당자와 쉽게 공유할 수 있습니다."],
+          ["예방접종 관리", "접종 일정 참고 정보와 완료 기록, 다음 접종 일정을 함께 관리할 수 있습니다."],
+          ["성장과 이정표", "키, 몸무게, 머리둘레와 뒤집기, 이 나기 등 소중한 첫 순간을 기록하세요."],
+          ["높은 자유도의 커스터마이징", "버튼 문구, 색상, 아이콘, 사진, 홈 화면 분위기를 우리 가족에게 맞게 꾸밀 수 있습니다."],
+          ["백업과 내보내기", "CSV 내보내기와 JSON 전체 백업을 지원해 기록, 사진, 설정, 커스텀 버튼을 보관할 수 있습니다."]
+        ],
+        premiumItems: ["광고 제거", "여러 아기 관리", "예방접종 기록", "생활 패턴 차트", "커스텀 버튼과 이미지", "CSV 및 JSON 백업"]
+      }
+    };
+
+    const screenLangMap = { zh: "zh", en: "en", ja: "ja", ko: "ko" };
+    const fallbackLang = "zh";
+
+    function detectLanguage() {
+      const urlLang = new URLSearchParams(window.location.search).get("lang");
+      if (copy[urlLang]) return urlLang;
+      const stored = localStorage.getItem("biulog-site-lang");
+      if (copy[stored]) return stored;
+      const browser = (navigator.language || "").toLowerCase();
+      if (browser.startsWith("ja")) return "ja";
+      if (browser.startsWith("ko")) return "ko";
+      if (browser.startsWith("en")) return "en";
+      return fallbackLang;
+    }
+
+    function imagePath(lang, index) {
+      return `/assets/screens/${screenLangMap[lang]}/screen-${index}.webp?v=20260513`;
+    }
+
+    function setText(lang) {
+      const data = copy[lang];
+      document.documentElement.lang = data.htmlLang;
+      document.title = data.title;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute("content", data.description);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (data[key]) node.textContent = data[key];
+      });
+
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.classList.toggle("active", button.getAttribute("data-lang") === lang);
+      });
+    }
+
+    function renderFeatures(lang) {
+      const grid = document.getElementById("featureGrid");
+      grid.innerHTML = "";
+      copy[lang].features.forEach(([title, body], index) => {
+        const article = document.createElement("article");
+        article.className = "feature";
+        article.innerHTML = `
+          <div class="mark">${String(index + 1).padStart(2, "0")}</div>
+          <h3></h3>
+          <p></p>
+        `;
+        article.querySelector("h3").textContent = title;
+        article.querySelector("p").textContent = body;
+        grid.appendChild(article);
+      });
+    }
+
+    function renderPremium(lang) {
+      const list = document.getElementById("premiumList");
+      list.innerHTML = "";
+      copy[lang].premiumItems.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "premium-item";
+        div.textContent = item;
+        list.appendChild(div);
+      });
+    }
+
+    function renderImages(lang) {
+      document.querySelectorAll("[data-shot-index]").forEach((image) => {
+        const index = Number(image.getAttribute("data-shot-index"));
+        image.src = imagePath(lang, index);
+        image.alt = `BiuLog ${lang} screenshot ${index}`;
+      });
+
+      const gallery = document.getElementById("gallery");
+      gallery.innerHTML = "";
+      [1, 2, 4, 6, 8].forEach((index) => {
+        const card = document.createElement("div");
+        card.className = "gallery-card";
+        const image = document.createElement("img");
+        image.src = imagePath(lang, index);
+        image.alt = `BiuLog screenshot ${index}`;
+        image.loading = "lazy";
+        image.decoding = "async";
+        card.appendChild(image);
+        gallery.appendChild(card);
+      });
+    }
+
+    function setLanguage(lang, updateUrl = false) {
+      const next = copy[lang] ? lang : fallbackLang;
+      localStorage.setItem("biulog-site-lang", next);
+      setText(next);
+      renderFeatures(next);
+      renderPremium(next);
+      renderImages(next);
+
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", next);
+        window.history.replaceState({}, "", url);
+      }
+    }
+
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang"), true));
+    });
+
+    setLanguage(detectLanguage());
+  </script>
+</body>
+</html>

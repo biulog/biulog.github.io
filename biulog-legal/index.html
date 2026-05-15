@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BiuLog support and legal center, including privacy policy, terms of use, App Store page, data practices, purchases, and contact support.">
+  <meta name="theme-color" content="#faf7f2">
+  <meta property="og:title" content="BiuLog Support and Legal Center">
+  <meta property="og:description" content="Privacy policy, terms of use, App Store page, data practices, purchases, and support contact for BiuLog.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biulog.github.io/biulog-legal/">
+  <meta property="og:image" content="https://biulog.github.io/biulog-legal/assets/biulog-icon.webp">
+  <link rel="icon" href="assets/biulog-icon.webp">
+  <title>BiuLog Support and Legal Center</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f2;
+      --surface: #fffdf9;
+      --surface-soft: #f7efe5;
+      --ink: #5c5346;
+      --muted: #8b7e72;
+      --quiet: #b5a89a;
+      --line: #e5ded3;
+      --gold: #d4b896;
+      --gold-deep: #9a8067;
+      --shadow: 0 24px 70px rgba(92, 83, 70, .14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbf6ee, var(--bg));
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", "Noto Sans", sans-serif;
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1040px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      box-shadow: 0 12px 30px rgba(92, 83, 70, .16);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .82);
+    }
+
+    .language button {
+      min-width: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      padding: 10px 11px;
+    }
+
+    .language button.active {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(154, 128, 103, .2);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 42px;
+      align-items: center;
+      padding: 54px 0 38px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 16px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .78);
+      color: var(--gold-deep);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .phone {
+      overflow: hidden;
+      padding: 10px;
+      border-radius: 34px;
+      background: #1d1c1a;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+
+    .phone img {
+      width: 100%;
+      border-radius: 24px;
+      aspect-ratio: 946 / 2048;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      padding: 24px 0 44px;
+    }
+
+    .card {
+      display: flex;
+      min-height: 154px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: 0 16px 42px rgba(92, 83, 70, .07);
+    }
+
+    .card span {
+      color: var(--quiet);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .card strong {
+      display: block;
+      margin-top: 18px;
+      color: var(--gold-deep);
+      font-size: 19px;
+      line-height: 1.35;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 16px 0 72px;
+    }
+
+    .panel {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255, 253, 249, .82);
+      box-shadow: 0 16px 42px rgba(92, 83, 70, .05);
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      color: var(--quiet);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 920px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero,
+      .info {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        width: min(270px, 80vw);
+        transform: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .language {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .language button {
+        flex: 1;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="https://biulog.github.io/">
+      <img src="assets/biulog-icon.webp" alt="BiuLog app icon" width="44" height="44">
+      <span>BiuLog</span>
+    </a>
+    <div class="language" aria-label="Language selector">
+      <button type="button" data-lang="zh">繁中</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ja">日本語</button>
+      <button type="button" data-lang="ko">한국어</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow" data-i18n="eyebrow">支援與法務資訊</div>
+        <h1 data-i18n="title">BiuLog 支援中心</h1>
+        <p class="lead" data-i18n="lead">這裡提供 BiuLog 的隱私權政策、使用條款、App Store 頁面、資料使用說明與聯絡方式。BiuLog 是給新手爸媽使用的寶寶生活記錄 App，用於記錄喝奶、睡眠、尿布、副食品、成長、疫苗與備份資料。</p>
+      </div>
+      <div class="phone">
+        <img id="phoneShot" src="assets/screens/zh/screen-1.webp" alt="BiuLog app screenshot" fetchpriority="high" decoding="async">
+      </div>
+    </section>
+
+    <section class="wrap cards">
+      <a class="card" href="privacy-policy.html">
+        <span>Privacy</span>
+        <strong data-i18n="privacy">隱私權政策</strong>
+      </a>
+      <a class="card" href="terms.html">
+        <span>Terms</span>
+        <strong data-i18n="terms">使用條款</strong>
+      </a>
+      <a class="card" href="https://apps.apple.com/app/biulog/id6766629143">
+        <span>Download</span>
+        <strong data-i18n="store">App Store 頁面</strong>
+      </a>
+      <a class="card" href="https://biulog.github.io/app-ads.txt">
+        <span>Ads</span>
+        <strong data-i18n="ads">app-ads.txt</strong>
+      </a>
+      <a class="card" href="mailto:9a6.chihao@gmail.com">
+        <span>Support</span>
+        <strong data-i18n="contact">聯絡支援</strong>
+      </a>
+    </section>
+
+    <section class="wrap info">
+      <article class="panel">
+        <h2 data-i18n="dataTitle">資料與隱私</h2>
+        <p data-i18n="dataBody">BiuLog 主要將寶寶紀錄保存在使用者裝置中。為了提供試用期、防止濫用、廣告與內購功能，App 會使用 Firebase、Google AdMob、Apple App Store 與 Google Play 等服務。</p>
+      </article>
+      <article class="panel">
+        <h2 data-i18n="purchaseTitle">購買與退款</h2>
+        <p data-i18n="purchaseBody">BiuLog 提供 14 天專業功能試用，試用後可選擇一次買斷去廣告或專業版。實際付款、價格與退款流程由 Apple 或 Google 商店平台處理。</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div data-i18n="footer">© 2026 BiuLog. All rights reserved. Contact: 9a6.chihao@gmail.com</div>
+  </footer>
+
+  <script>
+    const copy = {
+      zh: {
+        htmlLang: "zh-Hant",
+        pageTitle: "BiuLog 支援中心",
+        description: "BiuLog 支援與法務資訊，包含隱私權政策、使用條款、App Store 頁面、資料使用說明、購買與聯絡方式。",
+        eyebrow: "支援與法務資訊",
+        title: "BiuLog 支援中心",
+        lead: "這裡提供 BiuLog 的隱私權政策、使用條款、App Store 頁面、資料使用說明與聯絡方式。BiuLog 是給新手爸媽使用的寶寶生活記錄 App，用於記錄喝奶、睡眠、尿布、副食品、成長、疫苗與備份資料。",
+        privacy: "隱私權政策",
+        terms: "使用條款",
+        store: "App Store 頁面",
+        ads: "app-ads.txt",
+        contact: "聯絡支援",
+        dataTitle: "資料與隱私",
+        dataBody: "BiuLog 主要將寶寶紀錄保存在使用者裝置中。為了提供試用期、防止濫用、廣告與內購功能，App 會使用 Firebase、Google AdMob、Apple App Store 與 Google Play 等服務。",
+        purchaseTitle: "購買與退款",
+        purchaseBody: "BiuLog 提供 14 天專業功能試用，試用後可選擇一次買斷去廣告或專業版。實際付款、價格與退款流程由 Apple 或 Google 商店平台處理。",
+        footer: "© 2026 BiuLog. All rights reserved. Contact: 9a6.chihao@gmail.com"
+      },
+      en: {
+        htmlLang: "en",
+        pageTitle: "BiuLog Support Center",
+        description: "BiuLog support and legal center, including privacy policy, terms of use, App Store page, data practices, purchases, and contact support.",
+        eyebrow: "Support and legal information",
+        title: "BiuLog Support Center",
+        lead: "Find BiuLog's privacy policy, terms of use, App Store page, data practices, and contact information here. BiuLog is a baby care tracker for feeding, sleep, diapers, solid food, growth, vaccines, and backups.",
+        privacy: "Privacy Policy",
+        terms: "Terms of Use",
+        store: "App Store Page",
+        ads: "app-ads.txt",
+        contact: "Contact Support",
+        dataTitle: "Data and privacy",
+        dataBody: "BiuLog primarily stores baby care records on the user's device. To provide trials, prevent abuse, show ads, and support purchases, the app uses services such as Firebase, Google AdMob, Apple App Store, and Google Play.",
+        purchaseTitle: "Purchases and refunds",
+        purchaseBody: "BiuLog offers a 14-day premium trial. After the trial, users may choose one-time purchases for removing ads or unlocking premium. Actual payment, pricing, and refunds are handled by Apple or Google store platforms.",
+        footer: "© 2026 BiuLog. All rights reserved. Contact: 9a6.chihao@gmail.com"
+      },
+      ja: {
+        htmlLang: "ja",
+        pageTitle: "BiuLog サポートセンター",
+        description: "BiuLogのプライバシーポリシー、利用規約、App Storeページ、データ利用、購入、問い合わせ先を確認できます。",
+        eyebrow: "サポートと法務情報",
+        title: "BiuLog サポートセンター",
+        lead: "BiuLogのプライバシーポリシー、利用規約、App Storeページ、データ利用、問い合わせ先はこちらから確認できます。BiuLogは授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップを記録できる育児記録アプリです。",
+        privacy: "プライバシーポリシー",
+        terms: "利用規約",
+        store: "App Storeページ",
+        ads: "app-ads.txt",
+        contact: "サポートに連絡",
+        dataTitle: "データとプライバシー",
+        dataBody: "BiuLogは主に育児記録をユーザーの端末内に保存します。体験期間、不正利用防止、広告、購入機能のためにFirebase、Google AdMob、Apple App Store、Google Playなどのサービスを使用します。",
+        purchaseTitle: "購入と返金",
+        purchaseBody: "BiuLogは14日間のプレミアム体験を提供します。体験後は広告削除またはプレミアム版の買い切り購入を選択できます。実際の支払い、価格、返金はAppleまたはGoogleのストアプラットフォームが処理します。",
+        footer: "© 2026 BiuLog. All rights reserved. Contact: 9a6.chihao@gmail.com"
+      },
+      ko: {
+        htmlLang: "ko",
+        pageTitle: "BiuLog 지원 센터",
+        description: "BiuLog 개인정보 처리방침, 이용약관, App Store 페이지, 데이터 사용, 구매, 지원 문의 정보를 확인할 수 있습니다.",
+        eyebrow: "지원 및 법적 정보",
+        title: "BiuLog 지원 센터",
+        lead: "BiuLog의 개인정보 처리방침, 이용약관, App Store 페이지, 데이터 사용 설명, 문의 정보를 여기에서 확인할 수 있습니다. BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업을 정리하는 아기 생활 기록 앱입니다.",
+        privacy: "개인정보 처리방침",
+        terms: "이용약관",
+        store: "App Store 페이지",
+        ads: "app-ads.txt",
+        contact: "지원 문의",
+        dataTitle: "데이터와 개인정보",
+        dataBody: "BiuLog는 주로 아기 기록을 사용자의 기기에 저장합니다. 체험 기간 제공, 오용 방지, 광고, 구매 기능을 위해 Firebase, Google AdMob, Apple App Store, Google Play 등의 서비스를 사용합니다.",
+        purchaseTitle: "구매 및 환불",
+        purchaseBody: "BiuLog는 14일 프리미엄 체험을 제공합니다. 체험 후 광고 제거 또는 프리미엄 기능 해제를 위한 일시불 구매를 선택할 수 있습니다. 실제 결제, 가격, 환불은 Apple 또는 Google 스토어 플랫폼에서 처리합니다.",
+        footer: "© 2026 BiuLog. All rights reserved. Contact: 9a6.chihao@gmail.com"
+      }
+    };
+
+    function detectLanguage() {
+      const urlLang = new URLSearchParams(window.location.search).get("lang");
+      if (copy[urlLang]) return urlLang;
+      const stored = localStorage.getItem("biulog-site-lang");
+      if (copy[stored]) return stored;
+      const browser = (navigator.language || "").toLowerCase();
+      if (browser.startsWith("ja")) return "ja";
+      if (browser.startsWith("ko")) return "ko";
+      if (browser.startsWith("en")) return "en";
+      return "zh";
+    }
+
+    function setLanguage(lang, updateUrl = false) {
+      const next = copy[lang] ? lang : "zh";
+      const data = copy[next];
+      localStorage.setItem("biulog-site-lang", next);
+      document.documentElement.lang = data.htmlLang;
+      document.title = data.pageTitle;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute("content", data.description);
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (data[key]) node.textContent = data[key];
+      });
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.classList.toggle("active", button.getAttribute("data-lang") === next);
+      });
+      document.getElementById("phoneShot").src = `assets/screens/${next}/screen-1.webp?v=20260513`;
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", next);
+        window.history.replaceState({}, "", url);
+      }
+    }
+
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang"), true));
+    });
+
+    setLanguage(detectLanguage());
+  </script>
+</body>
+</html>

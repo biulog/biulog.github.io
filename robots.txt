@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biulog.github.io/sitemap.xml

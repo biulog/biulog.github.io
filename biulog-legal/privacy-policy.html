@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BiuLog privacy policy. Learn what data the app handles, how Firebase, AdMob, purchases, notifications, backups, and device storage are used.">
+  <meta name="theme-color" content="#faf7f2">
+  <title>BiuLog Privacy Policy</title>
+  <link rel="icon" href="assets/biulog-icon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f2;
+      --surface: #fffdf9;
+      --ink: #5c5346;
+      --muted: #8b7e72;
+      --quiet: #b5a89a;
+      --line: #e5ded3;
+      --gold: #d4b896;
+      --gold-deep: #9a8067;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", "Noto Sans", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--gold-deep);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      box-shadow: 0 12px 30px rgba(92, 83, 70, .16);
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .82);
+    }
+
+    .language button {
+      min-width: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      padding: 10px 11px;
+    }
+
+    .language button.active {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    main {
+      padding: 36px 0 72px;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 46px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: 0 18px 58px rgba(92, 83, 70, .08);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      margin: 0 0 28px;
+      color: var(--quiet);
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 23px;
+      letter-spacing: 0;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    .policy {
+      display: none;
+    }
+
+    .policy.active {
+      display: block;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      color: var(--quiet);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .language {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .language button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="https://biulog.github.io/">
+      <img src="assets/biulog-icon.png" alt="BiuLog app icon">
+      <span>BiuLog</span>
+    </a>
+    <div class="language" aria-label="Language selector">
+      <button type="button" data-lang="zh">繁中</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ja">日本語</button>
+      <button type="button" data-lang="ko">한국어</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="document">
+      <section class="policy" data-panel="zh">
+        <h1>BiuLog 隱私權政策</h1>
+        <p class="meta">最後更新日期：2026 年 5 月 13 日</p>
+        <p>BiuLog 是一款提供給父母與照顧者使用的寶寶生活記錄 App。本政策說明 BiuLog 如何處理與保護使用者在 App 中建立或產生的資料。</p>
+
+        <h2>1. 我們處理的資料</h2>
+        <p>使用者可在 App 中自行建立寶寶資料與照護紀錄，例如寶寶名稱、生日、性別、照片、喝奶、睡眠、尿布、副食品、成長、里程碑、疫苗紀錄、備註、提醒設定、自訂按鈕與備份資料。這些資料主要儲存在使用者裝置中。</p>
+
+        <h2>2. Firebase 與試用期</h2>
+        <p>為了提供 14 天專業功能試用、維護購買權益並降低重複濫用試用的情形，BiuLog 可能使用 Firebase 匿名驗證與 Cloud Firestore 儲存匿名裝置或試用狀態資料，例如 App ID、平台、匿名驗證 ID、試用開始時間、最後使用時間與更新時間。這些資料不包含姓名、電話或電子郵件。</p>
+
+        <h2>3. 廣告</h2>
+        <p>BiuLog 使用 Google AdMob 顯示廣告。Google 可能依其政策處理廣告識別碼、裝置資訊、廣告互動、粗略位置或其他廣告相關資料。購買去廣告或專業版後，BiuLog 會依購買狀態停止顯示廣告。</p>
+
+        <h2>4. 內購與付款</h2>
+        <p>BiuLog 提供一次性內購商品，例如去廣告與專業版。付款、價格、發票與退款流程由 Apple App Store 或 Google Play 處理。BiuLog 只會接收購買狀態、商品識別碼與必要的交易狀態，用於解鎖功能與恢復購買。</p>
+
+        <h2>5. 照片、檔案與備份</h2>
+        <p>使用者可自行選擇照片作為寶寶大頭貼、自訂按鈕圖片或里程碑資料。BiuLog 不會在未經使用者操作的情況下讀取或上傳相簿內容。使用者匯出 CSV、JSON 備份或透過系統分享功能傳送檔案時，資料會依使用者選擇的方式處理。</p>
+
+        <h2>6. 通知</h2>
+        <p>BiuLog 可能使用本機通知提醒照護事項、疫苗或自訂提醒。本機通知主要在使用者裝置上處理。</p>
+
+        <h2>7. 資料分享</h2>
+        <p>除提供 App 功能所需的服務，例如 Firebase、Google AdMob、Apple App Store、Google Play 與裝置系統服務外，BiuLog 不會販售使用者的個人資料。</p>
+
+        <h2>8. 兒童隱私</h2>
+        <p>BiuLog 並非設計給兒童直接使用，而是提供給父母或照顧者記錄寶寶照護資訊。</p>
+
+        <h2>9. 使用者控制</h2>
+        <p>使用者可在 App 中管理、刪除、匯出或備份資料。若移除 App 或清除裝置資料，本機資料可能會被刪除，建議在換手機或重裝前先匯出備份。</p>
+
+        <h2>10. 聯絡我們</h2>
+        <p>如對本隱私權政策有任何問題，請聯絡：<a href="mailto:9a6.chihao@gmail.com">9a6.chihao@gmail.com</a></p>
+      </section>
+
+      <section class="policy" data-panel="en">
+        <h1>BiuLog Privacy Policy</h1>
+        <p class="meta">Last updated: May 13, 2026</p>
+        <p>BiuLog is a baby daily care tracking app for parents and caregivers. This policy explains how BiuLog handles and protects data created or generated in the app.</p>
+
+        <h2>1. Data We Handle</h2>
+        <p>Users may create baby profiles and care records, such as baby name, birthday, gender, photos, feeding, sleep, diapers, solid food, growth, milestones, vaccine records, notes, reminders, custom buttons, and backup data. This data is primarily stored on the user's device.</p>
+
+        <h2>2. Firebase and Trial Management</h2>
+        <p>To provide the 14-day premium trial, maintain purchase entitlements, and reduce repeated trial abuse, BiuLog may use Firebase Anonymous Authentication and Cloud Firestore to store anonymous device or trial status data, such as app ID, platform, anonymous auth ID, trial start time, last seen time, and update time. This data does not include name, phone number, or email address.</p>
+
+        <h2>3. Advertising</h2>
+        <p>BiuLog uses Google AdMob to display ads. Google may process advertising identifiers, device information, ad interactions, coarse location, or other advertising-related data according to Google's policies. After a remove-ads or premium purchase, BiuLog uses purchase status to stop showing ads.</p>
+
+        <h2>4. In-App Purchases and Payment</h2>
+        <p>BiuLog offers non-consumable in-app purchases, such as remove ads and premium. Payments, pricing, invoices, and refunds are handled by Apple App Store or Google Play. BiuLog receives only purchase status, product identifiers, and necessary transaction status to unlock features and restore purchases.</p>
+
+        <h2>5. Photos, Files, and Backups</h2>
+        <p>Users may choose photos for baby avatars, custom button images, or milestone records. BiuLog does not read or upload the photo library without user action. When users export CSV, create JSON backups, or share files through the system share sheet, the data is handled according to the user's chosen action.</p>
+
+        <h2>6. Notifications</h2>
+        <p>BiuLog may use local notifications for care reminders, vaccines, or custom reminders. Local notifications are primarily processed on the user's device.</p>
+
+        <h2>7. Data Sharing</h2>
+        <p>BiuLog does not sell users' personal data. Data may be processed by services required to provide app functionality, such as Firebase, Google AdMob, Apple App Store, Google Play, and device operating system services.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>BiuLog is not intended for direct use by children. It is intended for parents or caregivers to record baby care information.</p>
+
+        <h2>9. User Control</h2>
+        <p>Users can manage, delete, export, or back up data in the app. Removing the app or clearing device data may delete local data, so users should export a backup before changing devices or reinstalling.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, contact: <a href="mailto:9a6.chihao@gmail.com">9a6.chihao@gmail.com</a></p>
+      </section>
+
+      <section class="policy" data-panel="ja">
+        <h1>BiuLog プライバシーポリシー</h1>
+        <p class="meta">最終更新日：2026年5月13日</p>
+        <p>BiuLogは、保護者および育児に関わる方のための赤ちゃんの日常記録アプリです。本ポリシーでは、BiuLogがアプリ内で作成または生成されるデータをどのように扱い、保護するかを説明します。</p>
+
+        <h2>1. 取り扱うデータ</h2>
+        <p>ユーザーは、赤ちゃんの名前、生年月日、性別、写真、授乳、睡眠、おむつ、離乳食、成長、マイルストーン、予防接種記録、メモ、リマインダー、カスタムボタン、バックアップデータなどをアプリ内で作成できます。これらのデータは主にユーザーの端末内に保存されます。</p>
+
+        <h2>2. Firebaseと体験期間</h2>
+        <p>14日間のプレミアム体験、購入権限の維持、体験期間の重複利用防止のため、BiuLogはFirebase匿名認証およびCloud Firestoreを使用し、App ID、プラットフォーム、匿名認証ID、体験開始日時、最終利用日時、更新日時などの匿名デバイスまたは体験状態データを保存する場合があります。これらのデータには氏名、電話番号、メールアドレスは含まれません。</p>
+
+        <h2>3. 広告</h2>
+        <p>BiuLogはGoogle AdMobを使用して広告を表示します。Googleは、Googleのポリシーに従い、広告識別子、端末情報、広告の操作情報、おおよその位置情報、その他広告関連データを処理する場合があります。広告削除またはプレミアム版の購入後、BiuLogは購入状態に基づき広告表示を停止します。</p>
+
+        <h2>4. アプリ内購入と支払い</h2>
+        <p>BiuLogは広告削除やプレミアム版などの非消耗型アプリ内購入を提供します。支払い、価格、請求、返金はApple App StoreまたはGoogle Playによって処理されます。BiuLogは機能の解放と購入の復元に必要な購入状態、商品ID、取引状態のみを受け取ります。</p>
+
+        <h2>5. 写真、ファイル、バックアップ</h2>
+        <p>ユーザーは、赤ちゃんのアイコン、カスタムボタン画像、マイルストーン記録に写真を選択できます。BiuLogは、ユーザーの操作なしに写真ライブラリを読み取ったりアップロードしたりしません。CSVの書き出し、JSONバックアップ、システム共有機能によるファイル共有は、ユーザーが選択した操作に従って処理されます。</p>
+
+        <h2>6. 通知</h2>
+        <p>BiuLogは育児、予防接種、カスタムリマインダーのためにローカル通知を使用する場合があります。ローカル通知は主にユーザーの端末上で処理されます。</p>
+
+        <h2>7. データ共有</h2>
+        <p>BiuLogはユーザーの個人データを販売しません。アプリ機能の提供に必要なFirebase、Google AdMob、Apple App Store、Google Play、端末OSサービスなどによりデータが処理される場合があります。</p>
+
+        <h2>8. 子どものプライバシー</h2>
+        <p>BiuLogは子どもが直接使用することを目的としていません。保護者または育児に関わる方が赤ちゃんのケア情報を記録するためのアプリです。</p>
+
+        <h2>9. ユーザーによる管理</h2>
+        <p>ユーザーはアプリ内でデータの管理、削除、書き出し、バックアップを行えます。アプリの削除や端末データの消去によりローカルデータが失われる場合があるため、機種変更や再インストール前にバックアップを推奨します。</p>
+
+        <h2>10. お問い合わせ</h2>
+        <p>本プライバシーポリシーに関するご質問は、<a href="mailto:9a6.chihao@gmail.com">9a6.chihao@gmail.com</a> までご連絡ください。</p>
+      </section>
+
+      <section class="policy" data-panel="ko">
+        <h1>BiuLog 개인정보 처리방침</h1>
+        <p class="meta">최종 업데이트: 2026년 5월 13일</p>
+        <p>BiuLog는 부모와 보호자를 위한 아기 생활 기록 앱입니다. 본 방침은 BiuLog가 앱에서 생성되거나 입력되는 데이터를 어떻게 처리하고 보호하는지 설명합니다.</p>
+
+        <h2>1. 처리하는 데이터</h2>
+        <p>사용자는 앱에서 아기 이름, 생일, 성별, 사진, 수유, 수면, 기저귀, 이유식, 성장, 이정표, 예방접종 기록, 메모, 알림 설정, 커스텀 버튼, 백업 데이터 등을 만들 수 있습니다. 이러한 데이터는 주로 사용자의 기기에 저장됩니다.</p>
+
+        <h2>2. Firebase와 체험 기간</h2>
+        <p>14일 프리미엄 체험 제공, 구매 권한 유지, 반복 체험 남용 방지를 위해 BiuLog는 Firebase 익명 인증과 Cloud Firestore를 사용하여 앱 ID, 플랫폼, 익명 인증 ID, 체험 시작 시간, 마지막 사용 시간, 업데이트 시간 등 익명 기기 또는 체험 상태 데이터를 저장할 수 있습니다. 이 데이터에는 이름, 전화번호, 이메일 주소가 포함되지 않습니다.</p>
+
+        <h2>3. 광고</h2>
+        <p>BiuLog는 Google AdMob을 사용하여 광고를 표시합니다. Google은 Google 정책에 따라 광고 식별자, 기기 정보, 광고 상호작용, 대략적인 위치 또는 기타 광고 관련 데이터를 처리할 수 있습니다. 광고 제거 또는 프리미엄 구매 후 BiuLog는 구매 상태에 따라 광고 표시를 중지합니다.</p>
+
+        <h2>4. 인앱 구매와 결제</h2>
+        <p>BiuLog는 광고 제거 및 프리미엄과 같은 비소모성 인앱 구매를 제공합니다. 결제, 가격, 영수증, 환불은 Apple App Store 또는 Google Play에서 처리됩니다. BiuLog는 기능 해제와 구매 복원에 필요한 구매 상태, 상품 ID, 거래 상태만 수신합니다.</p>
+
+        <h2>5. 사진, 파일, 백업</h2>
+        <p>사용자는 아기 프로필 사진, 커스텀 버튼 이미지, 이정표 기록에 사진을 선택할 수 있습니다. BiuLog는 사용자의 조작 없이 사진 보관함을 읽거나 업로드하지 않습니다. CSV 내보내기, JSON 백업 생성, 시스템 공유 기능을 통한 파일 공유는 사용자가 선택한 방식에 따라 처리됩니다.</p>
+
+        <h2>6. 알림</h2>
+        <p>BiuLog는 돌봄, 예방접종 또는 사용자 지정 알림을 위해 로컬 알림을 사용할 수 있습니다. 로컬 알림은 주로 사용자의 기기에서 처리됩니다.</p>
+
+        <h2>7. 데이터 공유</h2>
+        <p>BiuLog는 사용자의 개인 데이터를 판매하지 않습니다. 앱 기능 제공에 필요한 Firebase, Google AdMob, Apple App Store, Google Play, 기기 운영체제 서비스 등에 의해 데이터가 처리될 수 있습니다.</p>
+
+        <h2>8. 아동 개인정보</h2>
+        <p>BiuLog는 아동이 직접 사용하는 앱이 아닙니다. 부모 또는 보호자가 아기 돌봄 정보를 기록하기 위한 앱입니다.</p>
+
+        <h2>9. 사용자 제어</h2>
+        <p>사용자는 앱에서 데이터를 관리, 삭제, 내보내기 또는 백업할 수 있습니다. 앱 삭제 또는 기기 데이터 삭제 시 로컬 데이터가 사라질 수 있으므로 기기 변경 또는 재설치 전 백업을 권장합니다.</p>
+
+        <h2>10. 문의</h2>
+        <p>본 개인정보 처리방침에 대한 문의는 <a href="mailto:9a6.chihao@gmail.com">9a6.chihao@gmail.com</a> 으로 연락해 주세요.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="wrap">
+    <div>© 2026 BiuLog. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const panels = document.querySelectorAll("[data-panel]");
+    const titles = {
+      zh: ["zh-Hant", "BiuLog 隱私權政策"],
+      en: ["en", "BiuLog Privacy Policy"],
+      ja: ["ja", "BiuLog プライバシーポリシー"],
+      ko: ["ko", "BiuLog 개인정보 처리방침"]
+    };
+
+    function detectLanguage() {
+      const urlLang = new URLSearchParams(window.location.search).get("lang");
+      if (titles[urlLang]) return urlLang;
+      const stored = localStorage.getItem("biulog-site-lang");
+      if (titles[stored]) return stored;
+      const browser = (navigator.language || "").toLowerCase();
+      if (browser.startsWith("ja")) return "ja";
+      if (browser.startsWith("ko")) return "ko";
+      if (browser.startsWith("en")) return "en";
+      return "zh";
+    }
+
+    function setLanguage(lang, updateUrl = false) {
+      const next = titles[lang] ? lang : "zh";
+      localStorage.setItem("biulog-site-lang", next);
+      document.documentElement.lang = titles[next][0];
+      document.title = titles[next][1];
+      panels.forEach((panel) => panel.classList.toggle("active", panel.dataset.panel === next));
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.classList.toggle("active", button.getAttribute("data-lang") === next);
+      });
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", next);
+        window.history.replaceState({}, "", url);
+      }
+    }
+
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang"), true));
+    });
+
+    setLanguage(detectLanguage());
+  </script>
+</body>
+</html>
