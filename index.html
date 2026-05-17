@@ -571,7 +571,12 @@
       }
 
       .screens {
-        grid-template-columns: repeat(6, minmax(190px, 72vw));
+        grid-template-columns: 1fr;
+        overflow-x: visible;
+      }
+
+      .shot-card {
+        min-width: 0;
       }
 
       .shot-card:nth-child(even) {
