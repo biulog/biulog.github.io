@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BiuLog is a baby daily care tracking app for feeding, sleep, diaper, solid food, growth, vaccine reminders, backup, and routine analysis.">
+  <meta name="description" content="BiuLog is a gentle baby routine tracker for feeding, sleep, diapers, solids, growth, vaccines, backup, and routine analysis.">
   <meta name="theme-color" content="#faf7f2">
   <meta property="og:title" content="BiuLog - Baby Routine Tracker">
-  <meta property="og:description" content="A gentle baby care tracker for feeding, sleep, diapers, solid food, growth, vaccines, backup, and daily routine analysis.">
+  <meta property="og:description" content="Record baby feeding, sleep, diapers, solids, growth, vaccines, backup, and routine charts in one gentle app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://biulog.github.io/">
   <meta property="og:image" content="https://biulog.github.io/assets/biulog-icon.png">
@@ -15,20 +15,20 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #faf7f2;
-      --surface: #fffdf9;
-      --surface-soft: #f7efe5;
-      --ink: #5c5346;
-      --muted: #8b7e72;
-      --quiet: #b5a89a;
-      --line: #e5ded3;
-      --gold: #d4b896;
-      --gold-deep: #9a8067;
-      --milk: #e8d5c4;
-      --diaper: #d4e2d4;
-      --sleep: #cad5e2;
-      --food: #f5dcc4;
-      --shadow: 0 24px 70px rgba(92, 83, 70, .14);
+      --bg: #fbf7f1;
+      --surface: #fffdfa;
+      --surface-soft: #f8f1e8;
+      --ink: #554c42;
+      --muted: #8c7f73;
+      --quiet: #b3a79a;
+      --line: #e7ded4;
+      --gold: #d6af75;
+      --gold-deep: #98795a;
+      --rose: #e9afbd;
+      --mint: #cddfce;
+      --sky: #cad9e8;
+      --lavender: #d8d1e8;
+      --shadow: 0 22px 68px rgba(84, 73, 62, .14);
     }
 
     * {
@@ -42,7 +42,7 @@
     body {
       margin: 0;
       background:
-        linear-gradient(180deg, rgba(251, 246, 238, .98), rgba(250, 247, 242, 1) 620px),
+        linear-gradient(180deg, rgba(251, 247, 241, .98), rgba(255, 253, 250, 1) 720px),
         var(--bg);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", "Noto Sans", sans-serif;
@@ -61,7 +61,7 @@
     }
 
     .wrap {
-      width: min(1140px, calc(100% - 40px));
+      width: min(1160px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -74,25 +74,25 @@
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 850;
       white-space: nowrap;
     }
 
     .brand img {
       width: 46px;
       height: 46px;
-      border-radius: 13px;
-      box-shadow: 0 12px 30px rgba(92, 83, 70, .16);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(84, 73, 62, .14);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
     }
 
     .nav-links {
@@ -101,7 +101,7 @@
       gap: 20px;
       color: var(--muted);
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 750;
     }
 
     .nav-links a:hover {
@@ -109,14 +109,13 @@
     }
 
     .language {
-      position: relative;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       padding: 5px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 253, 249, .82);
+      background: rgba(255, 253, 250, .88);
     }
 
     .language button {
@@ -128,7 +127,7 @@
       cursor: pointer;
       font: inherit;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 850;
       line-height: 1;
       padding: 10px 11px;
     }
@@ -136,7 +135,7 @@
     .language button.active {
       background: var(--gold);
       color: #fff;
-      box-shadow: 0 8px 20px rgba(154, 128, 103, .2);
+      box-shadow: 0 8px 18px rgba(152, 121, 90, .18);
     }
 
     .hero {
@@ -144,7 +143,7 @@
       grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
       gap: 56px;
       align-items: center;
-      padding: 56px 0 78px;
+      padding: 54px 0 78px;
     }
 
     .eyebrow {
@@ -154,16 +153,23 @@
       padding: 8px 13px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 253, 249, .78);
+      background: rgba(255, 253, 250, .82);
       color: var(--gold-deep);
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 850;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(40px, 6.8vw, 76px);
-      line-height: 1.04;
+      margin-bottom: 0;
+      font-size: clamp(39px, 6.2vw, 72px);
+      line-height: 1.06;
       letter-spacing: 0;
     }
 
@@ -190,8 +196,8 @@
       border-radius: 999px;
       background: var(--gold);
       color: #fff;
-      font-weight: 800;
-      box-shadow: 0 14px 32px rgba(154, 128, 103, .24);
+      font-weight: 850;
+      box-shadow: 0 14px 30px rgba(152, 121, 90, .22);
     }
 
     .cta.secondary {
@@ -208,29 +214,29 @@
       margin-top: 24px;
       color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 750;
     }
 
     .trust span {
       padding: 7px 11px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 253, 249, .72);
+      background: rgba(255, 253, 250, .78);
     }
 
     .showcase {
       position: relative;
-      min-height: 635px;
+      min-height: 640px;
     }
 
     .phone {
-      width: min(382px, 82vw);
+      width: min(388px, 82vw);
       margin-left: auto;
-      padding: 13px;
+      padding: 12px;
       border-radius: 42px;
-      background: #1d1c1a;
+      background: #1d1b18;
       box-shadow: var(--shadow);
-      transform: rotate(2deg);
+      transform: rotate(1.8deg);
     }
 
     .phone-inner {
@@ -241,21 +247,21 @@
 
     .phone img,
     .mini-shot img,
-    .gallery-card img {
+    .shot-card img {
       width: 100%;
-      aspect-ratio: 946 / 2048;
+      aspect-ratio: 1290 / 2796;
       object-fit: cover;
       object-position: top center;
     }
 
     .mini-shot {
       position: absolute;
-      width: 188px;
+      width: 190px;
       overflow: hidden;
       border: 8px solid #fff;
       border-radius: 28px;
       background: #fff;
-      box-shadow: 0 18px 44px rgba(92, 83, 70, .16);
+      box-shadow: 0 18px 44px rgba(84, 73, 62, .15);
     }
 
     .mini-shot.one {
@@ -265,13 +271,21 @@
     }
 
     .mini-shot.two {
-      left: 24px;
-      bottom: 30px;
-      transform: rotate(3deg);
+      left: 30px;
+      bottom: 34px;
+      transform: rotate(4deg);
     }
 
     .section {
       padding: 58px 0;
+    }
+
+    .band {
+      padding: 68px 0;
+      background:
+        linear-gradient(90deg, rgba(232, 175, 189, .16), rgba(205, 223, 206, .18) 48%, rgba(202, 217, 232, .18)),
+        #fffdfa;
+      border-block: 1px solid rgba(231, 222, 212, .78);
     }
 
     .section-head {
@@ -280,7 +294,7 @@
     }
 
     h2 {
-      margin: 0;
+      margin-bottom: 0;
       font-size: clamp(30px, 4vw, 46px);
       line-height: 1.18;
       letter-spacing: 0;
@@ -294,17 +308,17 @@
 
     .features {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
     .feature {
-      min-height: 216px;
-      padding: 24px;
+      min-height: 220px;
+      padding: 22px;
       border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255, 253, 249, .84);
-      box-shadow: 0 16px 42px rgba(92, 83, 70, .06);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, .9);
+      box-shadow: 0 16px 40px rgba(84, 73, 62, .055);
     }
 
     .feature .mark {
@@ -313,131 +327,149 @@
       height: 42px;
       place-items: center;
       margin-bottom: 16px;
-      border-radius: 14px;
-      background: var(--surface-soft);
-      color: var(--gold-deep);
+      border-radius: 8px;
+      color: #fff;
       font-size: 13px;
       font-weight: 900;
     }
 
+    .feature:nth-child(4n+1) .mark { background: var(--gold); }
+    .feature:nth-child(4n+2) .mark { background: var(--rose); }
+    .feature:nth-child(4n+3) .mark { background: #95b795; }
+    .feature:nth-child(4n) .mark { background: #8aa8c4; }
+
     .feature h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
+      margin-bottom: 8px;
+      font-size: 19px;
       letter-spacing: 0;
     }
 
     .feature p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(180px, 1fr));
+      gap: 14px;
+      align-items: start;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .shot-card {
+      min-width: 180px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 16px 42px rgba(84, 73, 62, .08);
+    }
+
+    .shot-card:nth-child(even) {
+      margin-top: 26px;
+    }
+
+    .shot-caption {
+      display: grid;
+      gap: 4px;
+      padding: 13px 14px 15px;
+      border-top: 1px solid var(--line);
+      background: rgba(255, 253, 250, .94);
+    }
+
+    .shot-caption strong {
+      font-size: 15px;
+    }
+
+    .shot-caption span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .notes {
+      display: grid;
+      gap: 12px;
+    }
+
+    .note {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, .86);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .note p {
       margin: 0;
       color: var(--muted);
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      align-items: start;
-    }
-
-    .gallery-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: #fff;
-      box-shadow: 0 16px 42px rgba(92, 83, 70, .08);
-    }
-
-    .gallery-card:nth-child(even) {
-      margin-top: 26px;
-    }
-
-    .premium {
+    .pricing {
       display: grid;
       grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
       gap: 22px;
       align-items: stretch;
-      padding: 30px;
-      border: 1px solid rgba(212, 184, 150, .48);
-      border-radius: 30px;
-      background: linear-gradient(135deg, rgba(255, 253, 249, .96), rgba(244, 234, 220, .88));
+      padding: 28px;
+      border: 1px solid rgba(214, 175, 117, .45);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255, 253, 250, .96), rgba(248, 241, 232, .94));
       box-shadow: var(--shadow);
     }
 
-    .premium h2 {
-      margin-bottom: 14px;
-    }
-
-    .premium p {
-      margin: 0;
+    .pricing p {
+      margin: 14px 0 0;
       color: var(--muted);
       font-size: 18px;
     }
 
-    .premium-list {
+    .plan-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .plan-stack {
-      display: grid;
-      gap: 14px;
-    }
-
-    .free-card {
-      padding: 18px;
-      border: 1px solid rgba(212, 184, 150, .58);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, .78);
-      box-shadow: 0 12px 30px rgba(92, 83, 70, .07);
-    }
-
-    .free-card span {
-      display: inline-flex;
-      margin-bottom: 10px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(229, 211, 188, .72);
-      color: var(--brown);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .free-card strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-      font-size: 22px;
-      line-height: 1.25;
-    }
-
-    .free-card p {
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .premium-item {
+    .plan-list li {
       padding: 16px;
-      border: 1px solid rgba(229, 222, 211, .86);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .72);
+      border: 1px solid rgba(231, 222, 212, .9);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .76);
       color: var(--muted);
       font-weight: 800;
     }
 
     .legal {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
     .legal a {
       display: flex;
-      min-height: 104px;
+      min-height: 96px;
       align-items: center;
       justify-content: center;
       padding: 20px;
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 8px;
       background: #fff;
       color: var(--gold-deep);
       font-weight: 900;
@@ -450,9 +482,20 @@
       font-size: 14px;
     }
 
+    @media (max-width: 1080px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .screens {
+        grid-template-columns: repeat(3, minmax(210px, 1fr));
+      }
+    }
+
     @media (max-width: 980px) {
       .hero,
-      .premium {
+      .split,
+      .pricing {
         grid-template-columns: 1fr;
       }
 
@@ -461,7 +504,7 @@
       }
 
       .phone {
-        margin: 20px auto 0;
+        margin: 22px auto 0;
         transform: none;
       }
 
@@ -469,19 +512,14 @@
         display: none;
       }
 
-      .features,
       .legal {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 720px) {
       .wrap {
-        width: min(100% - 28px, 1140px);
+        width: min(100% - 28px, 1160px);
       }
 
       .nav {
@@ -491,11 +529,22 @@
 
       .nav-actions {
         width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .nav-links {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      .nav-links a {
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 250, .82);
+        text-align: center;
       }
 
       .language {
@@ -516,18 +565,21 @@
       }
 
       .features,
-      .gallery,
       .legal,
-      .premium-list {
+      .plan-list {
         grid-template-columns: 1fr;
       }
 
-      .gallery-card:nth-child(even) {
+      .screens {
+        grid-template-columns: repeat(6, minmax(190px, 72vw));
+      }
+
+      .shot-card:nth-child(even) {
         margin-top: 0;
       }
 
-      .premium {
-        padding: 22px;
+      .pricing {
+        padding: 20px;
       }
     }
   </style>
@@ -535,15 +587,15 @@
 <body>
   <header class="wrap nav">
     <a class="brand" href="/" aria-label="BiuLog home">
-      <img src="/assets/biulog-icon.webp" alt="BiuLog app icon" width="44" height="44">
+      <img src="/assets/biulog-icon.webp" alt="BiuLog app icon" width="46" height="46">
       <span>BiuLog</span>
     </a>
     <div class="nav-actions">
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#features" data-i18n="navFeatures">功能</a>
-        <a href="#premium" data-i18n="navPremium">專業版</a>
-        <a href="/biulog-legal/privacy-policy.html" data-i18n="navPrivacy">隱私權政策</a>
-        <a href="mailto:9a6.chihao@gmail.com" data-i18n="navSupport">支援</a>
+        <a href="#screens" data-i18n="navScreens">畫面</a>
+        <a href="#pro" data-i18n="navPro">專業版</a>
+        <a href="#support" data-i18n="navSupport">支援</a>
       </nav>
       <div class="language" aria-label="Language selector">
         <button type="button" data-lang="zh">繁中</button>
@@ -558,23 +610,23 @@
     <section class="wrap hero">
       <div>
         <div class="eyebrow" data-i18n="eyebrow">寶寶作息紀錄、成長與疫苗提醒</div>
-        <h1 data-i18n="heroTitle">把每天的育兒日常，記得溫柔又清楚。</h1>
-        <p class="lead" data-i18n="heroLead">BiuLog 是給新手爸媽使用的寶寶生活記錄 App。快速記錄喝奶、睡眠、尿布、副食品，並整理成生活作息分析、成長紀錄、疫苗提醒與完整備份。</p>
+        <h1 data-i18n="heroTitle">讓育兒記錄變得快速、可愛、好整理。</h1>
+        <p class="lead" data-i18n="heroLead">BiuLog 幫你把喝奶、睡眠、尿布、副食品、成長、疫苗與備份整理在同一個地方。半夜也能快速記，白天也能清楚看。</p>
         <div class="cta-row">
           <a class="cta" href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="ctaStore" data-app-store-link>在 App Store 下載</a>
           <a class="cta secondary" href="/biulog-legal/" data-i18n="ctaSupport">查看支援資訊</a>
         </div>
         <div class="trust">
-          <span data-i18n="trustFree">基礎版功能完善且完全免費</span>
-          <span data-i18n="trustTrial">14 天專業功能試用</span>
-          <span data-i18n="trustPurchase">一次買斷，不是訂閱</span>
-          <span data-i18n="trustLanguages">支援繁中、英文、日文、韓文</span>
+          <span data-i18n="trustAccount">免帳號即可開始</span>
+          <span data-i18n="trustFree">基本日常記錄可免費使用</span>
+          <span data-i18n="trustPurchase">專業版一次買斷，不是訂閱</span>
+          <span data-i18n="trustLanguages">繁中、英文、日文、韓文</span>
         </div>
       </div>
 
       <div class="showcase" aria-label="BiuLog app screenshots">
         <div class="mini-shot one">
-          <img id="miniOne" data-shot-index="4" src="/assets/screens/zh/screen-4.webp" alt="BiuLog analysis screenshot" loading="lazy" decoding="async">
+          <img id="miniOne" data-shot-index="3" src="/assets/screens/zh/screen-3.webp" alt="BiuLog summary screenshot" loading="lazy" decoding="async">
         </div>
         <div class="phone">
           <div class="phone-inner">
@@ -582,48 +634,53 @@
           </div>
         </div>
         <div class="mini-shot two">
-          <img id="miniTwo" data-shot-index="6" src="/assets/screens/zh/screen-6.webp" alt="BiuLog vaccine screenshot" loading="lazy" decoding="async">
+          <img id="miniTwo" data-shot-index="2" src="/assets/screens/zh/screen-2.webp" alt="BiuLog customization screenshot" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
     <section id="features" class="wrap section">
       <div class="section-head">
-        <h2 data-i18n="featuresTitle">新手爸媽真正會用到的記錄工具</h2>
-        <p data-i18n="featuresLead">從半夜餵奶到回診打疫苗，BiuLog 把散亂的照護資訊整理成清楚、好看的日常紀錄。</p>
+        <h2 data-i18n="featuresTitle">新手爸媽真正會用到的功能</h2>
+        <p data-i18n="featuresLead">從半夜餵奶、換尿布，到回診、成長紀錄和家人交接，BiuLog 把每天零散的照顧資訊整理成清楚的日常。</p>
       </div>
       <div class="features" id="featureGrid"></div>
     </section>
 
-    <section class="wrap section">
-      <div class="section-head">
-        <h2 data-i18n="galleryTitle">柔和水彩風格，打開就想記一下</h2>
-        <p data-i18n="galleryLead">畫面保留資訊密度，也維持柔和、乾淨、適合每天使用的視覺感。</p>
+    <section id="screens" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="screensTitle">每個常用頁面，都看得見重點</h2>
+          <p data-i18n="screensLead">首頁、作息分析、每日紀錄與客製化設定都重新整理過，資訊更完整，也保留 BiuLog 柔和乾淨的視覺感。</p>
+        </div>
+        <div class="screens" id="screenGallery"></div>
       </div>
-      <div class="gallery" id="gallery"></div>
     </section>
 
-    <section id="premium" class="wrap section">
-      <div class="premium">
+    <section class="wrap section">
+      <div class="split">
+        <div class="section-head">
+          <h2 data-i18n="careTitle">不只記錄，也方便回頭看</h2>
+          <p data-i18n="careLead">喝奶可以分親餵、瓶餵母乳與配方奶；尿布可以看尿尿、便便與換尿布次數；圖表則用週為單位看出最近的生活節奏。</p>
+        </div>
+        <div class="notes" id="notes"></div>
+      </div>
+    </section>
+
+    <section id="pro" class="wrap section">
+      <div class="pricing">
         <div>
-          <h2 data-i18n="premiumTitle">基礎版免費，專業版體驗 14 天</h2>
-          <p data-i18n="premiumLead">核心記錄功能可免費持續使用；新用戶可體驗專業版 14 天。需要更多寶寶、疫苗提醒、分析圖表、備份與客製化時，再選擇一次買斷升級。</p>
+          <h2 data-i18n="proTitle">基本日常記錄可免費使用</h2>
+          <p data-i18n="proLead">想要更多客製化、多寶寶管理與進階整理功能時，也可以依需求升級專業版。專業版為一次買斷，不是訂閱。</p>
         </div>
-        <div class="plan-stack">
-          <article class="free-card">
-            <span data-i18n="freeBadge">基礎版免費</span>
-            <strong data-i18n="freeTitle">功能完善且完全免費</strong>
-            <p data-i18n="freeLead">不用付費也能持續記錄喝奶、睡眠、尿布/便便、副食品與每日生活紀錄。想要多寶寶、疫苗提醒、作息分析、完整備份與深度客製化時，再升級專業版。</p>
-          </article>
-          <div class="premium-list" id="premiumList"></div>
-        </div>
+        <ul class="plan-list" id="proList"></ul>
       </div>
     </section>
 
-    <section class="wrap section">
+    <section id="support" class="wrap section">
       <div class="section-head">
         <h2 data-i18n="supportTitle">支援與法務資訊</h2>
-        <p data-i18n="supportLead">需要聯絡我們、查看隱私權政策或確認 App Store 頁面，可以從這裡前往。</p>
+        <p data-i18n="supportLead">需要查看 App Store 頁面、隱私權政策、app-ads.txt 或聯絡支援，可以從這裡前往。</p>
       </div>
       <div class="legal">
         <a href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="linkStore" data-app-store-link>App Store 頁面</a>
@@ -642,175 +699,248 @@
     const copy = {
       zh: {
         htmlLang: "zh-Hant",
-        title: "BiuLog - 寶寶作息紀錄與疫苗提醒",
-        description: "BiuLog 是給新手爸媽使用的寶寶作息紀錄 App，可快速記錄喝奶、睡眠、尿布、副食品、成長、疫苗提醒與備份資料。",
+        title: "BiuLog - 寶寶作息紀錄與新生兒照顧 App",
+        description: "BiuLog 是給新手爸媽使用的寶寶生活記錄 App，可記錄喝奶、睡眠、尿布、副食品、成長、疫苗、備份與作息分析。",
         navFeatures: "功能",
-        navPremium: "免費 / 專業",
-        navPrivacy: "隱私權政策",
+        navScreens: "畫面",
+        navPro: "專業版",
         navSupport: "支援",
         eyebrow: "寶寶作息紀錄、成長與疫苗提醒",
-        heroTitle: "把每天的育兒日常，記得溫柔又清楚。",
-        heroLead: "BiuLog 是給新手爸媽使用的寶寶生活記錄 App。快速記錄喝奶、睡眠、尿布、副食品，並整理成生活作息分析、成長紀錄、疫苗提醒與完整備份。",
+        heroTitle: "讓育兒記錄變得快速、可愛、好整理。",
+        heroLead: "BiuLog 幫你把喝奶、睡眠、尿布、副食品、成長、疫苗與備份整理在同一個地方。半夜也能快速記，白天也能清楚看。",
         ctaStore: "在 App Store 下載",
         ctaSupport: "查看支援資訊",
-        trustFree: "基礎版功能完善且完全免費",
-        trustTrial: "專業版體驗 14 天",
-        trustPurchase: "一次買斷，不是訂閱",
-        trustLanguages: "支援繁中、英文、日文、韓文",
-        featuresTitle: "新手爸媽真正會用到的記錄工具",
-        featuresLead: "從半夜餵奶到回診打疫苗，BiuLog 把散亂的照護資訊整理成清楚、好看的日常紀錄。",
-        galleryTitle: "柔和水彩風格，打開就想記一下",
-        galleryLead: "畫面保留資訊密度，也維持柔和、乾淨、適合每天使用的視覺感。",
-        premiumTitle: "基礎版免費，專業版體驗 14 天",
-        premiumLead: "核心記錄功能可免費持續使用；新用戶可體驗專業版 14 天。需要更多寶寶、疫苗提醒、分析圖表、備份與客製化時，再選擇一次買斷升級。",
-        freeBadge: "基礎版免費",
-        freeTitle: "功能完善且完全免費",
-        freeLead: "不用付費也能持續記錄喝奶、睡眠、尿布/便便、副食品與每日生活紀錄。想要多寶寶、疫苗提醒、作息分析、完整備份與深度客製化時，再升級專業版。",
+        trustAccount: "免帳號即可開始",
+        trustFree: "基本日常記錄可免費使用",
+        trustPurchase: "專業版一次買斷，不是訂閱",
+        trustLanguages: "繁中、英文、日文、韓文",
+        featuresTitle: "新手爸媽真正會用到的功能",
+        featuresLead: "從半夜餵奶、換尿布，到回診、成長紀錄和家人交接，BiuLog 把每天零散的照顧資訊整理成清楚的日常。",
+        screensTitle: "每個常用頁面，都看得見重點",
+        screensLead: "首頁、作息分析、每日紀錄與客製化設定都重新整理過，資訊更完整，也保留 BiuLog 柔和乾淨的視覺感。",
+        careTitle: "不只記錄，也方便回頭看",
+        careLead: "喝奶可以分親餵、瓶餵母乳與配方奶；尿布可以看尿尿、便便與換尿布次數；圖表則用週為單位看出最近的生活節奏。",
+        proTitle: "基本日常記錄可免費使用",
+        proLead: "想要更多客製化、多寶寶管理與進階整理功能時，也可以依需求升級專業版。專業版為一次買斷，不是訂閱。",
         supportTitle: "支援與法務資訊",
-        supportLead: "需要聯絡我們、查看隱私權政策或確認 App Store 頁面，可以從這裡前往。",
+        supportLead: "需要查看 App Store 頁面、隱私權政策、app-ads.txt 或聯絡支援，可以從這裡前往。",
         linkStore: "App Store 頁面",
         linkPrivacy: "隱私權政策",
         linkAds: "app-ads.txt",
         linkContact: "聯絡支援",
         footer: "© 2026 BiuLog. All rights reserved.",
         features: [
-          ["單手快速記錄", "短按快速新增，長按補登過去時間。瓶餵、親餵、睡眠、尿布與副食品都能快速完成。"],
-          ["作息分析圖表", "查看最近 7 天、14 天、30 天的生活模式，托嬰、保母與家人交接更清楚。"],
-          ["疫苗紀錄提醒", "內建多國疫苗時程參考，可標記完成、追蹤下一劑，降低漏打預防針的風險。"],
-          ["成長與里程碑", "記錄身高、體重、頭圍，以及翻身、爬行、長牙等值得保存的第一次。"],
-          ["高自由度客製化", "自訂按鈕文字、顏色、圖示、照片與首頁風格，打造屬於自己家庭的育兒介面。"],
-          ["完整備份與匯出", "支援 CSV 匯出與 JSON 完整備份，包含寶寶資料、記錄、圖片、設定與自訂按鈕。"]
+          ["單手快速記錄", "短按即可新增，長按可補登過去時間。半夜抱著寶寶，也能快速記下喝奶、睡眠、尿布與副食品。"],
+          ["親餵、瓶餵母乳、配方奶", "親餵支援左右奶計時，瓶餵可分別記錄瓶餵母乳與配方奶 ml 數。"],
+          ["尿尿、便便、換尿布", "尿布記錄可分尿尿、便便、尿尿＋便便，統計時也能清楚看出尿尿、便便與換尿布次數。"],
+          ["副食品與每日紀錄", "記錄副食品種類、份量與備註，也能回頭查看每天完整照顧時間線。"],
+          ["作息分析圖表", "以週為單位查看喝奶量、睡眠、尿布、副食品與趨勢，幫助家人交接更清楚。"],
+          ["成長與里程碑", "保存身高、體重、頭圍，也能記下翻身、爬行、走路等珍貴時刻。"],
+          ["疫苗紀錄與提醒", "整理接種狀態、完成日期與下一劑時間。實際接種請以醫師與官方資訊為準。"],
+          ["多寶寶、客製化、備份", "專業版可管理多位寶寶、客製首頁按鈕與圖片，並使用完整 JSON 備份與還原。"]
         ],
-        premiumItems: ["移除廣告", "多寶寶管理", "疫苗紀錄與提醒", "作息分析圖表", "自訂按鈕與圖片", "CSV 與 JSON 備份"]
+        shots: [
+          ["首頁快速記錄", "四大按鈕、今日摘要、最近紀錄都在同一頁。"],
+          ["客製化首頁", "按鈕文字、圖示、照片與風格都能調整。"],
+          ["本週摘要", "親餵、瓶餵母乳、配方奶與喝奶量更好整理。"],
+          ["24 小時熱度", "看出喝奶、尿布、睡眠、副食品集中在哪些時段。"],
+          ["趨勢圖表", "用週為單位追蹤最近生活節奏。"],
+          ["每日分析", "每天發生什麼，照時間清楚回看。"],
+          ["寶寶資料", "大頭照、生日、性別與基本資料集中管理。"],
+          ["成長記錄", "身高、體重、頭圍用清楚圖表與列表保存。"],
+          ["成長里程碑", "翻身、爬行、走路等珍貴時刻可以逐一記下。"],
+          ["疫苗紀錄", "依地區參考時程整理接種狀態與下一劑提醒。"],
+          ["記錄查詢", "用日期與分類快速找到過去的照顧紀錄。"]
+        ],
+        notes: [
+          ["免費版也能好好記", "基本日常記錄可持續使用，不需要一開始就付費。"],
+          ["適合家人與照顧者交接", "用圖表和每日紀錄快速了解寶寶今天吃了什麼、睡了多久、換了幾次尿布。"],
+          ["完整備份更安心", "JSON 完整備份可保存多寶寶資料、生活紀錄、成長、疫苗、自訂按鈕、圖片與設定。"]
+        ],
+        proItems: ["多寶寶管理", "自訂按鈕與圖片", "作息分析圖表", "疫苗紀錄與提醒", "完整 JSON 備份", "去除廣告"]
       },
       en: {
         htmlLang: "en",
         title: "BiuLog - Baby Routine Tracker",
-        description: "BiuLog is a gentle baby care tracker for feeding, sleep, diapers, solid food, growth, vaccines, backup, and daily routine analysis.",
+        description: "BiuLog is a gentle baby routine tracker for feeding, sleep, diapers, solids, growth, vaccines, backup, and routine analysis.",
         navFeatures: "Features",
-        navPremium: "Free / Premium",
-        navPrivacy: "Privacy",
+        navScreens: "Screens",
+        navPro: "Pro",
         navSupport: "Support",
         eyebrow: "Baby routine, growth, and vaccine reminders",
-        heroTitle: "Keep every baby care moment clear, calm, and beautifully organized.",
-        heroLead: "BiuLog helps parents record feeding, sleep, diapers, solid food, growth, vaccines, and backups with a gentle interface made for real daily care.",
+        heroTitle: "Make baby tracking quick, cute, and easy to organize.",
+        heroLead: "BiuLog keeps feeding, sleep, diapers, solids, growth, vaccines, and backups in one gentle place. Log quickly at night, review clearly during the day.",
         ctaStore: "Download on the App Store",
         ctaSupport: "Support information",
-        trustFree: "Full basic plan, completely free",
-        trustTrial: "14-day premium experience",
-        trustPurchase: "One-time purchase, no subscription",
+        trustAccount: "Start without an account",
+        trustFree: "Basic daily logging is free",
+        trustPurchase: "Pro is one-time purchase, not a subscription",
         trustLanguages: "Traditional Chinese, English, Japanese, Korean",
-        featuresTitle: "A practical tracker for everyday parenting",
-        featuresLead: "From midnight feeding to vaccine visits, BiuLog turns scattered care notes into clean daily records and useful patterns.",
-        galleryTitle: "Soft watercolor design, built for daily use",
-        galleryLead: "A gentle visual style with enough structure for repeated logging, reviewing, and handoff.",
-        premiumTitle: "Free basic plan, 14-day premium experience",
-        premiumLead: "Core daily tracking stays free. New users can experience premium for 14 days, then upgrade with a one-time purchase when they want multiple babies, vaccine reminders, charts, backup, and customization.",
-        freeBadge: "Free basic plan",
-        freeTitle: "Complete core features, completely free",
-        freeLead: "Keep tracking feeding, sleep, diapers, solids, and daily records without paying. Upgrade only when you want multiple babies, vaccine reminders, routine charts, full backup, and deeper customization.",
+        featuresTitle: "Practical features for real daily care",
+        featuresLead: "From midnight feeding and diaper changes to clinic visits, growth records, and family handoff, BiuLog turns scattered care notes into a clear routine.",
+        screensTitle: "Important details are easy to see",
+        screensLead: "The home screen, routine charts, daily records, and customization screens have been refreshed so the app feels clear, complete, and gentle.",
+        careTitle: "Not just logging. Easy reviewing too.",
+        careLead: "Track nursing, expressed breast milk, and formula separately. Review pee, poop, and total diaper changes. Use weekly charts to understand recent patterns.",
+        proTitle: "Basic daily logging is free",
+        proLead: "When you want more customization, multiple baby profiles, and advanced organization features, you can upgrade to Pro when you need it. Pro is a one-time purchase, not a subscription.",
         supportTitle: "Support and legal information",
-        supportLead: "Find the App Store page, privacy policy, and contact information here.",
+        supportLead: "Find the App Store page, privacy policy, app-ads.txt, and support contact here.",
         linkStore: "App Store page",
         linkPrivacy: "Privacy policy",
         linkAds: "app-ads.txt",
         linkContact: "Contact support",
         footer: "© 2026 BiuLog. All rights reserved.",
         features: [
-          ["Fast one-hand logging", "Quick tap to log now, long press to add past records. Bottle feeding, nursing, sleep, diapers, and solid food stay simple."],
-          ["Routine analysis", "Review 7-day, 14-day, and 30-day patterns to make handoff with family, babysitters, or daycare clearer."],
-          ["Vaccine tracking", "Built-in vaccine schedule references help you mark completed shots and keep an eye on the next dose."],
-          ["Growth and milestones", "Track height, weight, head circumference, and meaningful first moments as your baby grows."],
-          ["Highly customizable", "Customize button text, colors, icons, photos, and home screen style for your own family routine."],
-          ["Backup and export", "Export CSV and create full JSON backups including babies, records, photos, settings, and custom buttons."]
+          ["Fast one-handed logging", "Tap to log now, or long press to add an earlier time. Feeding, sleep, diapers, and solids stay simple even at night."],
+          ["Nursing, expressed milk, formula", "Track nursing with left and right timers, and record expressed breast milk or formula bottle amounts in ml."],
+          ["Pee, poop, diaper changes", "Record pee, poop, or pee + poop, then review pee counts, poop counts, and total diaper changes clearly."],
+          ["Solids and daily timeline", "Save food type, amount, and notes, then review a full timeline of each day."],
+          ["Routine charts", "Review feeding, sleep, diapers, solids, and trends by week so handoff with family is easier."],
+          ["Growth and milestones", "Track height, weight, head circumference, and precious milestones like rolling, crawling, and first steps."],
+          ["Vaccine records and reminders", "Organize vaccination status, completion dates, and next-dose reminders. Always follow official medical guidance."],
+          ["Multiple babies, custom home, backup", "Pro supports multiple babies, custom buttons and images, and complete JSON backup and restore."]
         ],
-        premiumItems: ["Remove ads", "Multiple babies", "Vaccine records", "Routine charts", "Custom buttons and images", "CSV and JSON backup"]
+        shots: [
+          ["Quick home logging", "Main actions, today summary, and recent records on one screen."],
+          ["Custom home screen", "Adjust button text, icons, photos, and visual style."],
+          ["Weekly summary", "Nursing, expressed milk, formula, and feeding totals stay organized."],
+          ["24-hour heatmap", "See when feeding, diapers, sleep, and solids usually happen."],
+          ["Trend charts", "Follow recent routine changes week by week."],
+          ["Daily analysis", "Review each day clearly in chronological order."],
+          ["Baby profile", "Keep photo, birthday, sex, and basic profile details together."],
+          ["Growth records", "Save height, weight, and head circumference with charts and lists."],
+          ["Milestones", "Track rolling, crawling, walking, and other precious firsts."],
+          ["Vaccine records", "Organize vaccine status and next-dose reminders by regional references."]
+        ],
+        notes: [
+          ["Free basics are useful", "Core daily logging can be used continuously without paying first."],
+          ["Made for handoff", "Charts and daily records help caregivers understand feeding, sleep, diapers, and solids quickly."],
+          ["Backup with confidence", "Full JSON backup can preserve baby profiles, records, growth, vaccines, custom buttons, images, and settings."]
+        ],
+        proItems: ["Multiple baby profiles", "Custom buttons and images", "Routine charts", "Vaccine records and reminders", "Full JSON backup", "Remove ads"]
       },
       ja: {
         htmlLang: "ja",
-        title: "BiuLog - 育児記録と予防接種スケジュール",
-        description: "BiuLogは授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップを記録できる育児記録アプリです。",
+        title: "BiuLog - 赤ちゃんの育児記録アプリ",
+        description: "BiuLog は、授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップ、生活リズム分析をまとめて記録できる育児記録アプリです。",
         navFeatures: "機能",
-        navPremium: "無料 / プレミアム",
-        navPrivacy: "プライバシー",
+        navScreens: "画面",
+        navPro: "プロ版",
         navSupport: "サポート",
-        eyebrow: "育児記録、成長、予防接種スケジュール",
-        heroTitle: "毎日の育児記録を、やさしく、見やすく。",
-        heroLead: "BiuLogは、授乳・睡眠・おむつ・離乳食・成長・予防接種・バックアップをまとめて管理できる、忙しいママとパパのための育児記録アプリです。",
-        ctaStore: "App Storeで見る",
-        ctaSupport: "サポート情報",
-        trustFree: "基本機能は充実、完全無料",
-        trustTrial: "プレミアム版を14日間体験",
-        trustPurchase: "買い切り型、サブスクなし",
-        trustLanguages: "繁体字中国語・英語・日本語・韓国語対応",
-        featuresTitle: "毎日の育児で本当に使いやすい記録ツール",
-        featuresLead: "夜中の授乳から予防接種の予定まで、BiuLogは育児の記録をすっきり整理します。",
-        galleryTitle: "やさしい水彩デザインで、毎日使いやすく",
-        galleryLead: "かわいさだけでなく、記録・確認・共有がしやすい画面設計を大切にしています。",
-        premiumTitle: "基本版は無料、プレミアム版は14日間体験",
-        premiumLead: "毎日の基本記録は無料で使い続けられます。新規ユーザーはプレミアム版を14日間体験でき、複数の赤ちゃん、予防接種、グラフ、バックアップ、カスタマイズが必要なときに買い切りでアップグレードできます。",
-        freeBadge: "基本版無料",
-        freeTitle: "基本機能は充実、完全無料",
-        freeLead: "授乳、睡眠、おむつ、離乳食、毎日の記録は無料で続けられます。複数の赤ちゃん、予防接種リマインダー、生活リズムグラフ、バックアップ、カスタマイズが必要なときだけアップグレードできます。",
+        eyebrow: "赤ちゃんの生活リズム、成長、予防接種を記録",
+        heroTitle: "育児記録を、もっと手軽に、かわいく、見やすく。",
+        heroLead: "BiuLog は、授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップをひとつにまとめる育児記録アプリです。夜中はすばやく記録、あとからは見やすく振り返れます。",
+        ctaStore: "App Store でダウンロード",
+        ctaSupport: "サポート情報を見る",
+        trustAccount: "アカウントなしで開始",
+        trustFree: "基本的な日々の記録は無料",
+        trustPurchase: "プロ版は買い切り、サブスクではありません",
+        trustLanguages: "繁体字中国語、英語、日本語、韓国語に対応",
+        featuresTitle: "毎日の育児で本当に使う機能",
+        featuresLead: "夜中の授乳やおむつ替えから、通院、成長記録、家族との共有まで。BiuLog は散らばりがちな記録を見やすく整理します。",
+        screensTitle: "よく使う画面で、必要な情報がすぐ見える",
+        screensLead: "ホーム、生活リズム分析、毎日の記録、カスタマイズ画面を見直し、情報量とやさしい見た目のバランスを整えました。",
+        careTitle: "記録するだけでなく、振り返りやすく",
+        careLead: "授乳は直接授乳、搾乳母乳、ミルクに分けて管理。おしっこ、うんち、おむつ替えの回数も確認でき、週ごとのグラフで最近のリズムをつかめます。",
+        proTitle: "基本的な日々の記録は無料",
+        proLead: "より細かなカスタマイズ、複数の赤ちゃん管理、便利な整理機能が必要な場合は、必要に応じてプロ版にアップグレードできます。プロ版は買い切りで、サブスクリプションではありません。",
         supportTitle: "サポートと法務情報",
-        supportLead: "App Storeページ、プライバシーポリシー、問い合わせ先はこちらから確認できます。",
-        linkStore: "App Storeページ",
+        supportLead: "App Store ページ、プライバシーポリシー、app-ads.txt、お問い合わせはこちらから確認できます。",
+        linkStore: "App Store ページ",
         linkPrivacy: "プライバシーポリシー",
         linkAds: "app-ads.txt",
-        linkContact: "サポートに連絡",
+        linkContact: "お問い合わせ",
         footer: "© 2026 BiuLog. All rights reserved.",
         features: [
-          ["片手でかんたん記録", "タップで今すぐ記録、長押しで過去の記録を追加。授乳、睡眠、おむつ、離乳食をすばやく入力できます。"],
-          ["生活リズム分析", "7日・14日・30日の記録をグラフで確認し、家族や保育者との共有にも役立ちます。"],
-          ["予防接種の管理", "接種スケジュールの参考情報を確認し、完了記録や次回予定を管理できます。"],
-          ["成長とマイルストーン", "身長、体重、頭囲、寝返りや歯が生えた日など、大切な成長の記録を残せます。"],
-          ["自由にカスタマイズ", "ボタンの文字、色、アイコン、写真、ホーム画面の雰囲気を自分好みに設定できます。"],
-          ["バックアップと書き出し", "CSV書き出しとJSON完全バックアップに対応。記録、写真、設定、カスタムボタンも保存できます。"]
+          ["片手でさっと記録", "今すぐ記録はタップ、過去の時間は長押しで入力。授乳、睡眠、おむつ、離乳食を夜中でも手早く残せます。"],
+          ["授乳、搾乳母乳、ミルク", "直接授乳は左右の時間を記録。哺乳瓶であげた搾乳母乳やミルクは ml で分けて記録できます。"],
+          ["おしっこ、うんち、おむつ替え", "おしっこ、うんち、おしっこ＋うんちに分けて記録し、回数も見やすく整理できます。"],
+          ["離乳食と毎日の記録", "食べたもの、量、メモを残し、1日の流れをあとから確認できます。"],
+          ["生活リズムのグラフ", "週ごとに授乳量、睡眠、おむつ、離乳食、傾向を確認でき、家族との共有にも役立ちます。"],
+          ["成長記録と成長の節目", "身長、体重、頭囲のほか、寝返り、はいはい、歩き始めなどの大切な瞬間も残せます。"],
+          ["予防接種の記録とリマインダー", "接種状況、接種日、次回予定を整理できます。実際の接種は医師や公式情報に従ってください。"],
+          ["複数の赤ちゃん、カスタマイズ、バックアップ", "プロ版では複数の赤ちゃん、ホーム画面のカスタマイズ、JSON 完全バックアップに対応します。"]
         ],
-        premiumItems: ["広告削除", "複数の赤ちゃん", "予防接種記録", "生活リズムグラフ", "カスタムボタンと画像", "CSV・JSONバックアップ"]
+        shots: [
+          ["ホームで素早く記録", "主な操作、今日のまとめ、最近の記録をひとつの画面に。"],
+          ["ホーム画面をカスタマイズ", "ボタンの文字、アイコン、写真、雰囲気を調整できます。"],
+          ["週ごとのまとめ", "授乳、搾乳母乳、ミルク、合計量を整理しやすく。"],
+          ["24時間の傾向", "授乳、おむつ、睡眠、離乳食が多い時間帯を確認。"],
+          ["傾向グラフ", "最近の生活リズムの変化を週単位で確認。"],
+          ["毎日の分析", "1日の出来事を時系列で見やすく振り返れます。"],
+          ["赤ちゃん情報", "写真、誕生日、性別などの基本情報をまとめて管理。"],
+          ["成長記録", "身長、体重、頭囲をグラフとリストで保存できます。"],
+          ["成長メモ", "寝返り、はいはい、歩き始めなど大切な瞬間を記録。"],
+          ["予防接種", "地域ごとの参考スケジュールで接種状況と次回予定を整理。"]
+        ],
+        notes: [
+          ["無料でもしっかり使える", "基本的な日々の記録は、最初から継続して使えます。"],
+          ["家族との共有にも便利", "グラフと毎日の記録で、授乳、睡眠、おむつ、離乳食の状況を伝えやすくなります。"],
+          ["バックアップも安心", "JSON 完全バックアップで、赤ちゃん情報、記録、成長、予防接種、カスタムボタン、画像、設定を保存できます。"]
+        ],
+        proItems: ["複数の赤ちゃん管理", "カスタムボタンと画像", "生活リズム分析", "予防接種の記録とリマインダー", "JSON 完全バックアップ", "広告の非表示"]
       },
       ko: {
         htmlLang: "ko",
-        title: "BiuLog - 아기 일과 기록과 예방접종 관리",
-        description: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업을 정리하는 아기 생활 기록 앱입니다.",
+        title: "BiuLog - 아기 생활 기록 앱",
+        description: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업, 생활 리듬 분석을 한곳에 정리하는 아기 생활 기록 앱입니다.",
         navFeatures: "기능",
-        navPremium: "무료 / 프리미엄",
-        navPrivacy: "개인정보",
+        navScreens: "화면",
+        navPro: "프로",
         navSupport: "지원",
-        eyebrow: "아기 일과 기록, 성장, 예방접종 관리",
-        heroTitle: "매일의 육아 기록을 부드럽고 선명하게 정리하세요.",
-        heroLead: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업까지 한곳에서 관리할 수 있는 감성 육아 기록 앱입니다.",
-        ctaStore: "App Store에서 보기",
+        eyebrow: "아기 생활 리듬, 성장, 예방접종 기록",
+        heroTitle: "아기 기록을 더 빠르고, 예쁘고, 깔끔하게.",
+        heroLead: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업을 한곳에 정리해 주는 아기 생활 기록 앱입니다. 밤에는 빠르게 기록하고, 낮에는 보기 좋게 확인할 수 있어요.",
+        ctaStore: "App Store에서 다운로드",
         ctaSupport: "지원 정보 보기",
-        trustFree: "기본 기능 충실, 완전 무료",
-        trustTrial: "프리미엄 14일 체험",
-        trustPurchase: "구독 없는 일시불 구매",
-        trustLanguages: "중국어 번체, 영어, 일본어, 한국어 지원",
-        featuresTitle: "초보 엄마 아빠에게 필요한 실전 기록 도구",
-        featuresLead: "새벽 수유부터 예방접종 일정까지, BiuLog가 흩어진 육아 기록을 보기 좋게 정리해 줍니다.",
-        galleryTitle: "매일 열고 싶은 부드러운 수채화 스타일",
-        galleryLead: "감성적인 화면과 반복 사용에 필요한 정보 구조를 함께 담았습니다.",
-        premiumTitle: "기본판 무료, 프리미엄 14일 체험",
-        premiumLead: "매일 쓰는 기본 기록은 무료로 계속 사용할 수 있습니다. 신규 사용자는 프리미엄을 14일 동안 체험하고, 여러 아기 관리, 예방접종, 차트, 백업, 커스터마이징이 필요할 때 일시불로 업그레이드할 수 있습니다.",
-        freeBadge: "기본판 무료",
-        freeTitle: "기본 기능 충실, 완전 무료",
-        freeLead: "수유, 수면, 기저귀, 이유식, 하루 기록은 결제 없이 계속 사용할 수 있습니다. 여러 아기 관리, 예방접종 알림, 생활 패턴 차트, 백업, 커스터마이징이 필요할 때만 업그레이드하면 됩니다.",
+        trustAccount: "계정 없이 바로 시작",
+        trustFree: "기본 일상 기록은 무료",
+        trustPurchase: "프로 버전은 구독이 아닌 한 번 구매",
+        trustLanguages: "번체 중국어, 영어, 일본어, 한국어 지원",
+        featuresTitle: "매일 육아에 실제로 필요한 기능",
+        featuresLead: "밤중 수유와 기저귀 교체부터 병원 방문, 성장 기록, 가족과의 공유까지. BiuLog는 흩어진 돌봄 기록을 보기 쉽게 정리합니다.",
+        screensTitle: "자주 쓰는 화면에서 필요한 정보가 바로 보여요",
+        screensLead: "홈 화면, 생활 리듬 분석, 하루 기록, 꾸미기 화면을 새롭게 다듬어 정보는 더 잘 보이고 분위기는 더 부드럽게 만들었습니다.",
+        careTitle: "기록만 하는 것이 아니라, 다시 보기도 쉽게",
+        careLead: "수유는 직수, 유축 모유, 분유로 나누어 관리할 수 있습니다. 소변, 대변, 기저귀 교체 횟수도 확인하고, 주 단위 차트로 최근 생활 리듬을 파악할 수 있어요.",
+        proTitle: "기본 일상 기록은 무료",
+        proLead: "더 많은 꾸미기 기능, 여러 아기 관리, 고급 정리 기능이 필요할 때 프로 버전으로 업그레이드할 수 있습니다. 프로 버전은 구독이 아닌 한 번 구매 방식입니다.",
         supportTitle: "지원 및 법적 정보",
-        supportLead: "App Store 페이지, 개인정보 처리방침, 문의 정보를 여기에서 확인할 수 있습니다.",
+        supportLead: "App Store 페이지, 개인정보 처리방침, app-ads.txt, 문의 정보는 여기에서 확인할 수 있습니다.",
         linkStore: "App Store 페이지",
         linkPrivacy: "개인정보 처리방침",
         linkAds: "app-ads.txt",
         linkContact: "지원 문의",
         footer: "© 2026 BiuLog. All rights reserved.",
         features: [
-          ["한 손으로 빠른 기록", "짧게 눌러 바로 기록하고 길게 눌러 과거 기록을 추가하세요. 수유, 수면, 기저귀, 이유식을 빠르게 남길 수 있습니다."],
-          ["생활 패턴 분석", "최근 7일, 14일, 30일 기록을 그래프로 확인해 가족이나 돌봄 담당자와 쉽게 공유할 수 있습니다."],
-          ["예방접종 관리", "접종 일정 참고 정보와 완료 기록, 다음 접종 일정을 함께 관리할 수 있습니다."],
-          ["성장과 이정표", "키, 몸무게, 머리둘레와 뒤집기, 이 나기 등 소중한 첫 순간을 기록하세요."],
-          ["높은 자유도의 커스터마이징", "버튼 문구, 색상, 아이콘, 사진, 홈 화면 분위기를 우리 가족에게 맞게 꾸밀 수 있습니다."],
-          ["백업과 내보내기", "CSV 내보내기와 JSON 전체 백업을 지원해 기록, 사진, 설정, 커스텀 버튼을 보관할 수 있습니다."]
+          ["한 손으로 빠르게 기록", "짧게 누르면 바로 기록하고, 길게 누르면 지난 시간도 입력할 수 있습니다. 수유, 수면, 기저귀, 이유식을 밤에도 쉽게 남길 수 있어요."],
+          ["직수, 유축 모유, 분유", "직수는 왼쪽과 오른쪽 수유 시간을 기록하고, 젖병 수유는 유축 모유와 분유를 ml 단위로 나누어 기록할 수 있습니다."],
+          ["소변, 대변, 기저귀 교체", "소변, 대변, 소변＋대변으로 구분해 기록하고, 각각의 횟수와 기저귀 교체 횟수를 보기 쉽게 확인할 수 있습니다."],
+          ["이유식과 하루 기록", "이유식 종류, 양, 메모를 남기고 하루의 흐름을 다시 확인할 수 있습니다."],
+          ["생활 리듬 분석 차트", "주 단위로 수유량, 수면, 기저귀, 이유식, 추세를 확인해 가족과의 공유도 쉬워집니다."],
+          ["성장 기록과 발달 순간", "키, 몸무게, 머리둘레와 함께 뒤집기, 기기, 첫걸음 같은 소중한 순간도 기록할 수 있습니다."],
+          ["예방접종 기록과 알림", "접종 상태, 완료일, 다음 접종 예정일을 정리할 수 있습니다. 실제 접종은 의사와 공식 안내를 따라 주세요."],
+          ["여러 아기, 꾸미기, 백업", "프로 버전에서는 여러 아기 관리, 홈 화면 꾸미기, JSON 전체 백업과 복원을 지원합니다."]
         ],
-        premiumItems: ["광고 제거", "여러 아기 관리", "예방접종 기록", "생활 패턴 차트", "커스텀 버튼과 이미지", "CSV 및 JSON 백업"]
+        shots: [
+          ["홈에서 빠르게 기록", "주요 버튼, 오늘 요약, 최근 기록을 한 화면에서 확인."],
+          ["홈 화면 꾸미기", "버튼 문구, 아이콘, 사진, 분위기를 원하는 대로 조정."],
+          ["이번 주 요약", "직수, 유축 모유, 분유와 총 수유량을 깔끔하게 정리."],
+          ["24시간 패턴", "수유, 기저귀, 수면, 이유식이 많은 시간대를 확인."],
+          ["추세 차트", "최근 생활 리듬 변화를 주 단위로 확인."],
+          ["하루 분석", "하루 동안의 일을 시간순으로 보기 쉽게 확인."],
+          ["아기 정보", "사진, 생일, 성별 등 기본 정보를 한곳에서 관리."],
+          ["성장 기록", "키, 몸무게, 머리둘레를 차트와 목록으로 저장."],
+          ["성장 순간", "뒤집기, 기기, 첫걸음 같은 소중한 순간을 기록."],
+          ["예방접종", "지역별 참고 일정으로 접종 상태와 다음 일정을 정리."]
+        ],
+        notes: [
+          ["무료로도 충분히 기록", "기본적인 일상 기록은 처음부터 계속 사용할 수 있습니다."],
+          ["가족과 공유하기 쉽게", "차트와 하루 기록으로 수유, 수면, 기저귀, 이유식 상황을 빠르게 전달할 수 있습니다."],
+          ["백업도 안심", "JSON 전체 백업으로 아기 정보, 기록, 성장, 예방접종, 커스텀 버튼, 이미지, 설정을 저장할 수 있습니다."]
+        ],
+        proItems: ["여러 아기 관리", "커스텀 버튼과 이미지", "생활 리듬 분석", "예방접종 기록과 알림", "JSON 전체 백업", "광고 제거"]
       }
     };
 
@@ -836,15 +966,16 @@
     }
 
     function imagePath(lang, index) {
-      return `/assets/screens/${screenLangMap[lang]}/screen-${index}.webp?v=20260513`;
+      return `/assets/screens/${screenLangMap[lang]}/screen-${index}.webp?v=20260518`;
     }
 
     function setText(lang) {
       const data = copy[lang];
       document.documentElement.lang = data.htmlLang;
       document.title = data.title;
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", data.description);
+      document.querySelector('meta[name="description"]').setAttribute("content", data.description);
+      document.querySelector('meta[property="og:title"]').setAttribute("content", data.title);
+      document.querySelector('meta[property="og:description"]').setAttribute("content", data.description);
 
       document.querySelectorAll("[data-i18n]").forEach((node) => {
         const key = node.getAttribute("data-i18n");
@@ -873,36 +1004,61 @@
       });
     }
 
-    function renderPremium(lang) {
-      const list = document.getElementById("premiumList");
-      list.innerHTML = "";
-      copy[lang].premiumItems.forEach((item) => {
-        const div = document.createElement("div");
-        div.className = "premium-item";
-        div.textContent = item;
-        list.appendChild(div);
-      });
-    }
-
-    function renderImages(lang) {
+    function renderScreens(lang) {
       document.querySelectorAll("[data-shot-index]").forEach((image) => {
         const index = Number(image.getAttribute("data-shot-index"));
         image.src = imagePath(lang, index);
-        image.alt = `BiuLog ${lang} screenshot ${index}`;
+        image.alt = `BiuLog screenshot ${index}`;
       });
 
-      const gallery = document.getElementById("gallery");
+      const gallery = document.getElementById("screenGallery");
       gallery.innerHTML = "";
-      [1, 2, 4, 6, 8].forEach((index) => {
-        const card = document.createElement("div");
-        card.className = "gallery-card";
+      copy[lang].shots.forEach(([title, body], index) => {
+        const card = document.createElement("article");
+        card.className = "shot-card";
+
         const image = document.createElement("img");
-        image.src = imagePath(lang, index);
-        image.alt = `BiuLog screenshot ${index}`;
+        image.src = imagePath(lang, index + 1);
+        image.alt = title;
         image.loading = "lazy";
         image.decoding = "async";
         card.appendChild(image);
+
+        const caption = document.createElement("div");
+        caption.className = "shot-caption";
+        const strong = document.createElement("strong");
+        strong.textContent = title;
+        const span = document.createElement("span");
+        span.textContent = body;
+        caption.append(strong, span);
+        card.appendChild(caption);
+
         gallery.appendChild(card);
+      });
+    }
+
+    function renderNotes(lang) {
+      const notes = document.getElementById("notes");
+      notes.innerHTML = "";
+      copy[lang].notes.forEach(([title, body]) => {
+        const article = document.createElement("article");
+        article.className = "note";
+        const strong = document.createElement("strong");
+        strong.textContent = title;
+        const p = document.createElement("p");
+        p.textContent = body;
+        article.append(strong, p);
+        notes.appendChild(article);
+      });
+    }
+
+    function renderPro(lang) {
+      const list = document.getElementById("proList");
+      list.innerHTML = "";
+      copy[lang].proItems.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
       });
     }
 
@@ -918,8 +1074,9 @@
       localStorage.setItem("biulog-site-lang", next);
       setText(next);
       renderFeatures(next);
-      renderPremium(next);
-      renderImages(next);
+      renderScreens(next);
+      renderNotes(next);
+      renderPro(next);
       updateAppStoreLinks(next);
 
       if (updateUrl) {
