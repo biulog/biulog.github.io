@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BiuLog is a gentle baby routine tracker for feeding, sleep, diapers, solids, growth, vaccines, backup, and routine analysis.">
+  <meta name="description" content="BiuLog is a baby routine tracker for feeding, sleep, diapers, solids, growth, vaccines, Family Sharing, Caregiver Sharing, backup, and charts.">
   <meta name="theme-color" content="#faf7f2">
   <meta property="og:title" content="BiuLog - Baby Routine Tracker">
-  <meta property="og:description" content="Record baby feeding, sleep, diapers, solids, growth, vaccines, backup, and routine charts in one gentle app.">
+  <meta property="og:description" content="Record baby feeding, sleep, diapers, solids, growth, vaccines, Family Sharing, Caregiver Sharing, backup, and routine charts in one gentle app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://biulog.github.io/">
   <meta property="og:image" content="https://biulog.github.io/assets/biulog-icon.png">
@@ -205,6 +205,11 @@
       background: #fff;
       color: var(--ink);
       box-shadow: none;
+    }
+
+    .cta.android {
+      background: var(--ink);
+      box-shadow: 0 14px 30px rgba(84, 73, 62, .22);
     }
 
     .trust {
@@ -462,7 +467,7 @@
 
     .legal {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 14px;
     }
 
@@ -603,7 +608,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#features" data-i18n="navFeatures">功能</a>
         <a href="#screens" data-i18n="navScreens">畫面</a>
-        <a href="#pro" data-i18n="navPro">專業版</a>
+        <a href="#pro" data-i18n="navPro">方案</a>
         <a href="#support" data-i18n="navSupport">支援</a>
       </nav>
       <div class="language" aria-label="Language selector">
@@ -618,17 +623,19 @@
   <main>
     <section class="wrap hero">
       <div>
-        <div class="eyebrow" data-i18n="eyebrow">寶寶作息紀錄、成長與疫苗提醒</div>
+        <div class="eyebrow" data-i18n="eyebrow">寶寶作息紀錄、家庭分享、托育照顧者共享</div>
         <h1 data-i18n="heroTitle">讓育兒記錄變得快速、可愛、好整理。</h1>
-        <p class="lead" data-i18n="heroLead">BiuLog 幫你把喝奶、睡眠、尿布、副食品、成長、疫苗與備份整理在同一個地方。半夜也能快速記，白天也能清楚看。</p>
+        <p class="lead" data-i18n="heroLead">BiuLog 幫你把喝奶、睡眠、尿布、副食品、成長、疫苗、家庭分享、托育照顧者共享與備份整理在同一個地方。半夜也能快速記，白天也能清楚看。</p>
         <div class="cta-row">
           <a class="cta" href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="ctaStore" data-app-store-link>在 App Store 下載</a>
+          <a class="cta android" href="https://play.google.com/store/apps/details?id=com.chy.biulog" data-i18n="ctaGooglePlay" data-google-play-link>在 Google Play 下載</a>
           <a class="cta secondary" href="/biulog-legal/" data-i18n="ctaSupport">查看支援資訊</a>
         </div>
         <div class="trust">
           <span data-i18n="trustAccount">免帳號即可開始</span>
           <span data-i18n="trustFree">基本日常記錄可免費使用</span>
-          <span data-i18n="trustPurchase">專業版一次買斷，不是訂閱</span>
+          <span data-i18n="trustPurchase">家庭專業版一次買斷</span>
+          <span data-i18n="trustCaregiver">托育照顧者月訂閱</span>
           <span data-i18n="trustLanguages">繁中、英文、日文、韓文</span>
         </div>
       </div>
@@ -650,8 +657,8 @@
 
     <section id="features" class="wrap section">
       <div class="section-head">
-        <h2 data-i18n="featuresTitle">新手爸媽真正會用到的功能</h2>
-        <p data-i18n="featuresLead">從半夜餵奶、換尿布，到回診、成長紀錄和家人交接，BiuLog 把每天零散的照顧資訊整理成清楚的日常。</p>
+        <h2 data-i18n="featuresTitle">新手爸媽、家人與照顧者真正會用到的功能</h2>
+        <p data-i18n="featuresLead">從半夜餵奶、換尿布，到家庭共同記錄與托育交接，BiuLog 把每天零散的照顧資訊整理成清楚的日常。</p>
       </div>
       <div class="features" id="featureGrid"></div>
     </section>
@@ -679,8 +686,8 @@
     <section id="pro" class="wrap section">
       <div class="pricing">
         <div>
-          <h2 data-i18n="proTitle">基本日常記錄可免費使用</h2>
-          <p data-i18n="proLead">想要更多客製化、多寶寶管理與進階整理功能時，也可以依需求升級專業版。專業版為一次買斷，不是訂閱。</p>
+          <h2 data-i18n="proTitle">基本記錄免費，家庭專業版與托育方案分開管理</h2>
+          <p data-i18n="proLead">核心日常記錄可免費使用。家庭使用可依需求升級一次買斷的去廣告與專業版；托育照顧者方案為月訂閱，適合保母、托嬰老師、月嫂與托育機構和家長共享照顧紀錄。</p>
         </div>
         <ul class="plan-list" id="proList"></ul>
       </div>
@@ -688,11 +695,12 @@
 
     <section id="support" class="wrap section">
       <div class="section-head">
-        <h2 data-i18n="supportTitle">支援與法務資訊</h2>
-        <p data-i18n="supportLead">需要查看 App Store 頁面、隱私權政策、app-ads.txt 或聯絡支援，可以從這裡前往。</p>
+        <h2 data-i18n="supportTitle">下載、支援與法務資訊</h2>
+        <p data-i18n="supportLead">需要下載 App、查看上架頁面、隱私權政策、app-ads.txt 或聯絡支援，可以從這裡前往。</p>
       </div>
       <div class="legal">
         <a href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="linkStore" data-app-store-link>App Store 頁面</a>
+        <a href="https://play.google.com/store/apps/details?id=com.chy.biulog" data-i18n="linkGooglePlay" data-google-play-link>Google Play 頁面</a>
         <a href="/biulog-legal/privacy-policy.html" data-i18n="linkPrivacy">隱私權政策</a>
         <a href="/app-ads.txt" data-i18n="linkAds">app-ads.txt</a>
         <a href="mailto:9a6.chihao@gmail.com" data-i18n="linkContact">聯絡支援</a>
@@ -708,32 +716,35 @@
     const copy = {
       zh: {
         htmlLang: "zh-Hant",
-        title: "BiuLog - 寶寶作息紀錄與新生兒照顧 App",
-        description: "BiuLog 是給新手爸媽使用的寶寶生活記錄 App，可記錄喝奶、睡眠、尿布、副食品、成長、疫苗、備份與作息分析。",
+        title: "BiuLog - 寶寶作息紀錄、家庭分享與托育照顧者共享",
+        description: "BiuLog 是新手爸媽與照顧者的寶寶生活記錄 App，可記錄喝奶、睡眠、尿布、副食品、成長、疫苗、家庭分享、托育照顧者共享、備份與作息分析。",
         navFeatures: "功能",
         navScreens: "畫面",
-        navPro: "專業版",
+        navPro: "方案",
         navSupport: "支援",
-        eyebrow: "寶寶作息紀錄、成長與疫苗提醒",
+        eyebrow: "寶寶作息紀錄、家庭分享、托育照顧者共享",
         heroTitle: "讓育兒記錄變得快速、可愛、好整理。",
-        heroLead: "BiuLog 幫你把喝奶、睡眠、尿布、副食品、成長、疫苗與備份整理在同一個地方。半夜也能快速記，白天也能清楚看。",
+        heroLead: "BiuLog 幫你把喝奶、睡眠、尿布、副食品、成長、疫苗、家庭分享、托育照顧者共享與備份整理在同一個地方。半夜也能快速記，白天也能清楚看。",
         ctaStore: "在 App Store 下載",
+        ctaGooglePlay: "在 Google Play 下載",
         ctaSupport: "查看支援資訊",
         trustAccount: "免帳號即可開始",
         trustFree: "基本日常記錄可免費使用",
-        trustPurchase: "專業版一次買斷，不是訂閱",
+        trustPurchase: "家庭專業版一次買斷",
+        trustCaregiver: "托育照顧者月訂閱",
         trustLanguages: "繁中、英文、日文、韓文",
-        featuresTitle: "新手爸媽真正會用到的功能",
-        featuresLead: "從半夜餵奶、換尿布，到回診、成長紀錄和家人交接，BiuLog 把每天零散的照顧資訊整理成清楚的日常。",
+        featuresTitle: "新手爸媽、家人與照顧者真正會用到的功能",
+        featuresLead: "從半夜餵奶、換尿布，到家庭共同記錄與托育交接，BiuLog 把每天零散的照顧資訊整理成清楚的日常。",
         screensTitle: "每個常用頁面，都看得見重點",
         screensLead: "首頁、作息分析、每日紀錄與客製化設定都重新整理過，資訊更完整，也保留 BiuLog 柔和乾淨的視覺感。",
         careTitle: "不只記錄，也方便回頭看",
-        careLead: "喝奶可以分親餵、瓶餵母乳與配方奶；尿布可以看尿尿、便便與換尿布次數；圖表則用週為單位看出最近的生活節奏。",
-        proTitle: "基本日常記錄可免費使用",
-        proLead: "想要更多客製化、多寶寶管理與進階整理功能時，也可以依需求升級專業版。專業版為一次買斷，不是訂閱。",
-        supportTitle: "支援與法務資訊",
-        supportLead: "需要查看 App Store 頁面、隱私權政策、app-ads.txt 或聯絡支援，可以從這裡前往。",
+        careLead: "喝奶可以分親餵、瓶餵母乳與配方奶；尿布可以看尿尿、便便與換尿布次數；圖表則用週為單位看出最近的生活節奏，也方便家庭或托育交接。",
+        proTitle: "基本記錄免費，家庭專業版與托育方案分開管理",
+        proLead: "核心日常記錄可免費使用。家庭使用可依需求升級一次買斷的去廣告與專業版；托育照顧者方案為月訂閱，適合保母、托嬰老師、月嫂與托育機構和家長共享照顧紀錄。",
+        supportTitle: "下載、支援與法務資訊",
+        supportLead: "需要下載 App、查看上架頁面、隱私權政策、app-ads.txt 或聯絡支援，可以從這裡前往。",
         linkStore: "App Store 頁面",
+        linkGooglePlay: "Google Play 頁面",
         linkPrivacy: "隱私權政策",
         linkAds: "app-ads.txt",
         linkContact: "聯絡支援",
@@ -743,10 +754,10 @@
           ["親餵、瓶餵母乳、配方奶", "親餵支援左右奶計時，瓶餵可分別記錄瓶餵母乳與配方奶 ml 數。"],
           ["尿尿、便便、換尿布", "尿布記錄可分尿尿、便便、尿尿＋便便，統計時也能清楚看出尿尿、便便與換尿布次數。"],
           ["副食品與每日紀錄", "記錄副食品種類、份量與備註，也能回頭查看每天完整照顧時間線。"],
-          ["作息分析圖表", "以週為單位查看喝奶量、睡眠、尿布、副食品與趨勢，幫助家人交接更清楚。"],
-          ["成長與里程碑", "保存身高、體重、頭圍，也能記下翻身、爬行、走路等珍貴時刻。"],
+          ["家庭分享", "專業版可建立家庭分享，最多邀請 2 位家人免費加入並同享專業版功能，一起查看與記錄寶寶日常。"],
+          ["托育照顧者共享", "托育照顧者方案適合保母、托嬰老師、月嫂與托育機構使用，可和家長共享照顧中的寶寶資料與日常紀錄。"],
           ["疫苗紀錄與提醒", "整理接種狀態、完成日期與下一劑時間。實際接種請以醫師與官方資訊為準。"],
-          ["多寶寶、客製化、備份", "專業版可管理多位寶寶、客製首頁按鈕與圖片，並使用完整 JSON 備份與還原。"]
+          ["成長、圖表、備份", "保存身高、體重、頭圍與里程碑，以週為單位查看趨勢，並使用完整 JSON 備份與還原。"]
         ],
         shots: [
           ["首頁快速記錄", "四大按鈕、今日摘要、最近紀錄都在同一頁。"],
@@ -762,39 +773,42 @@
         ],
         notes: [
           ["免費版也能好好記", "基本日常記錄可持續使用，不需要一開始就付費。"],
-          ["適合家人與照顧者交接", "用圖表和每日紀錄快速了解寶寶今天吃了什麼、睡了多久、換了幾次尿布。"],
+          ["適合家人與托育照顧者交接", "家庭分享與托育照顧者共享可搭配圖表和每日紀錄，快速了解寶寶今天吃了什麼、睡了多久、換了幾次尿布。"],
           ["完整備份更安心", "JSON 完整備份可保存多寶寶資料、生活紀錄、成長、疫苗、自訂按鈕、圖片與設定。"]
         ],
-        proItems: ["多寶寶管理", "自訂按鈕與圖片", "作息分析圖表", "疫苗紀錄與提醒", "完整 JSON 備份", "去除廣告"]
+        proItems: ["去除廣告", "家庭分享", "多寶寶管理", "托育照顧者共享", "作息分析圖表", "疫苗紀錄與提醒", "完整 JSON 備份", "自訂按鈕與圖片"]
       },
       en: {
         htmlLang: "en",
-        title: "BiuLog - Baby Routine Tracker",
-        description: "BiuLog is a gentle baby routine tracker for feeding, sleep, diapers, solids, growth, vaccines, backup, and routine analysis.",
+        title: "BiuLog - Baby Routine Tracker for Families and Caregivers",
+        description: "BiuLog is a baby routine tracker for feeding, sleep, diapers, solids, growth, vaccines, Family Sharing, Caregiver Sharing, backup, and routine analysis.",
         navFeatures: "Features",
         navScreens: "Screens",
-        navPro: "Pro",
+        navPro: "Plans",
         navSupport: "Support",
-        eyebrow: "Baby routine, growth, and vaccine reminders",
+        eyebrow: "Baby routines, Family Sharing, and Caregiver Sharing",
         heroTitle: "Make baby tracking quick, cute, and easy to organize.",
-        heroLead: "BiuLog keeps feeding, sleep, diapers, solids, growth, vaccines, and backups in one gentle place. Log quickly at night, review clearly during the day.",
+        heroLead: "BiuLog keeps feeding, sleep, diapers, solids, growth, vaccines, Family Sharing, Caregiver Sharing, and backups in one gentle place. Log quickly at night, review clearly during the day.",
         ctaStore: "Download on the App Store",
+        ctaGooglePlay: "Get it on Google Play",
         ctaSupport: "Support information",
         trustAccount: "Start without an account",
         trustFree: "Basic daily logging is free",
-        trustPurchase: "Pro is one-time purchase, not a subscription",
+        trustPurchase: "Family Pro is one-time",
+        trustCaregiver: "Caregiver monthly plan",
         trustLanguages: "Traditional Chinese, English, Japanese, Korean",
-        featuresTitle: "Practical features for real daily care",
-        featuresLead: "From midnight feeding and diaper changes to clinic visits, growth records, and family handoff, BiuLog turns scattered care notes into a clear routine.",
+        featuresTitle: "Practical features for parents, families, and caregivers",
+        featuresLead: "From midnight feeding and diaper changes to Family Sharing and childcare handoffs, BiuLog turns scattered care notes into a clear routine.",
         screensTitle: "Important details are easy to see",
         screensLead: "The home screen, routine charts, daily records, and customization screens have been refreshed so the app feels clear, complete, and gentle.",
         careTitle: "Not just logging. Easy reviewing too.",
-        careLead: "Track nursing, expressed breast milk, and formula separately. Review pee, poop, and total diaper changes. Use weekly charts to understand recent patterns.",
-        proTitle: "Basic daily logging is free",
-        proLead: "When you want more customization, multiple baby profiles, and advanced organization features, you can upgrade to Pro when you need it. Pro is a one-time purchase, not a subscription.",
-        supportTitle: "Support and legal information",
-        supportLead: "Find the App Store page, privacy policy, app-ads.txt, and support contact here.",
+        careLead: "Track nursing, expressed breast milk, and formula separately. Review pee, poop, and total diaper changes. Use weekly charts to support family records and childcare handoffs.",
+        proTitle: "Free daily logging, Family Pro, and a Caregiver Plan",
+        proLead: "Core daily records are free to use. Families can upgrade to one-time ad removal and Pro features. The Caregiver Plan is a monthly subscription for caregivers who need to share care records with parents.",
+        supportTitle: "Downloads, support, and legal information",
+        supportLead: "Find the App Store page, Google Play page, privacy policy, app-ads.txt, and support contact here.",
         linkStore: "App Store page",
+        linkGooglePlay: "Google Play page",
         linkPrivacy: "Privacy policy",
         linkAds: "app-ads.txt",
         linkContact: "Contact support",
@@ -804,10 +818,10 @@
           ["Nursing, expressed milk, formula", "Track nursing with left and right timers, and record expressed breast milk or formula bottle amounts in ml."],
           ["Pee, poop, diaper changes", "Record pee, poop, or pee + poop, then review pee counts, poop counts, and total diaper changes clearly."],
           ["Solids and daily timeline", "Save food type, amount, and notes, then review a full timeline of each day."],
-          ["Routine charts", "Review feeding, sleep, diapers, solids, and trends by week so handoff with family is easier."],
-          ["Growth and milestones", "Track height, weight, head circumference, and precious milestones like rolling, crawling, and first steps."],
+          ["Family Sharing", "With Pro, invite up to 2 family members to join for free and share Pro features while recording baby routines together."],
+          ["Caregiver Sharing", "The Caregiver Plan helps babysitters, childcare teachers, postpartum caregivers, and daycare providers share baby care records with parents."],
           ["Vaccine records and reminders", "Organize vaccination status, completion dates, and next-dose reminders. Always follow official medical guidance."],
-          ["Multiple babies, custom home, backup", "Pro supports multiple babies, custom buttons and images, and complete JSON backup and restore."]
+          ["Growth, charts, backup", "Track growth and milestones, review weekly routine charts, and create complete JSON backups."]
         ],
         shots: [
           ["Quick home logging", "Main actions, today summary, and recent records on one screen."],
@@ -823,39 +837,42 @@
         ],
         notes: [
           ["Free basics are useful", "Core daily logging can be used continuously without paying first."],
-          ["Made for handoff", "Charts and daily records help caregivers understand feeding, sleep, diapers, and solids quickly."],
+          ["Made for family and caregiver handoff", "Family Sharing, Caregiver Sharing, charts, and daily records help everyone understand feeding, sleep, diapers, and solids quickly."],
           ["Backup with confidence", "Full JSON backup can preserve baby profiles, records, growth, vaccines, custom buttons, images, and settings."]
         ],
-        proItems: ["Multiple baby profiles", "Custom buttons and images", "Routine charts", "Vaccine records and reminders", "Full JSON backup", "Remove ads"]
+        proItems: ["Ad removal", "Family Sharing", "Multiple baby profiles", "Caregiver Sharing", "Routine charts", "Vaccine records and reminders", "Full JSON backup", "Custom buttons and images"]
       },
       ja: {
         htmlLang: "ja",
-        title: "BiuLog - 赤ちゃんの育児記録アプリ",
-        description: "BiuLog は、授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップ、生活リズム分析をまとめて記録できる育児記録アプリです。",
+        title: "BiuLog - 家族とケア担当者のための育児記録アプリ",
+        description: "BiuLog は、授乳、睡眠、おむつ、離乳食、成長、予防接種、ファミリー共有、ケア担当者共有、バックアップ、生活リズム分析をまとめて記録できる育児記録アプリです。",
         navFeatures: "機能",
         navScreens: "画面",
-        navPro: "プロ版",
+        navPro: "プラン",
         navSupport: "サポート",
-        eyebrow: "赤ちゃんの生活リズム、成長、予防接種を記録",
+        eyebrow: "育児記録、ファミリー共有、ケア担当者共有",
         heroTitle: "育児記録を、もっと手軽に、かわいく、見やすく。",
-        heroLead: "BiuLog は、授乳、睡眠、おむつ、離乳食、成長、予防接種、バックアップをひとつにまとめる育児記録アプリです。夜中はすばやく記録、あとからは見やすく振り返れます。",
+        heroLead: "BiuLog は、授乳、睡眠、おむつ、離乳食、成長、予防接種、ファミリー共有、ケア担当者共有、バックアップをひとつにまとめる育児記録アプリです。夜中はすばやく記録、あとからは見やすく振り返れます。",
         ctaStore: "App Store でダウンロード",
+        ctaGooglePlay: "Google Play で見る",
         ctaSupport: "サポート情報を見る",
         trustAccount: "アカウントなしで開始",
         trustFree: "基本的な日々の記録は無料",
-        trustPurchase: "プロ版は買い切り、サブスクではありません",
+        trustPurchase: "家族向けプロ版は買い切り",
+        trustCaregiver: "ケア担当者向け月額プラン",
         trustLanguages: "繁体字中国語、英語、日本語、韓国語に対応",
-        featuresTitle: "毎日の育児で本当に使う機能",
-        featuresLead: "夜中の授乳やおむつ替えから、通院、成長記録、家族との共有まで。BiuLog は散らばりがちな記録を見やすく整理します。",
+        featuresTitle: "ママ・パパ、家族、ケア担当者が使いやすい機能",
+        featuresLead: "夜中の授乳やおむつ替えから、ファミリー共有、保育やケアの引き継ぎまで。BiuLog は散らばりがちな記録を見やすく整理します。",
         screensTitle: "よく使う画面で、必要な情報がすぐ見える",
         screensLead: "ホーム、生活リズム分析、毎日の記録、カスタマイズ画面を見直し、情報量とやさしい見た目のバランスを整えました。",
         careTitle: "記録するだけでなく、振り返りやすく",
-        careLead: "授乳は直接授乳、搾乳母乳、ミルクに分けて管理。おしっこ、うんち、おむつ替えの回数も確認でき、週ごとのグラフで最近のリズムをつかめます。",
-        proTitle: "基本的な日々の記録は無料",
-        proLead: "より細かなカスタマイズ、複数の赤ちゃん管理、便利な整理機能が必要な場合は、必要に応じてプロ版にアップグレードできます。プロ版は買い切りで、サブスクリプションではありません。",
-        supportTitle: "サポートと法務情報",
-        supportLead: "App Store ページ、プライバシーポリシー、app-ads.txt、お問い合わせはこちらから確認できます。",
+        careLead: "授乳は直接授乳、搾乳母乳、ミルクに分けて管理。おしっこ、うんち、おむつ替えの回数も確認でき、週ごとのグラフで家族やケア担当者との共有にも役立ちます。",
+        proTitle: "基本記録は無料、家族向けプロ版とケア担当者プランを用意",
+        proLead: "毎日の基本記録は無料で利用できます。家族向けには広告削除とプロ版機能を買い切りで用意しています。ケア担当者プランは、保護者とケア記録を共有するための月額サブスクリプションです。",
+        supportTitle: "ダウンロード、サポート、法務情報",
+        supportLead: "App Store ページ、Google Play ページ、プライバシーポリシー、app-ads.txt、お問い合わせはこちらから確認できます。",
         linkStore: "App Store ページ",
+        linkGooglePlay: "Google Play ページ",
         linkPrivacy: "プライバシーポリシー",
         linkAds: "app-ads.txt",
         linkContact: "お問い合わせ",
@@ -865,10 +882,10 @@
           ["授乳、搾乳母乳、ミルク", "直接授乳は左右の時間を記録。哺乳瓶であげた搾乳母乳やミルクは ml で分けて記録できます。"],
           ["おしっこ、うんち、おむつ替え", "おしっこ、うんち、おしっこ＋うんちに分けて記録し、回数も見やすく整理できます。"],
           ["離乳食と毎日の記録", "食べたもの、量、メモを残し、1日の流れをあとから確認できます。"],
-          ["生活リズムのグラフ", "週ごとに授乳量、睡眠、おむつ、離乳食、傾向を確認でき、家族との共有にも役立ちます。"],
-          ["成長記録と成長の節目", "身長、体重、頭囲のほか、寝返り、はいはい、歩き始めなどの大切な瞬間も残せます。"],
+          ["ファミリー共有", "プロ版では最大2名の家族を無料で招待でき、プロ版機能を共有しながら赤ちゃんの記録を一緒に入力できます。"],
+          ["ケア担当者共有", "ケア担当者プランは、ベビーシッター、保育士、産後ケア担当者、保育園などが保護者とケア記録を共有するための機能です。"],
           ["予防接種の記録とリマインダー", "接種状況、接種日、次回予定を整理できます。実際の接種は医師や公式情報に従ってください。"],
-          ["複数の赤ちゃん、カスタマイズ、バックアップ", "プロ版では複数の赤ちゃん、ホーム画面のカスタマイズ、JSON 完全バックアップに対応します。"]
+          ["成長、グラフ、バックアップ", "成長の記録、週ごとの生活リズムグラフ、JSON 完全バックアップに対応します。"]
         ],
         shots: [
           ["ホームで素早く記録", "主な操作、今日のまとめ、最近の記録をひとつの画面に。"],
@@ -884,39 +901,42 @@
         ],
         notes: [
           ["無料でもしっかり使える", "基本的な日々の記録は、最初から継続して使えます。"],
-          ["家族との共有にも便利", "グラフと毎日の記録で、授乳、睡眠、おむつ、離乳食の状況を伝えやすくなります。"],
+          ["家族やケア担当者との共有にも便利", "ファミリー共有、ケア担当者共有、グラフ、毎日の記録で、授乳、睡眠、おむつ、離乳食の状況を伝えやすくなります。"],
           ["バックアップも安心", "JSON 完全バックアップで、赤ちゃん情報、記録、成長、予防接種、カスタムボタン、画像、設定を保存できます。"]
         ],
-        proItems: ["複数の赤ちゃん管理", "カスタムボタンと画像", "生活リズム分析", "予防接種の記録とリマインダー", "JSON 完全バックアップ", "広告の非表示"]
+        proItems: ["広告の非表示", "ファミリー共有", "複数の赤ちゃん管理", "ケア担当者共有", "生活リズム分析", "予防接種の記録とリマインダー", "JSON 完全バックアップ", "カスタムボタンと画像"]
       },
       ko: {
         htmlLang: "ko",
-        title: "BiuLog - 아기 생활 기록 앱",
-        description: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업, 생활 리듬 분석을 한곳에 정리하는 아기 생활 기록 앱입니다.",
+        title: "BiuLog - 가족과 돌봄 제공자를 위한 아기 생활 기록 앱",
+        description: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 가족 공유, 돌봄 제공자 공유, 백업, 생활 리듬 분석을 한곳에 정리하는 아기 생활 기록 앱입니다.",
         navFeatures: "기능",
         navScreens: "화면",
-        navPro: "프로",
+        navPro: "플랜",
         navSupport: "지원",
-        eyebrow: "아기 생활 리듬, 성장, 예방접종 기록",
+        eyebrow: "아기 생활 기록, 가족 공유, 돌봄 제공자 공유",
         heroTitle: "아기 기록을 더 빠르고, 예쁘고, 깔끔하게.",
-        heroLead: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 백업을 한곳에 정리해 주는 아기 생활 기록 앱입니다. 밤에는 빠르게 기록하고, 낮에는 보기 좋게 확인할 수 있어요.",
+        heroLead: "BiuLog는 수유, 수면, 기저귀, 이유식, 성장, 예방접종, 가족 공유, 돌봄 제공자 공유, 백업을 한곳에 정리해 주는 아기 생활 기록 앱입니다. 밤에는 빠르게 기록하고, 낮에는 보기 좋게 확인할 수 있어요.",
         ctaStore: "App Store에서 다운로드",
+        ctaGooglePlay: "Google Play에서 보기",
         ctaSupport: "지원 정보 보기",
         trustAccount: "계정 없이 바로 시작",
         trustFree: "기본 일상 기록은 무료",
-        trustPurchase: "프로 버전은 구독이 아닌 한 번 구매",
+        trustPurchase: "가족용 프로는 일회성 구매",
+        trustCaregiver: "돌봄 제공자 월간 플랜",
         trustLanguages: "번체 중국어, 영어, 일본어, 한국어 지원",
-        featuresTitle: "매일 육아에 실제로 필요한 기능",
-        featuresLead: "밤중 수유와 기저귀 교체부터 병원 방문, 성장 기록, 가족과의 공유까지. BiuLog는 흩어진 돌봄 기록을 보기 쉽게 정리합니다.",
+        featuresTitle: "부모, 가족, 돌봄 제공자가 함께 쓰기 좋은 기능",
+        featuresLead: "밤중 수유와 기저귀 교체부터 가족 공유, 돌봄 인수인계까지. BiuLog는 흩어진 돌봄 기록을 보기 쉽게 정리합니다.",
         screensTitle: "자주 쓰는 화면에서 필요한 정보가 바로 보여요",
         screensLead: "홈 화면, 생활 리듬 분석, 하루 기록, 꾸미기 화면을 새롭게 다듬어 정보는 더 잘 보이고 분위기는 더 부드럽게 만들었습니다.",
         careTitle: "기록만 하는 것이 아니라, 다시 보기도 쉽게",
-        careLead: "수유는 직수, 유축 모유, 분유로 나누어 관리할 수 있습니다. 소변, 대변, 기저귀 교체 횟수도 확인하고, 주 단위 차트로 최근 생활 리듬을 파악할 수 있어요.",
-        proTitle: "기본 일상 기록은 무료",
-        proLead: "더 많은 꾸미기 기능, 여러 아기 관리, 고급 정리 기능이 필요할 때 프로 버전으로 업그레이드할 수 있습니다. 프로 버전은 구독이 아닌 한 번 구매 방식입니다.",
-        supportTitle: "지원 및 법적 정보",
-        supportLead: "App Store 페이지, 개인정보 처리방침, app-ads.txt, 문의 정보는 여기에서 확인할 수 있습니다.",
+        careLead: "수유는 직수, 유축 모유, 분유로 나누어 관리할 수 있습니다. 소변, 대변, 기저귀 교체 횟수도 확인하고, 주 단위 차트로 가족이나 돌봄 제공자와 쉽게 공유할 수 있어요.",
+        proTitle: "기본 기록은 무료, 가족용 프로와 돌봄 제공자 플랜 제공",
+        proLead: "일상 기본 기록은 무료로 사용할 수 있습니다. 가족용 광고 제거와 프로 기능은 일회성 구매이며, 돌봄 제공자 플랜은 보호자와 돌봄 기록을 공유하기 위한 월간 구독입니다.",
+        supportTitle: "다운로드, 지원 및 법적 정보",
+        supportLead: "App Store 페이지, Google Play 페이지, 개인정보 처리방침, app-ads.txt, 문의 정보는 여기에서 확인할 수 있습니다.",
         linkStore: "App Store 페이지",
+        linkGooglePlay: "Google Play 페이지",
         linkPrivacy: "개인정보 처리방침",
         linkAds: "app-ads.txt",
         linkContact: "지원 문의",
@@ -926,10 +946,10 @@
           ["직수, 유축 모유, 분유", "직수는 왼쪽과 오른쪽 수유 시간을 기록하고, 젖병 수유는 유축 모유와 분유를 ml 단위로 나누어 기록할 수 있습니다."],
           ["소변, 대변, 기저귀 교체", "소변, 대변, 소변＋대변으로 구분해 기록하고, 각각의 횟수와 기저귀 교체 횟수를 보기 쉽게 확인할 수 있습니다."],
           ["이유식과 하루 기록", "이유식 종류, 양, 메모를 남기고 하루의 흐름을 다시 확인할 수 있습니다."],
-          ["생활 리듬 분석 차트", "주 단위로 수유량, 수면, 기저귀, 이유식, 추세를 확인해 가족과의 공유도 쉬워집니다."],
-          ["성장 기록과 발달 순간", "키, 몸무게, 머리둘레와 함께 뒤집기, 기기, 첫걸음 같은 소중한 순간도 기록할 수 있습니다."],
+          ["가족 공유", "프로 버전에서는 최대 2명의 가족을 무료로 초대하고 프로 기능을 함께 사용하며 아기의 일상 기록을 함께 입력할 수 있습니다."],
+          ["돌봄 제공자 공유", "돌봄 제공자 플랜은 베이비시터, 어린이집 교사, 산후도우미, 돌봄 기관이 보호자와 돌봄 기록을 공유하기 위한 기능입니다."],
           ["예방접종 기록과 알림", "접종 상태, 완료일, 다음 접종 예정일을 정리할 수 있습니다. 실제 접종은 의사와 공식 안내를 따라 주세요."],
-          ["여러 아기, 꾸미기, 백업", "프로 버전에서는 여러 아기 관리, 홈 화면 꾸미기, JSON 전체 백업과 복원을 지원합니다."]
+          ["성장, 차트, 백업", "성장 기록, 주 단위 생활 리듬 차트, JSON 전체 백업과 복원을 지원합니다."]
         ],
         shots: [
           ["홈에서 빠르게 기록", "주요 버튼, 오늘 요약, 최근 기록을 한 화면에서 확인."],
@@ -945,10 +965,10 @@
         ],
         notes: [
           ["무료로도 충분히 기록", "기본적인 일상 기록은 처음부터 계속 사용할 수 있습니다."],
-          ["가족과 공유하기 쉽게", "차트와 하루 기록으로 수유, 수면, 기저귀, 이유식 상황을 빠르게 전달할 수 있습니다."],
+          ["가족과 돌봄 제공자에게 공유하기 쉽게", "가족 공유, 돌봄 제공자 공유, 차트와 하루 기록으로 수유, 수면, 기저귀, 이유식 상황을 빠르게 전달할 수 있습니다."],
           ["백업도 안심", "JSON 전체 백업으로 아기 정보, 기록, 성장, 예방접종, 커스텀 버튼, 이미지, 설정을 저장할 수 있습니다."]
         ],
-        proItems: ["여러 아기 관리", "커스텀 버튼과 이미지", "생활 리듬 분석", "예방접종 기록과 알림", "JSON 전체 백업", "광고 제거"]
+        proItems: ["광고 제거", "가족 공유", "여러 아기 관리", "돌봄 제공자 공유", "생활 리듬 분석", "예방접종 기록과 알림", "JSON 전체 백업", "커스텀 버튼과 이미지"]
       }
     };
 
@@ -959,6 +979,7 @@
       ja: "https://apps.apple.com/jp/app/biulog/id6766629143",
       ko: "https://apps.apple.com/kr/app/biulog/id6766629143"
     };
+    const googlePlayUrl = "https://play.google.com/store/apps/details?id=com.chy.biulog";
     const fallbackLang = "zh";
 
     function detectLanguage() {
@@ -1070,10 +1091,13 @@
       });
     }
 
-    function updateAppStoreLinks(lang) {
+    function updateStoreLinks(lang) {
       const url = appStoreUrls[lang] || appStoreUrls.zh;
       document.querySelectorAll("[data-app-store-link]").forEach((link) => {
         link.href = url;
+      });
+      document.querySelectorAll("[data-google-play-link]").forEach((link) => {
+        link.href = googlePlayUrl;
       });
     }
 
@@ -1085,7 +1109,7 @@
       renderScreens(next);
       renderNotes(next);
       renderPro(next);
-      updateAppStoreLinks(next);
+      updateStoreLinks(next);
 
       if (updateUrl) {
         const url = new URL(window.location.href);
