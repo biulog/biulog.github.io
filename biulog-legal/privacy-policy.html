@@ -204,7 +204,7 @@
         <p>BiuLog 提供一次性內購商品，例如去廣告與專業版。付款、價格、發票與退款流程由 Apple App Store 或 Google Play 處理。BiuLog 只會接收購買狀態、商品識別碼與必要的交易狀態，用於解鎖功能與恢復購買。</p>
 
         <h2>5. 照片、檔案與備份</h2>
-        <p>使用者可自行選擇照片作為寶寶大頭貼、自訂按鈕圖片、里程碑或照護聯絡簿內容。BiuLog 不會在未經使用者操作的情況下讀取或上傳相簿內容。使用者主動分享至照護聯絡簿的照片會儲存在非公開的 Cloudflare R2 物件儲存空間，並透過具時效性的授權連結提供給同一寶寶的授權家長與照護人員查看。具有權限的上傳者或機構管理者刪除共享照片後，雲端檔案會一併移除。使用者匯出 CSV、JSON 備份或透過系統分享功能傳送檔案時，資料會依使用者選擇的方式處理。</p>
+        <p>使用者可自行選擇照片作為寶寶大頭貼、自訂按鈕圖片、里程碑或照護聯絡簿內容。BiuLog 不會在未經使用者操作的情況下讀取或上傳相簿內容。使用者主動分享至照護聯絡簿的照片會儲存在非公開的 Cloudflare R2 物件儲存空間，並透過具時效性的授權連結提供給同一寶寶的授權家長與照護人員查看。聯絡簿共享照片預設保留 7 天，期間可由授權使用者儲存或分享，期限到達後會自動從雲端物件儲存空間移除；具有權限的上傳者或機構管理者也可提前刪除。文字聯絡簿與照護數據不會因照片到期而刪除。使用者匯出 CSV、JSON 備份或透過系統分享功能傳送檔案時，資料會依使用者選擇的方式處理。</p>
 
         <h2>6. 通知</h2>
         <p>BiuLog 可能使用本機通知提醒照護事項、疫苗或自訂提醒。本機通知主要在使用者裝置上處理。</p>
@@ -240,7 +240,7 @@
         <p>BiuLog offers non-consumable in-app purchases, such as remove ads and premium. Payments, pricing, invoices, and refunds are handled by Apple App Store or Google Play. BiuLog receives only purchase status, product identifiers, and necessary transaction status to unlock features and restore purchases.</p>
 
         <h2>5. Photos, Files, and Backups</h2>
-        <p>Users may choose photos for baby avatars, custom button images, milestone records, or shared daily care reports. BiuLog does not read or upload the photo library without user action. Photos actively shared to a care report are stored in private Cloudflare R2 object storage and made available to authorized parents and care providers for the same child through time-limited authorized links. When an authorized uploader or workspace owner deletes a shared photo, the cloud object is also removed. When users export CSV, create JSON backups, or share files through the system share sheet, the data is handled according to the user's chosen action.</p>
+        <p>Users may choose photos for baby avatars, custom button images, milestone records, or shared daily care reports. BiuLog does not read or upload the photo library without user action. Photos actively shared to a care report are stored in private Cloudflare R2 object storage and made available to authorized parents and care providers for the same child through time-limited authorized links. Shared report photos are retained for 7 days by default and may be saved or shared by authorized users during that period. After the retention period, they are automatically removed from cloud object storage; an authorized uploader or workspace owner may also delete them sooner. Text reports and care data are not deleted when a photo expires. When users export CSV, create JSON backups, or share files through the system share sheet, the data is handled according to the user's chosen action.</p>
 
         <h2>6. Notifications</h2>
         <p>BiuLog may use local notifications for care reminders, vaccines, or custom reminders. Local notifications are primarily processed on the user's device.</p>
@@ -276,7 +276,7 @@
         <p>BiuLogは広告削除やプレミアム版などの非消耗型アプリ内購入を提供します。支払い、価格、請求、返金はApple App StoreまたはGoogle Playによって処理されます。BiuLogは機能の解放と購入の復元に必要な購入状態、商品ID、取引状態のみを受け取ります。</p>
 
         <h2>5. 写真、ファイル、バックアップ</h2>
-        <p>ユーザーは、赤ちゃんのアイコン、カスタムボタン画像、マイルストーン記録、または共有れんらく帳に写真を選択できます。BiuLogは、ユーザーの操作なしに写真ライブラリを読み取ったりアップロードしたりしません。れんらく帳へ明示的に共有した写真は、非公開のCloudflare R2オブジェクトストレージに保存され、同じお子さまについて許可された保護者とケア担当者へ有効期限付きの認証リンクで提供されます。権限を持つ投稿者または管理者が共有写真を削除すると、クラウド上のファイルも削除されます。CSV、JSONバックアップ、システム共有はユーザーが選択した操作に従って処理されます。</p>
+        <p>ユーザーは、赤ちゃんのアイコン、カスタムボタン画像、マイルストーン記録、または共有れんらく帳に写真を選択できます。BiuLogは、ユーザーの操作なしに写真ライブラリを読み取ったりアップロードしたりしません。れんらく帳へ明示的に共有した写真は、非公開のCloudflare R2オブジェクトストレージに保存され、同じお子さまについて許可された保護者とケア担当者へ有効期限付きの認証リンクで提供されます。共有写真の標準保存期間は7日間で、その間は許可されたユーザーが保存または共有できます。期限後はクラウドストレージから自動削除され、権限を持つ投稿者または管理者は期限前にも削除できます。写真が期限切れになっても、れんらく帳の文章やケアデータは削除されません。CSV、JSONバックアップ、システム共有はユーザーが選択した操作に従って処理されます。</p>
 
         <h2>6. 通知</h2>
         <p>BiuLogは育児、予防接種、カスタムリマインダーのためにローカル通知を使用する場合があります。ローカル通知は主にユーザーの端末上で処理されます。</p>
@@ -312,7 +312,7 @@
         <p>BiuLog는 광고 제거 및 프리미엄과 같은 비소모성 인앱 구매를 제공합니다. 결제, 가격, 영수증, 환불은 Apple App Store 또는 Google Play에서 처리됩니다. BiuLog는 기능 해제와 구매 복원에 필요한 구매 상태, 상품 ID, 거래 상태만 수신합니다.</p>
 
         <h2>5. 사진, 파일, 백업</h2>
-        <p>사용자는 아기 프로필 사진, 커스텀 버튼 이미지, 이정표 기록 또는 공유 알림장에 사진을 선택할 수 있습니다. BiuLog는 사용자의 조작 없이 사진 보관함을 읽거나 업로드하지 않습니다. 알림장에 직접 공유한 사진은 비공개 Cloudflare R2 객체 저장소에 저장되며, 같은 아이에 대해 승인된 부모와 돌봄 제공자에게 유효 시간이 제한된 인증 링크로 제공됩니다. 권한이 있는 업로더 또는 기관 관리자가 공유 사진을 삭제하면 클라우드 파일도 함께 삭제됩니다. CSV, JSON 백업 및 시스템 공유는 사용자가 선택한 방식에 따라 처리됩니다.</p>
+        <p>사용자는 아기 프로필 사진, 커스텀 버튼 이미지, 이정표 기록 또는 공유 알림장에 사진을 선택할 수 있습니다. BiuLog는 사용자의 조작 없이 사진 보관함을 읽거나 업로드하지 않습니다. 알림장에 직접 공유한 사진은 비공개 Cloudflare R2 객체 저장소에 저장되며, 같은 아이에 대해 승인된 부모와 돌봄 제공자에게 유효 시간이 제한된 인증 링크로 제공됩니다. 공유 사진은 기본적으로 7일간 보관되며 그동안 승인된 사용자가 저장하거나 공유할 수 있습니다. 보관 기간이 끝나면 클라우드 저장소에서 자동 삭제되고, 권한이 있는 업로더 또는 기관 관리자는 더 일찍 삭제할 수도 있습니다. 사진이 만료되어도 알림장 텍스트와 돌봄 데이터는 삭제되지 않습니다. CSV, JSON 백업 및 시스템 공유는 사용자가 선택한 방식에 따라 처리됩니다.</p>
 
         <h2>6. 알림</h2>
         <p>BiuLog는 돌봄, 예방접종 또는 사용자 지정 알림을 위해 로컬 알림을 사용할 수 있습니다. 로컬 알림은 주로 사용자의 기기에서 처리됩니다.</p>
