@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BiuLog 機構合作｜托嬰中心與月子中心的照護協作 App</title>
+  <meta name="description" content="BiuLog 為托嬰中心、月子中心與專業嬰幼兒照護團隊整合每日照護、班級與人員協作、家長溝通及離館後持續使用體驗。">
+  <meta name="theme-color" content="#f7f2e9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BiuLog 機構合作｜讓照護品質被家長每天看見">
+  <meta property="og:description" content="機構裡好照護、團隊好協作；離開機構後，爸媽仍能延續熟悉的育兒紀錄。">
+  <meta property="og:image" content="/assets/biulog-og.png">
+  <meta property="og:url" content="https://biulog.github.io/institution.html">
+  <link rel="canonical" href="https://biulog.github.io/institution.html">
+  <link rel="icon" href="/assets/biulog-icon.webp">
+  <style>
+    :root {
+      --ink: #4f493f;
+      --ink-2: #746b5e;
+      --muted: #a39889;
+      --paper: #fbf8f2;
+      --paper-2: #f3ecdf;
+      --white: #fffdf9;
+      --line: rgba(95, 82, 66, .14);
+      --gold: #c79b61;
+      --gold-dark: #9b7042;
+      --green: #748f7b;
+      --green-pale: #e7eee6;
+      --rose: #b77b75;
+      --rose-pale: #f3e6e2;
+      --shadow: 0 24px 70px rgba(93, 72, 46, .12);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 3%, rgba(244, 211, 177, .34), transparent 24rem),
+        radial-gradient(circle at 92% 11%, rgba(222, 230, 218, .7), transparent 25rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .nav {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 22px; font-weight: 850; letter-spacing: -.02em; }
+    .brand img { width: 46px; height: 46px; border-radius: 14px; box-shadow: 0 8px 24px rgba(79, 64, 45, .16); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 750; }
+    .nav-links a { text-decoration: none; color: var(--ink-2); }
+    .nav-links a:hover { color: var(--ink); }
+    .language { display: flex; gap: 3px; padding: 4px; background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: 999px; }
+    .language button { border: 0; border-radius: 999px; padding: 7px 9px; color: var(--muted); background: transparent; cursor: pointer; font: inherit; font-size: 11px; font-weight: 800; }
+    .language button.active { color: var(--ink); background: var(--white); box-shadow: 0 3px 12px rgba(72, 59, 41, .1); }
+
+    .hero { min-height: 690px; padding: 72px 0 84px; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 72px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--gold-dark); font-size: 13px; font-weight: 850; letter-spacing: .08em; }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--gold); }
+    h1 { margin: 22px 0 22px; font-size: clamp(42px, 5.4vw, 68px); line-height: 1.12; letter-spacing: -.055em; }
+    .lead { margin: 0; color: var(--ink-2); font-size: clamp(17px, 1.8vw, 21px); line-height: 1.85; max-width: 680px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 22px; border-radius: 999px; text-decoration: none; font-size: 15px; font-weight: 850; background: var(--ink); color: #fff; box-shadow: 0 12px 28px rgba(59, 51, 42, .18); transition: .2s ease; }
+    .cta:hover { transform: translateY(-2px); }
+    .cta.secondary { background: rgba(255,255,255,.68); color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
+    .micro { margin-top: 16px; color: var(--muted); font-size: 13px; }
+
+    .hero-stage { position: relative; min-height: 550px; display: grid; place-items: center; }
+    .hero-stage::before { content: ""; position: absolute; inset: 7% 2% 5%; border-radius: 48% 52% 44% 56%; background: linear-gradient(145deg, rgba(229,238,226,.92), rgba(248,224,205,.72)); filter: blur(1px); }
+    .phone { position: relative; z-index: 2; width: min(280px, 66vw); padding: 9px; border-radius: 42px; background: #292722; box-shadow: 0 34px 76px rgba(58, 48, 36, .25); transform: rotate(1.6deg); }
+    .phone img { width: 100%; aspect-ratio: 9/19.45; object-fit: cover; object-position: top; border-radius: 34px; }
+    .float-card { position: absolute; z-index: 3; width: 205px; padding: 17px 18px; border: 1px solid rgba(255,255,255,.8); border-radius: 22px; background: rgba(255,253,249,.9); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
+    .float-card strong { display: block; font-size: 15px; }
+    .float-card span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .float-card.one { left: 0; top: 16%; }
+    .float-card.two { right: -2%; bottom: 14%; }
+    .float-icon { width: 36px; height: 36px; display: grid; place-items: center; margin-bottom: 10px; border-radius: 12px; background: var(--green-pale); font-size: 18px; }
+
+    .proof { padding: 0 0 80px; }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: rgba(255,255,255,.58); }
+    .proof-item { padding: 24px; border-right: 1px solid var(--line); }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item strong { display: block; font-size: 15px; }
+    .proof-item span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+
+    .section { padding: 100px 0; }
+    .section-soft { background: rgba(239, 233, 222, .54); border-block: 1px solid rgba(112, 94, 71, .08); }
+    .section-dark { background: #4e4a42; color: #fffaf1; }
+    .section-head { max-width: 770px; margin-bottom: 42px; }
+    .kicker { color: var(--gold-dark); font-weight: 850; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+    h2 { margin: 12px 0 14px; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.2; letter-spacing: -.04em; }
+    .section-head p { margin: 0; color: var(--ink-2); font-size: 17px; }
+    .section-dark .section-head p, .section-dark .kicker { color: #d8cdbd; }
+
+    .problem-grid, .audience-grid, .feature-grid { display: grid; gap: 18px; }
+    .problem-grid { grid-template-columns: repeat(3, 1fr); }
+    .card { padding: 30px; background: rgba(255,255,255,.78); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 14px 38px rgba(80,64,44,.06); }
+    .card-no { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 13px; color: var(--gold-dark); background: #f3e5d1; font-size: 12px; font-weight: 900; }
+    .card h3 { margin: 22px 0 10px; font-size: 22px; letter-spacing: -.025em; }
+    .card p { margin: 0; color: var(--ink-2); }
+
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+    .audience-card { position: relative; overflow: hidden; min-height: 480px; padding: 42px; border-radius: 34px; }
+    .audience-card.nursery { background: linear-gradient(145deg, #e6eee5, #f8f5ed); }
+    .audience-card.postpartum { background: linear-gradient(145deg, #f4e3dd, #fbf6ed); }
+    .audience-card::after { content: ""; position: absolute; width: 230px; height: 230px; right: -60px; bottom: -85px; border-radius: 50%; background: rgba(255,255,255,.54); }
+    .audience-label { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.72); font-size: 12px; font-weight: 850; }
+    .audience-card h3 { position: relative; z-index: 1; margin: 24px 0 12px; max-width: 520px; font-size: clamp(28px, 3vw, 38px); line-height: 1.28; letter-spacing: -.035em; }
+    .audience-card > p { position: relative; z-index: 1; margin: 0; color: var(--ink-2); font-size: 16px; }
+    .checks { position: relative; z-index: 1; display: grid; gap: 12px; padding: 0; margin: 26px 0 0; list-style: none; }
+    .checks li { display: grid; grid-template-columns: 24px 1fr; gap: 9px; align-items: start; }
+    .checks li::before { content: "✓"; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: #fff; background: var(--green); font-size: 12px; font-weight: 900; }
+    .postpartum .checks li::before { background: var(--rose); }
+
+    .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid rgba(255,255,255,.14); border-radius: 30px; overflow: hidden; }
+    .journey-step { position: relative; padding: 34px 28px 36px; border-right: 1px solid rgba(255,255,255,.14); }
+    .journey-step:last-child { border-right: 0; }
+    .journey-step small { color: #c9bca9; font-weight: 850; letter-spacing: .1em; }
+    .journey-step h3 { margin: 16px 0 10px; font-size: 21px; }
+    .journey-step p { margin: 0; color: #d9d1c5; font-size: 14px; }
+
+    .feature-grid { grid-template-columns: repeat(4, 1fr); }
+    .feature-card { padding: 26px; min-height: 235px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.72); }
+    .feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 15px; background: var(--paper-2); font-size: 21px; }
+    .feature-card h3 { margin: 20px 0 8px; font-size: 18px; }
+    .feature-card p { margin: 0; color: var(--ink-2); font-size: 14px; }
+
+    .product-view { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 78px; }
+    .dashboard { padding: 24px; border-radius: 32px; background: #fffdf9; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .dash-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .dash-brand { display: flex; align-items: center; gap: 11px; font-weight: 900; }
+    .dash-brand img { width: 38px; height: 38px; border-radius: 12px; }
+    .dash-pill { padding: 7px 10px; border-radius: 999px; background: var(--green-pale); color: #637b69; font-size: 11px; font-weight: 850; }
+    .dash-title { margin: 24px 0 12px; display: flex; align-items: end; justify-content: space-between; gap: 12px; }
+    .dash-title strong { font-size: 20px; }
+    .dash-title span { color: var(--muted); font-size: 12px; }
+    .kid-list { display: grid; gap: 10px; }
+    .kid { display: grid; grid-template-columns: 38px 1fr auto; align-items: center; gap: 12px; padding: 13px; border-radius: 17px; background: #f8f4ec; }
+    .avatar { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 13px; background: #efe1ce; }
+    .kid strong { display: block; font-size: 14px; }
+    .kid small { color: var(--muted); }
+    .state { font-size: 11px; color: #657d69; background: #e3eee4; padding: 5px 8px; border-radius: 999px; white-space: nowrap; }
+    .state.wait { color: #a36c52; background: #f4e5dc; }
+    .task-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 14px; }
+    .task { padding: 14px 10px; border: 1px solid var(--line); border-radius: 15px; text-align: center; font-size: 12px; }
+    .task b { display: block; margin-bottom: 3px; font-size: 20px; }
+    .demo-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; text-align: center; }
+    .product-copy .benefit { display: grid; grid-template-columns: 44px 1fr; gap: 14px; margin-top: 23px; }
+    .benefit-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 15px; background: var(--green-pale); }
+    .benefit strong { display: block; margin-bottom: 4px; }
+    .benefit p { margin: 0; color: var(--ink-2); font-size: 14px; }
+
+    .continuity { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .phone-row { min-height: 540px; display: flex; align-items: end; justify-content: center; gap: 18px; }
+    .phone.small { width: 218px; padding: 7px; border-radius: 34px; transform: rotate(-3deg); }
+    .phone.small:last-child { transform: translateY(-28px) rotate(3deg); }
+    .phone.small img { border-radius: 28px; }
+    .continuity-copy blockquote { margin: 28px 0 0; padding: 22px 24px; border-left: 3px solid var(--gold); background: rgba(255,255,255,.6); border-radius: 0 18px 18px 0; color: var(--ink-2); }
+
+    .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .role-card { padding: 28px; border: 1px solid rgba(255,255,255,.14); border-radius: 24px; background: rgba(255,255,255,.06); }
+    .role-card h3 { margin: 0 0 8px; }
+    .role-card p { margin: 0; color: #d9d1c5; }
+
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .process-card { padding: 26px; border-radius: 24px; background: #fff; border: 1px solid var(--line); }
+    .process-card small { color: var(--gold-dark); font-weight: 900; }
+    .process-card h3 { margin: 15px 0 8px; font-size: 18px; }
+    .process-card p { margin: 0; color: var(--ink-2); font-size: 14px; }
+
+    .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    details { padding: 20px 22px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.72); }
+    summary { cursor: pointer; font-weight: 850; }
+    details p { margin: 12px 0 0; color: var(--ink-2); font-size: 14px; }
+
+    .final-cta { padding: 84px 0 92px; }
+    .cta-panel { position: relative; overflow: hidden; padding: 58px; border-radius: 38px; background: linear-gradient(135deg, #e3ede3, #f7e4d8 60%, #f6efe2); text-align: center; }
+    .cta-panel::before, .cta-panel::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,.45); }
+    .cta-panel::before { left: -130px; top: -140px; }
+    .cta-panel::after { right: -120px; bottom: -160px; }
+    .cta-panel > * { position: relative; z-index: 1; }
+    .cta-panel h2 { max-width: 760px; margin-inline: auto; }
+    .cta-panel p { max-width: 700px; margin: 0 auto; color: var(--ink-2); font-size: 17px; }
+    .cta-panel .cta-row { justify-content: center; }
+
+    footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 30px 0 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    footer a { text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 34px; padding-top: 46px; }
+      .hero-stage { min-height: 500px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .problem-grid, .feature-grid { grid-template-columns: 1fr 1fr; }
+      .journey, .process { grid-template-columns: 1fr 1fr; }
+      .journey-step:nth-child(2) { border-right: 0; }
+      .journey-step:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
+      .product-view, .continuity { grid-template-columns: 1fr; gap: 50px; }
+      .product-copy { order: -1; }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .nav { min-height: 72px; }
+      .brand span { display: none; }
+      .brand img { width: 42px; height: 42px; }
+      .nav-right { gap: 8px; }
+      .back-home { display: none; }
+      .language button { padding: 7px 8px; }
+      .hero { min-height: auto; padding: 44px 0 62px; }
+      h1 { font-size: 42px; }
+      .lead { font-size: 17px; }
+      .cta { width: 100%; }
+      .hero-stage { min-height: 450px; }
+      .phone { width: 220px; border-radius: 34px; }
+      .phone img { border-radius: 27px; }
+      .float-card { width: 168px; padding: 14px; }
+      .float-card.one { left: -4px; top: 12%; }
+      .float-card.two { right: -4px; bottom: 9%; }
+      .proof { padding-bottom: 58px; }
+      .proof-grid, .problem-grid, .audience-grid, .feature-grid, .role-grid, .process, .faq { grid-template-columns: 1fr; }
+      .proof-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .section { padding: 74px 0; }
+      .audience-card { min-height: auto; padding: 30px 24px; }
+      .journey { grid-template-columns: 1fr; }
+      .journey-step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+      .journey-step:last-child { border-bottom: 0; }
+      .feature-card { min-height: 0; }
+      .phone-row { min-height: 400px; gap: 10px; }
+      .phone.small { width: 168px; }
+      .task-row { grid-template-columns: 1fr; }
+      .cta-panel { padding: 42px 22px; border-radius: 28px; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="/" aria-label="BiuLog home">
+      <img src="/assets/biulog-icon.webp" alt="BiuLog" width="46" height="46">
+      <span>BiuLog</span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Institution navigation">
+        <a href="#why" data-i18n="navWhy">合作價值</a>
+        <a href="#solutions" data-i18n="navSolutions">適用機構</a>
+        <a href="#features" data-i18n="navFeatures">機構功能</a>
+        <a href="#contact" data-i18n="navContact">預約展示</a>
+      </nav>
+      <a class="back-home" href="/" data-i18n="backHome">家長版首頁</a>
+      <div class="language" aria-label="Language selector">
+        <button type="button" data-lang="zh">繁中</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">日本語</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow" data-i18n="eyebrow">托嬰中心・月子中心・專業嬰幼兒照護團隊</div>
+        <h1 data-i18n="heroTitle">讓照護品質，被家長每天看見；讓信任，延續到回家以後。</h1>
+        <p class="lead" data-i18n="heroLead">BiuLog 把第一線照護、團隊協作與家長溝通放進同一套 App。機構使用時好記、好交接、好管理；爸媽離開機構後，也能繼續使用熟悉的育兒紀錄。</p>
+        <div class="cta-row">
+          <a class="cta" href="mailto:9a6.chihao@gmail.com?subject=BiuLog%20%E6%A9%9F%E6%A7%8B%E5%90%88%E4%BD%9C%E5%B1%95%E7%A4%BA" data-i18n="heroCta">預約合作展示</a>
+          <a class="cta secondary" href="#why" data-i18n="heroSecondary">先看合作價值</a>
+        </div>
+        <div class="micro" data-i18n="heroMicro">可從單一班級或照護單位開始討論，不需要先更換整套工作流程。</div>
+      </div>
+
+      <div class="hero-stage" aria-label="BiuLog app and institution collaboration preview">
+        <div class="float-card one">
+          <div class="float-icon">✓</div>
+          <strong data-i18n="floatOneTitle">今日照護，一目了然</strong>
+          <span data-i18n="floatOneBody">喝奶、睡眠、尿布與交接集中呈現</span>
+        </div>
+        <div class="phone">
+          <img id="heroImage" src="/assets/screens/zh/screen-1.webp" alt="BiuLog parent app home screen">
+        </div>
+        <div class="float-card two">
+          <div class="float-icon">↗</div>
+          <strong data-i18n="floatTwoTitle">離館後仍能繼續用</strong>
+          <span data-i18n="floatTwoBody">熟悉的 App 陪家庭回到日常生活</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap proof" aria-label="Partnership outcomes">
+      <div class="proof-grid" id="proofGrid"></div>
+    </section>
+
+    <section id="why" class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="whyKicker">WHY BIULOG</div>
+          <h2 data-i18n="whyTitle">好的照護，不該埋在紙本、群組訊息與口頭交接裡。</h2>
+          <p data-i18n="whyLead">家長真正重視的，不只是「有沒有做」，而是能不能即時、清楚、安心地理解寶寶今天被如何照顧。BiuLog 讓專業被看見，也讓溝通更有一致性。</p>
+        </div>
+        <div class="problem-grid" id="problemGrid"></div>
+      </div>
+    </section>
+
+    <section id="solutions" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="solutionKicker">TWO CARE SCENARIOS</div>
+          <h2 data-i18n="solutionTitle">不是把同一套話術套給所有機構，而是回應不同照護現場。</h2>
+          <p data-i18n="solutionLead">托嬰中心重視班級協作與日常聯絡；月子中心重視密集照護、輪班交接與離館銜接。BiuLog 讓兩種情境都能保留各自需要的工作節奏。</p>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card nursery">
+            <span class="audience-label" data-i18n="nurseryLabel">托嬰中心</span>
+            <h3 data-i18n="nurseryTitle">班級照護更一致，家長每天都看得懂。</h3>
+            <p data-i18n="nurseryBody">從入托、班級日常到接送前的聯絡，把老師需要記錄、主管需要掌握、家長需要知道的內容放在同一條流程。</p>
+            <ul class="checks" id="nurseryList"></ul>
+          </article>
+          <article class="audience-card postpartum">
+            <span class="audience-label" data-i18n="postpartumLabel">月子中心</span>
+            <h3 data-i18n="postpartumTitle">在館內感受專業，回家後延續安心。</h3>
+            <p data-i18n="postpartumBody">密集的餵奶、睡眠、尿布與照護交接不再只停留在紙本。家長離館時，熟悉的記錄方式也能跟著回家。</p>
+            <ul class="checks" id="postpartumList"></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="journeyKicker">ONE CONTINUOUS EXPERIENCE</div>
+          <h2 data-i18n="journeyTitle">一次記錄，串起照護現場、家長理解與返家日常。</h2>
+          <p data-i18n="journeyLead">機構不必只交付一張聯絡單；家長也不用在離館或退托後重新開始。完整體驗本身，就是機構最有感的服務差異。</p>
+        </div>
+        <div class="journey" id="journeyGrid"></div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="featuresKicker">CARE TEAM TOOLKIT</div>
+          <h2 data-i18n="featuresTitle">不是只有家長看紀錄，機構端也要真正好用。</h2>
+          <p data-i18n="featuresLead">BiuLog 把每天高頻、容易漏接、最需要追溯的照護工作集中管理，並依不同角色保留適合的操作與查看範圍。</p>
+        </div>
+        <div class="feature-grid" id="featureGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap product-view">
+        <div class="dashboard" aria-label="Institution workflow illustration">
+          <div class="dash-top">
+            <div class="dash-brand"><img src="/assets/biulog-icon.webp" alt=""><span>BiuLog Care</span></div>
+            <span class="dash-pill" data-i18n="demoStatus">今日同步中</span>
+          </div>
+          <div class="dash-title"><strong data-i18n="demoClass">向日葵班・今日概況</strong><span data-i18n="demoDate">照護流程示意</span></div>
+          <div class="kid-list">
+            <div class="kid"><span class="avatar">👶🏻</span><span><strong data-i18n="demoBabyOne">安安</strong><small data-i18n="demoBabyOneNote">奶量完成・待午睡</small></span><span class="state" data-i18n="demoReady">已更新</span></div>
+            <div class="kid"><span class="avatar">👶🏻</span><span><strong data-i18n="demoBabyTwo">樂樂</strong><small data-i18n="demoBabyTwoNote">用藥事項待確認</small></span><span class="state wait" data-i18n="demoCheck">待確認</span></div>
+            <div class="kid"><span class="avatar">👶🏻</span><span><strong data-i18n="demoBabyThree">米米</strong><small data-i18n="demoBabyThreeNote">午餐與體溫已記錄</small></span><span class="state" data-i18n="demoReady">已更新</span></div>
+          </div>
+          <div class="task-row">
+            <div class="task"><b>12</b><span data-i18n="demoAttendance">今日到班</span></div>
+            <div class="task"><b>3</b><span data-i18n="demoTasks">待辦事項</span></div>
+            <div class="task"><b>2</b><span data-i18n="demoUnread">未讀回覆</span></div>
+          </div>
+          <p class="demo-note" data-i18n="demoNote">示意畫面；實際內容依機構角色、班級與功能設定顯示。</p>
+        </div>
+        <div class="product-copy">
+          <div class="kicker" data-i18n="manageKicker">EASIER TO RUN</div>
+          <h2 data-i18n="manageTitle">第一線少一點重複，管理端多一點掌握。</h2>
+          <p class="lead" data-i18n="manageLead">讓老師把時間用在照顧寶寶，而不是在不同群組、紙本與表格間反覆抄寫；主管也能更快看見尚未完成或需要確認的事項。</p>
+          <div id="benefitList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap continuity">
+        <div class="phone-row" aria-label="BiuLog parent experience screenshots">
+          <div class="phone small"><img id="continueImageOne" src="/assets/screens/zh/screen-8.webp" alt="BiuLog daily activity timeline"></div>
+          <div class="phone small"><img id="continueImageTwo" src="/assets/screens/zh/screen-3.webp" alt="BiuLog routine analysis"></div>
+        </div>
+        <div class="continuity-copy">
+          <div class="kicker" data-i18n="continuityKicker">FROM CARE TO HOME</div>
+          <h2 data-i18n="continuityTitle">合作結束，不代表好的使用體驗也跟著結束。</h2>
+          <p class="lead" data-i18n="continuityLead">爸媽在機構期間已經熟悉 BiuLog，回家後仍可繼續記錄餵奶、睡眠、尿布、成長與疫苗。這份自然延續，能讓機構的專業印象留得更久。</p>
+          <blockquote data-i18n="continuityQuote">對家長來說，少一個重新適應的工具；對機構來說，多一段離開後仍被記得的服務體驗。</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="rolesKicker">CLEAR RESPONSIBILITIES</div>
+          <h2 data-i18n="rolesTitle">不同角色看該看的、做該做的，交接才真正可靠。</h2>
+          <p data-i18n="rolesLead">透過機構、班級、工作人員與家長端的角色區分，搭配操作紀錄，降低權限混亂與「不知道誰已處理」的管理落差。</p>
+        </div>
+        <div class="role-grid" id="roleGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="processKicker">START PRACTICALLY</div>
+          <h2 data-i18n="processTitle">合作可以先小規模開始，再依現場節奏擴大。</h2>
+          <p data-i18n="processLead">先用一個班級、房區或照護單位確認工作流程，讓第一線真的用得順，再擴大到更多人員與家庭。</p>
+        </div>
+        <div class="process" id="processGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">FAQ</div>
+          <h2 data-i18n="faqTitle">合作前，機構最常先問的事。</h2>
+        </div>
+        <div class="faq" id="faqGrid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap final-cta">
+      <div class="cta-panel">
+        <div class="kicker" data-i18n="finalKicker">LET CARE BE SEEN</div>
+        <h2 data-i18n="finalTitle">讓家長感受到的不只是紀錄，而是每一天都有人把寶寶照顧得很仔細。</h2>
+        <p data-i18n="finalLead">如果你正在為托嬰中心、月子中心或專業照護團隊尋找更完整的家長溝通與照護協作方式，歡迎直接來信討論使用情境。</p>
+        <div class="cta-row">
+          <a class="cta" href="mailto:9a6.chihao@gmail.com?subject=BiuLog%20%E6%A9%9F%E6%A7%8B%E5%90%88%E4%BD%9C%E5%B1%95%E7%A4%BA" data-i18n="finalCta">預約合作展示</a>
+          <a class="cta secondary" href="/" data-i18n="finalHome">查看家長版首頁</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span data-i18n="footer">© 2026 BiuLog. All rights reserved.</span>
+    <a href="mailto:9a6.chihao@gmail.com">9a6.chihao@gmail.com</a>
+  </footer>
+
+  <script>
+    const copy = {
+      zh: {
+        htmlLang: "zh-Hant", title: "BiuLog 機構合作｜托嬰中心與月子中心的照護協作 App", description: "BiuLog 為托嬰中心、月子中心與專業嬰幼兒照護團隊整合每日照護、班級與人員協作、家長溝通及離館後持續使用體驗。",
+        navWhy: "合作價值", navSolutions: "適用機構", navFeatures: "機構功能", navContact: "預約展示", backHome: "家長版首頁",
+        eyebrow: "托嬰中心・月子中心・專業嬰幼兒照護團隊", heroTitle: "讓照護品質，被家長每天看見；讓信任，延續到回家以後。", heroLead: "BiuLog 把第一線照護、團隊協作與家長溝通放進同一套 App。機構使用時好記、好交接、好管理；爸媽離開機構後，也能繼續使用熟悉的育兒紀錄。", heroCta: "預約合作展示", heroSecondary: "先看合作價值", heroMicro: "可從單一班級或照護單位開始討論，不需要先更換整套工作流程。",
+        floatOneTitle: "今日照護，一目了然", floatOneBody: "喝奶、睡眠、尿布與交接集中呈現", floatTwoTitle: "離館後仍能繼續用", floatTwoBody: "熟悉的 App 陪家庭回到日常生活",
+        proof: [["一套 App","機構照護與家庭日常自然銜接"],["清楚交接","重要照護資訊集中、可回看"],["角色協作","班級、人員與家長各有清楚範圍"],["四語介面","繁中、英文、日文、韓文皆可使用"]],
+        whyKicker: "WHY BIULOG", whyTitle: "好的照護，不該埋在紙本、群組訊息與口頭交接裡。", whyLead: "家長真正重視的，不只是「有沒有做」，而是能不能即時、清楚、安心地理解寶寶今天被如何照顧。BiuLog 讓專業被看見，也讓溝通更有一致性。",
+        problems: [["照護做了，家長卻感受不到","零散訊息很難形成完整印象。把每次照護整理成可理解的每日脈絡，專業才真正被看見。"],["老師重複寫，主管仍難掌握","同一件事分別寫在紙本、群組和表格，不只耗時，也容易在輪班與交接時遺漏。"],["離開機構，體驗突然中斷","家長重新找工具、重新建立習慣，機構原本累積的信任也停在離館或退托那一天。"]],
+        solutionKicker: "TWO CARE SCENARIOS", solutionTitle: "不是把同一套話術套給所有機構，而是回應不同照護現場。", solutionLead: "托嬰中心重視班級協作與日常聯絡；月子中心重視密集照護、輪班交接與離館銜接。BiuLog 讓兩種情境都能保留各自需要的工作節奏。",
+        nurseryLabel: "托嬰中心", nurseryTitle: "班級照護更一致，家長每天都看得懂。", nurseryBody: "從入托、班級日常到接送前的聯絡，把老師需要記錄、主管需要掌握、家長需要知道的內容放在同一條流程。", nurseryItems: ["班級與工作人員角色管理","出缺勤、請假與接送資訊","每日聯絡簿、公告與家長回覆","喝奶、睡眠、尿布、餐食與活動","用藥、用品、事件等待辦事項"],
+        postpartumLabel: "月子中心", postpartumTitle: "在館內感受專業，回家後延續安心。", postpartumBody: "密集的餵奶、睡眠、尿布與照護交接不再只停留在紙本。家長離館時，熟悉的記錄方式也能跟著回家。", postpartumItems: ["嬰兒室高頻照護快速記錄","輪班交接與重要事項追蹤","奶量、睡眠與尿布脈絡清楚","家長即時理解今日照護情況","離館後沿用同一套育兒紀錄"],
+        journeyKicker: "ONE CONTINUOUS EXPERIENCE", journeyTitle: "一次記錄，串起照護現場、家長理解與返家日常。", journeyLead: "機構不必只交付一張聯絡單；家長也不用在離館或退托後重新開始。完整體驗本身，就是機構最有感的服務差異。",
+        journey: [["01","照護人員快速記錄","在工作當下完成奶量、睡眠、尿布、餐食、活動與重要事項。"],["02","團隊有序協作","依班級與角色查看狀態、交接待辦，減少重複詢問。"],["03","家長即時理解","家長看到的是清楚的照護脈絡，不是一串零散訊息。"],["04","離開後繼續使用","家長回到家仍可沿用熟悉的 BiuLog，延續自己的家庭紀錄。"]],
+        featuresKicker: "CARE TEAM TOOLKIT", featuresTitle: "不是只有家長看紀錄，機構端也要真正好用。", featuresLead: "BiuLog 把每天高頻、容易漏接、最需要追溯的照護工作集中管理，並依不同角色保留適合的操作與查看範圍。",
+        features: [["🏠","機構工作區","集中查看機構、班級、幼兒與今日照護概況。"],["👥","班級與人員","建立班級、安排工作人員，依角色分配操作範圍。"],["📖","每日聯絡簿","整合照護紀錄、日報、家長確認與未讀訊息。"],["📌","公告與待辦","處理用藥、用品、接送、事件與需要追蹤的事項。"],["🍼","批次照護紀錄","針對班級情境快速處理高頻日常，減少反覆操作。"],["🗓️","出缺勤管理","掌握到班、離班、請假與相關紀錄。"],["📊","報表與匯出","整理每日與期間資料，支援名單匯入與報表匯出。"],["🧾","操作紀錄","保留重要異動與處理軌跡，讓交接更容易追溯。"]],
+        demoStatus: "今日同步中", demoClass: "向日葵班・今日概況", demoDate: "照護流程示意", demoBabyOne: "安安", demoBabyOneNote: "奶量完成・待午睡", demoBabyTwo: "樂樂", demoBabyTwoNote: "用藥事項待確認", demoBabyThree: "米米", demoBabyThreeNote: "午餐與體溫已記錄", demoReady: "已更新", demoCheck: "待確認", demoAttendance: "今日到班", demoTasks: "待辦事項", demoUnread: "未讀回覆", demoNote: "示意畫面；實際內容依機構角色、班級與功能設定顯示。",
+        manageKicker: "EASIER TO RUN", manageTitle: "第一線少一點重複，管理端多一點掌握。", manageLead: "讓老師把時間用在照顧寶寶，而不是在不同群組、紙本與表格間反覆抄寫；主管也能更快看見尚未完成或需要確認的事項。", benefits: [["⇄","交接不靠記憶","同一份紀錄沿著班級與角色流動，降低資訊只留在某個人手上的風險。"],["✓","完成狀態清楚","已處理、待確認、未讀等狀態更容易辨識，主管不必逐一追問。"],["◎","家長溝通一致","家長收到結構清楚的資訊，第一線也能減少重複回答相同問題。"]],
+        continuityKicker: "FROM CARE TO HOME", continuityTitle: "合作結束，不代表好的使用體驗也跟著結束。", continuityLead: "爸媽在機構期間已經熟悉 BiuLog，回家後仍可繼續記錄餵奶、睡眠、尿布、成長與疫苗。這份自然延續，能讓機構的專業印象留得更久。", continuityQuote: "對家長來說，少一個重新適應的工具；對機構來說，多一段離開後仍被記得的服務體驗。",
+        rolesKicker: "CLEAR RESPONSIBILITIES", rolesTitle: "不同角色看該看的、做該做的，交接才真正可靠。", rolesLead: "透過機構、班級、工作人員與家長端的角色區分，搭配操作紀錄，降低權限混亂與「不知道誰已處理」的管理落差。", roles: [["機構管理者","管理工作區、班級、人員與整體照護流程。"],["班級主管／負責人","掌握班級狀態、日報、待辦與重要交接。"],["照護工作人員","快速完成被分配範圍內的日常照護紀錄。"],["家長","查看自己寶寶的照護內容、公告與需要回覆的事項。"]],
+        processKicker: "START PRACTICALLY", processTitle: "合作可以先小規模開始，再依現場節奏擴大。", processLead: "先用一個班級、房區或照護單位確認工作流程，讓第一線真的用得順，再擴大到更多人員與家庭。", process: [["STEP 01","理解現場","確認機構類型、照護流程、班級或房區與家長溝通方式。"],["STEP 02","設定角色","建立工作區、班級、人員與適合的權限安排。"],["STEP 03","小範圍導入","選擇一個單位實際使用，整理需要調整的操作細節。"],["STEP 04","穩定擴大","流程確認後，再邀請更多工作人員與家長加入。"]],
+        faqTitle: "合作前，機構最常先問的事。", faqs: [["哪些機構適合使用？","托嬰中心、月子中心、居家托育與其他需要多人協作、家長共享的嬰幼兒照護團隊，都可以討論適合的導入方式。"],["家長離開機構後還能繼續使用嗎？","可以。家長仍可用 BiuLog 建立與延續自己的家庭育兒紀錄；機構共享範圍則依合作關係與權限設定管理。"],["需要另外購買專用硬體嗎？","目前以手機 App 為主要使用方式，不必先採購專用設備；實際裝置安排可依機構工作流程討論。"],["家長與工作人員會看到相同內容嗎？","不會全部相同。BiuLog 依機構、班級、工作人員與家長角色區分操作與查看範圍。"],["可以先從一個班級或單位開始嗎？","可以。小範圍導入最適合確認第一線操作與交接流程，再決定擴大方式。"],["合作費用怎麼計算？","會依機構規模、使用情境與導入範圍討論，請直接來信說明需求，我們會一起確認合適方案。"]],
+        finalKicker: "LET CARE BE SEEN", finalTitle: "讓家長感受到的不只是紀錄，而是每一天都有人把寶寶照顧得很仔細。", finalLead: "如果你正在為托嬰中心、月子中心或專業照護團隊尋找更完整的家長溝通與照護協作方式，歡迎直接來信討論使用情境。", finalCta: "預約合作展示", finalHome: "查看家長版首頁", footer: "© 2026 BiuLog. All rights reserved."
+      },
+      en: {
+        htmlLang: "en", title: "BiuLog for Care Organizations | Childcare and Postpartum Care Collaboration", description: "BiuLog brings daily care, team coordination, parent communication, and a continuous at-home experience together for childcare and postpartum care organizations.",
+        navWhy: "Why BiuLog", navSolutions: "Who it's for", navFeatures: "Features", navContact: "Book a demo", backHome: "Parent homepage",
+        eyebrow: "Childcare centers · Postpartum care centers · Infant care teams", heroTitle: "Make care quality visible every day—and keep trust going at home.", heroLead: "BiuLog brings frontline care, team coordination, and parent communication into one app. It is easy to record, hand over, and manage inside the organization, while parents can keep using the familiar experience after they leave.", heroCta: "Book a partnership demo", heroSecondary: "See the value", heroMicro: "Start the conversation with one class or care unit—without replacing your entire workflow first.",
+        floatOneTitle: "Today's care at a glance", floatOneBody: "Feeds, sleep, diapers, and handovers together", floatTwoTitle: "Keep using it at home", floatTwoBody: "A familiar app follows the family home",
+        proof: [["One app","Care at the center flows into life at home"],["Clear handovers","Important care stays organized and reviewable"],["Role-based teamwork","Clear scopes for teams, classes, and parents"],["Four languages","Traditional Chinese, English, Japanese, and Korean"]],
+        whyKicker: "WHY BIULOG", whyTitle: "Great care should not disappear into paper, chat threads, and verbal handovers.", whyLead: "Parents care not only that something was done, but that they can understand how their baby was cared for—clearly and with confidence. BiuLog makes professional care visible and communication consistent.",
+        problems: [["Care happens, but parents cannot feel it","Scattered messages rarely create a complete picture. A clear daily story makes professional care visible."],["Staff repeat work, yet managers still chase updates","Writing the same information across paper, chats, and sheets takes time and increases handover gaps."],["The experience stops when families leave","Parents start over with another tool, while the trust built by the organization ends at discharge or graduation."]],
+        solutionKicker: "TWO CARE SCENARIOS", solutionTitle: "Different care settings deserve more than the same generic pitch.", solutionLead: "Childcare centers need class coordination and daily communication. Postpartum care centers need intensive tracking, shift handovers, and a smooth transition home. BiuLog supports both rhythms.",
+        nurseryLabel: "Childcare centers", nurseryTitle: "Consistent class care that parents can understand every day.", nurseryBody: "From arrival and classroom routines to pickup, connect what staff record, managers oversee, and parents need to know.", nurseryItems: ["Class and staff role management","Attendance, leave, and pickup information","Daily care books, announcements, and replies","Feeds, sleep, diapers, meals, and activities","Medication, supplies, incidents, and action items"],
+        postpartumLabel: "Postpartum care centers", postpartumTitle: "Professional care inside, familiar reassurance at home.", postpartumBody: "Intensive feeding, sleep, diaper, and handover records no longer live only on paper. The familiar experience can follow parents home after discharge.", postpartumItems: ["Fast infant-room care recording","Shift handovers and important follow-ups","Clear feeding, sleep, and diaper context","Daily visibility for parents","The same baby log continues after discharge"],
+        journeyKicker: "ONE CONTINUOUS EXPERIENCE", journeyTitle: "One record connects frontline care, parent understanding, and life at home.", journeyLead: "Organizations can offer more than a handover sheet, and families do not have to start again when care ends. Continuity becomes a meaningful service difference.", journey: [["01","Care staff record quickly","Capture feeds, sleep, diapers, meals, activities, and important notes while care happens."],["02","Teams coordinate clearly","Use classes, roles, and action states to reduce repeated follow-ups."],["03","Parents understand","Parents see a coherent care story instead of scattered messages."],["04","Families keep going","At home, parents continue using BiuLog for their own family records."]],
+        featuresKicker: "CARE TEAM TOOLKIT", featuresTitle: "It is not only useful for parents—the organization side must work in real life.", featuresLead: "BiuLog organizes the high-frequency, easy-to-miss, and traceable parts of daily care, with appropriate scopes for each role.", features: [["🏠","Organization workspace","See organizations, classes, children, and today's care in one place."],["👥","Classes and staff","Create classes, assign team members, and manage role scopes."],["📖","Daily care book","Combine care records, daily reports, acknowledgements, and unread messages."],["📌","Notices and action items","Track medication, supplies, pickup, incidents, and follow-ups."],["🍼","Batch care recording","Handle frequent classroom routines with fewer repeated actions."],["🗓️","Attendance","Track arrival, departure, leave, and related records."],["📊","Reports and export","Organize daily or date-range data, roster imports, and report exports."],["🧾","Audit trail","Keep important changes and actions reviewable for better handovers."]],
+        demoStatus: "Updating today", demoClass: "Sunflower Class · Today", demoDate: "Workflow illustration", demoBabyOne: "Ava", demoBabyOneNote: "Feed complete · nap next", demoBabyTwo: "Leo", demoBabyTwoNote: "Medication needs confirmation", demoBabyThree: "Mia", demoBabyThreeNote: "Lunch and temperature recorded", demoReady: "Updated", demoCheck: "Check", demoAttendance: "Present", demoTasks: "Action items", demoUnread: "Unread replies", demoNote: "Illustration. Actual content depends on organization, class, role, and feature settings.",
+        manageKicker: "EASIER TO RUN", manageTitle: "Less repetition for frontline teams. More visibility for managers.", manageLead: "Let caregivers spend time with babies instead of copying across chats, paper, and sheets. Managers can spot unfinished or unconfirmed items sooner.", benefits: [["⇄","Handovers do not rely on memory","One record moves through classes and roles, reducing the risk of information staying with one person."],["✓","Clear completion states","Done, pending, and unread states are easier to see without asking everyone individually."],["◎","Consistent parent communication","Structured updates reduce repeated questions and give parents a clearer experience."]],
+        continuityKicker: "FROM CARE TO HOME", continuityTitle: "The partnership may end, but the good experience does not have to.", continuityLead: "Parents who already know BiuLog can keep logging feeds, sleep, diapers, growth, and vaccines at home. That natural continuity helps the organization's professional impression last longer.", continuityQuote: "For parents, it is one less tool to relearn. For organizations, it is a service experience remembered after families leave.",
+        rolesKicker: "CLEAR RESPONSIBILITIES", rolesTitle: "Reliable handovers start when each role sees and does the right things.", rolesLead: "Organization, class, staff, and parent scopes—together with action history—reduce permission confusion and uncertainty about who handled what.", roles: [["Organization managers","Manage workspaces, classes, staff, and the overall care flow."],["Class leads","Oversee class status, reports, action items, and important handovers."],["Care staff","Quickly complete daily care records within their assigned scope."],["Parents","See care for their child, announcements, and items that need a response."]],
+        processKicker: "START PRACTICALLY", processTitle: "Start small, prove the workflow, then expand at the pace of your team.", processLead: "Begin with one class, floor, or care unit so frontline teams can validate the workflow before more staff and families join.", process: [["STEP 01","Understand the setting","Map the care flow, classes or units, staff roles, and parent communication."],["STEP 02","Set up roles","Create the workspace, groups, staff, and appropriate access."],["STEP 03","Run a focused pilot","Use one care unit and refine the details that matter in daily work."],["STEP 04","Expand steadily","Once the workflow is stable, invite more staff members and families."]],
+        faqTitle: "Common questions before a partnership.", faqs: [["Which organizations are a good fit?","Childcare centers, postpartum care centers, home childcare teams, and other infant care organizations that need team collaboration and parent sharing."],["Can parents keep using BiuLog after they leave?","Yes. Parents can continue their own family baby records. Organization sharing remains governed by the relevant relationship and access settings."],["Do we need dedicated hardware?","The current experience is centered on the mobile app, so dedicated hardware is not required before you begin. Device arrangements can follow your workflow."],["Do parents and staff see everything the same way?","No. BiuLog separates organization, class, staff, and parent scopes so each role has an appropriate view."],["Can we begin with one class or unit?","Yes. A focused rollout is a practical way to validate frontline recording and handovers before expansion."],["How is partnership pricing determined?","Pricing is discussed based on organization size, use case, and rollout scope. Email us so we can understand your needs."]],
+        finalKicker: "LET CARE BE SEEN", finalTitle: "Let parents feel more than a record—let them feel how carefully their baby is cared for every day.", finalLead: "If your childcare center, postpartum care center, or professional care team needs a more complete way to coordinate care and communicate with parents, tell us about your workflow.", finalCta: "Book a partnership demo", finalHome: "View parent homepage", footer: "© 2026 BiuLog. All rights reserved."
+      },
+      ja: {
+        htmlLang: "ja", title: "BiuLog 施設連携｜保育施設・産後ケア施設向けケア連携アプリ", description: "BiuLog は保育施設・産後ケア施設向けに、毎日のケア、スタッフ連携、保護者との共有、退所後の継続利用をひとつにつなぎます。",
+        navWhy: "導入価値", navSolutions: "対象施設", navFeatures: "施設機能", navContact: "デモ相談", backHome: "保護者向けトップ",
+        eyebrow: "保育施設・産後ケア施設・乳幼児ケアチーム", heroTitle: "ケアの質を毎日見える形に。信頼を家庭に戻った後まで。", heroLead: "BiuLog は現場のケア、チーム連携、保護者とのコミュニケーションをひとつのアプリにまとめます。施設内では記録・引き継ぎ・管理がしやすく、退所後も保護者は使い慣れた育児記録を続けられます。", heroCta: "連携デモを相談", heroSecondary: "導入価値を見る", heroMicro: "まずは1クラス・1ケア単位から、現在の業務フローに合わせて相談できます。",
+        floatOneTitle: "今日のケアを一覧で", floatOneBody: "授乳・睡眠・おむつ・引き継ぎを集約", floatTwoTitle: "退所後も継続", floatTwoBody: "使い慣れたアプリを家庭でも",
+        proof: [["ひとつのアプリ","施設ケアから家庭の日常へ自然につながる"],["明確な引き継ぎ","重要なケア情報を整理して振り返れる"],["役割別の連携","施設・クラス・スタッフ・保護者の範囲を明確に"],["4言語対応","繁体字中国語・英語・日本語・韓国語"]],
+        whyKicker: "WHY BIULOG", whyTitle: "良いケアを、紙・チャット・口頭の引き継ぎの中に埋もれさせない。", whyLead: "保護者が知りたいのは「行ったか」だけではなく、今日どのようにケアされたかを安心して理解できること。BiuLog は専門性を見える形にし、伝え方を揃えます。",
+        problems: [["ケアしていても伝わりにくい","断片的な連絡では全体像が伝わりません。毎日の流れとして整理することで専門性が見えます。"],["記入は重複、管理は追いかけ作業","紙・チャット・表計算への二重入力は時間がかかり、シフト交代時の抜けにもつながります。"],["退所と同時に体験が途切れる","保護者が別のツールでやり直すと、施設が築いた信頼も退所の日で止まってしまいます。"]],
+        solutionKicker: "TWO CARE SCENARIOS", solutionTitle: "異なるケア現場には、それぞれに合う使い方を。", solutionLead: "保育施設はクラス連携と日々の連絡、産後ケア施設は高頻度のケア、シフト引き継ぎ、退所後への接続が重要です。BiuLog は両方のリズムに対応します。",
+        nurseryLabel: "保育施設", nurseryTitle: "クラスのケアを揃え、保護者にも毎日わかりやすく。", nurseryBody: "登園から日中の生活、降園前の連絡まで、スタッフの記録、管理者の把握、保護者への共有をひとつの流れにします。", nurseryItems: ["クラスとスタッフ権限の管理","出欠・休暇・送迎情報","連絡帳・お知らせ・保護者返信","授乳・睡眠・おむつ・食事・活動","服薬・用品・事故・対応事項"],
+        postpartumLabel: "産後ケア施設", postpartumTitle: "施設内で専門性を実感し、家庭でも安心を継続。", postpartumBody: "授乳、睡眠、おむつ、引き継ぎの高頻度な記録を紙だけに残しません。退所時には使い慣れた記録方法を家庭へ持ち帰れます。", postpartumItems: ["ベビールームの高速ケア記録","シフト引き継ぎと重要事項の追跡","授乳・睡眠・おむつの流れを明確に","保護者が今日のケアを把握","退所後も同じ育児記録を継続"],
+        journeyKicker: "ONE CONTINUOUS EXPERIENCE", journeyTitle: "ひとつの記録が、ケア現場・保護者の理解・家庭の日常をつなぐ。", journeyLead: "施設は一枚の引き継ぎ票以上の体験を提供でき、保護者は退所後に最初からやり直す必要がありません。継続性そのものがサービスの違いになります。", journey: [["01","現場ですぐ記録","授乳・睡眠・おむつ・食事・活動・重要事項をケアと同時に記録。"],["02","チームで連携","クラス、役割、対応状況で確認の重複を減らします。"],["03","保護者が理解","断片的なメッセージではなく、まとまったケアの流れを共有。"],["04","家庭でも継続","退所後は BiuLog を家庭の育児記録として使い続けられます。"]],
+        featuresKicker: "CARE TEAM TOOLKIT", featuresTitle: "保護者が見るだけでなく、施設側が本当に使いやすいこと。", featuresLead: "毎日多く、抜けやすく、確認が必要なケア業務をまとめ、役割ごとに適切な操作・閲覧範囲を用意します。", features: [["🏠","施設ワークスペース","施設、クラス、園児、今日のケア状況をまとめて確認。"],["👥","クラスとスタッフ","クラス作成、スタッフ配置、役割範囲を管理。"],["📖","毎日の連絡帳","ケア記録、日報、確認、未読メッセージを集約。"],["📌","お知らせと対応事項","服薬、用品、送迎、事故、フォロー事項を追跡。"],["🍼","一括ケア記録","クラスで頻度の高い日常記録を少ない操作で。"],["🗓️","出欠管理","登園・降園・休暇と関連記録を管理。"],["📊","レポートと出力","日次・期間データ、名簿取り込み、レポート出力。"],["🧾","操作履歴","重要な変更と対応の履歴を残し、引き継ぎを支援。"]],
+        demoStatus: "本日同期中", demoClass: "ひまわり組・本日の概要", demoDate: "フローイメージ", demoBabyOne: "あん", demoBabyOneNote: "授乳完了・午睡待ち", demoBabyTwo: "れお", demoBabyTwoNote: "服薬確認待ち", demoBabyThree: "みお", demoBabyThreeNote: "昼食・体温記録済み", demoReady: "更新済み", demoCheck: "要確認", demoAttendance: "本日登園", demoTasks: "対応事項", demoUnread: "未読返信", demoNote: "イメージ画面です。実際の内容は施設・クラス・役割・機能設定により異なります。",
+        manageKicker: "EASIER TO RUN", manageTitle: "現場の重複を減らし、管理者の把握を増やす。", manageLead: "チャット、紙、表計算への転記ではなく、スタッフが赤ちゃんのケアに時間を使えるように。管理者は未完了・要確認の事項を早く見つけられます。", benefits: [["⇄","記憶に頼らない引き継ぎ","同じ記録をクラスと役割で共有し、情報が個人に留まるリスクを減らします。"],["✓","状態が明確","完了・確認待ち・未読を見分けやすくし、個別確認を減らします。"],["◎","保護者への伝え方を統一","整理された情報で重複質問を減らし、理解しやすい体験を提供します。"]],
+        continuityKicker: "FROM CARE TO HOME", continuityTitle: "連携が終わっても、良い使用体験まで終わる必要はありません。", continuityLead: "施設で BiuLog に慣れた保護者は、家庭でも授乳、睡眠、おむつ、成長、予防接種を続けて記録できます。自然な継続が施設の専門的な印象を長く残します。", continuityQuote: "保護者には、覚え直すツールをひとつ減らす。施設には、退所後も記憶に残るサービス体験をひとつ増やす。",
+        rolesKicker: "CLEAR RESPONSIBILITIES", rolesTitle: "役割ごとに見る・行う範囲が明確だから、引き継ぎが信頼できる。", rolesLead: "施設、クラス、スタッフ、保護者の範囲と操作履歴により、権限の混乱や「誰が対応したか不明」を減らします。", roles: [["施設管理者","ワークスペース、クラス、スタッフ、全体フローを管理。"],["クラス責任者","クラス状況、日報、対応事項、重要な引き継ぎを把握。"],["ケアスタッフ","割り当て範囲の日常ケア記録をすばやく完了。"],["保護者","自分の子どものケア、お知らせ、返信事項を確認。"]],
+        processKicker: "START PRACTICALLY", processTitle: "小さく始め、現場で確かめ、チームのペースで広げる。", processLead: "まずは1クラス・1フロア・1ケア単位で現場の使いやすさを確認し、その後スタッフと家庭を増やせます。", process: [["STEP 01","現場を理解","ケアフロー、クラス・単位、役割、保護者連絡を確認。"],["STEP 02","役割を設定","ワークスペース、グループ、スタッフ、権限を設定。"],["STEP 03","小規模で導入","ひとつの単位で使い、毎日の細部を調整。"],["STEP 04","安定後に拡大","フロー確認後、スタッフと家庭の参加を増やします。"]],
+        faqTitle: "連携前によくあるご質問。", faqs: [["どの施設に向いていますか？","保育施設、産後ケア施設、家庭的保育、その他スタッフ連携と保護者共有が必要な乳幼児ケアチームです。"],["退所後も保護者は使えますか？","はい。保護者は家庭の育児記録を継続できます。施設共有の範囲は連携関係と権限設定により管理されます。"],["専用機器は必要ですか？","現在はスマートフォンアプリを中心に利用するため、開始前の専用機器購入は不要です。端末運用は現場に合わせて相談できます。"],["保護者とスタッフは同じ内容を見ますか？","すべて同じではありません。施設、クラス、スタッフ、保護者ごとに適切な閲覧・操作範囲があります。"],["1クラスから始められますか？","はい。小規模導入で記録と引き継ぎを確認してから広げる方法が実用的です。"],["費用はどう決まりますか？","施設規模、利用場面、導入範囲に合わせてご相談します。まずはメールでご要望をお知らせください。"]],
+        finalKicker: "LET CARE BE SEEN", finalTitle: "記録だけでなく、毎日ていねいにケアされている安心を保護者へ。", finalLead: "保育施設、産後ケア施設、専門ケアチームの連携と保護者コミュニケーションをより良くしたい方は、現在の運用をお聞かせください。", finalCta: "連携デモを相談", finalHome: "保護者向けトップを見る", footer: "© 2026 BiuLog. All rights reserved."
+      },
+      ko: {
+        htmlLang: "ko", title: "BiuLog 기관 협력 | 보육·산후조리 기관을 위한 돌봄 협업 앱", description: "BiuLog는 보육 기관과 산후조리 기관의 일상 돌봄, 팀 협업, 보호자 소통, 퇴소 후 지속 사용 경험을 하나로 연결합니다.",
+        navWhy: "협력 가치", navSolutions: "적합한 기관", navFeatures: "기관 기능", navContact: "데모 문의", backHome: "보호자 홈",
+        eyebrow: "보육 기관 · 산후조리 기관 · 영유아 돌봄팀", heroTitle: "돌봄의 품질은 매일 보이게, 신뢰는 집에 돌아간 뒤까지.", heroLead: "BiuLog는 현장 돌봄, 팀 협업, 보호자 소통을 하나의 앱에 담습니다. 기관에서는 기록·인계·관리가 쉽고, 보호자는 퇴소 후에도 익숙한 육아 기록을 계속 사용할 수 있습니다.", heroCta: "협력 데모 예약", heroSecondary: "협력 가치 보기", heroMicro: "전체 업무를 먼저 바꾸지 않고 한 반 또는 한 돌봄 단위부터 논의할 수 있습니다.",
+        floatOneTitle: "오늘 돌봄을 한눈에", floatOneBody: "수유, 수면, 기저귀, 인계를 한곳에", floatTwoTitle: "퇴소 후에도 계속", floatTwoBody: "익숙한 앱이 가족의 일상으로 이어집니다",
+        proof: [["하나의 앱","기관 돌봄에서 가정의 일상까지 자연스럽게"],["명확한 인계","중요한 돌봄 정보를 정리하고 다시 확인"],["역할별 협업","기관·반·직원·보호자의 범위를 명확하게"],["4개 언어","번체 중국어·영어·일본어·한국어 지원"]],
+        whyKicker: "WHY BIULOG", whyTitle: "좋은 돌봄이 종이, 단체 채팅, 구두 인계 속에 묻히지 않도록.", whyLead: "보호자가 원하는 것은 단순히 '했는지'가 아니라 오늘 아기가 어떻게 돌봄받았는지 명확하고 안심되게 이해하는 것입니다. BiuLog는 전문성을 보이게 하고 소통을 일관되게 만듭니다.",
+        problems: [["돌봄은 했지만 보호자에게 잘 보이지 않음","흩어진 메시지로는 전체 흐름이 전달되지 않습니다. 하루의 맥락으로 정리해야 전문성이 보입니다."],["직원은 반복 기록, 관리자는 계속 확인","종이·채팅·표에 같은 내용을 다시 쓰면 시간이 들고 교대 인계 누락도 생깁니다."],["퇴소하는 순간 경험도 끝남","보호자가 새 도구로 다시 시작하면 기관이 쌓은 신뢰도 퇴소일에 멈춥니다."]],
+        solutionKicker: "TWO CARE SCENARIOS", solutionTitle: "서로 다른 돌봄 현장에 같은 방식만 강요하지 않습니다.", solutionLead: "보육 기관은 반 협업과 일상 소통이, 산후조리 기관은 고빈도 돌봄·교대 인계·귀가 전환이 중요합니다. BiuLog는 두 흐름을 모두 지원합니다.",
+        nurseryLabel: "보육 기관", nurseryTitle: "반 돌봄은 일관되게, 보호자에게는 매일 이해하기 쉽게.", nurseryBody: "등원, 반 생활, 하원 전 연락까지 직원이 기록할 것, 관리자가 볼 것, 보호자가 알아야 할 것을 한 흐름에 둡니다.", nurseryItems: ["반과 직원 역할 관리","출결·휴가·등하원 정보","일일 돌봄장·공지·보호자 답변","수유·수면·기저귀·식사·활동","투약·준비물·사건·조치 사항"],
+        postpartumLabel: "산후조리 기관", postpartumTitle: "기관에서는 전문성을 느끼고, 집에서는 안심을 이어갑니다.", postpartumBody: "빈번한 수유, 수면, 기저귀, 돌봄 인계를 종이에만 남기지 않습니다. 퇴소할 때 익숙한 기록 방식도 함께 집으로 갑니다.", postpartumItems: ["신생아실 고빈도 돌봄 빠른 기록","교대 인계와 중요 사항 추적","수유·수면·기저귀 흐름 정리","보호자가 오늘 돌봄을 바로 이해","퇴소 후 같은 육아 기록 계속 사용"],
+        journeyKicker: "ONE CONTINUOUS EXPERIENCE", journeyTitle: "한 번의 기록이 돌봄 현장, 보호자의 이해, 가정의 일상을 잇습니다.", journeyLead: "기관은 한 장의 인계표보다 더 나은 경험을 제공하고, 보호자는 퇴소 후 처음부터 다시 시작할 필요가 없습니다. 연결성 자체가 서비스의 차이가 됩니다.", journey: [["01","돌봄 중 빠른 기록","수유·수면·기저귀·식사·활동·중요 사항을 현장에서 기록합니다."],["02","팀의 질서 있는 협업","반, 역할, 처리 상태로 반복 확인을 줄입니다."],["03","보호자가 쉽게 이해","흩어진 메시지가 아닌 정리된 하루 돌봄 흐름을 봅니다."],["04","가정에서도 계속 사용","퇴소 후 BiuLog를 가족의 육아 기록으로 이어갑니다."]],
+        featuresKicker: "CARE TEAM TOOLKIT", featuresTitle: "보호자가 보는 것만큼 기관에서도 실제로 쓰기 좋아야 합니다.", featuresLead: "매일 자주 발생하고 놓치기 쉽고 추적이 필요한 돌봄 업무를 모으고, 역할별로 적절한 보기와 작업 범위를 둡니다.", features: [["🏠","기관 워크스페이스","기관, 반, 아동, 오늘 돌봄 현황을 한곳에서 확인합니다."],["👥","반과 직원","반을 만들고 직원을 배치하며 역할 범위를 관리합니다."],["📖","일일 돌봄장","돌봄 기록, 일보, 확인, 읽지 않은 메시지를 모읍니다."],["📌","공지와 조치 사항","투약, 준비물, 하원, 사건, 후속 조치를 추적합니다."],["🍼","일괄 돌봄 기록","반에서 자주 하는 일상 기록을 더 적은 작업으로 처리합니다."],["🗓️","출결 관리","등원·하원·휴가와 관련 기록을 관리합니다."],["📊","보고서와 내보내기","일별·기간 데이터, 명단 가져오기, 보고서 내보내기를 지원합니다."],["🧾","작업 기록","중요 변경과 처리 이력을 남겨 인계를 쉽게 추적합니다."]],
+        demoStatus: "오늘 동기화 중", demoClass: "해바라기반 · 오늘 현황", demoDate: "돌봄 흐름 예시", demoBabyOne: "안이", demoBabyOneNote: "수유 완료 · 낮잠 대기", demoBabyTwo: "레오", demoBabyTwoNote: "투약 확인 필요", demoBabyThree: "미아", demoBabyThreeNote: "점심·체온 기록 완료", demoReady: "업데이트", demoCheck: "확인 필요", demoAttendance: "오늘 등원", demoTasks: "조치 사항", demoUnread: "읽지 않은 답변", demoNote: "예시 화면입니다. 실제 내용은 기관, 반, 역할, 기능 설정에 따라 달라집니다.",
+        manageKicker: "EASIER TO RUN", manageTitle: "현장 반복은 줄이고, 관리자의 가시성은 높입니다.", manageLead: "직원이 채팅, 종이, 표 사이에서 같은 내용을 옮기기보다 아기를 돌보는 데 시간을 쓰도록 합니다. 관리자는 미완료·확인 필요 항목을 더 빨리 볼 수 있습니다.", benefits: [["⇄","기억에 의존하지 않는 인계","한 기록이 반과 역할을 따라 공유되어 정보가 한 사람에게만 남는 위험을 줄입니다."],["✓","완료 상태가 명확","완료, 확인 대기, 미읽음을 쉽게 구분하여 일일이 묻는 일을 줄입니다."],["◎","일관된 보호자 소통","정리된 정보는 반복 질문을 줄이고 보호자에게 더 이해하기 쉬운 경험을 줍니다."]],
+        continuityKicker: "FROM CARE TO HOME", continuityTitle: "협력이 끝나도 좋은 사용 경험까지 끝날 필요는 없습니다.", continuityLead: "기관에서 BiuLog에 익숙해진 보호자는 집에서도 수유, 수면, 기저귀, 성장, 예방접종을 계속 기록할 수 있습니다. 자연스러운 연속성은 기관의 전문적인 인상을 더 오래 남깁니다.", continuityQuote: "보호자에게는 다시 배울 도구 하나를 줄이고, 기관에는 퇴소 후에도 기억되는 서비스 경험 하나를 더합니다.",
+        rolesKicker: "CLEAR RESPONSIBILITIES", rolesTitle: "역할마다 보고 해야 할 범위가 분명해야 인계가 믿을 수 있습니다.", rolesLead: "기관, 반, 직원, 보호자 범위와 작업 이력을 통해 권한 혼선과 '누가 처리했는지 모름'을 줄입니다.", roles: [["기관 관리자","워크스페이스, 반, 직원, 전체 돌봄 흐름을 관리합니다."],["반 책임자","반 상태, 일보, 조치 사항, 중요 인계를 확인합니다."],["돌봄 직원","배정된 범위에서 일상 돌봄 기록을 빠르게 완료합니다."],["보호자","내 아이의 돌봄, 공지, 답변 필요 사항을 봅니다."]],
+        processKicker: "START PRACTICALLY", processTitle: "작게 시작해 현장에서 확인하고 팀의 속도에 맞춰 넓힙니다.", processLead: "한 반, 한 층, 한 돌봄 단위에서 먼저 업무 흐름을 확인한 뒤 직원과 가족 참여를 확대할 수 있습니다.", process: [["STEP 01","현장 이해","돌봄 흐름, 반·단위, 직원 역할, 보호자 소통을 확인합니다."],["STEP 02","역할 설정","워크스페이스, 그룹, 직원, 접근 범위를 설정합니다."],["STEP 03","집중 도입","한 단위에서 실제 사용하며 일상 작업의 세부를 다듬습니다."],["STEP 04","안정적으로 확대","흐름이 안정되면 더 많은 직원과 가족을 초대합니다."]],
+        faqTitle: "협력 전에 자주 묻는 질문입니다.", faqs: [["어떤 기관에 적합한가요?","보육 기관, 산후조리 기관, 가정 보육팀, 그 밖에 팀 협업과 보호자 공유가 필요한 영유아 돌봄 조직에 적합합니다."],["퇴소 후에도 보호자가 사용할 수 있나요?","네. 보호자는 가족 육아 기록을 계속 사용할 수 있습니다. 기관 공유 범위는 협력 관계와 권한 설정에 따라 관리됩니다."],["전용 하드웨어가 필요한가요?","현재는 모바일 앱 중심이므로 시작 전에 전용 장비를 구매할 필요가 없습니다. 기기 운영은 현장 흐름에 맞춰 논의할 수 있습니다."],["보호자와 직원이 같은 내용을 모두 보나요?","아닙니다. 기관, 반, 직원, 보호자 역할에 따라 적절한 보기와 작업 범위가 구분됩니다."],["한 반부터 시작할 수 있나요?","네. 현장 기록과 인계를 확인한 뒤 확대하는 소규모 도입이 실용적입니다."],["협력 비용은 어떻게 정하나요?","기관 규모, 사용 상황, 도입 범위에 따라 논의합니다. 이메일로 필요한 내용을 알려 주세요."]],
+        finalKicker: "LET CARE BE SEEN", finalTitle: "기록을 넘어, 매일 아기를 세심하게 돌보고 있다는 안심을 보호자에게.", finalLead: "보육 기관, 산후조리 기관, 전문 돌봄팀의 협업과 보호자 소통을 더 완성도 있게 만들고 싶다면 현재 운영 방식을 알려 주세요.", finalCta: "협력 데모 예약", finalHome: "보호자 홈 보기", footer: "© 2026 BiuLog. All rights reserved."
+      }
+    };
+
+    const fallbackLang = "zh";
+    const screenLangMap = { zh: "zh", en: "en", ja: "ja", ko: "ko" };
+
+    function detectLanguage() {
+      const query = new URLSearchParams(window.location.search).get("lang");
+      if (copy[query]) return query;
+      const stored = localStorage.getItem("biulog-site-lang");
+      if (copy[stored]) return stored;
+      const browser = (navigator.language || "").toLowerCase();
+      if (browser.startsWith("ja")) return "ja";
+      if (browser.startsWith("ko")) return "ko";
+      if (browser.startsWith("en")) return "en";
+      return fallbackLang;
+    }
+
+    function fillList(id, items, render) {
+      const root = document.getElementById(id);
+      root.innerHTML = "";
+      items.forEach((item, index) => root.appendChild(render(item, index)));
+    }
+
+    function setLanguage(lang, updateUrl = false) {
+      const next = copy[lang] ? lang : fallbackLang;
+      const data = copy[next];
+      localStorage.setItem("biulog-site-lang", next);
+      document.documentElement.lang = data.htmlLang;
+      document.title = data.title;
+      document.querySelector('meta[name="description"]').setAttribute("content", data.description);
+      document.querySelector('meta[property="og:title"]').setAttribute("content", data.title);
+      document.querySelector('meta[property="og:description"]').setAttribute("content", data.description);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (data[key]) node.textContent = data[key];
+      });
+      document.querySelectorAll("[data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === next));
+
+      fillList("proofGrid", data.proof, ([title, body]) => {
+        const div = document.createElement("div"); div.className = "proof-item"; div.innerHTML = "<strong></strong><span></span>";
+        div.querySelector("strong").textContent = title; div.querySelector("span").textContent = body; return div;
+      });
+      fillList("problemGrid", data.problems, ([title, body], index) => {
+        const article = document.createElement("article"); article.className = "card"; article.innerHTML = '<span class="card-no"></span><h3></h3><p></p>';
+        article.querySelector(".card-no").textContent = String(index + 1).padStart(2, "0"); article.querySelector("h3").textContent = title; article.querySelector("p").textContent = body; return article;
+      });
+      fillList("nurseryList", data.nurseryItems, (item) => { const li = document.createElement("li"); li.textContent = item; return li; });
+      fillList("postpartumList", data.postpartumItems, (item) => { const li = document.createElement("li"); li.textContent = item; return li; });
+      fillList("journeyGrid", data.journey, ([number, title, body]) => {
+        const article = document.createElement("article"); article.className = "journey-step"; article.innerHTML = "<small></small><h3></h3><p></p>";
+        article.querySelector("small").textContent = number; article.querySelector("h3").textContent = title; article.querySelector("p").textContent = body; return article;
+      });
+      fillList("featureGrid", data.features, ([icon, title, body]) => {
+        const article = document.createElement("article"); article.className = "feature-card"; article.innerHTML = '<div class="feature-icon"></div><h3></h3><p></p>';
+        article.querySelector(".feature-icon").textContent = icon; article.querySelector("h3").textContent = title; article.querySelector("p").textContent = body; return article;
+      });
+      fillList("benefitList", data.benefits, ([icon, title, body]) => {
+        const div = document.createElement("div"); div.className = "benefit"; div.innerHTML = '<span class="benefit-icon"></span><div><strong></strong><p></p></div>';
+        div.querySelector(".benefit-icon").textContent = icon; div.querySelector("strong").textContent = title; div.querySelector("p").textContent = body; return div;
+      });
+      fillList("roleGrid", data.roles, ([title, body]) => {
+        const article = document.createElement("article"); article.className = "role-card"; article.innerHTML = "<h3></h3><p></p>";
+        article.querySelector("h3").textContent = title; article.querySelector("p").textContent = body; return article;
+      });
+      fillList("processGrid", data.process, ([step, title, body]) => {
+        const article = document.createElement("article"); article.className = "process-card"; article.innerHTML = "<small></small><h3></h3><p></p>";
+        article.querySelector("small").textContent = step; article.querySelector("h3").textContent = title; article.querySelector("p").textContent = body; return article;
+      });
+      fillList("faqGrid", data.faqs, ([question, answer]) => {
+        const details = document.createElement("details"); details.innerHTML = "<summary></summary><p></p>";
+        details.querySelector("summary").textContent = question; details.querySelector("p").textContent = answer; return details;
+      });
+
+      const folder = screenLangMap[next];
+      document.getElementById("heroImage").src = `/assets/screens/${folder}/screen-1.webp?v=20260518`;
+      document.getElementById("continueImageOne").src = `/assets/screens/${folder}/screen-8.webp?v=20260518`;
+      document.getElementById("continueImageTwo").src = `/assets/screens/${folder}/screen-3.webp?v=20260518`;
+
+      if (updateUrl) {
+        const url = new URL(window.location.href); url.searchParams.set("lang", next); window.history.replaceState({}, "", url);
+      }
+    }
+
+    document.querySelectorAll("[data-lang]").forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang, true)));
+    setLanguage(detectLanguage());
+  </script>
+</body>
+</html>
