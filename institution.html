@@ -110,6 +110,16 @@
     .parent-mode-list{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .parent-mode-item{display:grid;grid-template-columns:26px 1fr;gap:9px;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.46);font-size:13px;color:var(--muted)}
     .parent-mode-item:before{content:"✓";width:24px;height:24px;border-radius:8px;background:var(--mint);display:grid;place-items:center;color:#597558;font-weight:900}
+    .parent-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .parent-proof-card{display:flex;min-width:0;flex-direction:column;gap:20px;padding:24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,249,.8)}
+    .parent-proof-card:nth-child(2){background:linear-gradient(155deg,#fffdf9 0,#e7edf4 100%)}
+    .parent-proof-card:nth-child(3){background:linear-gradient(155deg,#fffdf9 0,#e5eee3 100%)}
+    .parent-proof-card:nth-child(4){background:linear-gradient(155deg,#fffdf9 0,#f2e5d6 100%)}
+    .parent-proof-card .phone{width:min(210px,100%);margin:auto;box-shadow:0 22px 50px rgba(67,58,49,.18)}
+    .parent-proof-copy span{display:block;margin-bottom:7px;color:#a17f59;font-size:11px;font-weight:900;letter-spacing:.09em}
+    .parent-proof-copy h3{margin-bottom:7px;font-size:18px}
+    .parent-proof-copy p{margin:0;color:var(--muted);font-size:13px}
+    .continuity{margin-top:108px}
     .quote{margin:34px 0 0;border-left:3px solid #d2ac7d;padding:3px 0 3px 20px;font-size:20px;font-weight:800;line-height:1.55}
     .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .benefit{padding:26px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.52)}
@@ -136,13 +146,13 @@
     @media(max-width:980px){
       .nav-links{display:none}.hero{grid-template-columns:1fr;min-height:auto;text-align:center;padding-top:50px}.hero-copy{display:grid;justify-items:center}.hero-stage{min-height:600px}
       .product-lead,.continuity,.faq{grid-template-columns:1fr;gap:50px}.gallery{grid-template-columns:repeat(2,1fr)}.gallery .showcase:last-child{grid-column:1/-1}
-      .flow,.benefits{grid-template-columns:repeat(2,1fr)}.feature-groups{grid-template-columns:1fr 1fr}.cta{grid-template-columns:1fr;padding:50px}
+      .flow,.benefits,.parent-proof-grid{grid-template-columns:repeat(2,1fr)}.feature-groups{grid-template-columns:1fr 1fr}.cta{grid-template-columns:1fr;padding:50px}
     }
     @media(max-width:660px){
       .wrap{width:min(100% - 28px,var(--max))}.nav{height:70px}.brand span{font-size:18px}.nav .button{display:none}.lang{max-width:118px}
       .hero{padding:36px 0 60px;gap:20px}h1{font-size:42px}.lead{font-size:17px}.hero-stage{min-height:570px}.float-chip{font-size:11px;padding:10px 12px}.chip-a{left:-4px}.chip-b{right:-4px}
       .audience-row{grid-template-columns:1fr;padding:22px 0;gap:10px}.section{padding:82px 0}.section-head{margin-bottom:38px}.screen-stage{min-height:590px}
-      .gallery,.scenarios,.flow,.benefits,.feature-groups{grid-template-columns:1fr}.gallery .showcase:last-child{grid-column:auto}.showcase{padding:22px}.showcase .phone{width:245px}
+      .gallery,.scenarios,.flow,.benefits,.feature-groups,.parent-proof-grid{grid-template-columns:1fr}.gallery .showcase:last-child{grid-column:auto}.showcase{padding:22px}.showcase .phone{width:245px}.parent-proof-card .phone{width:245px}.continuity{margin-top:76px}
       .scenario{padding:30px 24px}.two-phones{grid-template-columns:1fr;gap:18px}.phone-step .phone{width:260px}.bridge{gap:7px;margin:0}.bridge:before,.bridge:after{width:54px;height:1px}.bridge-arrow{transform:rotate(90deg)}.parent-mode-list{grid-template-columns:1fr}.cta{width:calc(100% - 28px);margin-bottom:60px;padding:38px 24px;border-radius:28px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
@@ -259,6 +269,31 @@
     </section>
 
     <section class="section soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="parentGalleryKicker">家長端真正收到的內容</div>
+          <h2 data-i18n="parentGalleryTitle">不是只有一張摘要，而是每天的照護、老師回饋與待確認事項都有完整脈絡。</h2>
+          <p class="lead" data-i18n="parentGalleryLead">下面都是家長實際使用的畫面。家長能從聯絡簿看懂寶寶今天吃了多少、睡了多久、參與什麼活動，也能留言、查看公告並完成已讀或用品確認。</p>
+        </div>
+        <div class="parent-proof-grid">
+          <article class="parent-proof-card">
+            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-care-book-overview.png" alt="BiuLog 家長端聯絡簿總覽與每日照護摘要" width="1080" height="2400"></figure>
+            <div class="parent-proof-copy"><span>01</span><h3 data-i18n="parentGalleryOneTitle">聯絡簿總覽</h3><p data-i18n="parentGalleryOneText">送達狀態、今日心情、飲食與喝奶、尿布、睡眠摘要，一打開就看得懂。</p></div>
+          </article>
+          <article class="parent-proof-card">
+            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-care-book-detail.png" alt="BiuLog 家長端今日照護明細與老師回饋" width="1080" height="2400"></figure>
+            <div class="parent-proof-copy"><span>02</span><h3 data-i18n="parentGalleryTwoTitle">今日照護明細</h3><p data-i18n="parentGalleryTwoText">入托時間、體溫、飲食、活動、繪本與老師觀察保留在同一份紀錄裡。</p></div>
+          </article>
+          <article class="parent-proof-card">
+            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-care-book-actions.png" alt="BiuLog 家長端聯絡簿留言照片與用品提醒" width="1080" height="2400"></figure>
+            <div class="parent-proof-copy"><span>03</span><h3 data-i18n="parentGalleryThreeTitle">留言與重要事項</h3><p data-i18n="parentGalleryThreeText">家長可留言、查看照護照片，並直接確認聯絡簿或用品提醒，不必在群組裡追訊息。</p></div>
+          </article>
+          <article class="parent-proof-card">
+            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-announcement.png" alt="BiuLog 家長端機構公告與確認已閱讀" width="1080" height="2400"></figure>
+            <div class="parent-proof-copy"><span>04</span><h3 data-i18n="parentGalleryFourTitle">機構公告</h3><p data-i18n="parentGalleryFourText">活動與臨時通知集中呈現，家長按下確認後，機構端也能掌握是否已讀。</p></div>
+          </article>
+        </div>
+      </div>
       <div class="wrap continuity">
         <div class="two-phones" aria-label="家長加入機構後到家庭育兒的連續體驗">
           <figure class="phone-step">
@@ -341,6 +376,7 @@
         productKicker:"實際 App 畫面",productTitle:"主管打開 App，先看見今天還有什麼沒完成。",productLead:"不用逐一問老師，也不用翻群組訊息。今日入托、照護紀錄、聯絡簿發布、家長已讀與待處理事項，都集中在同一個工作畫面。",
         screenPoints:[["01","班級進度","尚未紀錄、待發布、已送達、家長已讀，一眼分清。"],["02","照護快捷","喝奶、尿布、睡眠與副食品，第一線可以直接記。"],["03","重要事項","用品、接送、用藥與校內交班各自有狀態，不埋在聊天訊息裡。"]],
         galleryKicker:"第一線真的用得到",galleryTitle:"從記錄到交付，不必在紙本、群組和表格之間來回。",galleryLead:"下面不是示意圖，而是 BiuLog 現有機構端功能。每個畫面都對應照護現場每天會發生的工作。",galleryOneTitle:"多人快速紀錄",galleryOneText:"一次選擇多位寶寶，批次記錄喝奶、尿布、睡眠與副食品，再保留個別修改空間。",galleryTwoTitle:"每日聯絡簿",galleryTwoText:"今日照護內容自動整理成聯絡簿，發布前可檢查；發布後可確認家長是否已讀。",galleryThreeTitle:"公告與家長確認",galleryThreeText:"活動、用品與臨時通知一次發布給指定家庭，已讀狀態直接留在 App 裡。",
+        parentGalleryKicker:"家長端真正收到的內容",parentGalleryTitle:"不是只有一張摘要，而是每天的照護、老師回饋與待確認事項都有完整脈絡。",parentGalleryLead:"下面都是家長實際使用的畫面。家長能從聯絡簿看懂寶寶今天吃了多少、睡了多久、參與什麼活動，也能留言、查看公告並完成已讀或用品確認。",parentGalleryOneTitle:"聯絡簿總覽",parentGalleryOneText:"送達狀態、今日心情、飲食與喝奶、尿布、睡眠摘要，一打開就看得懂。",parentGalleryTwoTitle:"今日照護明細",parentGalleryTwoText:"入托時間、體溫、飲食、活動、繪本與老師觀察保留在同一份紀錄裡。",parentGalleryThreeTitle:"留言與重要事項",parentGalleryThreeText:"家長可留言、查看照護照片，並直接確認聯絡簿或用品提醒，不必在群組裡追訊息。",parentGalleryFourTitle:"機構公告",parentGalleryFourText:"活動與臨時通知集中呈現，家長按下確認後，機構端也能掌握是否已讀。",
         flowKicker:"一條清楚的工作流程",flowTitle:"照護人員記一次，主管、家長與下一班都接得到。",flowLead:"每個角色在同一套資料上完成自己的工作，減少重抄、漏看與「到底誰處理了」的來回確認。",flow:[["照護人員記錄","用手機快速完成個別或多人照護紀錄。"],["主管掌握進度","即時看班級、出勤、待辦與聯絡簿狀態。"],["家長收到內容","每日聯絡簿、公告與重要事項清楚送達。"],["下一班接續","重要異動與處理狀態可回看，交班更有依據。"]],
         scenarioKicker:"依照護現場使用",scenarioTitle:"托嬰中心與月子中心，都能從每天最頻繁的工作開始。",
         scenarios:[["托嬰中心","班級協作與每日聯絡更有秩序",["班級、老師與寶寶的操作範圍清楚","到托／離托、請假與接送資訊集中","多人批次記錄，聯絡簿下班前統一檢查","用品、用藥、事件與家長回覆可追蹤"]],["月子中心／產後護理之家","密集照護與返家銜接更完整",["喝奶、尿布、睡眠等高頻內容快速記錄","重要照護事項留在同一份寶寶脈絡裡","家長在館期間即時看見每天的照護內容","離館後繼續使用熟悉的家庭育兒功能"]]],
@@ -358,6 +394,7 @@
         productKicker:"Real product screen",productTitle:"Open the app and see what still needs attention today.",productLead:"No need to ask every staff member or search through chat. Check-in, care records, publishing, family reads, and open tasks are together in one workspace.",
         screenPoints:[["01","Class progress","Separate not started, ready to publish, delivered, and read at a glance."],["02","Fast care records","Record feeding, diapers, sleep, and solids right from the workspace."],["03","Important items","Keep supplies, pickup, medication, and staff handover out of scattered chat."]],
         galleryKicker:"Built for frontline work",galleryTitle:"From recording to delivery—without jumping between paper, chat, and spreadsheets.",galleryLead:"These are current BiuLog organization screens, each tied to work that care teams do every day.",galleryOneTitle:"Batch care records",galleryOneText:"Select multiple children, record frequent care items in one flow, and keep individual edits available.",galleryTwoTitle:"Daily care book",galleryTwoText:"Care activity is organized into a daily report for review, publishing, and family-read tracking.",galleryThreeTitle:"Notices and read status",galleryThreeText:"Send activities, supply reminders, and urgent notices to selected families, with read status in the app.",
+        parentGalleryKicker:"What families actually receive",parentGalleryTitle:"More than a summary: daily care, staff feedback, and items needing a response stay in one clear story.",parentGalleryLead:"These are real family-side screens. Parents can see how much their child ate, slept, and participated, then leave a message, review notices, and confirm care books or supply reminders.",parentGalleryOneTitle:"Care-book overview",parentGalleryOneText:"Delivery status, mood, meals, feeding, diapers, and sleep are understandable at a glance.",parentGalleryTwoTitle:"Daily care details",parentGalleryTwoText:"Check-in, temperature, meals, activities, books, and staff observations stay together.",parentGalleryThreeTitle:"Messages and important items",parentGalleryThreeText:"Families can message, view care photos, and confirm reports or supply reminders without searching group chat.",parentGalleryFourTitle:"Organization notices",parentGalleryFourText:"Activities and urgent updates stay in one place, with read confirmation visible to the organization.",
         flowKicker:"One clear workflow",flowTitle:"Record once, and managers, families, and the next shift can all continue.",flowLead:"Each role works from the same care context, reducing rewrites, missed messages, and repeated follow-up.",flow:[["Staff records care","Complete individual or batch records quickly on a phone."],["Managers see progress","Review classes, attendance, tasks, and report status."],["Families receive updates","Daily reports, notices, and important items arrive clearly."],["The next shift continues","Important changes and action status stay available for handover."]],
         scenarioKicker:"Fits the care setting",scenarioTitle:"Childcare and postpartum care teams can start with their most frequent daily work.",scenarios:[["Childcare centers","More orderly class collaboration and daily communication",["Clear scope for classes, staff, and children","Check-in, check-out, leave, and pickup in one place","Batch records with final care-book review","Track supplies, medication, incidents, and replies"]],["Postpartum care centers","Complete high-frequency care and transition home",["Fast feeding, diaper, and sleep records","Keep important care items in one child timeline","Families see daily care while in residence","Continue familiar family tools after discharge"]]],
         continuityKicker:"The real family experience",continuityTitle:"Joining a care organization adds care books and notices—the family home screen stays in place.",continuityLead:"Families only see their own child’s organization content. They can review daily care, reports, notices, photos, messages, and items that need a reply while continuing their existing feeding, sleep, diaper, and growth records.",parentStepLabel:"After joining",parentStepCaption:"See your child’s care book, notices, and important items",bridgeLabel:"Continue after discharge or graduation",homeStepLabel:"Family routines",homeStepCaption:"Keep tracking feeding, diapers, sleep, growth, and vaccines",parentModeItems:["Only your own child’s organization content","Care books, notices, photos, and messages","Supplies, medication, pickup, and leave items","Home records and organization sharing remain separate"],continuityQuote:"You are not only delivering a report—you are giving families a reassuring habit they can take home.",
@@ -374,6 +411,7 @@
         productKicker:"実際のアプリ画面",productTitle:"アプリを開けば、今日まだ終わっていないことが分かります。",productLead:"職員一人ひとりに確認したり、チャットを探したりする必要はありません。登園、ケア記録、連絡帳の公開、保護者確認、対応事項をひとつの画面で把握できます。",
         screenPoints:[["01","クラス進捗","未記録・公開待ち・配信済み・保護者確認済みを一覧で確認。"],["02","すばやいケア記録","授乳、おむつ、睡眠、離乳食をその場で記録。"],["03","重要事項","用品、送迎、与薬、職員間の引き継ぎをチャットに埋もれさせません。"]],
         galleryKicker:"現場で使える設計",galleryTitle:"記録から共有まで、紙・チャット・表計算を行き来しません。",galleryLead:"下記はすべて BiuLog の現在の施設向け機能です。",galleryOneTitle:"複数人の一括記録",galleryOneText:"複数のお子さまを選び、よく使うケア項目をまとめて記録しながら個別修正もできます。",galleryTwoTitle:"毎日の連絡帳",galleryTwoText:"ケア内容を連絡帳に自動整理。公開前の確認と、公開後の保護者既読を追跡できます。",galleryThreeTitle:"お知らせと既読",galleryThreeText:"行事、用品、臨時連絡を対象家庭へ一括配信し、既読をアプリ内で確認できます。",
+        parentGalleryKicker:"保護者が実際に受け取る内容",parentGalleryTitle:"概要だけではなく、毎日のケア、スタッフのコメント、確認事項までひとつの流れで伝わります。",parentGalleryLead:"以下は保護者側の実際の画面です。食事量、睡眠、活動を連絡帳で確認し、メッセージ、お知らせ、既読確認、用品確認まで行えます。",parentGalleryOneTitle:"連絡帳の概要",parentGalleryOneText:"配信状態、気分、食事、授乳、おむつ、睡眠をひと目で確認できます。",parentGalleryTwoTitle:"今日のケア詳細",parentGalleryTwoText:"登園、体温、食事、活動、絵本、スタッフの観察を一つの記録で確認できます。",parentGalleryThreeTitle:"メッセージと重要事項",parentGalleryThreeText:"メッセージやケア写真を確認し、連絡帳や用品の準備をアプリ内で返答できます。",parentGalleryFourTitle:"施設からのお知らせ",parentGalleryFourText:"行事や臨時連絡をまとめて確認。保護者の既読も施設側で把握できます。",
         flowKicker:"ひとつの明確な流れ",flowTitle:"一度記録すれば、管理者・保護者・次のシフトへつながります。",flowLead:"同じケア情報を各役割が使うことで、転記、見落とし、確認の往復を減らします。",flow:[["スタッフが記録","スマートフォンで個別・一括ケアを記録。"],["管理者が把握","クラス、登降園、対応事項、連絡帳を確認。"],["保護者へ共有","連絡帳、お知らせ、重要事項を分かりやすく配信。"],["次のシフトへ","変更や対応状況を残し、引き継ぎの根拠に。"]],
         scenarioKicker:"ケア現場に合わせて",scenarioTitle:"保育施設も産後ケア施設も、頻度の高い業務から始められます。",scenarios:[["保育施設","クラス連携と毎日の連絡を整理",["クラス・職員・お子さまの範囲を明確に","登降園、欠席、送迎情報を一か所に","一括記録と連絡帳の最終確認","用品、与薬、事故、返信を追跡"]],["産後ケア施設","高頻度ケアと退所後をつなぐ",["授乳、おむつ、睡眠をすばやく記録","重要事項をお子さまの流れに集約","滞在中のケアを保護者が確認","退所後も家庭向け機能を継続"]]],
         continuityKicker:"保護者側の実際の体験",continuityTitle:"施設に参加すると連絡帳とお知らせが追加され、家庭用ホームはそのまま使えます。",continuityLead:"保護者が見られるのは自分のお子さまの施設情報だけです。毎日のケア、連絡帳、お知らせ、写真、メッセージ、返信が必要な事項を確認しながら、家庭の授乳・睡眠・おむつ・成長記録も続けられます。",parentStepLabel:"施設に参加後",parentStepCaption:"自分のお子さまの連絡帳・お知らせ・重要事項",bridgeLabel:"退所・卒園後も継続",homeStepLabel:"家庭の日常",homeStepCaption:"授乳・おむつ・睡眠・成長・予防接種を継続",parentModeItems:["自分のお子さまの施設情報だけを表示","連絡帳、お知らせ、写真、メッセージ","用品、与薬、送迎、欠席などの対応事項","家庭記録と施設共有の範囲を分けて管理"],continuityQuote:"連絡帳だけでなく、家庭に持ち帰れる安心の習慣を届けます。",
@@ -390,6 +428,7 @@
         productKicker:"실제 앱 화면",productTitle:"앱을 열면 오늘 아직 끝나지 않은 일이 보입니다.",productLead:"선생님마다 묻거나 채팅을 뒤질 필요가 없습니다. 등원, 돌봄 기록, 알림장 게시, 보호자 확인, 처리할 일을 한 화면에서 봅니다.",
         screenPoints:[["01","반 진행 상황","미기록·게시 대기·전달·보호자 확인을 한눈에 구분합니다."],["02","빠른 돌봄 기록","수유, 기저귀, 수면, 이유식을 바로 기록합니다."],["03","중요 사항","준비물, 하원, 투약, 직원 인계를 채팅 속에 묻히지 않게 합니다."]],
         galleryKicker:"현장에서 실제로 사용",galleryTitle:"기록부터 전달까지 종이, 채팅, 표를 오가지 않습니다.",galleryLead:"아래는 모두 현재 BiuLog 기관용 실제 기능입니다.",galleryOneTitle:"여러 명 빠른 기록",galleryOneText:"여러 아이를 선택해 자주 쓰는 돌봄 항목을 한 번에 기록하고 개별 수정할 수 있습니다.",galleryTwoTitle:"매일 알림장",galleryTwoText:"돌봄 내용을 알림장으로 정리하고 게시 전 검토와 게시 후 보호자 확인을 추적합니다.",galleryThreeTitle:"공지와 확인",galleryThreeText:"행사, 준비물, 긴급 공지를 대상 가족에게 보내고 읽음 상태를 확인합니다.",
+        parentGalleryKicker:"보호자가 실제로 받는 내용",parentGalleryTitle:"요약 한 장이 아니라 매일의 돌봄, 교사 피드백, 확인할 사항이 하나의 흐름으로 전달됩니다.",parentGalleryLead:"아래는 실제 보호자 화면입니다. 식사량, 수면, 활동을 알림장에서 확인하고 메시지, 공지, 읽음 확인, 준비물 확인까지 할 수 있습니다.",parentGalleryOneTitle:"알림장 한눈에 보기",parentGalleryOneText:"전달 상태, 기분, 식사, 수유, 기저귀, 수면을 한눈에 이해할 수 있습니다.",parentGalleryTwoTitle:"오늘의 돌봄 상세",parentGalleryTwoText:"등원, 체온, 식사, 활동, 그림책, 교사의 관찰을 한 기록에서 확인합니다.",parentGalleryThreeTitle:"메시지와 중요 사항",parentGalleryThreeText:"메시지와 돌봄 사진을 보고 알림장이나 준비물 요청을 앱에서 바로 확인합니다.",parentGalleryFourTitle:"기관 공지",parentGalleryFourText:"행사와 긴급 안내를 한곳에서 확인하고 기관은 보호자의 읽음 상태를 확인할 수 있습니다.",
         flowKicker:"하나의 명확한 흐름",flowTitle:"한 번 기록하면 관리자, 보호자, 다음 근무자가 이어받습니다.",flowLead:"같은 돌봄 맥락에서 역할별로 일해 중복 작성과 누락, 반복 확인을 줄입니다.",flow:[["담당자가 기록","휴대폰에서 개별·일괄 돌봄을 기록합니다."],["관리자가 확인","반, 출결, 할 일, 알림장 상태를 봅니다."],["보호자에게 전달","알림장, 공지, 중요 사항을 명확히 보냅니다."],["다음 근무로 연결","변경과 처리 상태를 남겨 인계 근거로 씁니다."]],
         scenarioKicker:"돌봄 현장에 맞게",scenarioTitle:"어린이집과 산후조리원 모두 가장 잦은 일부터 시작할 수 있습니다.",scenarios:[["어린이집","반 협업과 일상 소통을 정리",["반·교사·아이 범위를 명확하게","등하원, 결석, 픽업 정보를 한곳에","일괄 기록 후 알림장 최종 확인","준비물, 투약, 사고, 답변 추적"]],["산후조리원","고빈도 돌봄과 퇴소 후를 연결",["수유, 기저귀, 수면을 빠르게 기록","중요 돌봄을 아이 흐름에 모아 관리","입실 중 보호자가 매일 돌봄 확인","퇴소 후에도 가족 기능을 계속 사용"]]],
         continuityKicker:"보호자용 실제 경험",continuityTitle:"기관에 참여하면 알림장과 공지가 추가되고, 기존 가족 홈은 그대로 유지됩니다.",continuityLead:"보호자는 자기 아이의 기관 내용만 볼 수 있습니다. 매일 돌봄, 알림장, 공지, 사진, 메시지, 답변할 사항을 확인하면서 기존 수유, 수면, 기저귀, 성장 기록도 계속 사용할 수 있습니다.",parentStepLabel:"기관 참여 후",parentStepCaption:"내 아이의 알림장, 공지, 중요 사항 확인",bridgeLabel:"퇴소·졸업 후에도 계속",homeStepLabel:"가족 일상",homeStepCaption:"수유, 기저귀, 수면, 성장, 예방접종 계속 기록",parentModeItems:["내 아이의 기관 돌봄 내용만 표시","알림장, 공지, 사진, 메시지 확인","준비물, 투약, 픽업, 결석 사항 처리","가족 기록과 기관 공유 범위를 분리 관리"],continuityQuote:"알림장 한 장이 아니라 가족이 집으로 가져갈 안심 습관을 제공합니다.",
@@ -400,7 +439,7 @@
       }
     };
 
-    const ids=["navProduct","navScenarios","navFeatures","navParents","navCta","eyebrow","heroTitle","heroLead","heroCta","heroSecondary","heroMicro","chipOne","chipTwo","audienceLabel","productKicker","productTitle","productLead","galleryKicker","galleryTitle","galleryLead","galleryOneTitle","galleryOneText","galleryTwoTitle","galleryTwoText","galleryThreeTitle","galleryThreeText","flowKicker","flowTitle","flowLead","scenarioKicker","scenarioTitle","continuityKicker","continuityTitle","continuityLead","parentStepLabel","parentStepCaption","bridgeLabel","homeStepLabel","homeStepCaption","continuityQuote","benefitKicker","benefitTitle","featuresKicker","featuresTitle","faqKicker","faqTitle","faqLead","ctaKicker","ctaTitle","ctaLead","ctaButton","footerParents"];
+    const ids=["navProduct","navScenarios","navFeatures","navParents","navCta","eyebrow","heroTitle","heroLead","heroCta","heroSecondary","heroMicro","chipOne","chipTwo","audienceLabel","productKicker","productTitle","productLead","galleryKicker","galleryTitle","galleryLead","galleryOneTitle","galleryOneText","galleryTwoTitle","galleryTwoText","galleryThreeTitle","galleryThreeText","parentGalleryKicker","parentGalleryTitle","parentGalleryLead","parentGalleryOneTitle","parentGalleryOneText","parentGalleryTwoTitle","parentGalleryTwoText","parentGalleryThreeTitle","parentGalleryThreeText","parentGalleryFourTitle","parentGalleryFourText","flowKicker","flowTitle","flowLead","scenarioKicker","scenarioTitle","continuityKicker","continuityTitle","continuityLead","parentStepLabel","parentStepCaption","bridgeLabel","homeStepLabel","homeStepCaption","continuityQuote","benefitKicker","benefitTitle","featuresKicker","featuresTitle","faqKicker","faqTitle","faqLead","ctaKicker","ctaTitle","ctaLead","ctaButton","footerParents"];
     function esc(v){return String(v).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]})}
     function render(lang){
       const c=COPY[lang]||COPY.zh;

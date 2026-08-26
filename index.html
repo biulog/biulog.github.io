@@ -474,6 +474,106 @@
       line-height: 1.45;
     }
 
+    .parent-care-band {
+      padding: 92px 0;
+      background:
+        radial-gradient(circle at 8% 16%, rgba(232, 205, 172, .32), transparent 24rem),
+        radial-gradient(circle at 92% 84%, rgba(164, 195, 178, .25), transparent 26rem),
+        #fffdf9;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .parent-care-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 54px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .parent-care-kicker {
+      color: var(--gold-deep);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .parent-care-head h2 {
+      margin-top: 10px;
+    }
+
+    .parent-care-intro p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .parent-care-privacy {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 9px 13px;
+      border: 1px solid rgba(121, 169, 154, .4);
+      border-radius: 999px;
+      background: rgba(230, 241, 233, .8);
+      color: #4f705f;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .parent-care-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .parent-care-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 16px 38px rgba(27, 49, 70, .07);
+    }
+
+    .parent-care-card:nth-child(2) { background: linear-gradient(150deg, #fff 0, #eef3f8 100%); }
+    .parent-care-card:nth-child(3) { background: linear-gradient(150deg, #fff 0, #eef5ef 100%); }
+    .parent-care-card:nth-child(4) { background: linear-gradient(150deg, #fff 0, #f7ede2 100%); }
+
+    .parent-care-phone {
+      width: min(210px, 100%);
+      margin: 0 auto;
+      padding: 8px;
+      overflow: hidden;
+      border-radius: 34px;
+      background: #24211f;
+      box-shadow: 0 22px 48px rgba(41, 47, 52, .18);
+    }
+
+    .parent-care-phone img {
+      display: block;
+      width: 100%;
+      border-radius: 27px;
+    }
+
+    .parent-care-copy strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .parent-care-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
     .split {
       display: grid;
       grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
@@ -579,6 +679,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .parent-care-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .screens {
         grid-template-columns: repeat(3, minmax(210px, 1fr));
       }
@@ -587,7 +691,8 @@
     @media (max-width: 980px) {
       .hero,
       .split,
-      .pricing {
+      .pricing,
+      .parent-care-head {
         grid-template-columns: 1fr;
       }
 
@@ -662,8 +767,21 @@
 
       .features,
       .legal,
-      .plan-list {
+      .plan-list,
+      .parent-care-grid {
         grid-template-columns: 1fr;
+      }
+
+      .parent-care-band {
+        padding: 74px 0;
+      }
+
+      .parent-care-card {
+        padding: 20px;
+      }
+
+      .parent-care-phone {
+        width: 252px;
       }
 
       .screens {
@@ -763,6 +881,39 @@
       </div>
     </section>
 
+    <section class="parent-care-band" id="parent-care-book">
+      <div class="wrap">
+        <div class="parent-care-head">
+          <div>
+            <div class="parent-care-kicker" data-i18n="parentCareKicker">加入托育或月子機構後</div>
+            <h2 data-i18n="parentCareTitle">家長不只收到一句「今天很好」，而是看得懂寶寶一整天的照護。</h2>
+          </div>
+          <div class="parent-care-intro">
+            <p data-i18n="parentCareLead">原本的家庭育兒首頁照常使用；如果寶寶加入合作機構，App 會再多出專屬聯絡簿、每日照護明細、機構公告、照片、留言與重要事項。</p>
+            <span class="parent-care-privacy" data-i18n="parentCarePrivacy">只顯示自己寶寶的內容，家庭紀錄與機構共享範圍分開管理</span>
+          </div>
+        </div>
+        <div class="parent-care-grid">
+          <article class="parent-care-card">
+            <figure class="parent-care-phone"><img loading="lazy" decoding="async" src="/assets/institution/parent-care-book-overview.png" alt="BiuLog 家長端聯絡簿總覽" width="1080" height="2400"></figure>
+            <div class="parent-care-copy"><strong data-i18n="parentCareOneTitle">每天的聯絡簿，一眼先看重點</strong><p data-i18n="parentCareOneText">今日心情、飲食、喝奶、尿布與睡眠摘要集中呈現，不用等紙本，也不用翻聊天訊息。</p></div>
+          </article>
+          <article class="parent-care-card">
+            <figure class="parent-care-phone"><img loading="lazy" decoding="async" src="/assets/institution/parent-care-book-detail.png" alt="BiuLog 家長端今日照護明細" width="1080" height="2400"></figure>
+            <div class="parent-care-copy"><strong data-i18n="parentCareTwoTitle">細節與老師回饋，都留在同一天</strong><p data-i18n="parentCareTwoText">入托、體溫、飲食、活動、繪本與老師觀察完整保留，晚上接手照顧時更有依據。</p></div>
+          </article>
+          <article class="parent-care-card">
+            <figure class="parent-care-phone"><img loading="lazy" decoding="async" src="/assets/institution/parent-care-book-actions.png" alt="BiuLog 家長端留言照片與用品提醒" width="1080" height="2400"></figure>
+            <div class="parent-care-copy"><strong data-i18n="parentCareThreeTitle">可以留言、看照片，也能回覆重要事項</strong><p data-i18n="parentCareThreeText">聯絡簿已讀、用品提醒與家長回覆都能直接完成，重要訊息不再散落。</p></div>
+          </article>
+          <article class="parent-care-card">
+            <figure class="parent-care-phone"><img loading="lazy" decoding="async" src="/assets/institution/parent-announcement.png" alt="BiuLog 家長端機構公告" width="1080" height="2400"></figure>
+            <div class="parent-care-copy"><strong data-i18n="parentCareFourTitle">機構公告集中看，確認過就有紀錄</strong><p data-i18n="parentCareFourText">活動、入園提醒與臨時通知都在 App 裡，家長與機構都知道訊息有沒有送達。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="wrap section">
       <div class="split">
         <div class="section-head">
@@ -832,6 +983,18 @@
         featuresLead: "快速記錄、多人共享、趨勢分析、疫苗與成長追蹤都在同一套流程裡，新手爸媽容易上手，專業照顧者也能清楚交接。",
         screensTitle: "功能完整，操作依然直覺",
         screensLead: "首頁快速記錄、每日時間線、作息圖表、疫苗與成長資料各自清楚呈現，需要的資訊不用翻找。",
+        parentCareKicker: "加入托育或月子機構後",
+        parentCareTitle: "家長不只收到一句「今天很好」，而是看得懂寶寶一整天的照護。",
+        parentCareLead: "原本的家庭育兒首頁照常使用；如果寶寶加入合作機構，App 會再多出專屬聯絡簿、每日照護明細、機構公告、照片、留言與重要事項。",
+        parentCarePrivacy: "只顯示自己寶寶的內容，家庭紀錄與機構共享範圍分開管理",
+        parentCareOneTitle: "每天的聯絡簿，一眼先看重點",
+        parentCareOneText: "今日心情、飲食、喝奶、尿布與睡眠摘要集中呈現，不用等紙本，也不用翻聊天訊息。",
+        parentCareTwoTitle: "細節與老師回饋，都留在同一天",
+        parentCareTwoText: "入托、體溫、飲食、活動、繪本與老師觀察完整保留，晚上接手照顧時更有依據。",
+        parentCareThreeTitle: "可以留言、看照片，也能回覆重要事項",
+        parentCareThreeText: "聯絡簿已讀、用品提醒與家長回覆都能直接完成，重要訊息不再散落。",
+        parentCareFourTitle: "機構公告集中看，確認過就有紀錄",
+        parentCareFourText: "活動、入園提醒與臨時通知都在 App 裡，家長與機構都知道訊息有沒有送達。",
         careTitle: "把日常記錄，變成有用的照護資訊",
         careLead: "細分親餵、瓶餵母乳與配方奶，掌握睡眠、尿布、副食品與每日時間線，再透過圖表看出寶寶最近的生活節奏。",
         proTitle: "讓家長即時掌握，也讓專業照護被看見",
@@ -900,6 +1063,18 @@
         featuresLead: "Quick logging, shared care, trend analysis, vaccines, and growth tracking work together in one flow that is easy for new parents and clear for professional caregivers.",
         screensTitle: "Complete capabilities. Intuitive by design.",
         screensLead: "Quick home logging, daily timelines, routine charts, vaccines, and growth records each present the right details without extra searching.",
+        parentCareKicker: "After joining childcare or postpartum care",
+        parentCareTitle: "Parents receive more than ‘a good day’—they can understand the child’s whole day of care.",
+        parentCareLead: "The family home screen stays in place. When a child joins a partner organization, the app adds a private care book, daily care details, notices, photos, messages, and important items.",
+        parentCarePrivacy: "Only your child’s content is shown; home records and organization sharing remain separate",
+        parentCareOneTitle: "See the day’s essentials first",
+        parentCareOneText: "Mood, meals, feeding, diapers, and sleep are summarized clearly without waiting for paper or searching chat.",
+        parentCareTwoTitle: "Details and staff feedback stay together",
+        parentCareTwoText: "Check-in, temperature, meals, activities, books, and observations give families context for care at home.",
+        parentCareThreeTitle: "Message, view photos, and respond",
+        parentCareThreeText: "Read confirmation, supply reminders, and family replies happen directly in the app so important items stay visible.",
+        parentCareFourTitle: "Organization notices in one place",
+        parentCareFourText: "Activities, arrival reminders, and urgent updates stay together, with delivery and read status available.",
         careTitle: "Turn daily logs into useful care insight",
         careLead: "Track nursing, expressed breast milk, and formula separately, then review sleep, diapers, solids, daily timelines, and charts to understand the baby's recent rhythm.",
         proTitle: "Keep parents informed. Make professional care visible.",
@@ -968,6 +1143,18 @@
         featuresLead: "すばやい記録、家族やケア担当者との共有、傾向分析、予防接種、成長記録をひとつの流れで管理できます。",
         screensTitle: "充実した機能を、直感的な操作で",
         screensLead: "ホームのクイック記録、毎日のタイムライン、生活リズムのグラフ、予防接種、成長記録。必要な情報に迷わずアクセスできます。",
+        parentCareKicker: "保育・産後ケア施設に参加すると",
+        parentCareTitle: "「今日も元気でした」だけでなく、お子さまの一日のケアが具体的に分かります。",
+        parentCareLead: "家庭用ホームはそのまま利用できます。提携施設に参加すると、専用の連絡帳、ケア詳細、お知らせ、写真、メッセージ、重要事項が追加されます。",
+        parentCarePrivacy: "表示されるのは自分のお子さまの内容だけ。家庭記録と施設共有は分けて管理",
+        parentCareOneTitle: "毎日の連絡帳で、まず要点を確認",
+        parentCareOneText: "気分、食事、授乳、おむつ、睡眠をまとめて確認。紙を待ったり、チャットを探したりする必要はありません。",
+        parentCareTwoTitle: "ケア詳細とスタッフのコメントを一緒に",
+        parentCareTwoText: "登園、体温、食事、活動、絵本、観察記録が残るため、帰宅後のケアにも役立ちます。",
+        parentCareThreeTitle: "メッセージ、写真、確認事項に対応",
+        parentCareThreeText: "連絡帳の既読、用品の準備、保護者からの返信をアプリ内で完了できます。",
+        parentCareFourTitle: "施設のお知らせをまとめて確認",
+        parentCareFourText: "行事、登園のお願い、臨時連絡を一か所で確認し、配信と既読の状態も残ります。",
         careTitle: "毎日の記録を、役立つケア情報へ",
         careLead: "直接授乳、搾乳母乳、ミルクを分けて管理し、睡眠、おむつ、離乳食、毎日の流れをグラフとタイムラインで確認できます。",
         proTitle: "保護者に安心を。プロのケアを、もっと見える形に。",
@@ -1036,6 +1223,18 @@
         featuresLead: "빠른 기록, 가족 및 돌봄 제공자 공유, 추세 분석, 예방접종, 성장 기록을 하나의 흐름에서 관리할 수 있습니다.",
         screensTitle: "풍부한 기능을 직관적인 화면으로",
         screensLead: "홈 빠른 기록, 하루 타임라인, 생활 패턴 차트, 예방접종, 성장 기록까지 필요한 정보를 바로 확인할 수 있습니다.",
+        parentCareKicker: "어린이집이나 산후조리원에 참여하면",
+        parentCareTitle: "‘오늘 잘 지냈어요’ 한마디가 아니라 아이의 하루 돌봄을 구체적으로 이해할 수 있습니다.",
+        parentCareLead: "기존 가족 홈은 그대로 사용합니다. 제휴 기관에 참여하면 전용 알림장, 돌봄 상세, 기관 공지, 사진, 메시지, 중요 사항이 추가됩니다.",
+        parentCarePrivacy: "내 아이의 내용만 표시되며 가족 기록과 기관 공유 범위는 따로 관리됩니다",
+        parentCareOneTitle: "매일 알림장에서 핵심부터 확인",
+        parentCareOneText: "기분, 식사, 수유, 기저귀, 수면을 한눈에 보고 종이나 채팅을 기다릴 필요가 없습니다.",
+        parentCareTwoTitle: "돌봄 상세와 교사 피드백을 함께",
+        parentCareTwoText: "등원, 체온, 식사, 활동, 그림책, 관찰 기록이 남아 귀가 후 돌봄에도 도움이 됩니다.",
+        parentCareThreeTitle: "메시지, 사진, 중요 사항에 바로 응답",
+        parentCareThreeText: "알림장 읽음, 준비물 요청, 보호자 답변을 앱에서 바로 처리할 수 있습니다.",
+        parentCareFourTitle: "기관 공지를 한곳에서 확인",
+        parentCareFourText: "행사, 등원 안내, 긴급 공지를 모아 보고 전달 및 읽음 상태도 기록됩니다.",
         careTitle: "일상 기록을 유용한 돌봄 정보로",
         careLead: "직수, 유축 모유, 분유를 나누어 관리하고 수면, 기저귀, 이유식, 하루 흐름을 차트와 타임라인으로 확인합니다.",
         proTitle: "부모에게는 안심을, 전문 돌봄에는 신뢰를",
