@@ -98,11 +98,18 @@
     .scenario ul,.benefit-list{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:13px}
     .scenario li,.benefit-list li{display:grid;grid-template-columns:20px 1fr;gap:10px;color:var(--muted)}
     .scenario li:before,.benefit-list li:before{content:"✓";font-weight:900;color:#6f956e}
-    .continuity{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
-    .two-phones{position:relative;min-height:650px}
-    .two-phones .phone:first-child{position:absolute;left:0;top:0;transform:rotate(-3deg)}
-    .two-phones .phone:last-child{position:absolute;right:0;bottom:0;transform:rotate(4deg)}
-    .bridge{position:absolute;z-index:5;left:50%;top:47%;transform:translate(-50%,-50%);width:94px;height:94px;border-radius:50%;display:grid;place-items:center;background:var(--dark);color:white;border:8px solid var(--paper);font-size:27px;font-weight:900}
+    .continuity{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+    .two-phones{display:grid;grid-template-columns:1fr 74px 1fr;gap:10px;align-items:center;min-width:0}
+    .phone-step{margin:0;display:grid;justify-items:center;gap:12px;min-width:0}
+    .phone-step .phone{width:min(238px,100%);transform:none}
+    .phone-step-label{font-size:13px;font-weight:900;color:#8f714f;text-align:center}
+    .phone-step figcaption{font-size:12px;line-height:1.45;color:var(--muted);font-weight:750;text-align:center;max-width:220px}
+    .bridge{display:grid;justify-items:center;gap:8px;color:#947b60;font-size:11px;line-height:1.35;font-weight:900;text-align:center;pointer-events:none}
+    .bridge:before,.bridge:after{content:"";width:1px;height:54px;background:#c9aa83}
+    .bridge-arrow{font-size:24px;line-height:1;color:var(--dark)}
+    .parent-mode-list{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .parent-mode-item{display:grid;grid-template-columns:26px 1fr;gap:9px;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.46);font-size:13px;color:var(--muted)}
+    .parent-mode-item:before{content:"✓";width:24px;height:24px;border-radius:8px;background:var(--mint);display:grid;place-items:center;color:#597558;font-weight:900}
     .quote{margin:34px 0 0;border-left:3px solid #d2ac7d;padding:3px 0 3px 20px;font-size:20px;font-weight:800;line-height:1.55}
     .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .benefit{padding:26px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.52)}
@@ -136,7 +143,7 @@
       .hero{padding:36px 0 60px;gap:20px}h1{font-size:42px}.lead{font-size:17px}.hero-stage{min-height:570px}.float-chip{font-size:11px;padding:10px 12px}.chip-a{left:-4px}.chip-b{right:-4px}
       .audience-row{grid-template-columns:1fr;padding:22px 0;gap:10px}.section{padding:82px 0}.section-head{margin-bottom:38px}.screen-stage{min-height:590px}
       .gallery,.scenarios,.flow,.benefits,.feature-groups{grid-template-columns:1fr}.gallery .showcase:last-child{grid-column:auto}.showcase{padding:22px}.showcase .phone{width:245px}
-      .scenario{padding:30px 24px}.two-phones{min-height:570px}.two-phones .phone{width:235px}.bridge{width:76px;height:76px}.cta{width:calc(100% - 28px);margin-bottom:60px;padding:38px 24px;border-radius:28px}
+      .scenario{padding:30px 24px}.two-phones{grid-template-columns:1fr;gap:18px}.phone-step .phone{width:260px}.bridge{gap:7px;margin:0}.bridge:before,.bridge:after{width:54px;height:1px}.bridge-arrow{transform:rotate(90deg)}.parent-mode-list{grid-template-columns:1fr}.cta{width:calc(100% - 28px);margin-bottom:60px;padding:38px 24px;border-radius:28px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
   </style>
@@ -253,15 +260,24 @@
 
     <section class="section soft">
       <div class="wrap continuity">
-        <div class="two-phones" aria-label="機構照護到家庭育兒的連續體驗">
-          <figure class="phone small"><img loading="lazy" src="/assets/institution/institution-report.png" alt="BiuLog 機構聯絡簿" width="1080" height="2400"></figure>
-          <figure class="phone small"><img loading="lazy" src="/assets/screens/zh/screen-1.webp" alt="BiuLog 家庭育兒首頁" width="1242" height="2688"></figure>
-          <div class="bridge">→</div>
+        <div class="two-phones" aria-label="家長加入機構後到家庭育兒的連續體驗">
+          <figure class="phone-step">
+            <div class="phone-step-label" data-i18n="parentStepLabel">加入機構後</div>
+            <div class="phone small"><img loading="lazy" src="/assets/institution/parent-care-book.png" alt="BiuLog 家長端寶寶聯絡簿" width="1080" height="2400"></div>
+            <figcaption data-i18n="parentStepCaption">查看自己寶寶的聯絡簿、公告與重要事項</figcaption>
+          </figure>
+          <div class="bridge" aria-hidden="true"><span data-i18n="bridgeLabel">離館／退托後<br>仍可繼續</span><span class="bridge-arrow">→</span></div>
+          <figure class="phone-step">
+            <div class="phone-step-label" data-i18n="homeStepLabel">家庭日常</div>
+            <div class="phone small"><img loading="lazy" src="/assets/screens/zh/screen-1.webp" alt="BiuLog 家庭育兒首頁" width="1242" height="2688"></div>
+            <figcaption data-i18n="homeStepCaption">繼續記錄喝奶、尿布、睡眠、成長與疫苗</figcaption>
+          </figure>
         </div>
         <div>
-          <div class="kicker" data-i18n="continuityKicker">從機構到家庭</div>
-          <h2 data-i18n="continuityTitle">家長離開機構，不必離開熟悉的 App。</h2>
-          <p class="lead" data-i18n="continuityLead">在機構期間，家長用 BiuLog 看每日照護與聯絡簿；離館或退托後，仍能繼續記錄喝奶、睡眠、尿布、成長與疫苗。少一次重新適應，也讓機構提供的好體驗延續更久。</p>
+          <div class="kicker" data-i18n="continuityKicker">家長端實際體驗</div>
+          <h2 data-i18n="continuityTitle">加入機構後，多的是聯絡簿與機構公告；原本的家庭育兒首頁不會消失。</h2>
+          <p class="lead" data-i18n="continuityLead">家長只會看到自己寶寶的機構內容，可以查看每日照護、聯絡簿、公告、照片、留言與需要回覆的重要事項；喝奶、睡眠、尿布、成長等原本的家庭紀錄仍可照常使用。</p>
+          <div class="parent-mode-list" id="parentModeList"></div>
           <div class="quote" data-i18n="continuityQuote">機構交付的不只是一份聯絡簿，而是一套家長帶得回家的安心習慣。</div>
         </div>
       </div>
@@ -328,7 +344,7 @@
         flowKicker:"一條清楚的工作流程",flowTitle:"照護人員記一次，主管、家長與下一班都接得到。",flowLead:"每個角色在同一套資料上完成自己的工作，減少重抄、漏看與「到底誰處理了」的來回確認。",flow:[["照護人員記錄","用手機快速完成個別或多人照護紀錄。"],["主管掌握進度","即時看班級、出勤、待辦與聯絡簿狀態。"],["家長收到內容","每日聯絡簿、公告與重要事項清楚送達。"],["下一班接續","重要異動與處理狀態可回看，交班更有依據。"]],
         scenarioKicker:"依照護現場使用",scenarioTitle:"托嬰中心與月子中心，都能從每天最頻繁的工作開始。",
         scenarios:[["托嬰中心","班級協作與每日聯絡更有秩序",["班級、老師與寶寶的操作範圍清楚","到托／離托、請假與接送資訊集中","多人批次記錄，聯絡簿下班前統一檢查","用品、用藥、事件與家長回覆可追蹤"]],["月子中心／產後護理之家","密集照護與返家銜接更完整",["喝奶、尿布、睡眠等高頻內容快速記錄","重要照護事項留在同一份寶寶脈絡裡","家長在館期間即時看見每天的照護內容","離館後繼續使用熟悉的家庭育兒功能"]]],
-        continuityKicker:"從機構到家庭",continuityTitle:"家長離開機構，不必離開熟悉的 App。",continuityLead:"在機構期間，家長用 BiuLog 看每日照護與聯絡簿；離館或退托後，仍能繼續記錄喝奶、睡眠、尿布、成長與疫苗。少一次重新適應，也讓機構提供的好體驗延續更久。",continuityQuote:"機構交付的不只是一份聯絡簿，而是一套家長帶得回家的安心習慣。",
+        continuityKicker:"家長端實際體驗",continuityTitle:"加入機構後，多的是聯絡簿與機構公告；原本的家庭育兒首頁不會消失。",continuityLead:"家長只會看到自己寶寶的機構內容，可以查看每日照護、聯絡簿、公告、照片、留言與需要回覆的重要事項；喝奶、睡眠、尿布、成長等原本的家庭紀錄仍可照常使用。",parentStepLabel:"加入機構後",parentStepCaption:"查看自己寶寶的聯絡簿、公告與重要事項",bridgeLabel:"離館／退托後仍可繼續",homeStepLabel:"家庭日常",homeStepCaption:"繼續記錄喝奶、尿布、睡眠、成長與疫苗",parentModeItems:["只顯示自己寶寶的機構照護內容","查看聯絡簿、機構公告、照片與留言","處理用品、用藥、接送與請假等事項","家庭紀錄與機構共享範圍分開管理"],continuityQuote:"機構交付的不只是一份聯絡簿，而是一套家長帶得回家的安心習慣。",
         benefitKicker:"對經營者真正有用",benefitTitle:"讓第一線更順，也讓家長更能感受到機構的專業。",benefits:[["◎","降低重複整理","照護紀錄直接成為聯絡簿素材，減少重抄與分散整理。"],["◫","掌握完成狀態","主管能看見尚未記錄、待發布、家長未讀與待處理事項。"],["✓","交接有依據","照護、公告、留言與重要異動保留脈絡，不只靠口頭提醒。"],["↗","延續服務印象","家長返家後仍能繼續使用，機構帶來的好體驗不在離館當天結束。"]],
         featuresKicker:"機構功能總覽",featuresTitle:"日常照護、班級管理、家長溝通與追蹤，都有對應工具。",featureGroups:[["日常照護",["喝奶、尿布、睡眠、副食品","體溫、身體檢查、餐點與活動","個別快速記錄與多人批次記錄","到托、離托與每日照護摘要"]],["聯絡與待辦",["每日聯絡簿、發布與家長已讀","聯絡簿留言與照片","機構公告與指定家庭通知","用品、用藥、接送、請假與事件事項"]],["管理與追蹤",["機構工作區、班級與人員指派","管理者、班級主管與照護人員角色","寶寶名單 CSV 匯入、班級報表匯出","重要操作與異動紀錄"]]],
         faqKicker:"合作前常見問題",faqTitle:"先把機構最在意的問題說清楚。",faqLead:"想了解是否適合你的機構，可以直接來信說明規模與照護方式。",faqs:[["需要另外購買專用硬體嗎？","不需要先採購專用設備。BiuLog 以手機 App 為主要使用方式，實際裝置安排可依機構流程討論。"],["家長和工作人員會看到完全相同的內容嗎？","不會。系統依機構、班級、工作人員與家長角色區分操作及查看範圍。"],["家長離館或退托後還能使用嗎？","可以。家長可繼續使用家庭育兒紀錄；機構共享範圍則依合作關係與權限管理。"],["可以先從一個班級或單位開始嗎？","可以。先用一個班級、房區或照護單位確認流程，再依實際使用情況擴大。"],["合作費用怎麼計算？","會依機構規模、使用情境與導入範圍討論，來信後我們會一起確認適合的方式。"]],
@@ -344,7 +360,7 @@
         galleryKicker:"Built for frontline work",galleryTitle:"From recording to delivery—without jumping between paper, chat, and spreadsheets.",galleryLead:"These are current BiuLog organization screens, each tied to work that care teams do every day.",galleryOneTitle:"Batch care records",galleryOneText:"Select multiple children, record frequent care items in one flow, and keep individual edits available.",galleryTwoTitle:"Daily care book",galleryTwoText:"Care activity is organized into a daily report for review, publishing, and family-read tracking.",galleryThreeTitle:"Notices and read status",galleryThreeText:"Send activities, supply reminders, and urgent notices to selected families, with read status in the app.",
         flowKicker:"One clear workflow",flowTitle:"Record once, and managers, families, and the next shift can all continue.",flowLead:"Each role works from the same care context, reducing rewrites, missed messages, and repeated follow-up.",flow:[["Staff records care","Complete individual or batch records quickly on a phone."],["Managers see progress","Review classes, attendance, tasks, and report status."],["Families receive updates","Daily reports, notices, and important items arrive clearly."],["The next shift continues","Important changes and action status stay available for handover."]],
         scenarioKicker:"Fits the care setting",scenarioTitle:"Childcare and postpartum care teams can start with their most frequent daily work.",scenarios:[["Childcare centers","More orderly class collaboration and daily communication",["Clear scope for classes, staff, and children","Check-in, check-out, leave, and pickup in one place","Batch records with final care-book review","Track supplies, medication, incidents, and replies"]],["Postpartum care centers","Complete high-frequency care and transition home",["Fast feeding, diaper, and sleep records","Keep important care items in one child timeline","Families see daily care while in residence","Continue familiar family tools after discharge"]]],
-        continuityKicker:"From care to home",continuityTitle:"Families can leave the facility without leaving the app they know.",continuityLead:"During care, families use BiuLog for daily reports. After discharge or graduation, they can continue tracking feeding, sleep, diapers, growth, and vaccines at home.",continuityQuote:"You are not only delivering a report—you are giving families a reassuring habit they can take home.",
+        continuityKicker:"The real family experience",continuityTitle:"Joining a care organization adds care books and notices—the family home screen stays in place.",continuityLead:"Families only see their own child’s organization content. They can review daily care, reports, notices, photos, messages, and items that need a reply while continuing their existing feeding, sleep, diaper, and growth records.",parentStepLabel:"After joining",parentStepCaption:"See your child’s care book, notices, and important items",bridgeLabel:"Continue after discharge or graduation",homeStepLabel:"Family routines",homeStepCaption:"Keep tracking feeding, diapers, sleep, growth, and vaccines",parentModeItems:["Only your own child’s organization content","Care books, notices, photos, and messages","Supplies, medication, pickup, and leave items","Home records and organization sharing remain separate"],continuityQuote:"You are not only delivering a report—you are giving families a reassuring habit they can take home.",
         benefitKicker:"Value for operators",benefitTitle:"Make frontline work smoother and professional care more visible to families.",benefits:[["◎","Less duplicate work","Care records become report content instead of being copied across tools."],["◫","Visible completion","See missing records, unpublished reports, unread items, and open tasks."],["✓","Traceable handover","Care, notices, messages, and changes retain context beyond verbal reminders."],["↗","A longer service impression","Families keep using the app after care, extending a positive experience."]],
         featuresKicker:"Feature overview",featuresTitle:"Tools for daily care, class management, family communication, and follow-up.",featureGroups:[["Daily care",["Feeding, diapers, sleep, and solids","Temperature, body checks, meals, and activities","Individual and batch records","Check-in, check-out, and daily summaries"]],["Communication and tasks",["Daily care books, publishing, and read status","Messages and photos","Organization notices","Supplies, medication, pickup, leave, and incidents"]],["Management and tracking",["Workspaces, classes, and staff assignments","Manager, class lead, and care-staff roles","CSV roster import and report export","Activity and change history"]]],
         faqKicker:"Common questions",faqTitle:"Answers to what care organizations ask first.",faqLead:"Tell us your care model and size, and we can discuss the right setup.",faqs:[["Do we need special hardware?","No dedicated hardware purchase is required. BiuLog is primarily a mobile app; device arrangements can follow your workflow."],["Do families and staff see the same content?","No. Access and actions are separated by organization, class, staff, and family roles."],["Can families keep using BiuLog after care ends?","Yes. Families can continue their own home records, while organization access follows the active relationship and permissions."],["Can we start with one class or unit?","Yes. Start with one class, floor, or unit, validate the workflow, and then expand."],["How is pricing determined?","Pricing is discussed based on organization size, use case, and rollout scope. Contact us for a suitable approach."]],
@@ -360,7 +376,7 @@
         galleryKicker:"現場で使える設計",galleryTitle:"記録から共有まで、紙・チャット・表計算を行き来しません。",galleryLead:"下記はすべて BiuLog の現在の施設向け機能です。",galleryOneTitle:"複数人の一括記録",galleryOneText:"複数のお子さまを選び、よく使うケア項目をまとめて記録しながら個別修正もできます。",galleryTwoTitle:"毎日の連絡帳",galleryTwoText:"ケア内容を連絡帳に自動整理。公開前の確認と、公開後の保護者既読を追跡できます。",galleryThreeTitle:"お知らせと既読",galleryThreeText:"行事、用品、臨時連絡を対象家庭へ一括配信し、既読をアプリ内で確認できます。",
         flowKicker:"ひとつの明確な流れ",flowTitle:"一度記録すれば、管理者・保護者・次のシフトへつながります。",flowLead:"同じケア情報を各役割が使うことで、転記、見落とし、確認の往復を減らします。",flow:[["スタッフが記録","スマートフォンで個別・一括ケアを記録。"],["管理者が把握","クラス、登降園、対応事項、連絡帳を確認。"],["保護者へ共有","連絡帳、お知らせ、重要事項を分かりやすく配信。"],["次のシフトへ","変更や対応状況を残し、引き継ぎの根拠に。"]],
         scenarioKicker:"ケア現場に合わせて",scenarioTitle:"保育施設も産後ケア施設も、頻度の高い業務から始められます。",scenarios:[["保育施設","クラス連携と毎日の連絡を整理",["クラス・職員・お子さまの範囲を明確に","登降園、欠席、送迎情報を一か所に","一括記録と連絡帳の最終確認","用品、与薬、事故、返信を追跡"]],["産後ケア施設","高頻度ケアと退所後をつなぐ",["授乳、おむつ、睡眠をすばやく記録","重要事項をお子さまの流れに集約","滞在中のケアを保護者が確認","退所後も家庭向け機能を継続"]]],
-        continuityKicker:"施設から家庭へ",continuityTitle:"施設を離れても、使い慣れたアプリはそのまま。",continuityLead:"施設では連絡帳を確認し、退所・卒園後は授乳、睡眠、おむつ、成長、予防接種を家庭で記録できます。",continuityQuote:"連絡帳だけでなく、家庭に持ち帰れる安心の習慣を届けます。",
+        continuityKicker:"保護者側の実際の体験",continuityTitle:"施設に参加すると連絡帳とお知らせが追加され、家庭用ホームはそのまま使えます。",continuityLead:"保護者が見られるのは自分のお子さまの施設情報だけです。毎日のケア、連絡帳、お知らせ、写真、メッセージ、返信が必要な事項を確認しながら、家庭の授乳・睡眠・おむつ・成長記録も続けられます。",parentStepLabel:"施設に参加後",parentStepCaption:"自分のお子さまの連絡帳・お知らせ・重要事項",bridgeLabel:"退所・卒園後も継続",homeStepLabel:"家庭の日常",homeStepCaption:"授乳・おむつ・睡眠・成長・予防接種を継続",parentModeItems:["自分のお子さまの施設情報だけを表示","連絡帳、お知らせ、写真、メッセージ","用品、与薬、送迎、欠席などの対応事項","家庭記録と施設共有の範囲を分けて管理"],continuityQuote:"連絡帳だけでなく、家庭に持ち帰れる安心の習慣を届けます。",
         benefitKicker:"運営者への価値",benefitTitle:"現場をスムーズにし、ケアの専門性を保護者に伝えます。",benefits:[["◎","重複作業を削減","ケア記録をそのまま連絡帳に活用。"],["◫","完了状態を把握","未記録、未公開、未読、未対応を確認。"],["✓","引き継ぎを追跡","ケア、お知らせ、メッセージ、変更を記録。"],["↗","体験を継続","施設を離れた後も良い印象が続きます。"]],
         featuresKicker:"機能一覧",featuresTitle:"日常ケア、クラス管理、保護者連絡、追跡のための機能。",featureGroups:[["日常ケア",["授乳、おむつ、睡眠、離乳食","体温、健康確認、食事、活動","個別・一括記録","登降園と日次サマリー"]],["連絡と対応",["連絡帳、公開、既読","メッセージと写真","施設のお知らせ","用品、与薬、送迎、欠席、事故"]],["管理と追跡",["ワークスペース、クラス、職員","管理者、クラス責任者、職員の役割","CSV 名簿取込とレポート出力","操作・変更履歴"]]],
         faqKicker:"よくある質問",faqTitle:"施設が最初に確認したいこと。",faqLead:"施設の規模とケア方法をお知らせください。",faqs:[["専用ハードウェアは必要ですか？","専用機器の購入は不要です。BiuLog は主にスマートフォンアプリとして利用します。"],["保護者と職員は同じ内容を見ますか？","いいえ。施設、クラス、職員、保護者の役割ごとに操作・閲覧範囲を分けます。"],["退所後も保護者は使えますか？","はい。家庭の育児記録は継続でき、施設共有は関係と権限に応じて管理されます。"],["1クラスから始められますか？","はい。小さな単位で流れを確認してから広げられます。"],["料金はどう決まりますか？","施設規模、利用場面、導入範囲に応じてご相談します。"]],
@@ -376,7 +392,7 @@
         galleryKicker:"현장에서 실제로 사용",galleryTitle:"기록부터 전달까지 종이, 채팅, 표를 오가지 않습니다.",galleryLead:"아래는 모두 현재 BiuLog 기관용 실제 기능입니다.",galleryOneTitle:"여러 명 빠른 기록",galleryOneText:"여러 아이를 선택해 자주 쓰는 돌봄 항목을 한 번에 기록하고 개별 수정할 수 있습니다.",galleryTwoTitle:"매일 알림장",galleryTwoText:"돌봄 내용을 알림장으로 정리하고 게시 전 검토와 게시 후 보호자 확인을 추적합니다.",galleryThreeTitle:"공지와 확인",galleryThreeText:"행사, 준비물, 긴급 공지를 대상 가족에게 보내고 읽음 상태를 확인합니다.",
         flowKicker:"하나의 명확한 흐름",flowTitle:"한 번 기록하면 관리자, 보호자, 다음 근무자가 이어받습니다.",flowLead:"같은 돌봄 맥락에서 역할별로 일해 중복 작성과 누락, 반복 확인을 줄입니다.",flow:[["담당자가 기록","휴대폰에서 개별·일괄 돌봄을 기록합니다."],["관리자가 확인","반, 출결, 할 일, 알림장 상태를 봅니다."],["보호자에게 전달","알림장, 공지, 중요 사항을 명확히 보냅니다."],["다음 근무로 연결","변경과 처리 상태를 남겨 인계 근거로 씁니다."]],
         scenarioKicker:"돌봄 현장에 맞게",scenarioTitle:"어린이집과 산후조리원 모두 가장 잦은 일부터 시작할 수 있습니다.",scenarios:[["어린이집","반 협업과 일상 소통을 정리",["반·교사·아이 범위를 명확하게","등하원, 결석, 픽업 정보를 한곳에","일괄 기록 후 알림장 최종 확인","준비물, 투약, 사고, 답변 추적"]],["산후조리원","고빈도 돌봄과 퇴소 후를 연결",["수유, 기저귀, 수면을 빠르게 기록","중요 돌봄을 아이 흐름에 모아 관리","입실 중 보호자가 매일 돌봄 확인","퇴소 후에도 가족 기능을 계속 사용"]]],
-        continuityKicker:"기관에서 가정으로",continuityTitle:"기관을 떠나도 익숙한 앱은 그대로 사용할 수 있습니다.",continuityLead:"기관에서는 매일 알림장을 보고, 퇴소·졸업 후에는 수유, 수면, 기저귀, 성장, 예방접종을 집에서 계속 기록합니다.",continuityQuote:"알림장 한 장이 아니라 가족이 집으로 가져갈 안심 습관을 제공합니다.",
+        continuityKicker:"보호자용 실제 경험",continuityTitle:"기관에 참여하면 알림장과 공지가 추가되고, 기존 가족 홈은 그대로 유지됩니다.",continuityLead:"보호자는 자기 아이의 기관 내용만 볼 수 있습니다. 매일 돌봄, 알림장, 공지, 사진, 메시지, 답변할 사항을 확인하면서 기존 수유, 수면, 기저귀, 성장 기록도 계속 사용할 수 있습니다.",parentStepLabel:"기관 참여 후",parentStepCaption:"내 아이의 알림장, 공지, 중요 사항 확인",bridgeLabel:"퇴소·졸업 후에도 계속",homeStepLabel:"가족 일상",homeStepCaption:"수유, 기저귀, 수면, 성장, 예방접종 계속 기록",parentModeItems:["내 아이의 기관 돌봄 내용만 표시","알림장, 공지, 사진, 메시지 확인","준비물, 투약, 픽업, 결석 사항 처리","가족 기록과 기관 공유 범위를 분리 관리"],continuityQuote:"알림장 한 장이 아니라 가족이 집으로 가져갈 안심 습관을 제공합니다.",
         benefitKicker:"운영자를 위한 가치",benefitTitle:"현장은 더 원활하게, 전문 돌봄은 보호자에게 더 잘 보이게.",benefits:[["◎","중복 업무 감소","돌봄 기록이 바로 알림장 내용이 됩니다."],["◫","완료 상태 확인","미기록, 미게시, 미확인, 할 일을 확인합니다."],["✓","인계 근거 보존","돌봄, 공지, 메시지, 변경 맥락을 남깁니다."],["↗","서비스 경험 연장","기관을 떠난 후에도 좋은 경험이 이어집니다."]],
         featuresKicker:"기능 개요",featuresTitle:"일상 돌봄, 반 관리, 가족 소통, 추적을 위한 도구.",featureGroups:[["일상 돌봄",["수유, 기저귀, 수면, 이유식","체온, 신체 확인, 식사, 활동","개별·일괄 기록","등하원과 일일 요약"]],["소통과 할 일",["알림장, 게시, 보호자 확인","메시지와 사진","기관 공지","준비물, 투약, 픽업, 결석, 사고"]],["관리와 추적",["워크스페이스, 반, 직원 배정","관리자, 반 책임자, 돌봄 직원 역할","CSV 명단 가져오기와 보고서 내보내기","활동·변경 기록"]]],
         faqKicker:"자주 묻는 질문",faqTitle:"기관이 먼저 확인하는 내용을 답합니다.",faqLead:"기관 규모와 돌봄 방식을 알려 주세요.",faqs:[["전용 하드웨어가 필요한가요?","전용 장비를 먼저 구매할 필요가 없습니다. BiuLog는 주로 휴대폰 앱으로 사용합니다."],["보호자와 직원이 같은 내용을 보나요?","아닙니다. 기관, 반, 직원, 보호자 역할에 따라 보기와 작업 범위를 구분합니다."],["퇴소 후에도 보호자가 사용할 수 있나요?","네. 가족 기록은 계속 사용할 수 있고 기관 공유는 관계와 권한에 따라 관리됩니다."],["한 반부터 시작할 수 있나요?","네. 작은 단위에서 흐름을 확인한 뒤 확대할 수 있습니다."],["비용은 어떻게 정하나요?","기관 규모, 사용 상황, 도입 범위에 따라 협의합니다."]],
@@ -384,7 +400,7 @@
       }
     };
 
-    const ids=["navProduct","navScenarios","navFeatures","navParents","navCta","eyebrow","heroTitle","heroLead","heroCta","heroSecondary","heroMicro","chipOne","chipTwo","audienceLabel","productKicker","productTitle","productLead","galleryKicker","galleryTitle","galleryLead","galleryOneTitle","galleryOneText","galleryTwoTitle","galleryTwoText","galleryThreeTitle","galleryThreeText","flowKicker","flowTitle","flowLead","scenarioKicker","scenarioTitle","continuityKicker","continuityTitle","continuityLead","continuityQuote","benefitKicker","benefitTitle","featuresKicker","featuresTitle","faqKicker","faqTitle","faqLead","ctaKicker","ctaTitle","ctaLead","ctaButton","footerParents"];
+    const ids=["navProduct","navScenarios","navFeatures","navParents","navCta","eyebrow","heroTitle","heroLead","heroCta","heroSecondary","heroMicro","chipOne","chipTwo","audienceLabel","productKicker","productTitle","productLead","galleryKicker","galleryTitle","galleryLead","galleryOneTitle","galleryOneText","galleryTwoTitle","galleryTwoText","galleryThreeTitle","galleryThreeText","flowKicker","flowTitle","flowLead","scenarioKicker","scenarioTitle","continuityKicker","continuityTitle","continuityLead","parentStepLabel","parentStepCaption","bridgeLabel","homeStepLabel","homeStepCaption","continuityQuote","benefitKicker","benefitTitle","featuresKicker","featuresTitle","faqKicker","faqTitle","faqLead","ctaKicker","ctaTitle","ctaLead","ctaButton","footerParents"];
     function esc(v){return String(v).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]})}
     function render(lang){
       const c=COPY[lang]||COPY.zh;
@@ -395,6 +411,7 @@
       document.getElementById("screenPoints").innerHTML=c.screenPoints.map(function(x){return '<div class="point"><div class="point-num">'+esc(x[0])+'</div><div><h3>'+esc(x[1])+'</h3><p>'+esc(x[2])+'</p></div></div>'}).join("");
       document.getElementById("flow").innerHTML=c.flow.map(function(x){return '<article class="flow-card"><h3>'+esc(x[0])+'</h3><p>'+esc(x[1])+'</p></article>'}).join("");
       document.getElementById("scenarioCards").innerHTML=c.scenarios.map(function(x,i){return '<article class="scenario"><div class="scenario-tag">'+(i===0?"Childcare":"Postpartum care")+'</div><h3>'+esc(x[0])+'</h3><p>'+esc(x[1])+'</p><ul>'+x[2].map(function(y){return "<li>"+esc(y)+"</li>"}).join("")+"</ul></article>"}).join("");
+      document.getElementById("parentModeList").innerHTML=c.parentModeItems.map(function(x){return '<div class="parent-mode-item">'+esc(x)+'</div>'}).join("");
       document.getElementById("benefits").innerHTML=c.benefits.map(function(x){return '<article class="benefit"><div class="icon">'+esc(x[0])+'</div><h3>'+esc(x[1])+'</h3><p>'+esc(x[2])+'</p></article>'}).join("");
       document.getElementById("featureGroups").innerHTML=c.featureGroups.map(function(x){return '<article class="feature-group"><h3>'+esc(x[0])+'</h3><ul>'+x[1].map(function(y){return "<li>"+esc(y)+"</li>"}).join("")+"</ul></article>"}).join("");
       document.getElementById("faqList").innerHTML=c.faqs.map(function(x,i){return '<details'+(i===0?" open":"")+'><summary>'+esc(x[0])+'</summary><p>'+esc(x[1])+'</p></details>'}).join("");
