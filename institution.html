@@ -198,7 +198,7 @@
       <div class="hero-stage" aria-label="BiuLog 機構端今日照護畫面">
         <div class="stage-glow"></div>
         <figure class="phone">
-          <img src="/assets/current/manager-today.webp" alt="BiuLog 管理者端今日照護與班級進度實際畫面" width="810" height="1800">
+          <img src="/assets/institution/institution-today.png" alt="BiuLog 機構端今日照護與班級進度實際畫面" width="1080" height="2400">
         </figure>
         <div class="float-chip chip-a"><b></b><span data-i18n="chipOne">今日班級進度一眼掌握</span></div>
         <div class="float-chip chip-b"><b></b><span data-i18n="chipTwo">聯絡簿狀態清楚可追</span></div>
@@ -216,7 +216,7 @@
       <div class="wrap product-lead">
         <div class="screen-stage">
           <figure class="phone">
-            <img loading="lazy" src="/assets/current/manager-today.webp" alt="BiuLog 今日照護畫面，顯示班級進度與照護快捷功能" width="810" height="1800">
+            <img loading="lazy" src="/assets/institution/institution-today.png" alt="BiuLog 今日照護畫面，顯示班級進度與照護快捷功能" width="1080" height="2400">
           </figure>
         </div>
         <div>
@@ -248,19 +248,19 @@
             <figure class="phone"><img loading="lazy" src="/assets/institution/institution-notice.png" alt="BiuLog 機構公告與家長已讀畫面" width="1080" height="2400"></figure>
             <div class="showcase-copy"><span>03</span><h3 data-i18n="galleryThreeTitle">公告與家長確認</h3><p data-i18n="galleryThreeText">活動、用品與臨時通知一次發布給指定家庭，已讀狀態直接留在 App 裡。</p></div>
           </article>
-          <article class="showcase visual">
+          <article class="showcase visual" data-current-screenshots>
             <figure class="phone"><img loading="lazy" src="/assets/current/care-home.webp" alt="BiuLog 老師端照護首頁與班級工作按鈕" width="810" height="1440"></figure>
             <div class="showcase-copy"><span>04</span><h3 data-i18n="galleryFourTitle">老師要做什麼，直接按</h3><p data-i18n="galleryFourText">聯絡簿、多人紀錄、公告、親師訊息、睡眠安全、照片、托藥與接送各自有入口，不必猜功能藏在哪裡。</p></div>
           </article>
-          <article class="showcase visual">
+          <article class="showcase visual" data-current-screenshots>
             <figure class="phone"><img loading="lazy" src="/assets/current/care-message.webp" alt="BiuLog 親師訊息可選班級與個別寶寶" width="810" height="1440"></figure>
             <div class="showcase-copy"><span>05</span><h3 data-i18n="galleryFiveTitle">親師訊息可選個人、多人或整班</h3><p data-i18n="galleryFiveText">老師每次重新選擇對象，各家庭只看到和自己有關的訊息；管理者也能依權限接續處理。</p></div>
           </article>
-          <article class="showcase visual">
+          <article class="showcase visual" data-current-screenshots>
             <figure class="phone"><img loading="lazy" src="/assets/current/care-task.webp" alt="BiuLog 用品提醒與事件回報可指定班級或寶寶" width="810" height="1440"></figure>
             <div class="showcase-copy"><span>06</span><h3 data-i18n="gallerySixTitle">用品、事件與交代事項可追蹤</h3><p data-i18n="gallerySixText">指定班級或寶寶、選擇家長或校內人員、留下數量與處理狀態，完成後自動進入歷史。</p></div>
           </article>
-          <article class="showcase visual">
+          <article class="showcase visual" data-current-screenshots>
             <figure class="phone"><img loading="lazy" src="/assets/current/care-sleep.webp" alt="BiuLog 睡眠安全檢查可選多位寶寶" width="810" height="1440"></figure>
             <div class="showcase-copy"><span>07</span><h3 data-i18n="gallerySevenTitle">睡眠安全一次檢查多人</h3><p data-i18n="gallerySevenText">依機構自己的巡視規則選擇寶寶、標示正常或例外，時間與操作人自動留存，方便交班與回看。</p></div>
           </article>
@@ -325,7 +325,7 @@
           <div class="bridge" aria-hidden="true"><span data-i18n="bridgeLabel">離館／退托後<br>仍可繼續</span><span class="bridge-arrow">→</span></div>
           <figure class="phone-step">
             <div class="phone-step-label" data-i18n="homeStepLabel">家庭日常</div>
-            <div class="phone small"><img loading="lazy" src="/assets/current/family-home.webp" alt="BiuLog 家庭育兒首頁" width="810" height="1440"></div>
+            <div class="phone small"><img loading="lazy" src="/assets/screens/zh/screen-1.webp" alt="BiuLog 家庭育兒首頁" width="1242" height="2688"></div>
             <figcaption data-i18n="homeStepCaption">繼續記錄喝奶、尿布、睡眠、成長與疫苗</figcaption>
           </figure>
         </div>
@@ -475,6 +475,7 @@
       document.getElementById("benefits").innerHTML=c.benefits.map(function(x){return '<article class="benefit"><div class="icon">'+esc(x[0])+'</div><h3>'+esc(x[1])+'</h3><p>'+esc(x[2])+'</p></article>'}).join("");
       document.getElementById("featureGroups").innerHTML=c.featureGroups.map(function(x){return '<article class="feature-group"><h3>'+esc(x[0])+'</h3><ul>'+x[1].map(function(y){return "<li>"+esc(y)+"</li>"}).join("")+"</ul></article>"}).join("");
       document.getElementById("faqList").innerHTML=c.faqs.map(function(x,i){return '<details'+(i===0?" open":"")+'><summary>'+esc(x[0])+'</summary><p>'+esc(x[1])+'</p></details>'}).join("");
+      document.querySelectorAll("[data-current-screenshots]").forEach(function(section){section.hidden=lang!=="zh"});
       localStorage.setItem("biulog-institution-lang",lang);
     }
     const language=document.getElementById("language");

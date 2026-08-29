@@ -654,7 +654,6 @@
 
     .family-proof-phone {
       width: min(220px, 100%);
-      aspect-ratio: 9 / 16;
       margin: 0 auto;
       padding: 7px;
       overflow: hidden;
@@ -666,10 +665,9 @@
     .family-proof-phone img {
       display: block;
       width: 100%;
-      height: 100%;
+      height: auto;
       border-radius: 27px;
-      object-fit: cover;
-      object-position: top center;
+      object-fit: contain;
     }
 
     .family-proof-copy strong {
@@ -981,15 +979,15 @@
 
       <div class="showcase" aria-label="BiuLog app screenshots">
         <div class="mini-shot one">
-          <img id="miniOne" data-shot-index="3" src="/assets/current/family-teeth.webp" alt="BiuLog 乳牙紀錄畫面" loading="lazy" decoding="async">
+          <img id="miniOne" data-shot-index="3" src="/assets/screens/zh/screen-3.webp" alt="BiuLog summary screenshot" loading="lazy" decoding="async">
         </div>
         <div class="phone">
           <div class="phone-inner">
-            <img id="heroShot" data-shot-index="1" src="/assets/current/family-home.webp" alt="BiuLog 家庭生活首頁" fetchpriority="high" decoding="async">
+            <img id="heroShot" data-shot-index="1" src="/assets/screens/zh/screen-1.webp" alt="BiuLog home screenshot" fetchpriority="high" decoding="async">
           </div>
         </div>
         <div class="mini-shot two">
-          <img id="miniTwo" data-shot-index="2" src="/assets/current/family-handbook.webp" alt="BiuLog 寶寶成長手冊" loading="lazy" decoding="async">
+          <img id="miniTwo" data-shot-index="2" src="/assets/screens/zh/screen-2.webp" alt="BiuLog customization screenshot" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -1012,7 +1010,7 @@
       </div>
     </section>
 
-    <section class="family-proof-band" id="family-handbook">
+    <section class="family-proof-band" id="family-handbook" data-current-screenshots lang="zh-Hant">
       <div class="wrap">
         <div class="family-proof-head">
           <div>
@@ -1204,10 +1202,10 @@
           ["家庭健康與生活事件", "集中記錄健檢、症狀、用藥、食材反應、就醫、體溫與其他生活事件。"]
         ],
         shots: [
-          ["家庭生活首頁", "每天最常用的喝奶、尿布、睡眠、副食品與其他事件直接記。"],
-          ["寶寶成長手冊", "成長、乳牙、發展、健康、日記與練習整齊集中。"],
-          ["乳牙圖像紀錄", "牙齒位置、編號、萌出日期與常見月齡一眼看懂。"],
-          ["兒童發展檢核", "依月齡追蹤檢核、簽名與後續觀察狀態。"],
+          ["首頁快速記錄", "四大按鈕、今日摘要、最近紀錄都在同一頁。"],
+          ["客製化首頁", "按鈕文字、圖示、照片與風格都能調整。"],
+          ["本週摘要", "親餵、瓶餵母乳、配方奶與喝奶量更好整理。"],
+          ["疫苗紀錄", "依地區參考時程整理接種狀態與下一劑提醒。"],
           ["成長里程碑", "翻身、爬行、走路等珍貴時刻可以逐一記下。"],
           ["24 小時熱度", "看出喝奶、尿布、睡眠、副食品集中在哪些時段。"],
           ["趨勢圖表", "用週為單位追蹤最近生活節奏。"],
@@ -1507,12 +1505,6 @@
     };
 
     const screenLangMap = { zh: "zh", en: "en", ja: "ja", ko: "ko" };
-    const currentZhShots = {
-      1: "/assets/current/family-home.webp?v=20260829",
-      2: "/assets/current/family-handbook.webp?v=20260829",
-      3: "/assets/current/family-teeth.webp?v=20260829",
-      4: "/assets/current/family-development.webp?v=20260829"
-    };
     const appStoreUrls = {
       zh: "https://apps.apple.com/tw/app/biulog/id6766629143",
       en: "https://apps.apple.com/us/app/biulog/id6766629143",
@@ -1540,7 +1532,6 @@
     }
 
     function imagePath(lang, index) {
-      if (lang === "zh" && currentZhShots[index]) return currentZhShots[index];
       return `/assets/screens/${screenLangMap[lang]}/screen-${index}.webp?v=20260518`;
     }
 
@@ -1657,6 +1648,9 @@
       renderNotes(next);
       renderPro(next);
       updateStoreLinks(next);
+      document.querySelectorAll("[data-current-screenshots]").forEach((section) => {
+        section.hidden = next !== "zh";
+      });
 
       if (updateUrl) {
         const url = new URL(window.location.href);
