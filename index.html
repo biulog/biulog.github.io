@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BiuLog 寶寶紀錄 App，整合餵奶、睡眠、尿布、副食品、成長、疫苗、作息圖表、家庭共享與托育照顧者協作，適合新手爸媽、保母、月子中心與托育機構。">
-  <meta name="keywords" content="寶寶紀錄App,育兒App,餵奶紀錄,睡眠紀錄,尿布紀錄,寶寶作息,成長紀錄,疫苗提醒,保母交接,托育共享,月子中心">
+  <meta name="description" content="BiuLog 寶寶紀錄 App，整合餵奶、睡眠、尿布、副食品、體溫、成長手冊、乳牙、發展檢核、疫苗、家庭健康、家庭共享與托育聯絡簿。">
+  <meta name="keywords" content="寶寶紀錄App,育兒App,餵奶紀錄,睡眠紀錄,尿布紀錄,寶寶作息,乳牙紀錄,兒童發展檢核,成長紀錄,疫苗提醒,家庭健康,托育聯絡簿">
   <meta name="application-name" content="BiuLog">
   <meta name="theme-color" content="#faf7f2">
   <meta property="og:title" content="BiuLog｜完整寶寶照護紀錄與托育協作 App">
-  <meta property="og:description" content="從每次餵奶到長期成長，讓家庭與專業照顧者共享同一份清楚可靠的寶寶紀錄。">
+  <meta property="og:description" content="從每次餵奶到乳牙、發展、健康與托育聯絡，讓家庭與專業照顧者共享一份清楚可靠的寶寶紀錄。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://biulog.github.io/">
   <meta property="og:image" content="https://biulog.github.io/assets/biulog-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BiuLog｜完整寶寶照護紀錄與托育協作 App">
-  <meta name="twitter:description" content="從每次餵奶到長期成長，讓家庭與專業照顧者共享同一份清楚可靠的寶寶紀錄。">
+  <meta name="twitter:description" content="從每次餵奶到乳牙、發展、健康與托育聯絡，讓家庭與專業照顧者共享一份清楚可靠的寶寶紀錄。">
   <meta name="twitter:image" content="https://biulog.github.io/assets/biulog-og.png">
   <link rel="canonical" href="https://biulog.github.io/">
   <link rel="icon" href="/assets/biulog-icon.png">
@@ -576,6 +576,117 @@
       line-height: 1.6;
     }
 
+    .family-proof-band {
+      padding: 96px 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(217, 229, 238, .72), transparent 28rem),
+        radial-gradient(circle at 88% 76%, rgba(239, 218, 221, .58), transparent 30rem),
+        #fbf8f3;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .family-proof-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+      gap: 54px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .family-proof-kicker {
+      color: var(--gold-deep);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .family-proof-head h2 {
+      margin-top: 10px;
+    }
+
+    .family-proof-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .family-proof-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .family-proof-pills span {
+      padding: 8px 12px;
+      border: 1px solid rgba(177, 151, 119, .28);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .78);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .family-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .family-proof-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      gap: 18px;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(177, 151, 119, .24);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 18px 42px rgba(64, 52, 42, .08);
+    }
+
+    .family-proof-card:nth-child(2) { background: linear-gradient(150deg, #fff 0, #f7eee8 100%); }
+    .family-proof-card:nth-child(3) { background: linear-gradient(150deg, #fff 0, #edf2f6 100%); }
+    .family-proof-card:nth-child(4) { background: linear-gradient(150deg, #fff 0, #f1ecef 100%); }
+
+    .family-proof-phone {
+      width: min(220px, 100%);
+      aspect-ratio: 9 / 16;
+      margin: 0 auto;
+      padding: 7px;
+      overflow: hidden;
+      border-radius: 34px;
+      background: #26221f;
+      box-shadow: 0 20px 42px rgba(40, 35, 31, .18);
+    }
+
+    .family-proof-phone img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 27px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .family-proof-copy strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .family-proof-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
     .split {
       display: grid;
       grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
@@ -685,6 +796,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .family-proof-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .screens {
         grid-template-columns: repeat(3, minmax(210px, 1fr));
       }
@@ -694,7 +809,8 @@
       .hero,
       .split,
       .pricing,
-      .parent-care-head {
+      .parent-care-head,
+      .family-proof-head {
         grid-template-columns: 1fr;
       }
 
@@ -770,8 +886,21 @@
       .features,
       .legal,
       .plan-list,
-      .parent-care-grid {
+      .parent-care-grid,
+      .family-proof-grid {
         grid-template-columns: 1fr;
+      }
+
+      .family-proof-band {
+        padding: 74px 0;
+      }
+
+      .family-proof-card {
+        padding: 20px;
+      }
+
+      .family-proof-phone {
+        width: 252px;
       }
 
       .parent-care-band {
@@ -832,7 +961,7 @@
       <div>
         <div class="eyebrow" data-i18n="eyebrow">完整育兒紀錄系統｜為家庭與專業照顧者而設計</div>
         <h1 data-i18n="heroTitle">寶寶每一天，都有清楚可靠的紀錄。</h1>
-        <p class="lead" data-i18n="heroLead">從半夜單手記下喝奶、睡眠與尿布，到成長、疫苗、圖表分析與照顧者交接，BiuLog 把零散資訊整理成全家都看得懂的照護紀錄。</p>
+        <p class="lead" data-i18n="heroLead">從半夜單手記下喝奶、睡眠與尿布，到乳牙、發展、健康、疫苗與照顧者交接，BiuLog 把寶寶每天與長期成長整理成全家都看得懂的紀錄。</p>
         <div class="cta-row">
           <a class="cta" href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="ctaStore" data-app-store-link>在 App Store 下載</a>
           <a class="cta android" href="https://play.google.com/store/apps/details?id=com.chy.biulog" data-i18n="ctaGooglePlay" data-google-play-link>在 Google Play 下載</a>
@@ -852,23 +981,23 @@
 
       <div class="showcase" aria-label="BiuLog app screenshots">
         <div class="mini-shot one">
-          <img id="miniOne" data-shot-index="3" src="/assets/screens/zh/screen-3.webp" alt="BiuLog summary screenshot" loading="lazy" decoding="async">
+          <img id="miniOne" data-shot-index="3" src="/assets/current/family-teeth.webp" alt="BiuLog 乳牙紀錄畫面" loading="lazy" decoding="async">
         </div>
         <div class="phone">
           <div class="phone-inner">
-            <img id="heroShot" data-shot-index="1" src="/assets/screens/zh/screen-1.webp" alt="BiuLog home screenshot" fetchpriority="high" decoding="async">
+            <img id="heroShot" data-shot-index="1" src="/assets/current/family-home.webp" alt="BiuLog 家庭生活首頁" fetchpriority="high" decoding="async">
           </div>
         </div>
         <div class="mini-shot two">
-          <img id="miniTwo" data-shot-index="2" src="/assets/screens/zh/screen-2.webp" alt="BiuLog customization screenshot" loading="lazy" decoding="async">
+          <img id="miniTwo" data-shot-index="2" src="/assets/current/family-handbook.webp" alt="BiuLog 寶寶成長手冊" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
     <section id="features" class="wrap section">
       <div class="section-head">
-        <h2 data-i18n="featuresTitle">從今天的作息，到長期成長，完整串連</h2>
-        <p data-i18n="featuresLead">快速記錄、多人共享、趨勢分析、疫苗與成長追蹤都在同一套流程裡，新手爸媽容易上手，專業照顧者也能清楚交接。</p>
+        <h2 data-i18n="featuresTitle">從今天的作息，到乳牙、發展與長期健康，完整串連</h2>
+        <p data-i18n="featuresLead">快速記錄、家庭同步、成長手冊、健康紀錄與托育聯絡都在同一套流程裡；功能變多，操作仍維持簡單直覺。</p>
       </div>
       <div class="features" id="featureGrid"></div>
     </section>
@@ -877,9 +1006,46 @@
       <div class="wrap">
         <div class="section-head">
           <h2 data-i18n="screensTitle">功能完整，操作依然直覺</h2>
-          <p data-i18n="screensLead">首頁快速記錄、每日時間線、作息圖表、疫苗與成長資料各自清楚呈現，需要的資訊不用翻找。</p>
+          <p data-i18n="screensLead">首頁保留每天最常用的快速記錄，較低頻的成長、健康與珍貴第一次集中在成長手冊，需要的資訊不用到設定裡翻找。</p>
         </div>
         <div class="screens" id="screenGallery"></div>
+      </div>
+    </section>
+
+    <section class="family-proof-band" id="family-handbook">
+      <div class="wrap">
+        <div class="family-proof-head">
+          <div>
+            <div class="family-proof-kicker" data-i18n="familyProofKicker">不只記作息，也陪寶寶長大</div>
+            <h2 data-i18n="familyProofTitle">每天常用的放首頁，成長、健康與珍貴第一次，收進專屬成長手冊。</h2>
+          </div>
+          <div>
+            <p data-i18n="familyProofLead">喝奶、睡眠、尿布與副食品維持快速好記；需要長期保存的乳牙、發展檢核、身高體重、疫苗、健康與家庭日記則集中在同一頁，不必到設定裡翻找。</p>
+            <div class="family-proof-pills" aria-label="BiuLog 家庭功能">
+              <span data-i18n="familyProofPillOne">家庭共享同步</span>
+              <span data-i18n="familyProofPillTwo">多寶寶分開管理</span>
+              <span data-i18n="familyProofPillThree">日常與長期紀錄分層</span>
+            </div>
+          </div>
+        </div>
+        <div class="family-proof-grid">
+          <article class="family-proof-card">
+            <figure class="family-proof-phone"><img loading="lazy" decoding="async" src="/assets/current/family-home.webp" alt="BiuLog 家庭生活首頁與快速記錄" width="810" height="1440"></figure>
+            <div class="family-proof-copy"><strong data-i18n="familyProofOneTitle">日常照護，單手就能記</strong><p data-i18n="familyProofOneText">喝奶、尿布、睡眠、副食品與體溫等事件從首頁直接新增，過去的資料長按即可補登。</p></div>
+          </article>
+          <article class="family-proof-card">
+            <figure class="family-proof-phone"><img loading="lazy" decoding="async" src="/assets/current/family-handbook.webp" alt="BiuLog 寶寶成長手冊功能總覽" width="810" height="1440"></figure>
+            <div class="family-proof-copy"><strong data-i18n="familyProofTwoTitle">一頁收好長期成長</strong><p data-i18n="familyProofTwoText">成長、里程碑、乳牙、疫苗、發展檢核、健康、日記與如廁練習各自清楚，不讓首頁變複雜。</p></div>
+          </article>
+          <article class="family-proof-card">
+            <figure class="family-proof-phone"><img loading="lazy" decoding="async" src="/assets/current/family-teeth.webp" alt="BiuLog 乳牙紀錄與常見萌出月齡" width="804" height="1434"></figure>
+            <div class="family-proof-copy"><strong data-i18n="familyProofThreeTitle">乳牙位置、編號與月齡都看得懂</strong><p data-i18n="familyProofThreeText">直接點嘴巴裡的牙齒記錄萌出日期，搭配編號和常見月齡，不必先懂牙齒名稱。</p></div>
+          </article>
+          <article class="family-proof-card">
+            <figure class="family-proof-phone"><img loading="lazy" decoding="async" src="/assets/current/family-development.webp" alt="BiuLog 兒童發展檢核與家長簽名追蹤" width="810" height="1800"></figure>
+            <div class="family-proof-copy"><strong data-i18n="familyProofFourTitle">按月齡追蹤發展，不只靠印象</strong><p data-i18n="familyProofFourText">依階段建立發展檢核、保留結果與簽名進度；內容是早期觀察參考，不取代醫療診斷。</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -961,14 +1127,14 @@
       zh: {
         htmlLang: "zh-Hant",
         title: "BiuLog｜寶寶作息紀錄、家庭共享與托育協作 App",
-        description: "BiuLog 寶寶紀錄 App，整合餵奶、睡眠、尿布、副食品、成長、疫苗、作息圖表、家庭共享與托育照顧者協作，適合新手爸媽、保母、月子中心與托育機構。",
+        description: "BiuLog 寶寶紀錄 App，整合餵奶、睡眠、尿布、副食品、體溫、成長手冊、乳牙、發展檢核、疫苗、家庭健康、家庭共享與托育聯絡簿。",
         navFeatures: "功能",
         navScreens: "畫面",
         navPro: "機構合作",
         navSupport: "支援",
         eyebrow: "完整育兒紀錄系統｜為家庭與專業照顧者而設計",
         heroTitle: "寶寶每一天，都有清楚可靠的紀錄。",
-        heroLead: "從半夜單手記下喝奶、睡眠與尿布，到成長、疫苗、圖表分析與照顧者交接，BiuLog 把零散資訊整理成全家都看得懂的照護紀錄。",
+        heroLead: "從半夜單手記下喝奶、睡眠與尿布，到乳牙、發展、健康、疫苗與照顧者交接，BiuLog 把寶寶每天與長期成長整理成全家都看得懂的紀錄。",
         ctaStore: "在 App Store 下載",
         ctaGooglePlay: "在 Google Play 下載",
         ctaSupport: "查看支援資訊",
@@ -981,10 +1147,24 @@
         trustCharts: "作息分析",
         trustBabies: "多寶寶",
         trustBackup: "備份還原",
-        featuresTitle: "從今天的作息，到長期成長，完整串連",
-        featuresLead: "快速記錄、多人共享、趨勢分析、疫苗與成長追蹤都在同一套流程裡，新手爸媽容易上手，專業照顧者也能清楚交接。",
+        featuresTitle: "從今天的作息，到乳牙、發展與長期健康，完整串連",
+        featuresLead: "快速記錄、家庭同步、成長手冊、健康紀錄與托育聯絡都在同一套流程裡；功能變多，操作仍維持簡單直覺。",
         screensTitle: "功能完整，操作依然直覺",
-        screensLead: "首頁快速記錄、每日時間線、作息圖表、疫苗與成長資料各自清楚呈現，需要的資訊不用翻找。",
+        screensLead: "首頁保留每天最常用的快速記錄，較低頻的成長、健康與珍貴第一次集中在成長手冊，需要的資訊不用到設定裡翻找。",
+        familyProofKicker: "不只記作息，也陪寶寶長大",
+        familyProofTitle: "每天常用的放首頁，成長、健康與珍貴第一次，收進專屬成長手冊。",
+        familyProofLead: "喝奶、睡眠、尿布與副食品維持快速好記；需要長期保存的乳牙、發展檢核、身高體重、疫苗、健康與家庭日記則集中在同一頁，不必到設定裡翻找。",
+        familyProofPillOne: "家庭共享同步",
+        familyProofPillTwo: "多寶寶分開管理",
+        familyProofPillThree: "日常與長期紀錄分層",
+        familyProofOneTitle: "日常照護，單手就能記",
+        familyProofOneText: "喝奶、尿布、睡眠、副食品與體溫等事件從首頁直接新增，過去的資料長按即可補登。",
+        familyProofTwoTitle: "一頁收好長期成長",
+        familyProofTwoText: "成長、里程碑、乳牙、疫苗、發展檢核、健康、日記與如廁練習各自清楚，不讓首頁變複雜。",
+        familyProofThreeTitle: "乳牙位置、編號與月齡都看得懂",
+        familyProofThreeText: "直接點嘴巴裡的牙齒記錄萌出日期，搭配編號和常見月齡，不必先懂牙齒名稱。",
+        familyProofFourTitle: "按月齡追蹤發展，不只靠印象",
+        familyProofFourText: "依階段建立發展檢核、保留結果與簽名進度；內容是早期觀察參考，不取代醫療診斷。",
         parentCareKicker: "加入托育或月子機構後",
         parentCareTitle: "家長不只收到一句「今天很好」，而是看得懂寶寶一整天的照護。",
         parentCareLead: "原本的家庭育兒首頁照常使用；如果寶寶加入合作機構，App 會再多出專屬聯絡簿、每日照護明細、機構公告、照片、留言與重要事項。",
@@ -1017,13 +1197,17 @@
           ["家庭即時共享", "邀請家人一起查看與記錄，照護資訊同步更新，誰餵過奶、睡了多久、換過幾次尿布都更清楚。"],
           ["專業照顧者協作", "保母、托嬰老師、月嫂與托育機構可和家長共享照護中的寶寶資料，讓日常交接更完整。"],
           ["疫苗紀錄與提醒", "整理接種狀態、完成日期與下一劑時間。實際接種請以醫師與官方資訊為準。"],
-          ["成長、圖表、備份", "保存身高、體重、頭圍與里程碑，以週為單位查看趨勢，並使用完整 JSON 備份與還原。"]
+          ["成長、圖表、備份", "保存身高、體重、頭圍與里程碑，以週為單位查看趨勢，並使用完整 JSON 備份與還原。"],
+          ["寶寶成長手冊", "把成長、里程碑、乳牙、疫苗、健康、家庭日記與如廁練習集中管理，首頁維持清爽。"],
+          ["乳牙萌出紀錄", "用嘴巴圖直接辨認牙齒，記錄萌出日期，並查看各牙齒常見的萌出月齡範圍。"],
+          ["兒童發展檢核", "依寶寶月齡建立分階段檢核，保存歷次結果與簽名狀態，協助家庭持續觀察。"],
+          ["家庭健康與生活事件", "集中記錄健檢、症狀、用藥、食材反應、就醫、體溫與其他生活事件。"]
         ],
         shots: [
-          ["首頁快速記錄", "四大按鈕、今日摘要、最近紀錄都在同一頁。"],
-          ["客製化首頁", "按鈕文字、圖示、照片與風格都能調整。"],
-          ["本週摘要", "親餵、瓶餵母乳、配方奶與喝奶量更好整理。"],
-          ["疫苗紀錄", "依地區參考時程整理接種狀態與下一劑提醒。"],
+          ["家庭生活首頁", "每天最常用的喝奶、尿布、睡眠、副食品與其他事件直接記。"],
+          ["寶寶成長手冊", "成長、乳牙、發展、健康、日記與練習整齊集中。"],
+          ["乳牙圖像紀錄", "牙齒位置、編號、萌出日期與常見月齡一眼看懂。"],
+          ["兒童發展檢核", "依月齡追蹤檢核、簽名與後續觀察狀態。"],
           ["成長里程碑", "翻身、爬行、走路等珍貴時刻可以逐一記下。"],
           ["24 小時熱度", "看出喝奶、尿布、睡眠、副食品集中在哪些時段。"],
           ["趨勢圖表", "用週為單位追蹤最近生活節奏。"],
@@ -1065,6 +1249,20 @@
         featuresLead: "Quick logging, shared care, trend analysis, vaccines, and growth tracking work together in one flow that is easy for new parents and clear for professional caregivers.",
         screensTitle: "Complete capabilities. Intuitive by design.",
         screensLead: "Quick home logging, daily timelines, routine charts, vaccines, and growth records each present the right details without extra searching.",
+        familyProofKicker: "More than routines—grow together",
+        familyProofTitle: "Daily actions stay on Home; growth, health, and first moments live in one dedicated handbook.",
+        familyProofLead: "Feeding, sleep, diapers, and solids remain quick to log, while teeth, development checks, growth, vaccines, health, and family notes stay together without cluttering settings.",
+        familyProofPillOne: "Family sharing sync",
+        familyProofPillTwo: "Separate profiles for each child",
+        familyProofPillThree: "Daily and long-term records organized",
+        familyProofOneTitle: "One-handed daily care logging",
+        familyProofOneText: "Add feeding, diapers, sleep, solids, temperature, and other events from Home; long-press to backfill earlier records.",
+        familyProofTwoTitle: "Long-term growth in one place",
+        familyProofTwoText: "Growth, milestones, teeth, vaccines, development, health, journals, and toilet learning stay clear without complicating Home.",
+        familyProofThreeTitle: "Understand tooth position, number, and age",
+        familyProofThreeText: "Tap the tooth in the mouth illustration, record its eruption date, and compare the usual age range without memorizing dental names.",
+        familyProofFourTitle: "Track development by age",
+        familyProofFourText: "Create age-based checks and retain results and signature progress. The content supports observation and does not replace medical diagnosis.",
         parentCareKicker: "After joining childcare or postpartum care",
         parentCareTitle: "Parents receive more than ‘a good day’—they can understand the child’s whole day of care.",
         parentCareLead: "The family home screen stays in place. When a child joins a partner organization, the app adds a private care book, daily care details, notices, photos, messages, and important items.",
@@ -1145,6 +1343,20 @@
         featuresLead: "すばやい記録、家族やケア担当者との共有、傾向分析、予防接種、成長記録をひとつの流れで管理できます。",
         screensTitle: "充実した機能を、直感的な操作で",
         screensLead: "ホームのクイック記録、毎日のタイムライン、生活リズムのグラフ、予防接種、成長記録。必要な情報に迷わずアクセスできます。",
+        familyProofKicker: "生活記録だけでなく、成長も一緒に",
+        familyProofTitle: "毎日使う機能はホームへ。成長、健康、大切な初めては専用ハンドブックにまとめます。",
+        familyProofLead: "授乳、睡眠、おむつ、離乳食はすばやく記録。乳歯、発達チェック、身長体重、予防接種、健康、家族日記は設定に埋もれず一つの画面にまとまります。",
+        familyProofPillOne: "家族共有で同期",
+        familyProofPillTwo: "お子さまごとに分けて管理",
+        familyProofPillThree: "日常と長期記録を整理",
+        familyProofOneTitle: "毎日のケアを片手で記録",
+        familyProofOneText: "授乳、おむつ、睡眠、離乳食、体温などをホームから追加し、過去の記録は長押しで入力できます。",
+        familyProofTwoTitle: "長期の成長を一画面に",
+        familyProofTwoText: "成長、マイルストーン、乳歯、予防接種、発達、健康、日記、トイレ練習を分かりやすく整理します。",
+        familyProofThreeTitle: "乳歯の位置・番号・月齢が分かる",
+        familyProofThreeText: "口のイラストから歯を直接選び、萌出日と一般的な月齢を確認できます。歯の名前を覚える必要はありません。",
+        familyProofFourTitle: "月齢ごとに発達を確認",
+        familyProofFourText: "段階別の発達チェック、結果、署名状況を保存します。早期観察の参考であり、医療診断の代わりではありません。",
         parentCareKicker: "保育・産後ケア施設に参加すると",
         parentCareTitle: "「今日も元気でした」だけでなく、お子さまの一日のケアが具体的に分かります。",
         parentCareLead: "家庭用ホームはそのまま利用できます。提携施設に参加すると、専用の連絡帳、ケア詳細、お知らせ、写真、メッセージ、重要事項が追加されます。",
@@ -1225,6 +1437,20 @@
         featuresLead: "빠른 기록, 가족 및 돌봄 제공자 공유, 추세 분석, 예방접종, 성장 기록을 하나의 흐름에서 관리할 수 있습니다.",
         screensTitle: "풍부한 기능을 직관적인 화면으로",
         screensLead: "홈 빠른 기록, 하루 타임라인, 생활 패턴 차트, 예방접종, 성장 기록까지 필요한 정보를 바로 확인할 수 있습니다.",
+        familyProofKicker: "일상 기록을 넘어 성장까지",
+        familyProofTitle: "매일 쓰는 기능은 홈에, 성장·건강·소중한 첫 순간은 전용 성장 수첩에 담습니다.",
+        familyProofLead: "수유, 수면, 기저귀, 이유식은 빠르게 기록하고 치아, 발달 확인, 성장, 예방접종, 건강, 가족 일기는 설정 속에 숨기지 않고 한 화면에 모읍니다.",
+        familyProofPillOne: "가족 공유 동기화",
+        familyProofPillTwo: "아이별 분리 관리",
+        familyProofPillThree: "일상과 장기 기록 구분",
+        familyProofOneTitle: "한 손으로 기록하는 일상 돌봄",
+        familyProofOneText: "수유, 기저귀, 수면, 이유식, 체온과 기타 사건을 홈에서 추가하고, 이전 기록은 길게 눌러 입력할 수 있습니다.",
+        familyProofTwoTitle: "장기 성장을 한곳에",
+        familyProofTwoText: "성장, 이정표, 유치, 예방접종, 발달, 건강, 일기, 배변 연습을 정리해 홈 화면은 단순하게 유지합니다.",
+        familyProofThreeTitle: "치아 위치·번호·시기를 쉽게 확인",
+        familyProofThreeText: "입 그림에서 치아를 직접 눌러 맹출일을 기록하고 일반적인 월령 범위를 확인합니다.",
+        familyProofFourTitle: "월령별 발달 확인",
+        familyProofFourText: "단계별 발달 확인표와 결과, 서명 진행을 보관합니다. 관찰을 돕는 참고 자료이며 의료 진단을 대체하지 않습니다.",
         parentCareKicker: "어린이집이나 산후조리원에 참여하면",
         parentCareTitle: "‘오늘 잘 지냈어요’ 한마디가 아니라 아이의 하루 돌봄을 구체적으로 이해할 수 있습니다.",
         parentCareLead: "기존 가족 홈은 그대로 사용합니다. 제휴 기관에 참여하면 전용 알림장, 돌봄 상세, 기관 공지, 사진, 메시지, 중요 사항이 추가됩니다.",
@@ -1281,6 +1507,12 @@
     };
 
     const screenLangMap = { zh: "zh", en: "en", ja: "ja", ko: "ko" };
+    const currentZhShots = {
+      1: "/assets/current/family-home.webp?v=20260829",
+      2: "/assets/current/family-handbook.webp?v=20260829",
+      3: "/assets/current/family-teeth.webp?v=20260829",
+      4: "/assets/current/family-development.webp?v=20260829"
+    };
     const appStoreUrls = {
       zh: "https://apps.apple.com/tw/app/biulog/id6766629143",
       en: "https://apps.apple.com/us/app/biulog/id6766629143",
@@ -1308,6 +1540,7 @@
     }
 
     function imagePath(lang, index) {
+      if (lang === "zh" && currentZhShots[index]) return currentZhShots[index];
       return `/assets/screens/${screenLangMap[lang]}/screen-${index}.webp?v=20260518`;
     }
 
