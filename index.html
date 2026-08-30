@@ -715,6 +715,11 @@
       right: -38px;
     }
 
+    .family-photo-callout--teeth {
+      top: 42%;
+      left: -38px;
+    }
+
     .family-proof-copy strong {
       display: block;
       margin-bottom: 6px;
@@ -1095,7 +1100,10 @@
             <div class="family-proof-copy"><strong data-i18n="familyProofFourTitle">疫苗時程與提醒，依所在地整理</strong><p data-i18n="familyProofFourText">依所在地提供參考時程，集中管理完成狀態、接種日與下一劑；實際接種仍依醫師與官方指引。</p></div>
           </article>
           <article class="family-proof-card">
-            <figure class="family-proof-phone"><img loading="lazy" decoding="async" data-showcase-shot="family-teeth" src="/assets/showcase/zh/family-teeth.webp" alt="BiuLog 乳牙位置、編號與萌出月齡紀錄" width="810" height="1800"></figure>
+            <figure class="family-proof-phone">
+              <img loading="lazy" decoding="async" data-showcase-shot="family-teeth" src="/assets/showcase/zh/family-teeth.webp" alt="BiuLog 乳牙位置、編號與萌出月齡紀錄" width="810" height="1800">
+              <figcaption class="family-photo-callout family-photo-callout--teeth" data-i18n="teethTapCallout">可以點選牙齒進行紀錄</figcaption>
+            </figure>
             <div class="family-proof-copy"><strong data-i18n="familyProofFiveTitle">乳牙位置、編號與萌出月齡，一眼看懂</strong><p data-i18n="familyProofFiveText">直接點嘴巴裡的牙齒記錄日期；未記錄顯示編號，完成後變成勾選，並附常見萌出月齡參考。</p></div>
           </article>
           <article class="family-proof-card">
@@ -1208,6 +1216,7 @@
         familyProofPillThree: "日常與長期紀錄分層",
         familyPhotoCallout: "按鈕圖片可換成寶寶的可愛照片",
         handbookPhotoCallout: "成長手冊按鈕也能換成自己的照片",
+        teethTapCallout: "可以點選牙齒進行紀錄",
         familyProofOneTitle: "日常照護，單手就能記",
         familyProofOneText: "喝奶、尿布、睡眠、副食品與體溫等事件從首頁直接新增，過去的資料長按即可補登。",
         familyProofTwoTitle: "一頁收好長期成長",
@@ -1312,6 +1321,7 @@
         familyProofPillThree: "Daily and long-term records organized",
         familyPhotoCallout: "Use your baby's photos on Home buttons",
         handbookPhotoCallout: "Handbook buttons can use your own photos too",
+        teethTapCallout: "Tap any tooth to record it",
         familyProofOneTitle: "One-handed daily care logging",
         familyProofOneText: "Add feeding, diapers, sleep, solids, temperature, and other events from Home; long-press to backfill earlier records.",
         familyProofTwoTitle: "Long-term growth in one place",
@@ -1412,6 +1422,7 @@
         familyProofPillThree: "日常と長期記録を整理",
         familyPhotoCallout: "ホームのボタン画像をお子さまの写真に変更",
         handbookPhotoCallout: "成長手帳のボタンにも写真を設定できます",
+        teethTapCallout: "歯をタップして記録できます",
         familyProofOneTitle: "毎日のケアを片手で記録",
         familyProofOneText: "授乳、おむつ、睡眠、離乳食、体温などをホームから追加し、過去の記録は長押しで入力できます。",
         familyProofTwoTitle: "長期の成長を一画面に",
@@ -1512,6 +1523,7 @@
         familyProofPillThree: "일상과 장기 기록 구분",
         familyPhotoCallout: "홈 버튼 이미지를 우리 아이 사진으로 변경",
         handbookPhotoCallout: "성장 수첩 버튼에도 사진을 설정할 수 있어요",
+        teethTapCallout: "치아를 눌러 기록할 수 있어요",
         familyProofOneTitle: "한 손으로 기록하는 일상 돌봄",
         familyProofOneText: "수유, 기저귀, 수면, 이유식, 체온과 기타 사건을 홈에서 추가하고, 이전 기록은 길게 눌러 입력할 수 있습니다.",
         familyProofTwoTitle: "장기 성장을 한곳에",
@@ -1613,7 +1625,7 @@
     function updateShowcaseImages(lang) {
       const locale = screenLangMap[lang] || screenLangMap.zh;
       document.querySelectorAll("[data-showcase-shot]").forEach((image) => {
-        image.src = `/assets/showcase/${locale}/${image.dataset.showcaseShot}.webp?v=20260831`;
+        image.src = `/assets/showcase/${locale}/${image.dataset.showcaseShot}.webp?v=20260830b`;
       });
     }
 
