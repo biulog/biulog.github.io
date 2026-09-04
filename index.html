@@ -1089,7 +1089,7 @@
           </div>
           <div>
             <p data-i18n="familyProofLead">喝奶、睡眠、尿布與副食品維持快速好記；需要長期保存的乳牙、發展檢核、身高體重、疫苗、健康與家庭日記則集中在同一頁，不必到設定裡翻找。</p>
-            <div class="family-proof-pills" aria-label="BiuLog 家庭功能">
+            <div class="family-proof-pills" aria-label="BiuLog 家庭功能" data-i18n-aria="familyProofAria">
               <span data-i18n="familyProofPillOne">家庭共享同步</span>
               <span data-i18n="familyProofPillTwo">多寶寶分開管理</span>
               <span data-i18n="familyProofPillThree">日常與長期紀錄分層</span>
@@ -1691,6 +1691,11 @@
       document.querySelectorAll("[data-i18n]").forEach((node) => {
         const key = node.getAttribute("data-i18n");
         if (data[key]) node.textContent = data[key];
+      });
+
+      document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
+        const key = node.getAttribute("data-i18n-aria");
+        if (data[key]) node.setAttribute("aria-label", data[key]);
       });
 
       document.querySelectorAll("[data-lang]").forEach((button) => {
