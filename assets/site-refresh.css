@@ -222,6 +222,58 @@ h1 {
     #fffdf9;
 }
 
+.family-proof-band {
+  border-block-color: rgba(235, 216, 202, .8);
+  background:
+    radial-gradient(circle at 8% 14%, rgba(247, 200, 181, .38), transparent 25rem),
+    radial-gradient(circle at 92% 82%, rgba(220, 234, 245, .7), transparent 28rem),
+    #fffdf9;
+}
+
+.family-proof-kicker {
+  color: #a66255;
+}
+
+.family-proof-pills span,
+.family-proof-card {
+  border-color: rgba(234, 216, 202, .86);
+}
+
+.family-proof-pills span {
+  background: rgba(255, 250, 245, .92);
+  color: #745f53;
+}
+
+.family-proof-card,
+.family-proof-card:nth-child(2) {
+  background: linear-gradient(150deg, #fff, #fff0e7);
+}
+
+.family-proof-card:nth-child(3) {
+  background: linear-gradient(150deg, #fff, #eaf3fa);
+}
+
+.family-proof-card:nth-child(4) {
+  background: linear-gradient(150deg, #fff, #fff1d7);
+}
+
+.family-proof-card:nth-child(5) {
+  background: linear-gradient(150deg, #fff, #f8e7e9);
+}
+
+.family-proof-card:nth-child(6) {
+  background: linear-gradient(150deg, #fff, #edf4fa);
+}
+
+.family-photo-callout {
+  border-color: rgba(234, 216, 202, .9);
+  box-shadow: 0 16px 34px rgba(112, 77, 58, .12);
+}
+
+.family-photo-callout::before {
+  background: #eeaa9b;
+}
+
 .parent-care-card,
 .note {
   border-color: rgba(234, 216, 202, .85);

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>BiuLog 機構合作｜托嬰中心與月子中心的照護協作 App</title>
-  <meta name="description" content="BiuLog 把班級照護、每日聯絡簿、出勤、公告待辦與家長溝通放進同一套 App，適合托嬰中心、月子中心與專業嬰幼兒照護團隊。">
+  <meta name="description" content="BiuLog 把班級照護、多人紀錄、每日聯絡簿、親師訊息、照護照片、睡眠安全、托藥、出勤與管理流程放進同一套 App。">
   <meta name="theme-color" content="#f8f4ed">
   <link rel="canonical" href="https://biulog.github.io/institution.html">
   <link rel="icon" href="/assets/biulog-icon.webp">
@@ -82,6 +82,10 @@
     .showcase.visual{align-items:center;background:linear-gradient(155deg,#fff 0,#f1e8dc 100%)}
     .showcase.visual:nth-child(2){background:linear-gradient(155deg,#fff 0,#e4ede4 100%)}
     .showcase.visual:nth-child(3){background:linear-gradient(155deg,#fff 0,#e7eaf1 100%)}
+    .showcase.visual:nth-child(4){background:linear-gradient(155deg,#fff 0,#eee8ef 100%)}
+    .showcase.visual:nth-child(5){background:linear-gradient(155deg,#fff 0,#e4ecea 100%)}
+    .showcase.visual:nth-child(6){background:linear-gradient(155deg,#fff 0,#f3e4d6 100%)}
+    .showcase.visual:nth-child(7){background:linear-gradient(155deg,#fff 0,#e5eaf0 100%)}
     .showcase .phone{width:230px;box-shadow:0 24px 55px rgba(67,58,49,.19)}
     .showcase-copy{align-self:stretch}
     .showcase-copy span{display:block;font-size:12px;font-weight:900;color:#a17f59;letter-spacing:.08em;margin-bottom:8px}
@@ -110,7 +114,7 @@
     .parent-mode-list{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .parent-mode-item{display:grid;grid-template-columns:26px 1fr;gap:9px;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.46);font-size:13px;color:var(--muted)}
     .parent-mode-item:before{content:"✓";width:24px;height:24px;border-radius:8px;background:var(--mint);display:grid;place-items:center;color:#597558;font-weight:900}
-    .parent-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .parent-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:860px;margin-inline:auto}
     .parent-proof-card{display:flex;min-width:0;flex-direction:column;gap:20px;padding:24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,249,.8)}
     .parent-proof-card:nth-child(2){background:linear-gradient(155deg,#fffdf9 0,#e7edf4 100%)}
     .parent-proof-card:nth-child(3){background:linear-gradient(155deg,#fffdf9 0,#e5eee3 100%)}
@@ -146,14 +150,14 @@
     .footer-row a{text-decoration:none}
     @media(max-width:980px){
       .nav-links{display:none}.hero{grid-template-columns:1fr;min-height:auto;text-align:center;padding-top:50px}.hero-copy{display:grid;justify-items:center}.hero-stage{min-height:600px}
-      .product-lead,.continuity,.faq{grid-template-columns:1fr;gap:50px}.gallery{grid-template-columns:repeat(2,1fr)}.gallery .showcase:last-child{grid-column:1/-1}
+      .product-lead,.continuity,.faq{grid-template-columns:1fr;gap:50px}.gallery{grid-template-columns:repeat(2,1fr)}
       .flow,.benefits,.parent-proof-grid{grid-template-columns:repeat(2,1fr)}.feature-groups{grid-template-columns:1fr 1fr}.cta{grid-template-columns:1fr;padding:50px}
     }
     @media(max-width:660px){
       .wrap{width:min(100% - 28px,var(--max))}.nav{height:70px}.brand span{font-size:18px}.nav .button{display:none}.lang{max-width:118px}
       .hero{padding:36px 0 60px;gap:20px}h1{font-size:42px}.lead{font-size:17px}.hero-stage{min-height:570px}.float-chip{font-size:11px;padding:10px 12px}.chip-a{left:-4px}.chip-b{right:-4px}
       .audience-row{grid-template-columns:1fr;padding:22px 0;gap:10px}.section{padding:82px 0}.section-head{margin-bottom:38px}.screen-stage{min-height:590px}
-      .gallery,.scenarios,.flow,.benefits,.feature-groups,.parent-proof-grid{grid-template-columns:1fr}.gallery .showcase:last-child{grid-column:auto}.showcase{padding:22px}.showcase .phone{width:245px}.parent-proof-card .phone{width:245px}.continuity{margin-top:76px}
+      .gallery,.scenarios,.flow,.benefits,.feature-groups,.parent-proof-grid{grid-template-columns:1fr}.showcase{padding:22px}.showcase .phone{width:245px}.parent-proof-card .phone{width:245px}.continuity{margin-top:76px}
       .scenario{padding:30px 24px}.two-phones{grid-template-columns:1fr;gap:18px}.phone-step .phone{width:260px}.bridge{gap:7px;margin:0}.bridge:before,.bridge:after{width:54px;height:1px}.bridge-arrow{transform:rotate(90deg)}.parent-mode-list{grid-template-columns:1fr}.cta{width:calc(100% - 28px);margin-bottom:60px;padding:38px 24px;border-radius:28px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
@@ -162,7 +166,7 @@
 <body>
   <header class="wrap nav">
     <a class="brand" href="/" aria-label="BiuLog 首頁">
-      <img src="/assets/biulog-icon.webp" width="42" height="42" alt="">
+      <img src="/assets/biulog-icon.webp" width="42" height="42" alt="BiuLog app icon">
       <span>BiuLog</span>
     </a>
     <div class="nav-right">
@@ -183,18 +187,18 @@
     <section class="wrap hero">
       <div class="hero-copy">
         <div class="eyebrow" data-i18n="eyebrow">給托嬰中心、月子中心與專業照護團隊</div>
-        <h1 data-i18n="heroTitle">照護、聯絡簿與家長溝通，一個 App 完成。</h1>
-        <p class="lead" data-i18n="heroLead">照護人員快速記錄，主管即時掌握班級與待辦，家長收到清楚的每日聯絡簿。從機構裡的每一天，到返家後的育兒日常，BiuLog 讓服務不中斷。</p>
+        <h1 data-i18n="heroTitle">照護、聯絡簿、親師溝通與現場管理，一個 App 完成。</h1>
+        <p class="lead" data-i18n="heroLead">老師從按鈕直接完成個別或整班工作，主管掌握班級、待辦與交付狀態，家長收到清楚的每日聯絡簿與訊息。從機構裡的每一天，到返家後的育兒日常，BiuLog 讓服務不中斷。</p>
         <div class="hero-actions">
           <a class="button" href="#contact" data-i18n="heroCta">預約產品展示</a>
           <a class="button alt" href="#product" data-i18n="heroSecondary">直接看 App 畫面</a>
         </div>
         <p class="micro" data-i18n="heroMicro">以下皆為 BiuLog 機構端實際功能畫面，使用無個資示範資料。</p>
       </div>
-      <div class="hero-stage" aria-label="BiuLog 機構端今日照護畫面">
+      <div class="hero-stage" aria-label="BiuLog 機構端照護首頁">
         <div class="stage-glow"></div>
         <figure class="phone">
-          <img src="/assets/institution/institution-today.png" alt="BiuLog 機構端今日照護與班級進度實際畫面" width="1080" height="2400">
+          <img data-showcase-shot="care-home" src="/assets/showcase/zh/care-home.webp" alt="BiuLog 機構端照護首頁與清楚的工作入口" width="810" height="1800">
         </figure>
         <div class="float-chip chip-a"><b></b><span data-i18n="chipOne">今日班級進度一眼掌握</span></div>
         <div class="float-chip chip-b"><b></b><span data-i18n="chipTwo">聯絡簿狀態清楚可追</span></div>
@@ -212,13 +216,13 @@
       <div class="wrap product-lead">
         <div class="screen-stage">
           <figure class="phone">
-            <img loading="lazy" src="/assets/institution/institution-today.png" alt="BiuLog 今日照護畫面，顯示班級進度與照護快捷功能" width="1080" height="2400">
+            <img loading="lazy" data-showcase-shot="care-today" src="/assets/showcase/zh/care-today.webp" alt="BiuLog 今日照護畫面，顯示班級進度與照護快捷功能" width="810" height="1800">
           </figure>
         </div>
         <div>
           <div class="kicker" data-i18n="productKicker">實際 App 畫面</div>
-          <h2 data-i18n="productTitle">主管打開 App，先看見今天還有什麼沒完成。</h2>
-          <p class="lead" data-i18n="productLead">不用逐一問老師，也不用翻群組訊息。今日入托、照護紀錄、聯絡簿發布、家長已讀與待處理事項，都集中在同一個工作畫面。</p>
+          <h2 data-i18n="productTitle">主管先看班級進度，老師則從照護首頁直接開始工作。</h2>
+          <p class="lead" data-i18n="productLead">不用逐一問人，也不用翻群組訊息。今日入托、照護紀錄、聯絡簿發布、家長已讀、親師訊息與待處理事項，都在各角色清楚的工作入口裡。</p>
           <div class="screen-points" id="screenPoints"></div>
         </div>
       </div>
@@ -228,21 +232,25 @@
       <div class="wrap">
         <div class="section-head">
           <div class="kicker" data-i18n="galleryKicker">第一線真的用得到</div>
-          <h2 data-i18n="galleryTitle">從記錄到交付，不必在紙本、群組和表格之間來回。</h2>
-          <p class="lead" data-i18n="galleryLead">下面不是示意圖，而是 BiuLog 現有機構端功能。每個畫面都對應照護現場每天會發生的工作。</p>
+          <h2 data-i18n="galleryTitle">從日常照護到安全、溝通與交付，不必在紙本、群組和表格之間來回。</h2>
+          <p class="lead" data-i18n="galleryLead">下面不是功能清單或示意圖，而是 BiuLog 現有的實際操作畫面。每個按鈕都有對應流程，並能依需要選擇個別寶寶、多人或整班。</p>
         </div>
         <div class="gallery">
           <article class="showcase visual">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/institution-batch.png" alt="BiuLog 多人快速紀錄畫面" width="1080" height="2400"></figure>
-            <div class="showcase-copy"><span>01</span><h3 data-i18n="galleryOneTitle">多人快速紀錄</h3><p data-i18n="galleryOneText">一次選擇多位寶寶，批次記錄喝奶、尿布、睡眠與副食品，再保留個別修改空間。</p></div>
+            <figure class="phone"><img loading="lazy" data-showcase-shot="care-report" src="/assets/showcase/zh/care-report.webp" alt="BiuLog 每日聯絡簿發布畫面" width="810" height="1800"></figure>
+            <div class="showcase-copy"><span>01</span><h3 data-i18n="galleryTwoTitle">每日聯絡簿</h3><p data-i18n="galleryTwoText">今日照護內容自動整理成聯絡簿，發布前可檢查；發布後可確認家長是否已讀。</p></div>
           </article>
           <article class="showcase visual">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/institution-report.png" alt="BiuLog 每日聯絡簿畫面" width="1080" height="2400"></figure>
-            <div class="showcase-copy"><span>02</span><h3 data-i18n="galleryTwoTitle">每日聯絡簿</h3><p data-i18n="galleryTwoText">今日照護內容自動整理成聯絡簿，發布前可檢查；發布後可確認家長是否已讀。</p></div>
+            <figure class="phone"><img loading="lazy" data-showcase-shot="manager-home" src="/assets/showcase/zh/manager-home.webp" alt="BiuLog 管理者照護首頁與營運功能" width="810" height="1800"></figure>
+            <div class="showcase-copy"><span>02</span><h3 data-i18n="galleryThreeTitle">管理者工作集中，但不干擾第一線</h3><p data-i18n="galleryThreeText">人員、班級、收費、報表與流程規則集中在管理首頁；老師只看到每天需要的工作。</p></div>
           </article>
           <article class="showcase visual">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/institution-notice.png" alt="BiuLog 機構公告與家長已讀畫面" width="1080" height="2400"></figure>
-            <div class="showcase-copy"><span>03</span><h3 data-i18n="galleryThreeTitle">公告與家長確認</h3><p data-i18n="galleryThreeText">活動、用品與臨時通知一次發布給指定家庭，已讀狀態直接留在 App 裡。</p></div>
+            <figure class="phone"><img loading="lazy" data-showcase-shot="care-messages" src="/assets/showcase/zh/care-messages.webp" alt="BiuLog 家長與老師親師訊息雙向對話" width="810" height="1800"></figure>
+            <div class="showcase-copy"><span>03</span><h3 data-i18n="galleryFourTitle">親師訊息，不必等聯絡簿發布</h3><p data-i18n="galleryFourText">家長直接說明 Biu 的狀況，老師在同一段對話回覆體溫、喝奶與後續觀察；身分和時間都清楚保留。</p></div>
+          </article>
+          <article class="showcase visual">
+            <figure class="phone"><img loading="lazy" data-showcase-shot="care-calendar" src="/assets/showcase/zh/care-calendar.webp" alt="BiuLog 機構共用行事曆與活動明細" width="810" height="1800"></figure>
+            <div class="showcase-copy"><span>04</span><h3 data-i18n="galleryFiveTitle">行事曆讓老師與主管共同維護</h3><p data-i18n="galleryFiveText">活動、健康檢查、用品與放假提醒集中在同一月曆；授權老師也能新增，不必每件事都等負責人。</p></div>
           </article>
         </div>
       </div>
@@ -278,34 +286,26 @@
         </div>
         <div class="parent-proof-grid">
           <article class="parent-proof-card">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-care-book-overview.png" alt="BiuLog 家長端聯絡簿總覽與每日照護摘要" width="1080" height="2400"></figure>
+            <figure class="phone"><img loading="lazy" data-showcase-shot="parent-home" src="/assets/showcase/zh/parent-home.webp" alt="BiuLog 家長端照護首頁與聯絡簿入口" width="810" height="1800"></figure>
             <div class="parent-proof-copy"><span>01</span><h3 data-i18n="parentGalleryOneTitle">聯絡簿總覽</h3><p data-i18n="parentGalleryOneText">送達狀態、今日心情、飲食與喝奶、尿布、睡眠摘要，一打開就看得懂。</p></div>
           </article>
           <article class="parent-proof-card">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-care-book-detail.png" alt="BiuLog 家長端今日照護明細與老師回饋" width="1080" height="2400"></figure>
+            <figure class="phone"><img loading="lazy" data-showcase-shot="parent-report" src="/assets/showcase/zh/parent-report.webp" alt="BiuLog 家長端每日聯絡簿與照護明細" width="810" height="1800"></figure>
             <div class="parent-proof-copy"><span>02</span><h3 data-i18n="parentGalleryTwoTitle">今日照護明細</h3><p data-i18n="parentGalleryTwoText">入托時間、體溫、飲食、活動、繪本與老師觀察保留在同一份紀錄裡。</p></div>
-          </article>
-          <article class="parent-proof-card">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-care-book-actions.png" alt="BiuLog 家長端聯絡簿留言照片與用品提醒" width="1080" height="2400"></figure>
-            <div class="parent-proof-copy"><span>03</span><h3 data-i18n="parentGalleryThreeTitle">留言與重要事項</h3><p data-i18n="parentGalleryThreeText">家長可留言、查看照護照片，並直接確認聯絡簿或用品提醒，不必在群組裡追訊息。</p></div>
-          </article>
-          <article class="parent-proof-card">
-            <figure class="phone"><img loading="lazy" src="/assets/institution/parent-announcement.png" alt="BiuLog 家長端機構公告與確認已閱讀" width="1080" height="2400"></figure>
-            <div class="parent-proof-copy"><span>04</span><h3 data-i18n="parentGalleryFourTitle">機構公告</h3><p data-i18n="parentGalleryFourText">活動與臨時通知集中呈現，家長按下確認後，機構端也能掌握是否已讀。</p></div>
           </article>
         </div>
       </div>
       <div class="wrap continuity">
         <div class="two-phones" aria-label="家長加入機構後到家庭育兒的連續體驗">
           <figure class="phone-step">
-            <div class="phone-step-label" data-i18n="parentStepLabel">加入機構後</div>
-            <div class="phone small"><img loading="lazy" src="/assets/institution/parent-care-book.png" alt="BiuLog 家長端寶寶聯絡簿" width="1080" height="2400"></div>
-            <figcaption data-i18n="parentStepCaption">查看自己寶寶的聯絡簿、公告與重要事項</figcaption>
+            <div class="phone-step-label" data-i18n="parentStepLabel">寶寶成長手冊</div>
+            <div class="phone small"><img loading="lazy" data-showcase-shot="family-handbook" src="/assets/showcase/zh/family-handbook.webp" alt="BiuLog 寶寶成長手冊" width="810" height="1800"></div>
+            <figcaption data-i18n="parentStepCaption">成長、里程碑、乳牙、疫苗與健康紀錄集中保存</figcaption>
           </figure>
           <div class="bridge" aria-hidden="true"><span data-i18n="bridgeLabel">離館／退托後<br>仍可繼續</span><span class="bridge-arrow">→</span></div>
           <figure class="phone-step">
             <div class="phone-step-label" data-i18n="homeStepLabel">家庭日常</div>
-            <div class="phone small"><img loading="lazy" src="/assets/screens/zh/screen-1.webp" alt="BiuLog 家庭育兒首頁" width="1242" height="2688"></div>
+            <div class="phone small"><img loading="lazy" data-showcase-shot="family-home" src="/assets/showcase/zh/family-home.webp" alt="BiuLog 家庭育兒首頁" width="810" height="1753"></div>
             <figcaption data-i18n="homeStepCaption">繼續記錄喝奶、尿布、睡眠、成長與疫苗</figcaption>
           </figure>
         </div>
@@ -370,35 +370,35 @@
   <script>
     const COPY={
       zh:{
-        htmlLang:"zh-Hant",title:"BiuLog 機構合作｜托嬰中心與月子中心的照護協作 App",description:"BiuLog 把班級照護、每日聯絡簿、出勤、公告待辦與家長溝通放進同一套 App，適合托嬰中心、月子中心與專業嬰幼兒照護團隊。",
+        htmlLang:"zh-Hant",title:"BiuLog 機構合作｜托嬰中心與月子中心的照護協作 App",description:"BiuLog 把班級照護、多人紀錄、每日聯絡簿、親師訊息、照護照片、睡眠安全、托藥、出勤與管理流程放進同一套 App。",
         navProduct:"實際畫面",navScenarios:"適用機構",navFeatures:"完整功能",navParents:"家長版首頁",navCta:"洽談合作",
-        eyebrow:"給托嬰中心、月子中心與專業照護團隊",heroTitle:"照護、聯絡簿與家長溝通，一個 App 完成。",heroLead:"照護人員快速記錄，主管即時掌握班級與待辦，家長收到清楚的每日聯絡簿。從機構裡的每一天，到返家後的育兒日常，BiuLog 讓服務不中斷。",heroCta:"預約產品展示",heroSecondary:"直接看 App 畫面",heroMicro:"以下皆為 BiuLog 機構端實際功能畫面，使用無個資示範資料。",chipOne:"今日班級進度一眼掌握",chipTwo:"聯絡簿狀態清楚可追",
+        eyebrow:"給托嬰中心、月子中心與專業照護團隊",heroTitle:"照護、聯絡簿、親師溝通與現場管理，一個 App 完成。",heroLead:"老師從按鈕直接完成個別或整班工作，主管掌握班級、待辦與交付狀態，家長收到清楚的每日聯絡簿與訊息。從機構裡的每一天，到返家後的育兒日常，BiuLog 讓服務不中斷。",heroCta:"預約產品展示",heroSecondary:"直接看 App 畫面",heroMicro:"以下皆為 BiuLog 機構端實際功能畫面，使用無個資示範資料。",chipOne:"要做什麼，直接按",chipTwo:"每項工作都有清楚入口",
         audienceLabel:"適合這些照護現場",audiences:["托嬰中心","產後護理之家／月子中心","居家托育團隊","專業嬰幼兒照護單位"],
-        productKicker:"實際 App 畫面",productTitle:"主管打開 App，先看見今天還有什麼沒完成。",productLead:"不用逐一問老師，也不用翻群組訊息。今日入托、照護紀錄、聯絡簿發布、家長已讀與待處理事項，都集中在同一個工作畫面。",
+        productKicker:"實際 App 畫面",productTitle:"主管先看班級進度，老師則從照護首頁直接開始工作。",productLead:"不用逐一問人，也不用翻群組訊息。今日入托、照護紀錄、聯絡簿發布、家長已讀、親師訊息與待處理事項，都在各角色清楚的工作入口裡。",
         screenPoints:[["01","班級進度","尚未紀錄、待發布、已送達、家長已讀，一眼分清。"],["02","照護快捷","喝奶、尿布、睡眠與副食品，第一線可以直接記。"],["03","重要事項","用品、接送、用藥與校內交班各自有狀態，不埋在聊天訊息裡。"]],
-        galleryKicker:"第一線真的用得到",galleryTitle:"從記錄到交付，不必在紙本、群組和表格之間來回。",galleryLead:"下面不是示意圖，而是 BiuLog 現有機構端功能。每個畫面都對應照護現場每天會發生的工作。",galleryOneTitle:"多人快速紀錄",galleryOneText:"一次選擇多位寶寶，批次記錄喝奶、尿布、睡眠與副食品，再保留個別修改空間。",galleryTwoTitle:"每日聯絡簿",galleryTwoText:"今日照護內容自動整理成聯絡簿，發布前可檢查；發布後可確認家長是否已讀。",galleryThreeTitle:"公告與家長確認",galleryThreeText:"活動、用品與臨時通知一次發布給指定家庭，已讀狀態直接留在 App 裡。",
+        galleryKicker:"第一線真的用得到",galleryTitle:"從日常照護到安全、溝通與交付，不必在紙本、群組和表格之間來回。",galleryLead:"下面不是功能清單或示意圖，而是 BiuLog 現有的實際操作畫面。每個按鈕都有對應流程，並能依需要選擇個別寶寶、多人或整班。",galleryOneTitle:"多人快速紀錄",galleryOneText:"一次選擇多位寶寶，批次記錄喝奶、尿布、睡眠與副食品，再保留個別修改空間。",galleryTwoTitle:"每日聯絡簿",galleryTwoText:"今日照護內容自動整理成聯絡簿，發布前可檢查；發布後可確認家長是否已讀。",galleryThreeTitle:"公告與家長確認",galleryThreeText:"活動、用品與臨時通知一次發布給指定家庭，已讀狀態直接留在 App 裡。",galleryFourTitle:"老師要做什麼，直接按",galleryFourText:"聯絡簿、多人紀錄、公告、親師訊息、睡眠安全、照片、托藥與接送各自有入口，不必猜功能藏在哪裡。",galleryFiveTitle:"親師訊息可選個人、多人或整班",galleryFiveText:"老師每次重新選擇對象，各家庭只看到和自己有關的訊息；管理者也能依權限接續處理。",gallerySixTitle:"用品、事件與交代事項可追蹤",gallerySixText:"指定班級或寶寶、選擇家長或校內人員、留下數量與處理狀態，完成後自動進入歷史。",gallerySevenTitle:"睡眠安全一次檢查多人",gallerySevenText:"依機構自己的巡視規則選擇寶寶、標示正常或例外，時間與操作人自動留存，方便交班與回看。",
         parentGalleryKicker:"家長端真正收到的內容",parentGalleryTitle:"不是只有一張摘要，而是每天的照護、老師回饋與待確認事項都有完整脈絡。",parentGalleryLead:"下面都是家長實際使用的畫面。家長能從聯絡簿看懂寶寶今天吃了多少、睡了多久、參與什麼活動，也能留言、查看公告並完成已讀或用品確認。",parentGalleryOneTitle:"聯絡簿總覽",parentGalleryOneText:"送達狀態、今日心情、飲食與喝奶、尿布、睡眠摘要，一打開就看得懂。",parentGalleryTwoTitle:"今日照護明細",parentGalleryTwoText:"入托時間、體溫、飲食、活動、繪本與老師觀察保留在同一份紀錄裡。",parentGalleryThreeTitle:"留言與重要事項",parentGalleryThreeText:"家長可留言、查看照護照片，並直接確認聯絡簿或用品提醒，不必在群組裡追訊息。",parentGalleryFourTitle:"機構公告",parentGalleryFourText:"活動與臨時通知集中呈現，家長按下確認後，機構端也能掌握是否已讀。",
         flowKicker:"一條清楚的工作流程",flowTitle:"照護人員記一次，主管、家長與下一班都接得到。",flowLead:"每個角色在同一套資料上完成自己的工作，減少重抄、漏看與「到底誰處理了」的來回確認。",flow:[["照護人員記錄","用手機快速完成個別或多人照護紀錄。"],["主管掌握進度","即時看班級、出勤、待辦與聯絡簿狀態。"],["家長收到內容","每日聯絡簿、公告與重要事項清楚送達。"],["下一班接續","重要異動與處理狀態可回看，交班更有依據。"]],
         scenarioKicker:"依照護現場使用",scenarioTitle:"托嬰中心與月子中心，都能從每天最頻繁的工作開始。",
         scenarios:[["托嬰中心","班級協作與每日聯絡更有秩序",["班級、老師與寶寶的操作範圍清楚","到托／離托、請假與接送資訊集中","多人批次記錄，聯絡簿下班前統一檢查","用品、用藥、事件與家長回覆可追蹤"]],["月子中心／產後護理之家","密集照護與返家銜接更完整",["喝奶、尿布、睡眠等高頻內容快速記錄","重要照護事項留在同一份寶寶脈絡裡","家長在館期間即時看見每天的照護內容","離館後繼續使用熟悉的家庭育兒功能"]]],
-        continuityKicker:"家長端實際體驗",continuityTitle:"加入機構後，多的是聯絡簿與機構公告；原本的家庭育兒首頁不會消失。",continuityLead:"家長只會看到自己寶寶的機構內容，可以查看每日照護、聯絡簿、公告、照片、留言與需要回覆的重要事項；喝奶、睡眠、尿布、成長等原本的家庭紀錄仍可照常使用。",parentStepLabel:"加入機構後",parentStepCaption:"查看自己寶寶的聯絡簿、公告與重要事項",bridgeLabel:"離館／退托後仍可繼續",homeStepLabel:"家庭日常",homeStepCaption:"繼續記錄喝奶、尿布、睡眠、成長與疫苗",parentModeItems:["只顯示自己寶寶的機構照護內容","查看聯絡簿、機構公告、照片與留言","處理用品、用藥、接送與請假等事項","家庭紀錄與機構共享範圍分開管理"],continuityQuote:"機構交付的不只是一份聯絡簿，而是一套家長帶得回家的安心習慣。",
+        continuityKicker:"家長端實際體驗",continuityTitle:"離開機構後，成長手冊與家庭育兒首頁仍然接著使用。",continuityLead:"家長在機構期間收到每日照護、聯絡簿、公告、照片與訊息；返家或離開機構後，仍能繼續保存成長、里程碑、乳牙、疫苗與健康紀錄。",parentStepLabel:"寶寶成長手冊",parentStepCaption:"成長、里程碑、乳牙、疫苗與健康紀錄集中保存",bridgeLabel:"離館／退托後仍可繼續",homeStepLabel:"家庭日常",homeStepCaption:"繼續記錄喝奶、尿布、睡眠、成長與疫苗",parentModeItems:["只顯示自己寶寶的機構照護內容","查看聯絡簿、機構公告、照片與留言","處理用品、用藥、接送與請假等事項","家庭紀錄與機構共享範圍分開管理"],continuityQuote:"機構交付的不只是一份聯絡簿，而是一套家長帶得回家的安心習慣。",
         benefitKicker:"對經營者真正有用",benefitTitle:"讓第一線更順，也讓家長更能感受到機構的專業。",benefits:[["◎","降低重複整理","照護紀錄直接成為聯絡簿素材，減少重抄與分散整理。"],["◫","掌握完成狀態","主管能看見尚未記錄、待發布、家長未讀與待處理事項。"],["✓","交接有依據","照護、公告、留言與重要異動保留脈絡，不只靠口頭提醒。"],["↗","延續服務印象","家長返家後仍能繼續使用，機構帶來的好體驗不在離館當天結束。"]],
-        featuresKicker:"機構功能總覽",featuresTitle:"日常照護、班級管理、家長溝通與追蹤，都有對應工具。",featureGroups:[["日常照護",["喝奶、尿布、睡眠、副食品","體溫、身體檢查、餐點與活動","個別快速記錄與多人批次記錄","到托、離托與每日照護摘要"]],["聯絡與待辦",["每日聯絡簿、發布與家長已讀","聯絡簿留言與照片","機構公告與指定家庭通知","用品、用藥、接送、請假與事件事項"]],["管理與追蹤",["機構工作區、班級與人員指派","管理者、班級主管與照護人員角色","寶寶名單 CSV 匯入、班級報表匯出","重要操作與異動紀錄"]]],
+        featuresKicker:"機構功能總覽",featuresTitle:"日常照護、班級管理、家長溝通與追蹤，都有對應工具。",featureGroups:[["第一線照護",["喝奶、尿布、睡眠、副食品與體溫","個別、多位或整班的快速紀錄","睡眠安全檢查與托藥執行","到離園、請假、接送與健康外出"]],["家長溝通與交付",["每日聯絡簿、發布、已讀與親師留言","親師訊息與班級交流分流","照護照片可發個別、多位或整班","公告、用品、事件與重要交代可追蹤"]],["管理與營運",["管理者與職員顯示不同工作入口","班級、人員、寶寶與負責範圍管理","上下班打卡、行事曆、問卷與機構文件","名單匯入、報表匯出、收費核銷與異動紀錄"]]],
         faqKicker:"合作前常見問題",faqTitle:"先把機構最在意的問題說清楚。",faqLead:"想了解是否適合你的機構，可以直接來信說明規模與照護方式。",faqs:[["需要另外購買專用硬體嗎？","不需要先採購專用設備。BiuLog 以手機 App 為主要使用方式，實際裝置安排可依機構流程討論。"],["家長和工作人員會看到完全相同的內容嗎？","不會。系統依機構、班級、工作人員與家長角色區分操作及查看範圍。"],["家長離館或退托後還能使用嗎？","可以。家長可繼續使用家庭育兒紀錄；機構共享範圍則依合作關係與權限管理。"],["可以先從一個班級或單位開始嗎？","可以。先用一個班級、房區或照護單位確認流程，再依實際使用情況擴大。"],["合作費用怎麼計算？","會依機構規模、使用情境與導入範圍討論，來信後我們會一起確認適合的方式。"]],
         ctaKicker:"看一次實際操作，比想像更快",ctaTitle:"把你們現在的照護流程告訴我們，一起看 BiuLog 能怎麼接上。",ctaLead:"來信請簡單說明機構類型、照護人數與目前使用的聯絡方式，我們會回覆適合的展示與合作方向。",ctaButton:"寄信洽談合作",footerParents:"家長版首頁"
       },
       en:{
         htmlLang:"en",title:"BiuLog for Care Organizations | Childcare and Postpartum Care App",description:"BiuLog brings daily care, care books, attendance, notices, tasks, and family communication into one app.",
         navProduct:"Product",navScenarios:"For your care setting",navFeatures:"Features",navParents:"For families",navCta:"Talk to us",
-        eyebrow:"For childcare, postpartum care, and infant-care teams",heroTitle:"Care records, daily reports, and family communication—in one app.",heroLead:"Care staff record quickly, managers see class progress and tasks, and families receive a clear daily care book. BiuLog keeps the experience connected from the care setting to life at home.",heroCta:"Book a product demo",heroSecondary:"See the app",heroMicro:"All screens below are real BiuLog organization features shown with fictional demo data.",chipOne:"See today’s class progress",chipTwo:"Track every care-book status",
+        eyebrow:"For childcare, postpartum care, and infant-care teams",heroTitle:"Care records, daily reports, and family communication—in one app.",heroLead:"Care staff record quickly, managers see class progress and tasks, and families receive a clear daily care book. BiuLog keeps the experience connected from the care setting to life at home.",heroCta:"Book a product demo",heroSecondary:"See the app",heroMicro:"All screens below are real BiuLog organization features shown with fictional demo data.",chipOne:"Tap the work you need",chipTwo:"Every task has a clear entry",
         audienceLabel:"Designed for",audiences:["Childcare centers","Postpartum care centers","Home childcare teams","Professional infant-care teams"],
         productKicker:"Real product screen",productTitle:"Open the app and see what still needs attention today.",productLead:"No need to ask every staff member or search through chat. Check-in, care records, publishing, family reads, and open tasks are together in one workspace.",
         screenPoints:[["01","Class progress","Separate not started, ready to publish, delivered, and read at a glance."],["02","Fast care records","Record feeding, diapers, sleep, and solids right from the workspace."],["03","Important items","Keep supplies, pickup, medication, and staff handover out of scattered chat."]],
-        galleryKicker:"Built for frontline work",galleryTitle:"From recording to delivery—without jumping between paper, chat, and spreadsheets.",galleryLead:"These are current BiuLog organization screens, each tied to work that care teams do every day.",galleryOneTitle:"Batch care records",galleryOneText:"Select multiple children, record frequent care items in one flow, and keep individual edits available.",galleryTwoTitle:"Daily care book",galleryTwoText:"Care activity is organized into a daily report for review, publishing, and family-read tracking.",galleryThreeTitle:"Notices and read status",galleryThreeText:"Send activities, supply reminders, and urgent notices to selected families, with read status in the app.",
+        galleryKicker:"Built for frontline work",galleryTitle:"From daily care to safety, communication, and delivery—without jumping between paper, chat, and spreadsheets.",galleryLead:"These are real BiuLog workflows, not feature-list mockups. Each action can target one child, several children, or a whole class when appropriate.",galleryOneTitle:"Batch care records",galleryOneText:"Select multiple children, record frequent care items in one flow, and keep individual edits available.",galleryTwoTitle:"Daily care book",galleryTwoText:"Care activity is organized into a daily report for review, publishing, and family-read tracking.",galleryThreeTitle:"Notices and read status",galleryThreeText:"Send activities, supply reminders, and urgent notices to selected families, with read status in the app.",galleryFourTitle:"Staff tap the work they need",galleryFourText:"Care books, batch records, notices, messages, sleep safety, photos, medication, and pickup each have a clear entry point.",galleryFiveTitle:"Message one child, several, or a class",galleryFiveText:"Staff choose recipients each time, so every family only sees relevant messages while managers can follow up by role.",gallerySixTitle:"Track supplies, incidents, and handover",gallerySixText:"Choose the class or child, family or staff recipient, quantities, and status; completed work moves to history.",gallerySevenTitle:"Check sleep safety for multiple children",gallerySevenText:"Follow the organization’s own schedule, mark normal or exceptional observations, and retain time and operator for handover.",
         parentGalleryKicker:"What families actually receive",parentGalleryTitle:"More than a summary: daily care, staff feedback, and items needing a response stay in one clear story.",parentGalleryLead:"These are real family-side screens. Parents can see how much their child ate, slept, and participated, then leave a message, review notices, and confirm care books or supply reminders.",parentGalleryOneTitle:"Care-book overview",parentGalleryOneText:"Delivery status, mood, meals, feeding, diapers, and sleep are understandable at a glance.",parentGalleryTwoTitle:"Daily care details",parentGalleryTwoText:"Check-in, temperature, meals, activities, books, and staff observations stay together.",parentGalleryThreeTitle:"Messages and important items",parentGalleryThreeText:"Families can message, view care photos, and confirm reports or supply reminders without searching group chat.",parentGalleryFourTitle:"Organization notices",parentGalleryFourText:"Activities and urgent updates stay in one place, with read confirmation visible to the organization.",
         flowKicker:"One clear workflow",flowTitle:"Record once, and managers, families, and the next shift can all continue.",flowLead:"Each role works from the same care context, reducing rewrites, missed messages, and repeated follow-up.",flow:[["Staff records care","Complete individual or batch records quickly on a phone."],["Managers see progress","Review classes, attendance, tasks, and report status."],["Families receive updates","Daily reports, notices, and important items arrive clearly."],["The next shift continues","Important changes and action status stay available for handover."]],
         scenarioKicker:"Fits the care setting",scenarioTitle:"Childcare and postpartum care teams can start with their most frequent daily work.",scenarios:[["Childcare centers","More orderly class collaboration and daily communication",["Clear scope for classes, staff, and children","Check-in, check-out, leave, and pickup in one place","Batch records with final care-book review","Track supplies, medication, incidents, and replies"]],["Postpartum care centers","Complete high-frequency care and transition home",["Fast feeding, diaper, and sleep records","Keep important care items in one child timeline","Families see daily care while in residence","Continue familiar family tools after discharge"]]],
-        continuityKicker:"The real family experience",continuityTitle:"Joining a care organization adds care books and notices—the family home screen stays in place.",continuityLead:"Families only see their own child’s organization content. They can review daily care, reports, notices, photos, messages, and items that need a reply while continuing their existing feeding, sleep, diaper, and growth records.",parentStepLabel:"After joining",parentStepCaption:"See your child’s care book, notices, and important items",bridgeLabel:"Continue after discharge or graduation",homeStepLabel:"Family routines",homeStepCaption:"Keep tracking feeding, diapers, sleep, growth, and vaccines",parentModeItems:["Only your own child’s organization content","Care books, notices, photos, and messages","Supplies, medication, pickup, and leave items","Home records and organization sharing remain separate"],continuityQuote:"You are not only delivering a report—you are giving families a reassuring habit they can take home.",
+        continuityKicker:"The real family experience",continuityTitle:"The growth handbook and family home continue after families leave the organization.",continuityLead:"Families receive daily care, reports, notices, photos, and messages while enrolled. At home or after graduation, they can keep growth, milestones, teeth, vaccines, and health records together.",parentStepLabel:"Biu’s growth handbook",parentStepCaption:"Keep growth, milestones, teeth, vaccines, and health records together",bridgeLabel:"Continue after discharge or graduation",homeStepLabel:"Family routines",homeStepCaption:"Keep tracking feeding, diapers, sleep, growth, and vaccines",parentModeItems:["Only your own child’s organization content","Care books, notices, photos, and messages","Supplies, medication, pickup, and leave items","Home records and organization sharing remain separate"],continuityQuote:"You are not only delivering a report—you are giving families a reassuring habit they can take home.",
         benefitKicker:"Value for operators",benefitTitle:"Make frontline work smoother and professional care more visible to families.",benefits:[["◎","Less duplicate work","Care records become report content instead of being copied across tools."],["◫","Visible completion","See missing records, unpublished reports, unread items, and open tasks."],["✓","Traceable handover","Care, notices, messages, and changes retain context beyond verbal reminders."],["↗","A longer service impression","Families keep using the app after care, extending a positive experience."]],
         featuresKicker:"Feature overview",featuresTitle:"Tools for daily care, class management, family communication, and follow-up.",featureGroups:[["Daily care",["Feeding, diapers, sleep, and solids","Temperature, body checks, meals, and activities","Individual and batch records","Check-in, check-out, and daily summaries"]],["Communication and tasks",["Daily care books, publishing, and read status","Messages and photos","Organization notices","Supplies, medication, pickup, leave, and incidents"]],["Management and tracking",["Workspaces, classes, and staff assignments","Manager, class lead, and care-staff roles","CSV roster import and report export","Activity and change history"]]],
         faqKicker:"Common questions",faqTitle:"Answers to what care organizations ask first.",faqLead:"Tell us your care model and size, and we can discuss the right setup.",faqs:[["Do we need special hardware?","No dedicated hardware purchase is required. BiuLog is primarily a mobile app; device arrangements can follow your workflow."],["Do families and staff see the same content?","No. Access and actions are separated by organization, class, staff, and family roles."],["Can families keep using BiuLog after care ends?","Yes. Families can continue their own home records, while organization access follows the active relationship and permissions."],["Can we start with one class or unit?","Yes. Start with one class, floor, or unit, validate the workflow, and then expand."],["How is pricing determined?","Pricing is discussed based on organization size, use case, and rollout scope. Contact us for a suitable approach."]],
@@ -407,15 +407,15 @@
       ja:{
         htmlLang:"ja",title:"BiuLog 施設連携｜保育・産後ケアの業務連携アプリ",description:"BiuLog は日々のケア、連絡帳、登降園、お知らせ、対応事項、保護者連絡をひとつのアプリにまとめます。",
         navProduct:"実際の画面",navScenarios:"対象施設",navFeatures:"機能",navParents:"ご家族向け",navCta:"お問い合わせ",
-        eyebrow:"保育施設・産後ケア施設・乳幼児ケアチームへ",heroTitle:"ケア記録、連絡帳、保護者連絡を、ひとつのアプリで。",heroLead:"スタッフはすばやく記録し、管理者はクラスの進捗と対応事項を把握。保護者には分かりやすい連絡帳が届きます。施設での毎日から帰宅後まで、BiuLog が体験をつなぎます。",heroCta:"製品デモを予約",heroSecondary:"アプリ画面を見る",heroMicro:"以下はすべて、個人情報を含まないデモデータを使った実際の施設向け機能です。",chipOne:"今日のクラス進捗を確認",chipTwo:"連絡帳の状態を追跡",
+        eyebrow:"保育施設・産後ケア施設・乳幼児ケアチームへ",heroTitle:"ケア記録、連絡帳、保護者連絡を、ひとつのアプリで。",heroLead:"スタッフはすばやく記録し、管理者はクラスの進捗と対応事項を把握。保護者には分かりやすい連絡帳が届きます。施設での毎日から帰宅後まで、BiuLog が体験をつなぎます。",heroCta:"製品デモを予約",heroSecondary:"アプリ画面を見る",heroMicro:"以下はすべて、個人情報を含まないデモデータを使った実際の施設向け機能です。",chipOne:"やりたい業務をそのままタップ",chipTwo:"すべての業務に明確な入口",
         audienceLabel:"対象",audiences:["保育施設","産後ケア施設","家庭的保育チーム","乳幼児ケアチーム"],
         productKicker:"実際のアプリ画面",productTitle:"アプリを開けば、今日まだ終わっていないことが分かります。",productLead:"職員一人ひとりに確認したり、チャットを探したりする必要はありません。登園、ケア記録、連絡帳の公開、保護者確認、対応事項をひとつの画面で把握できます。",
         screenPoints:[["01","クラス進捗","未記録・公開待ち・配信済み・保護者確認済みを一覧で確認。"],["02","すばやいケア記録","授乳、おむつ、睡眠、離乳食をその場で記録。"],["03","重要事項","用品、送迎、与薬、職員間の引き継ぎをチャットに埋もれさせません。"]],
-        galleryKicker:"現場で使える設計",galleryTitle:"記録から共有まで、紙・チャット・表計算を行き来しません。",galleryLead:"下記はすべて BiuLog の現在の施設向け機能です。",galleryOneTitle:"複数人の一括記録",galleryOneText:"複数のお子さまを選び、よく使うケア項目をまとめて記録しながら個別修正もできます。",galleryTwoTitle:"毎日の連絡帳",galleryTwoText:"ケア内容を連絡帳に自動整理。公開前の確認と、公開後の保護者既読を追跡できます。",galleryThreeTitle:"お知らせと既読",galleryThreeText:"行事、用品、臨時連絡を対象家庭へ一括配信し、既読をアプリ内で確認できます。",
+        galleryKicker:"現場で使える設計",galleryTitle:"日常ケアから安全、連絡、共有まで、紙・チャット・表計算を行き来しません。",galleryLead:"機能一覧のイメージではなく、実際に操作できる BiuLog の画面です。必要に応じて個別、複数、クラス全体を選べます。",galleryOneTitle:"複数人の一括記録",galleryOneText:"複数のお子さまを選び、よく使うケア項目をまとめて記録しながら個別修正もできます。",galleryTwoTitle:"毎日の連絡帳",galleryTwoText:"ケア内容を連絡帳に自動整理。公開前の確認と、公開後の保護者既読を追跡できます。",galleryThreeTitle:"お知らせと既読",galleryThreeText:"行事、用品、臨時連絡を対象家庭へ一括配信し、既読をアプリ内で確認できます。",galleryFourTitle:"必要な業務をそのままタップ",galleryFourText:"連絡帳、一括記録、お知らせ、メッセージ、睡眠安全、写真、与薬、送迎にそれぞれ明確な入口があります。",galleryFiveTitle:"個別・複数・クラスへメッセージ",galleryFiveText:"毎回送信先を選び、各家庭には関係する内容だけを表示。管理者も役割に応じて対応できます。",gallerySixTitle:"用品・事故・引き継ぎを追跡",gallerySixText:"クラスやお子さま、保護者や職員、数量、処理状態を指定し、完了後は履歴へ移動します。",gallerySevenTitle:"複数のお子さまを睡眠安全確認",gallerySevenText:"施設の巡視ルールに合わせて正常・例外を記録し、時刻と担当者を引き継ぎに残します。",
         parentGalleryKicker:"保護者が実際に受け取る内容",parentGalleryTitle:"概要だけではなく、毎日のケア、スタッフのコメント、確認事項までひとつの流れで伝わります。",parentGalleryLead:"以下は保護者側の実際の画面です。食事量、睡眠、活動を連絡帳で確認し、メッセージ、お知らせ、既読確認、用品確認まで行えます。",parentGalleryOneTitle:"連絡帳の概要",parentGalleryOneText:"配信状態、気分、食事、授乳、おむつ、睡眠をひと目で確認できます。",parentGalleryTwoTitle:"今日のケア詳細",parentGalleryTwoText:"登園、体温、食事、活動、絵本、スタッフの観察を一つの記録で確認できます。",parentGalleryThreeTitle:"メッセージと重要事項",parentGalleryThreeText:"メッセージやケア写真を確認し、連絡帳や用品の準備をアプリ内で返答できます。",parentGalleryFourTitle:"施設からのお知らせ",parentGalleryFourText:"行事や臨時連絡をまとめて確認。保護者の既読も施設側で把握できます。",
         flowKicker:"ひとつの明確な流れ",flowTitle:"一度記録すれば、管理者・保護者・次のシフトへつながります。",flowLead:"同じケア情報を各役割が使うことで、転記、見落とし、確認の往復を減らします。",flow:[["スタッフが記録","スマートフォンで個別・一括ケアを記録。"],["管理者が把握","クラス、登降園、対応事項、連絡帳を確認。"],["保護者へ共有","連絡帳、お知らせ、重要事項を分かりやすく配信。"],["次のシフトへ","変更や対応状況を残し、引き継ぎの根拠に。"]],
         scenarioKicker:"ケア現場に合わせて",scenarioTitle:"保育施設も産後ケア施設も、頻度の高い業務から始められます。",scenarios:[["保育施設","クラス連携と毎日の連絡を整理",["クラス・職員・お子さまの範囲を明確に","登降園、欠席、送迎情報を一か所に","一括記録と連絡帳の最終確認","用品、与薬、事故、返信を追跡"]],["産後ケア施設","高頻度ケアと退所後をつなぐ",["授乳、おむつ、睡眠をすばやく記録","重要事項をお子さまの流れに集約","滞在中のケアを保護者が確認","退所後も家庭向け機能を継続"]]],
-        continuityKicker:"保護者側の実際の体験",continuityTitle:"施設に参加すると連絡帳とお知らせが追加され、家庭用ホームはそのまま使えます。",continuityLead:"保護者が見られるのは自分のお子さまの施設情報だけです。毎日のケア、連絡帳、お知らせ、写真、メッセージ、返信が必要な事項を確認しながら、家庭の授乳・睡眠・おむつ・成長記録も続けられます。",parentStepLabel:"施設に参加後",parentStepCaption:"自分のお子さまの連絡帳・お知らせ・重要事項",bridgeLabel:"退所・卒園後も継続",homeStepLabel:"家庭の日常",homeStepCaption:"授乳・おむつ・睡眠・成長・予防接種を継続",parentModeItems:["自分のお子さまの施設情報だけを表示","連絡帳、お知らせ、写真、メッセージ","用品、与薬、送迎、欠席などの対応事項","家庭記録と施設共有の範囲を分けて管理"],continuityQuote:"連絡帳だけでなく、家庭に持ち帰れる安心の習慣を届けます。",
+        continuityKicker:"保護者側の実際の体験",continuityTitle:"施設を離れた後も、成長手帳と家庭用ホームをそのまま使い続けられます。",continuityLead:"在園中は毎日のケア、連絡帳、お知らせ、写真、メッセージを受け取り、帰宅後や卒園後も成長、マイルストーン、乳歯、予防接種、健康記録をまとめて残せます。",parentStepLabel:"Biu の成長手帳",parentStepCaption:"成長、マイルストーン、乳歯、予防接種、健康記録をまとめて保存",bridgeLabel:"退所・卒園後も継続",homeStepLabel:"家庭の日常",homeStepCaption:"授乳・おむつ・睡眠・成長・予防接種を継続",parentModeItems:["自分のお子さまの施設情報だけを表示","連絡帳、お知らせ、写真、メッセージ","用品、与薬、送迎、欠席などの対応事項","家庭記録と施設共有の範囲を分けて管理"],continuityQuote:"連絡帳だけでなく、家庭に持ち帰れる安心の習慣を届けます。",
         benefitKicker:"運営者への価値",benefitTitle:"現場をスムーズにし、ケアの専門性を保護者に伝えます。",benefits:[["◎","重複作業を削減","ケア記録をそのまま連絡帳に活用。"],["◫","完了状態を把握","未記録、未公開、未読、未対応を確認。"],["✓","引き継ぎを追跡","ケア、お知らせ、メッセージ、変更を記録。"],["↗","体験を継続","施設を離れた後も良い印象が続きます。"]],
         featuresKicker:"機能一覧",featuresTitle:"日常ケア、クラス管理、保護者連絡、追跡のための機能。",featureGroups:[["日常ケア",["授乳、おむつ、睡眠、離乳食","体温、健康確認、食事、活動","個別・一括記録","登降園と日次サマリー"]],["連絡と対応",["連絡帳、公開、既読","メッセージと写真","施設のお知らせ","用品、与薬、送迎、欠席、事故"]],["管理と追跡",["ワークスペース、クラス、職員","管理者、クラス責任者、職員の役割","CSV 名簿取込とレポート出力","操作・変更履歴"]]],
         faqKicker:"よくある質問",faqTitle:"施設が最初に確認したいこと。",faqLead:"施設の規模とケア方法をお知らせください。",faqs:[["専用ハードウェアは必要ですか？","専用機器の購入は不要です。BiuLog は主にスマートフォンアプリとして利用します。"],["保護者と職員は同じ内容を見ますか？","いいえ。施設、クラス、職員、保護者の役割ごとに操作・閲覧範囲を分けます。"],["退所後も保護者は使えますか？","はい。家庭の育児記録は継続でき、施設共有は関係と権限に応じて管理されます。"],["1クラスから始められますか？","はい。小さな単位で流れを確認してから広げられます。"],["料金はどう決まりますか？","施設規模、利用場面、導入範囲に応じてご相談します。"]],
@@ -424,15 +424,15 @@
       ko:{
         htmlLang:"ko",title:"BiuLog 기관 협력 | 어린이집·산후조리원 돌봄 협업 앱",description:"BiuLog는 일상 돌봄, 알림장, 출결, 공지, 할 일, 보호자 소통을 하나의 앱에 담습니다.",
         navProduct:"실제 화면",navScenarios:"적용 기관",navFeatures:"기능",navParents:"가족용",navCta:"협력 문의",
-        eyebrow:"어린이집·산후조리원·영유아 돌봄팀을 위한",heroTitle:"돌봄 기록, 알림장, 보호자 소통을 하나의 앱으로.",heroLead:"돌봄 담당자는 빠르게 기록하고, 관리자는 반 진행 상황과 할 일을 확인하며, 보호자는 명확한 알림장을 받습니다. 기관에서 가정까지 BiuLog가 경험을 이어 줍니다.",heroCta:"제품 데모 예약",heroSecondary:"앱 화면 보기",heroMicro:"아래 화면은 개인정보가 없는 데모 데이터로 표시한 실제 기관용 기능입니다.",chipOne:"오늘 반 진행 상황 확인",chipTwo:"알림장 상태 추적",
+        eyebrow:"어린이집·산후조리원·영유아 돌봄팀을 위한",heroTitle:"돌봄 기록, 알림장, 보호자 소통을 하나의 앱으로.",heroLead:"돌봄 담당자는 빠르게 기록하고, 관리자는 반 진행 상황과 할 일을 확인하며, 보호자는 명확한 알림장을 받습니다. 기관에서 가정까지 BiuLog가 경험을 이어 줍니다.",heroCta:"제품 데모 예약",heroSecondary:"앱 화면 보기",heroMicro:"아래 화면은 개인정보가 없는 데모 데이터로 표시한 실제 기관용 기능입니다.",chipOne:"할 일을 바로 탭하세요",chipTwo:"모든 업무에 명확한 진입점",
         audienceLabel:"적합한 곳",audiences:["어린이집","산후조리원","가정 보육팀","전문 영유아 돌봄팀"],
         productKicker:"실제 앱 화면",productTitle:"앱을 열면 오늘 아직 끝나지 않은 일이 보입니다.",productLead:"선생님마다 묻거나 채팅을 뒤질 필요가 없습니다. 등원, 돌봄 기록, 알림장 게시, 보호자 확인, 처리할 일을 한 화면에서 봅니다.",
         screenPoints:[["01","반 진행 상황","미기록·게시 대기·전달·보호자 확인을 한눈에 구분합니다."],["02","빠른 돌봄 기록","수유, 기저귀, 수면, 이유식을 바로 기록합니다."],["03","중요 사항","준비물, 하원, 투약, 직원 인계를 채팅 속에 묻히지 않게 합니다."]],
-        galleryKicker:"현장에서 실제로 사용",galleryTitle:"기록부터 전달까지 종이, 채팅, 표를 오가지 않습니다.",galleryLead:"아래는 모두 현재 BiuLog 기관용 실제 기능입니다.",galleryOneTitle:"여러 명 빠른 기록",galleryOneText:"여러 아이를 선택해 자주 쓰는 돌봄 항목을 한 번에 기록하고 개별 수정할 수 있습니다.",galleryTwoTitle:"매일 알림장",galleryTwoText:"돌봄 내용을 알림장으로 정리하고 게시 전 검토와 게시 후 보호자 확인을 추적합니다.",galleryThreeTitle:"공지와 확인",galleryThreeText:"행사, 준비물, 긴급 공지를 대상 가족에게 보내고 읽음 상태를 확인합니다.",
+        galleryKicker:"현장에서 실제로 사용",galleryTitle:"일상 돌봄부터 안전, 소통, 전달까지 종이, 채팅, 표를 오가지 않습니다.",galleryLead:"기능 목록용 그림이 아니라 실제로 작동하는 BiuLog 화면입니다. 필요에 따라 한 명, 여러 명, 반 전체를 선택합니다.",galleryOneTitle:"여러 명 빠른 기록",galleryOneText:"여러 아이를 선택해 자주 쓰는 돌봄 항목을 한 번에 기록하고 개별 수정할 수 있습니다.",galleryTwoTitle:"매일 알림장",galleryTwoText:"돌봄 내용을 알림장으로 정리하고 게시 전 검토와 게시 후 보호자 확인을 추적합니다.",galleryThreeTitle:"공지와 확인",galleryThreeText:"행사, 준비물, 긴급 공지를 대상 가족에게 보내고 읽음 상태를 확인합니다.",galleryFourTitle:"할 일을 그대로 눌러 시작",galleryFourText:"알림장, 일괄 기록, 공지, 메시지, 수면 안전, 사진, 투약, 하원에 각각 명확한 진입점이 있습니다.",galleryFiveTitle:"한 명·여러 명·반에 메시지",galleryFiveText:"매번 대상을 선택해 각 가족은 관련 메시지만 보고 관리자는 역할에 따라 이어서 처리합니다.",gallerySixTitle:"준비물·사고·인계 추적",gallerySixText:"반이나 아이, 보호자나 직원, 수량과 상태를 지정하고 완료된 작업은 기록으로 이동합니다.",gallerySevenTitle:"여러 아이 수면 안전 확인",gallerySevenText:"기관의 순회 규칙에 맞춰 정상과 예외를 표시하고 시간과 담당자를 인계 기록으로 남깁니다.",
         parentGalleryKicker:"보호자가 실제로 받는 내용",parentGalleryTitle:"요약 한 장이 아니라 매일의 돌봄, 교사 피드백, 확인할 사항이 하나의 흐름으로 전달됩니다.",parentGalleryLead:"아래는 실제 보호자 화면입니다. 식사량, 수면, 활동을 알림장에서 확인하고 메시지, 공지, 읽음 확인, 준비물 확인까지 할 수 있습니다.",parentGalleryOneTitle:"알림장 한눈에 보기",parentGalleryOneText:"전달 상태, 기분, 식사, 수유, 기저귀, 수면을 한눈에 이해할 수 있습니다.",parentGalleryTwoTitle:"오늘의 돌봄 상세",parentGalleryTwoText:"등원, 체온, 식사, 활동, 그림책, 교사의 관찰을 한 기록에서 확인합니다.",parentGalleryThreeTitle:"메시지와 중요 사항",parentGalleryThreeText:"메시지와 돌봄 사진을 보고 알림장이나 준비물 요청을 앱에서 바로 확인합니다.",parentGalleryFourTitle:"기관 공지",parentGalleryFourText:"행사와 긴급 안내를 한곳에서 확인하고 기관은 보호자의 읽음 상태를 확인할 수 있습니다.",
         flowKicker:"하나의 명확한 흐름",flowTitle:"한 번 기록하면 관리자, 보호자, 다음 근무자가 이어받습니다.",flowLead:"같은 돌봄 맥락에서 역할별로 일해 중복 작성과 누락, 반복 확인을 줄입니다.",flow:[["담당자가 기록","휴대폰에서 개별·일괄 돌봄을 기록합니다."],["관리자가 확인","반, 출결, 할 일, 알림장 상태를 봅니다."],["보호자에게 전달","알림장, 공지, 중요 사항을 명확히 보냅니다."],["다음 근무로 연결","변경과 처리 상태를 남겨 인계 근거로 씁니다."]],
         scenarioKicker:"돌봄 현장에 맞게",scenarioTitle:"어린이집과 산후조리원 모두 가장 잦은 일부터 시작할 수 있습니다.",scenarios:[["어린이집","반 협업과 일상 소통을 정리",["반·교사·아이 범위를 명확하게","등하원, 결석, 픽업 정보를 한곳에","일괄 기록 후 알림장 최종 확인","준비물, 투약, 사고, 답변 추적"]],["산후조리원","고빈도 돌봄과 퇴소 후를 연결",["수유, 기저귀, 수면을 빠르게 기록","중요 돌봄을 아이 흐름에 모아 관리","입실 중 보호자가 매일 돌봄 확인","퇴소 후에도 가족 기능을 계속 사용"]]],
-        continuityKicker:"보호자용 실제 경험",continuityTitle:"기관에 참여하면 알림장과 공지가 추가되고, 기존 가족 홈은 그대로 유지됩니다.",continuityLead:"보호자는 자기 아이의 기관 내용만 볼 수 있습니다. 매일 돌봄, 알림장, 공지, 사진, 메시지, 답변할 사항을 확인하면서 기존 수유, 수면, 기저귀, 성장 기록도 계속 사용할 수 있습니다.",parentStepLabel:"기관 참여 후",parentStepCaption:"내 아이의 알림장, 공지, 중요 사항 확인",bridgeLabel:"퇴소·졸업 후에도 계속",homeStepLabel:"가족 일상",homeStepCaption:"수유, 기저귀, 수면, 성장, 예방접종 계속 기록",parentModeItems:["내 아이의 기관 돌봄 내용만 표시","알림장, 공지, 사진, 메시지 확인","준비물, 투약, 픽업, 결석 사항 처리","가족 기록과 기관 공유 범위를 분리 관리"],continuityQuote:"알림장 한 장이 아니라 가족이 집으로 가져갈 안심 습관을 제공합니다.",
+        continuityKicker:"보호자용 실제 경험",continuityTitle:"기관을 떠난 뒤에도 성장 수첩과 가족 홈을 계속 사용할 수 있습니다.",continuityLead:"재원 중에는 매일 돌봄, 알림장, 공지, 사진, 메시지를 받고 집이나 졸업 후에도 성장, 이정표, 유치, 예방접종, 건강 기록을 한곳에 보관합니다.",parentStepLabel:"Biu 성장 수첩",parentStepCaption:"성장, 이정표, 유치, 예방접종, 건강 기록을 한곳에 보관",bridgeLabel:"퇴소·졸업 후에도 계속",homeStepLabel:"가족 일상",homeStepCaption:"수유, 기저귀, 수면, 성장, 예방접종 계속 기록",parentModeItems:["내 아이의 기관 돌봄 내용만 표시","알림장, 공지, 사진, 메시지 확인","준비물, 투약, 픽업, 결석 사항 처리","가족 기록과 기관 공유 범위를 분리 관리"],continuityQuote:"알림장 한 장이 아니라 가족이 집으로 가져갈 안심 습관을 제공합니다.",
         benefitKicker:"운영자를 위한 가치",benefitTitle:"현장은 더 원활하게, 전문 돌봄은 보호자에게 더 잘 보이게.",benefits:[["◎","중복 업무 감소","돌봄 기록이 바로 알림장 내용이 됩니다."],["◫","완료 상태 확인","미기록, 미게시, 미확인, 할 일을 확인합니다."],["✓","인계 근거 보존","돌봄, 공지, 메시지, 변경 맥락을 남깁니다."],["↗","서비스 경험 연장","기관을 떠난 후에도 좋은 경험이 이어집니다."]],
         featuresKicker:"기능 개요",featuresTitle:"일상 돌봄, 반 관리, 가족 소통, 추적을 위한 도구.",featureGroups:[["일상 돌봄",["수유, 기저귀, 수면, 이유식","체온, 신체 확인, 식사, 활동","개별·일괄 기록","등하원과 일일 요약"]],["소통과 할 일",["알림장, 게시, 보호자 확인","메시지와 사진","기관 공지","준비물, 투약, 픽업, 결석, 사고"]],["관리와 추적",["워크스페이스, 반, 직원 배정","관리자, 반 책임자, 돌봄 직원 역할","CSV 명단 가져오기와 보고서 내보내기","활동·변경 기록"]]],
         faqKicker:"자주 묻는 질문",faqTitle:"기관이 먼저 확인하는 내용을 답합니다.",faqLead:"기관 규모와 돌봄 방식을 알려 주세요.",faqs:[["전용 하드웨어가 필요한가요?","전용 장비를 먼저 구매할 필요가 없습니다. BiuLog는 주로 휴대폰 앱으로 사용합니다."],["보호자와 직원이 같은 내용을 보나요?","아닙니다. 기관, 반, 직원, 보호자 역할에 따라 보기와 작업 범위를 구분합니다."],["퇴소 후에도 보호자가 사용할 수 있나요?","네. 가족 기록은 계속 사용할 수 있고 기관 공유는 관계와 권한에 따라 관리됩니다."],["한 반부터 시작할 수 있나요?","네. 작은 단위에서 흐름을 확인한 뒤 확대할 수 있습니다."],["비용은 어떻게 정하나요?","기관 규모, 사용 상황, 도입 범위에 따라 협의합니다."]],
@@ -440,8 +440,62 @@
       }
     };
 
-    const ids=["navProduct","navScenarios","navFeatures","navParents","navCta","eyebrow","heroTitle","heroLead","heroCta","heroSecondary","heroMicro","chipOne","chipTwo","audienceLabel","productKicker","productTitle","productLead","galleryKicker","galleryTitle","galleryLead","galleryOneTitle","galleryOneText","galleryTwoTitle","galleryTwoText","galleryThreeTitle","galleryThreeText","parentGalleryKicker","parentGalleryTitle","parentGalleryLead","parentGalleryOneTitle","parentGalleryOneText","parentGalleryTwoTitle","parentGalleryTwoText","parentGalleryThreeTitle","parentGalleryThreeText","parentGalleryFourTitle","parentGalleryFourText","flowKicker","flowTitle","flowLead","scenarioKicker","scenarioTitle","continuityKicker","continuityTitle","continuityLead","parentStepLabel","parentStepCaption","bridgeLabel","homeStepLabel","homeStepCaption","continuityQuote","benefitKicker","benefitTitle","featuresKicker","featuresTitle","faqKicker","faqTitle","faqLead","ctaKicker","ctaTitle","ctaLead","ctaButton","footerParents"];
+    const SHOWCASE_COPY={
+      zh:{
+        galleryOneTitle:"今日班級進度與快速紀錄",galleryOneText:"先看未記錄、待發布與已送達數量，再從喝奶、尿布、睡眠與飲食按鈕開始工作。",
+        galleryThreeTitle:"管理者工作集中，但不干擾第一線",galleryThreeText:"人員、班級、收費、報表與流程規則集中在管理首頁；老師只看到每天需要的工作。",
+        galleryFourTitle:"親師訊息，不必等聯絡簿發布",galleryFourText:"家長直接說明 Biu 的狀況，老師在同一段對話回覆體溫、喝奶與後續觀察；身分和時間都清楚保留。",
+        galleryFiveTitle:"行事曆讓老師與主管共同維護",galleryFiveText:"活動、健康檢查、用品與放假提醒集中在同一月曆；授權老師也能新增，不必每件事都等負責人。",
+        gallerySixTitle:"今天吃多少、睡多久，家長打開就懂",gallerySixText:"心情、食慾、喝奶、尿布、睡眠、入托與完整時間線集中在同一天，不只是一張空泛摘要。",
+        gallerySevenTitle:"離開機構後，照護記憶仍能繼續",gallerySevenText:"家庭可繼續使用成長、里程碑、疫苗、作息分析與健康紀錄，把機構的安心延續到日常生活。",
+        parentGalleryTitle:"家長先找到需要的入口，再看懂寶寶完整的一天。",parentGalleryLead:"家長只會看到自己寶寶的機構內容。照護首頁把聯絡簿、公告、訊息、交代事項與照片分開；每日聯絡簿則把實際照護數據與時間線留在同一天。",
+        parentGalleryOneTitle:"家長照護首頁",parentGalleryOneText:"聯絡簿、公告、親師訊息、交代事項、入托資料與照護照片，一頁就能找到。",
+        parentGalleryTwoTitle:"有內容的每日聯絡簿",parentGalleryTwoText:"心情、食慾、喝奶、尿布、睡眠、入托時間與照護時間線清楚呈現。"
+      },
+      en:{
+        galleryOneTitle:"Today's class progress and quick logging",galleryOneText:"See what is unrecorded, waiting to publish, or delivered, then start feeding, diaper, sleep, or meal records directly.",
+        galleryThreeTitle:"Management stays organized without complicating frontline work",galleryThreeText:"Staff, classes, fees, reports, and workflow rules stay on the manager home; caregivers see only the work they need each day.",
+        galleryFourTitle:"Two-way parent-teacher messages",galleryFourText:"Families describe Biu's condition and teachers reply in the same conversation with temperature, feeding, and follow-up observations; roles and times stay clear.",
+        galleryFiveTitle:"A shared calendar for staff and managers",galleryFiveText:"Keep activities, health checks, supplies, holidays, and reminders together; authorized staff can add events without waiting for a manager.",
+        gallerySixTitle:"Families instantly see how much Biu ate and slept",gallerySixText:"Mood, appetite, feeding, diapers, sleep, check-in, and the full care timeline stay together—not in a vague summary.",
+        gallerySevenTitle:"Care memories continue after leaving the organization",gallerySevenText:"Families keep growth, milestones, vaccines, routine insights, and health records, extending reassurance into everyday life.",
+        parentGalleryTitle:"Families find the right action first, then understand Biu's whole day.",parentGalleryLead:"Families see only their own child's organization content. Care Home separates care books, notices, messages, requests, and photos, while the daily care book keeps real care data and its timeline together.",
+        parentGalleryOneTitle:"Family Care Home",parentGalleryOneText:"Care books, notices, messages, requests, intake details, and care photos are all easy to find.",
+        parentGalleryTwoTitle:"A daily care book with real detail",parentGalleryTwoText:"Mood, appetite, feeding, diapers, sleep, check-in, and the care timeline are presented clearly."
+      },
+      ja:{
+        galleryOneTitle:"今日のクラス進捗とすばやい記録",galleryOneText:"未記録・公開待ち・配信済みを確認してから、授乳、おむつ、睡眠、食事をすぐ記録できます。",
+        galleryThreeTitle:"管理業務は集約し、現場はシンプルに",galleryThreeText:"職員、クラス、料金、レポート、運用ルールは管理ホームへ。スタッフには毎日必要な業務だけを表示します。",
+        galleryFourTitle:"保護者と先生が同じ画面で会話",galleryFourText:"保護者が Biu の様子を伝え、先生は体温、授乳、経過を同じ会話で返信。役割と時刻も分かりやすく残ります。",
+        galleryFiveTitle:"職員と管理者で共有するカレンダー",galleryFiveText:"活動、健診、用品、休園、連絡予定を一つにまとめ、権限のある職員も管理者を待たずに追加できます。",
+        gallerySixTitle:"食事量と睡眠時間がすぐ分かる",gallerySixText:"気分、食欲、授乳、おむつ、睡眠、登園、ケアのタイムラインを同じ日にまとめ、曖昧な要約で終わらせません。",
+        gallerySevenTitle:"施設を離れた後も記録は続く",gallerySevenText:"成長、マイルストーン、予防接種、生活リズム、健康記録を家庭で使い続け、安心を日常へつなげます。",
+        parentGalleryTitle:"必要な入口がすぐ見つかり、Biu の一日をきちんと理解できます。",parentGalleryLead:"保護者に見えるのは自分のお子さまの情報だけ。保育ホームで連絡帳、お知らせ、メッセージ、依頼、写真を整理し、毎日の連絡帳で実際のケア内容と時間の流れを確認できます。",
+        parentGalleryOneTitle:"保護者向け保育ホーム",parentGalleryOneText:"連絡帳、お知らせ、メッセージ、依頼、入園資料、ケア写真を一画面から確認できます。",
+        parentGalleryTwoTitle:"内容のある毎日の連絡帳",parentGalleryTwoText:"気分、食欲、授乳、おむつ、睡眠、登園時刻、ケアのタイムラインを明確に表示します。"
+      },
+      ko:{
+        galleryOneTitle:"오늘 반 진행 상황과 빠른 기록",galleryOneText:"미기록·게시 대기·전달 완료를 먼저 확인하고 수유, 기저귀, 수면, 식사를 바로 기록합니다.",
+        galleryThreeTitle:"관리 업무는 모으고 현장 화면은 단순하게",galleryThreeText:"직원, 반, 비용, 보고서, 업무 규칙은 관리자 홈에 모으고 교사는 매일 필요한 일만 봅니다.",
+        galleryFourTitle:"보호자와 교사가 한 대화에서 소통",galleryFourText:"보호자가 Biu의 상태를 알리고 교사는 같은 대화에서 체온, 수유, 후속 관찰을 답변해 역할과 시간을 명확히 남깁니다.",
+        galleryFiveTitle:"교사와 관리자가 함께 쓰는 일정",galleryFiveText:"활동, 건강 확인, 준비물, 휴원, 알림을 한곳에 모으고 권한 있는 교사도 관리자 없이 일정을 추가할 수 있습니다.",
+        gallerySixTitle:"Biu가 얼마나 먹고 잤는지 바로 확인",gallerySixText:"기분, 식욕, 수유, 기저귀, 수면, 등원과 전체 돌봄 타임라인을 하루에 모아 막연한 요약으로 끝내지 않습니다.",
+        gallerySevenTitle:"기관을 떠난 뒤에도 기록은 계속",gallerySevenText:"성장, 이정표, 예방접종, 생활 패턴, 건강 기록을 가정에서 계속 사용해 안심을 일상으로 이어 갑니다.",
+        parentGalleryTitle:"필요한 진입점을 먼저 찾고 Biu의 하루를 제대로 이해합니다.",parentGalleryLead:"보호자는 자기 아이의 기관 정보만 봅니다. 돌봄 홈은 알림장, 공지, 메시지, 요청 사항과 사진을 나누고, 알림장은 실제 돌봄 데이터와 시간 흐름을 함께 보여 줍니다.",
+        parentGalleryOneTitle:"보호자 돌봄 홈",parentGalleryOneText:"알림장, 공지, 메시지, 요청 사항, 입소 자료와 돌봄 사진을 한 화면에서 찾습니다.",
+        parentGalleryTwoTitle:"내용이 담긴 매일 알림장",parentGalleryTwoText:"기분, 식욕, 수유, 기저귀, 수면, 등원 시각과 돌봄 타임라인을 명확히 보여 줍니다."
+      }
+    };
+    Object.keys(SHOWCASE_COPY).forEach(function(lang){Object.assign(COPY[lang],SHOWCASE_COPY[lang])});
+
+    const ids=["navProduct","navScenarios","navFeatures","navParents","navCta","eyebrow","heroTitle","heroLead","heroCta","heroSecondary","heroMicro","chipOne","chipTwo","audienceLabel","productKicker","productTitle","productLead","galleryKicker","galleryTitle","galleryLead","galleryOneTitle","galleryOneText","galleryTwoTitle","galleryTwoText","galleryThreeTitle","galleryThreeText","galleryFourTitle","galleryFourText","galleryFiveTitle","galleryFiveText","gallerySixTitle","gallerySixText","gallerySevenTitle","gallerySevenText","parentGalleryKicker","parentGalleryTitle","parentGalleryLead","parentGalleryOneTitle","parentGalleryOneText","parentGalleryTwoTitle","parentGalleryTwoText","parentGalleryThreeTitle","parentGalleryThreeText","parentGalleryFourTitle","parentGalleryFourText","flowKicker","flowTitle","flowLead","scenarioKicker","scenarioTitle","continuityKicker","continuityTitle","continuityLead","parentStepLabel","parentStepCaption","bridgeLabel","homeStepLabel","homeStepCaption","continuityQuote","benefitKicker","benefitTitle","featuresKicker","featuresTitle","faqKicker","faqTitle","faqLead","ctaKicker","ctaTitle","ctaLead","ctaButton","footerParents"];
     function esc(v){return String(v).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]})}
+    function updateShowcaseImages(lang){
+      const locale=COPY[lang]?lang:"zh";
+      document.querySelectorAll("[data-showcase-shot]").forEach(function(image){
+        image.src="/assets/showcase/"+locale+"/"+image.dataset.showcaseShot+".webp?v=20260830d";
+      });
+    }
     function render(lang){
       const c=COPY[lang]||COPY.zh;
       document.documentElement.lang=c.htmlLang;document.title=c.title;
@@ -455,14 +509,19 @@
       document.getElementById("benefits").innerHTML=c.benefits.map(function(x){return '<article class="benefit"><div class="icon">'+esc(x[0])+'</div><h3>'+esc(x[1])+'</h3><p>'+esc(x[2])+'</p></article>'}).join("");
       document.getElementById("featureGroups").innerHTML=c.featureGroups.map(function(x){return '<article class="feature-group"><h3>'+esc(x[0])+'</h3><ul>'+x[1].map(function(y){return "<li>"+esc(y)+"</li>"}).join("")+"</ul></article>"}).join("");
       document.getElementById("faqList").innerHTML=c.faqs.map(function(x,i){return '<details'+(i===0?" open":"")+'><summary>'+esc(x[0])+'</summary><p>'+esc(x[1])+'</p></details>'}).join("");
+      updateShowcaseImages(lang);
       localStorage.setItem("biulog-institution-lang",lang);
     }
     const language=document.getElementById("language");
+    const requested=new URLSearchParams(window.location.search).get("lang");
     const saved=localStorage.getItem("biulog-institution-lang");
     const browser=(navigator.language||"zh").toLowerCase();
-    const initial=saved||(browser.startsWith("ja")?"ja":browser.startsWith("ko")?"ko":browser.startsWith("en")?"en":"zh");
+    const initial=COPY[requested]?requested:(COPY[saved]?saved:(browser.startsWith("ja")?"ja":browser.startsWith("ko")?"ko":browser.startsWith("en")?"en":"zh"));
     language.value=initial;render(initial);
-    language.addEventListener("change",function(){render(language.value)});
+    language.addEventListener("change",function(){
+      render(language.value);
+      const url=new URL(window.location.href);url.searchParams.set("lang",language.value);window.history.replaceState({},"",url);
+    });
     document.getElementById("year").textContent=new Date().getFullYear();
   </script>
 </body>

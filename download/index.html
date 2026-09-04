@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="下載 BiuLog 寶寶作息紀錄 App，支援 iPhone 與 Android。">
+  <meta name="theme-color" content="#fbf7f1">
+  <meta property="og:title" content="下載 BiuLog">
+  <meta property="og:description" content="一個連結，依照你的手機自動前往 App Store 或 Google Play。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biulog.github.io/download/">
+  <meta property="og:image" content="https://biulog.github.io/assets/biulog-icon.png">
+  <link rel="canonical" href="https://biulog.github.io/download/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://biulog.github.io/download/?lang=zh">
+  <link rel="alternate" hreflang="en" href="https://biulog.github.io/download/?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://biulog.github.io/download/?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://biulog.github.io/download/?lang=ko">
+  <link rel="alternate" hreflang="de" href="https://biulog.github.io/download/?lang=de">
+  <link rel="alternate" hreflang="it" href="https://biulog.github.io/download/?lang=it">
+  <link rel="alternate" hreflang="x-default" href="https://biulog.github.io/download/">
+  <link rel="icon" href="/assets/biulog-icon.png">
+  <title>下載 BiuLog｜iOS・Android</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fbf7f1;
+      --surface: rgba(255, 253, 250, .92);
+      --ink: #554c42;
+      --muted: #8c7f73;
+      --line: rgba(152, 121, 90, .17);
+      --gold: #d6af75;
+      --gold-deep: #8b6d51;
+      --shadow: 0 24px 72px rgba(84, 73, 62, .15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(233, 175, 189, .25), transparent 34%),
+        radial-gradient(circle at 88% 86%, rgba(202, 217, 232, .34), transparent 36%),
+        linear-gradient(145deg, #fff9f3 0%, #fbf7f1 54%, #f7f1eb 100%);
+    }
+
+    main {
+      width: min(100%, 520px);
+      padding: 34px 26px 28px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, .92);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 20px;
+      border-radius: 25px;
+      box-shadow: 0 12px 34px rgba(84, 73, 62, .17);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(29px, 7vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .lead {
+      margin: 12px auto 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 30px;
+      margin-bottom: 20px;
+      color: var(--gold-deep);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(214, 175, 117, .32);
+      border-top-color: var(--gold-deep);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+
+    .store-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .store-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 68px;
+      padding: 13px 18px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .store-link:hover,
+    .store-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(152, 121, 90, .4);
+      box-shadow: 0 10px 28px rgba(84, 73, 62, .11);
+      outline: none;
+    }
+
+    .store-copy {
+      display: grid;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .store-copy small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .store-copy strong {
+      font-size: 17px;
+    }
+
+    .arrow {
+      color: var(--gold-deep);
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .hint {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--gold-deep);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 420px) {
+      main {
+        padding: 28px 18px 24px;
+        border-radius: 26px;
+      }
+
+      .app-icon {
+        width: 84px;
+        height: 84px;
+        border-radius: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spinner {
+        animation: none;
+      }
+
+      .store-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="app-icon" id="app-icon" src="/assets/biulog-icon.png" alt="BiuLog App 圖示" width="96" height="96">
+    <h1 id="download-title">下載 BiuLog</h1>
+    <p class="lead" id="download-lead">寶寶作息、家庭共享與托育照護，一個 App 溫柔整理。</p>
+
+    <div class="status" id="status" aria-live="polite">
+      <span class="spinner" aria-hidden="true"></span>
+      <span id="status-copy">正在為你開啟適合的商店…</span>
+    </div>
+
+    <div class="store-links" id="store-links" aria-label="選擇 App 商店">
+      <a class="store-link" id="ios-link" href="https://apps.apple.com/tw/app/biulog/id6766629143">
+        <span class="store-copy">
+          <small id="ios-small">iPhone・iPad</small>
+          <strong id="ios-copy">前往 App Store</strong>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="store-link" id="android-link" href="https://play.google.com/store/apps/details?id=com.chy.biulog">
+        <span class="store-copy">
+          <small id="android-small">Android</small>
+          <strong id="android-copy">前往 Google Play</strong>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+
+    <p class="hint" id="download-hint">如果商店沒有自動開啟，請直接點選上方對應按鈕。</p>
+    <a class="home-link" id="home-copy" href="/">查看 BiuLog 官網</a>
+  </main>
+
+  <noscript>
+    <style>.status { display: none; }</style>
+  </noscript>
+
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const copy = {
+        zh: { htmlLang: "zh-Hant", title: "下載 BiuLog｜iOS・Android", description: "下載 BiuLog 寶寶生活記錄 App，支援 iPhone、iPad 與 Android。", alt: "BiuLog App 圖示", heading: "下載 BiuLog", lead: "寶寶作息、家庭共享與成長紀錄，一個 App 溫柔整理。", loading: "正在為你開啟適合的商店…", choose: "請選擇你的手機商店", opening: (name) => `正在開啟 ${name}…`, stores: "選擇 App 商店", iosSmall: "iPhone・iPad", ios: "前往 App Store", androidSmall: "Android", android: "前往 Google Play", hint: "如果商店沒有自動開啟，請直接點選上方對應按鈕。", home: "查看 BiuLog 官網" },
+        en: { htmlLang: "en", title: "Download BiuLog | iOS & Android", description: "Download the BiuLog baby tracker for iPhone, iPad and Android.", alt: "BiuLog app icon", heading: "Download BiuLog", lead: "Baby routines, family sharing and growth records—gently organized in one app.", loading: "Opening the right store for you…", choose: "Choose your mobile app store", opening: (name) => `Opening ${name}…`, stores: "Choose an app store", iosSmall: "iPhone · iPad", ios: "Open in the App Store", androidSmall: "Android", android: "Open in Google Play", hint: "If the store does not open automatically, tap the matching button above.", home: "Visit the BiuLog website" },
+        ja: { htmlLang: "ja", title: "BiuLogをダウンロード｜iOS・Android", description: "iPhone、iPad、Android対応の育児記録アプリBiuLogをダウンロード。", alt: "BiuLogアプリアイコン", heading: "BiuLogをダウンロード", lead: "生活リズム、家族共有、成長記録を、ひとつのアプリでやさしく整理。", loading: "お使いの端末に合うストアを開いています…", choose: "アプリストアを選択してください", opening: (name) => `${name}を開いています…`, stores: "アプリストアを選択", iosSmall: "iPhone・iPad", ios: "App Storeで開く", androidSmall: "Android", android: "Google Playで開く", hint: "ストアが自動で開かない場合は、上のボタンを選択してください。", home: "BiuLog公式サイトを見る" },
+        ko: { htmlLang: "ko", title: "BiuLog 다운로드｜iOS·Android", description: "iPhone, iPad, Android에서 BiuLog 아기 기록 앱을 다운로드하세요.", alt: "BiuLog 앱 아이콘", heading: "BiuLog 다운로드", lead: "아기 생활 리듬, 가족 공유, 성장 기록을 하나의 앱에 다정하게 정리하세요.", loading: "사용 중인 기기에 맞는 스토어를 여는 중…", choose: "앱 스토어를 선택해 주세요", opening: (name) => `${name} 여는 중…`, stores: "앱 스토어 선택", iosSmall: "iPhone · iPad", ios: "App Store에서 열기", androidSmall: "Android", android: "Google Play에서 열기", hint: "스토어가 자동으로 열리지 않으면 위의 해당 버튼을 눌러 주세요.", home: "BiuLog 공식 웹사이트 보기" },
+        de: { htmlLang: "de", title: "BiuLog herunterladen | iOS & Android", description: "BiuLog Baby Tracker für iPhone, iPad und Android herunterladen.", alt: "BiuLog App-Symbol", heading: "BiuLog herunterladen", lead: "Babyroutinen, Familienfreigabe und Entwicklung – liebevoll geordnet in einer App.", loading: "Der passende Store wird geöffnet…", choose: "Wähle deinen App-Store", opening: (name) => `${name} wird geöffnet…`, stores: "App-Store auswählen", iosSmall: "iPhone · iPad", ios: "Im App Store öffnen", androidSmall: "Android", android: "Bei Google Play öffnen", hint: "Falls der Store nicht automatisch startet, tippe oben auf die passende Schaltfläche.", home: "Zur BiuLog Website" },
+        it: { htmlLang: "it", title: "Scarica BiuLog | iOS e Android", description: "Scarica il diario del bebè BiuLog per iPhone, iPad e Android.", alt: "Icona dell'app BiuLog", heading: "Scarica BiuLog", lead: "Routine del bebè, condivisione in famiglia e crescita, custodite con cura in un'unica app.", loading: "Stiamo aprendo lo store giusto per te…", choose: "Scegli lo store del tuo telefono", opening: (name) => `Apertura di ${name}…`, stores: "Scegli un app store", iosSmall: "iPhone · iPad", ios: "Apri nell'App Store", androidSmall: "Android", android: "Apri in Google Play", hint: "Se lo store non si apre automaticamente, tocca il pulsante corrispondente qui sopra.", home: "Visita il sito di BiuLog" }
+      };
+      const requestedLang = params.get("lang");
+      const storedLang = localStorage.getItem("biulog-site-lang");
+      const browserLang = (navigator.language || "").toLowerCase();
+      const lang = copy[requestedLang] ? requestedLang : copy[storedLang] ? storedLang : browserLang.startsWith("ja") ? "ja" : browserLang.startsWith("ko") ? "ko" : browserLang.startsWith("de") ? "de" : browserLang.startsWith("it") ? "it" : browserLang.startsWith("en") ? "en" : "zh";
+      const text = copy[lang];
+      const IOS_URLS = { zh: "https://apps.apple.com/tw/app/biulog/id6766629143", en: "https://apps.apple.com/us/app/biulog/id6766629143", ja: "https://apps.apple.com/jp/app/biulog/id6766629143", ko: "https://apps.apple.com/kr/app/biulog/id6766629143", de: "https://apps.apple.com/de/app/biulog/id6766629143", it: "https://apps.apple.com/it/app/biulog/id6766629143" };
+      const ANDROID_URLS = { zh: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=zh_TW", en: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=en", ja: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ja", ko: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ko", de: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=de", it: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=it" };
+      const IOS_URL = IOS_URLS[lang];
+      const ANDROID_URL = ANDROID_URLS[lang];
+      const preview = params.get("preview") === "1";
+      const ua = navigator.userAgent || "";
+      const platform = navigator.platform || "";
+      const isIPadOS = platform === "MacIntel" && navigator.maxTouchPoints > 1;
+      const isIOS = /iPhone|iPad|iPod/i.test(ua) || isIPadOS;
+      const isAndroid = /Android/i.test(ua);
+      const status = document.getElementById("status");
+
+      document.documentElement.lang = text.htmlLang;
+      document.title = text.title;
+      document.querySelector('meta[name="description"]').content = text.description;
+      document.getElementById("app-icon").alt = text.alt;
+      document.getElementById("download-title").textContent = text.heading;
+      document.getElementById("download-lead").textContent = text.lead;
+      document.getElementById("status-copy").textContent = text.loading;
+      document.getElementById("store-links").setAttribute("aria-label", text.stores);
+      document.getElementById("ios-small").textContent = text.iosSmall;
+      document.getElementById("ios-copy").textContent = text.ios;
+      document.getElementById("android-small").textContent = text.androidSmall;
+      document.getElementById("android-copy").textContent = text.android;
+      document.getElementById("download-hint").textContent = text.hint;
+      document.getElementById("home-copy").textContent = text.home;
+      document.getElementById("ios-link").href = IOS_URL;
+      document.getElementById("android-link").href = ANDROID_URL;
+
+      let target = null;
+      let storeName = "";
+
+      if (isIOS) {
+        target = IOS_URL;
+        storeName = "App Store";
+      } else if (isAndroid) {
+        target = ANDROID_URL;
+        storeName = "Google Play";
+      }
+
+      if (target && !preview) {
+        status.querySelector("span:last-child").textContent = text.opening(storeName);
+        window.setTimeout(() => window.location.replace(target), 320);
+      } else {
+        status.innerHTML = "<span></span>";
+        status.querySelector("span").textContent = text.choose;
+      }
+    })();
+  </script>
+</body>
+</html>
