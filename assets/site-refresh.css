@@ -1,0 +1,321 @@
+:root {
+  --cream: #fffaf5;
+  --peach: #f7c8b5;
+  --peach-deep: #d98778;
+  --blush: #f5d8da;
+  --baby-blue: #dceaf5;
+  --butter: #f8e6bd;
+  --cocoa: #5b4d43;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--cream);
+}
+
+.nav {
+  position: sticky;
+  z-index: 20;
+  top: 12px;
+  border-color: rgba(235, 218, 204, .8);
+  background: rgba(255, 252, 247, .86);
+  box-shadow: 0 14px 44px rgba(105, 75, 58, .09);
+}
+
+.language {
+  border-color: rgba(225, 196, 176, .78);
+  background: rgba(255, 248, 241, .84);
+}
+
+.language button.active {
+  background: #e99f91;
+  box-shadow: 0 8px 18px rgba(217, 135, 120, .24);
+}
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  margin-top: 30px;
+  padding: 64px;
+  overflow: hidden;
+  border: 1px solid rgba(238, 220, 205, .82);
+  border-radius: 46px;
+  background: rgba(255, 252, 247, .84);
+  box-shadow: 0 34px 100px rgba(118, 80, 59, .12);
+}
+
+.hero::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 251, 246, .87) 0%, rgba(255, 251, 246, .73) 46%, rgba(255, 251, 246, .24) 100%),
+    url('/assets/biulog-watercolor.webp') center 23% / cover no-repeat;
+  content: "";
+  opacity: .68;
+}
+
+.hero::after {
+  position: absolute;
+  z-index: 0;
+  width: 430px;
+  height: 430px;
+  right: -120px;
+  bottom: -170px;
+  border-radius: 50%;
+  background: rgba(246, 196, 184, .38);
+  filter: blur(12px);
+  content: "";
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  border-color: rgba(218, 142, 126, .34);
+  background: rgba(255, 248, 242, .9);
+  color: #a66255;
+}
+
+h1,
+h2 {
+  color: var(--cocoa);
+  text-wrap: balance;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+.lead {
+  color: #7f6c60;
+}
+
+.cta {
+  border-radius: 999px;
+  background: #e79687;
+  box-shadow: 0 14px 30px rgba(217, 135, 120, .24);
+}
+
+.cta.android {
+  background: #6b574a;
+  box-shadow: 0 14px 30px rgba(91, 77, 67, .22);
+}
+
+.cta.secondary {
+  border-color: rgba(218, 190, 169, .9);
+  background: rgba(255, 253, 249, .9);
+  color: var(--cocoa);
+}
+
+.trust span {
+  border-color: rgba(232, 210, 194, .84);
+  border-radius: 999px;
+  background: rgba(255, 252, 247, .88);
+  color: #745f53;
+}
+
+.trust span::before {
+  background: #eeaa9b;
+}
+
+.phone {
+  background: #554941;
+  box-shadow: 0 30px 80px rgba(91, 69, 55, .24);
+}
+
+.mini-shot {
+  border-color: #fffaf5;
+  box-shadow: 0 22px 55px rgba(118, 80, 59, .2);
+}
+
+.section {
+  padding-block: 94px;
+}
+
+.section-head p {
+  color: #857165;
+}
+
+.features {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.feature {
+  min-height: 244px;
+  border-color: rgba(234, 216, 202, .85);
+  border-radius: 26px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, .97), rgba(255, 242, 233, .82));
+  box-shadow: 0 18px 46px rgba(121, 83, 63, .07);
+}
+
+.feature:nth-child(5n+2) {
+  background: linear-gradient(150deg, #fff, #fce7e8);
+}
+
+.feature:nth-child(5n+3) {
+  background: linear-gradient(150deg, #fff, #eaf3fa);
+}
+
+.feature:nth-child(5n+4) {
+  background: linear-gradient(150deg, #fff, #fff1d7);
+}
+
+.feature:nth-child(5n) {
+  background: linear-gradient(150deg, #fff, #f4eaf4);
+}
+
+.feature .mark,
+.feature:nth-child(4n+1) .mark,
+.feature:nth-child(4n+2) .mark,
+.feature:nth-child(4n+3) .mark,
+.feature:nth-child(4n) .mark {
+  background: rgba(234, 157, 143, .9);
+  color: #fff;
+}
+
+.feature:hover {
+  border-color: rgba(230, 157, 143, .55);
+  box-shadow: 0 24px 54px rgba(121, 83, 63, .12);
+}
+
+.band {
+  position: relative;
+  overflow: hidden;
+  border-block-color: rgba(235, 216, 201, .8);
+  background:
+    linear-gradient(rgba(255, 250, 245, .91), rgba(255, 247, 241, .91)),
+    url('/assets/biulog-watercolor.webp') center 48% / cover no-repeat;
+}
+
+.screens {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  overflow: visible;
+}
+
+.shot-card {
+  min-width: 0;
+  border-color: rgba(232, 211, 196, .9);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(112, 77, 58, .1);
+}
+
+.shot-card:nth-child(even) {
+  margin-top: 22px;
+}
+
+.shot-caption {
+  min-height: 135px;
+  border-bottom-color: rgba(235, 216, 202, .8);
+  background: linear-gradient(145deg, #fff9f4, #fff);
+}
+
+.parent-care-band {
+  border-bottom-color: rgba(235, 216, 202, .8);
+  background:
+    radial-gradient(circle at 8% 16%, rgba(249, 200, 181, .42), transparent 25rem),
+    radial-gradient(circle at 92% 84%, rgba(210, 227, 243, .62), transparent 27rem),
+    #fffdf9;
+}
+
+.parent-care-card,
+.note {
+  border-color: rgba(234, 216, 202, .85);
+  border-radius: 24px;
+}
+
+.parent-care-card:nth-child(2),
+.parent-care-card:nth-child(3),
+.parent-care-card:nth-child(4) {
+  background: linear-gradient(150deg, #fff, #fff0e7);
+}
+
+.parent-care-privacy {
+  border-color: rgba(218, 142, 126, .3);
+  background: rgba(253, 228, 223, .72);
+  color: #9b6258;
+}
+
+.pricing {
+  border-color: rgba(255, 255, 255, .18);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 96% 0%, rgba(244, 180, 166, .34), transparent 25rem),
+    linear-gradient(135deg, #645246, #493e37);
+  box-shadow: 0 30px 80px rgba(81, 59, 46, .2);
+}
+
+.legal a {
+  border-color: rgba(234, 216, 202, .9);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fff, #fff4ec);
+}
+
+@media (max-width: 1120px) {
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .screens {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    margin-top: 20px;
+    padding: 48px;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    position: relative;
+    top: 0;
+  }
+
+  .language {
+    flex-wrap: wrap;
+  }
+
+  .language button {
+    min-width: calc(33.333% - 4px);
+  }
+
+  .nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-links a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .hero {
+    margin-top: 14px;
+    padding: 34px 22px 42px;
+    border-radius: 32px;
+  }
+
+  .hero::before {
+    background-position: 58% 18%;
+    opacity: .55;
+  }
+
+  .features,
+  .screens {
+    grid-template-columns: 1fr;
+  }
+
+  .shot-card:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .shot-caption {
+    min-height: auto;
+  }
+}
