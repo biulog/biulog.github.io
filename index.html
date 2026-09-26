@@ -999,6 +999,7 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/site-refresh.css?v=20260904">
+  <link rel="stylesheet" href="/assets/site-experience.css?v=20260926c">
 </head>
 <body>
   <header class="wrap nav">
@@ -1024,11 +1025,11 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="wrap hero">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow" data-i18n="eyebrow">給正在努力的爸媽｜一個 App，接住每一天</div>
-        <h1 data-i18n="heroTitle">育兒很忙，珍貴的每一天別讓它散掉。</h1>
+        <h1 data-i18n="heroTitle">把育兒日常，留成成長故事。</h1>
         <p class="lead" data-i18n="heroLead">半夜餵奶、換尿布、哄睡，只要一鍵就能記下。從今天的作息到第一顆牙、每次長高與健康大小事，BiuLog 幫你整理好，也讓家人與爸媽夥伴陪你一起走。</p>
         <div class="cta-row">
           <a class="cta" href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="ctaStore" data-app-store-link>在 App Store 下載</a>
@@ -1059,16 +1060,17 @@
         <div class="mini-shot two">
           <img id="miniTwo" data-shot-index="2" src="/assets/screens/zh/screen-2.webp" alt="BiuLog customization screenshot" loading="lazy" decoding="async">
         </div>
+        <div class="hero-caption">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 20s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.3-8 10-8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span data-experience="caption">小小日常，慢慢收藏。</span>
+        </div>
       </div>
     </section>
 
-    <section id="features" class="wrap section">
-      <div class="section-head">
-        <h2 data-i18n="featuresTitle">不是多做一份功課，是少記住一件事。</h2>
-        <p data-i18n="featuresLead">把每天會反覆發生的照顧變簡單，把一生只有一次的成長好好留下來。</p>
-      </div>
-      <div class="features" id="featureGrid"></div>
-    </section>
+    <div class="wrap experience-toolbar">
+      <a href="#screens" data-experience="explore">看看 BiuLog 怎麼陪你</a>
+      <button class="motion-toggle" type="button" aria-pressed="false">暫停動態</button>
+    </div>
 
     <section id="screens" class="band">
       <div class="wrap">
@@ -1078,6 +1080,14 @@
         </div>
         <div class="screens" id="screenGallery"></div>
       </div>
+    </section>
+
+    <section id="features" class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="featuresTitle">不是多做一份功課，是少記住一件事。</h2>
+        <p data-i18n="featuresLead">把每天會反覆發生的照顧變簡單，把一生只有一次的成長好好留下來。</p>
+      </div>
+      <div class="features" id="featureGrid"></div>
     </section>
 
     <section class="family-proof-band" id="family-handbook">
@@ -1096,6 +1106,7 @@
             </div>
           </div>
         </div>
+        <details class="more-screens"><summary data-experience="more">展開成長手冊的更多畫面</summary>
         <div class="family-proof-grid">
           <article class="family-proof-card">
             <figure class="family-proof-phone">
@@ -1131,6 +1142,7 @@
             <div class="family-proof-copy"><strong data-i18n="familyProofSixTitle">健檢、症狀、用藥與食材反應，集中管理</strong><p data-i18n="familyProofSixText">替 Biu 留下健檢／塗氟、就醫症狀、居家用藥與食材觀察，重要健康資訊不再散落。</p></div>
           </article>
         </div>
+        </details>
       </div>
     </section>
 
@@ -1146,6 +1158,7 @@
             <span class="parent-care-privacy" data-i18n="parentCarePrivacy">只顯示自己寶寶的內容，家庭紀錄與機構共享範圍分開管理</span>
           </div>
         </div>
+        <details class="more-screens"><summary data-experience="parentMore">查看家長端照護畫面</summary>
         <div class="parent-care-grid">
           <article class="parent-care-card">
             <figure class="parent-care-phone"><img loading="lazy" decoding="async" data-showcase-shot="parent-home" src="/assets/showcase/zh/parent-home.webp" alt="BiuLog 家長端照護首頁" width="810" height="1800"></figure>
@@ -1156,6 +1169,7 @@
             <div class="parent-care-copy"><strong data-i18n="parentCareTwoTitle">今天吃了多少、睡了多久，打開就看懂</strong><p data-i18n="parentCareTwoText">心情、食慾、喝奶、尿布、睡眠、入托時間與照護時間線集中在同一天，晚上接手照顧更安心。</p></div>
           </article>
         </div>
+        </details>
       </div>
     </section>
 
@@ -1177,6 +1191,14 @@
           <a class="cta partner" href="/institution.html" data-i18n="ctaPartner">洽談機構合作</a>
         </div>
         <ul class="plan-list" id="proList"></ul>
+      </div>
+    </section>
+
+    <section class="wrap download-finale">
+      <h2 data-experience="finale">今天的小事，都是未來的珍藏。</h2>
+      <div class="cta-row">
+        <a class="cta" href="https://apps.apple.com/tw/app/biulog/id6766629143" data-i18n="ctaStore" data-app-store-link>在 App Store 下載</a>
+        <a class="cta android" href="https://play.google.com/store/apps/details?id=com.chy.biulog" data-i18n="ctaGooglePlay" data-google-play-link>在 Google Play 下載</a>
       </div>
     </section>
 
@@ -1638,7 +1660,8 @@
     function detectLanguage() {
       const urlLang = new URLSearchParams(window.location.search).get("lang");
       if (copy[urlLang]) return urlLang;
-      const stored = localStorage.getItem("biulog-site-lang");
+      let stored;
+      try { stored = localStorage.getItem("biulog-site-lang"); } catch (_) { /* Storage can be unavailable in private contexts. */ }
       if (copy[stored]) return stored;
       const browser = (navigator.language || "").toLowerCase();
       if (browser.startsWith("ja")) return "ja";
@@ -1791,7 +1814,7 @@
 
     function setLanguage(lang, updateUrl = false) {
       const next = copy[lang] ? lang : fallbackLang;
-      localStorage.setItem("biulog-site-lang", next);
+      try { localStorage.setItem("biulog-site-lang", next); } catch (_) { /* Locale still works for this page. */ }
       setText(next);
       renderFeatures(next);
       renderScreens(next);
@@ -1799,6 +1822,7 @@
       renderPro(next);
       updateStoreLinks(next);
       updateShowcaseImages(next);
+      document.dispatchEvent(new CustomEvent("biulog:language", { detail: { lang: next } }));
 
       if (updateUrl) {
         const url = new URL(window.location.href);
@@ -1813,5 +1837,6 @@
 
     setLanguage(detectLanguage());
   </script>
+  <script src="/assets/site-experience.js?v=20260926c"></script>
 </body>
 </html>
