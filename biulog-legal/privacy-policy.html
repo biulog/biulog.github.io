@@ -212,10 +212,10 @@
         <p>BiuLog 使用 Google AdMob 顯示廣告。Google 可能依其政策處理廣告識別碼、裝置資訊、廣告互動、粗略位置或其他廣告相關資料。購買去廣告或專業版後，BiuLog 會依購買狀態停止顯示廣告。</p>
 
         <h2>3.1 廣告成效衡量</h2>
-        <p>在支援此功能的版本中，BiuLog 僅在您明確同意後才初始化 AppsFlyer 安裝歸因 SDK，用於了解哪些廣告帶來 App 安裝與開啟。iOS 另須取得系統「App 追蹤透明度」（ATT）的允許；未取得這兩項同意時，不會啟用此 SDK。</p>
-        <p>啟用後，AppsFlyer 可能處理安裝與開啟事件、裝置及作業系統資訊、IP 位址、可用且獲准使用的廣告識別碼，以及廣告來源與點擊識別資訊。目前僅將歸因於 ChatGPT 廣告渠道的安裝事件及必要的歸因資料，由 AppsFlyer 回傳給 OpenAI 以衡量廣告成效；未啟用進階比對，也不向 OpenAI 回傳其他 App 內事件。</p>
+        <p>在 3.2.8 及後續支援此功能的版本中，BiuLog 使用 AppsFlyer 了解哪些廣告帶來 App 安裝與開啟。Android 的安裝來源量測預設開啟，不會以額外同意頁阻擋進入 App；先前已拒絕或關閉的選擇會保留。iOS 僅在取得系統「App 追蹤透明度」（ATT）許可後啟用。</p>
+        <p>AppsFlyer 可能處理安裝與開啟事件、裝置及作業系統資訊、IP 位址，以及廣告來源與點擊識別資訊。此量測功能在 Android 關閉廣告識別碼、Android ID、IMEI 與 App Set ID 的蒐集；iOS 可在系統允許追蹤後使用廣告識別碼。目前僅將歸因於 ChatGPT 廣告渠道的安裝事件及必要歸因資料，由 AppsFlyer 回傳 OpenAI；未啟用進階比對，也不向 OpenAI 回傳其他 App 內事件。</p>
         <p>BiuLog 不會為此廣告成效衡量目的，向 AppsFlyer 或 OpenAI 傳送寶寶照護紀錄、姓名、生日、照片、聊天內容，或家人帳號及聯絡資訊。</p>
-        <p>您可拒絕，或隨時在 App 設定中關閉廣告成效衡量，不影響主要 App 功能。這項同意與去廣告或專業版購買分開管理；購買去廣告不等於同意此量測。關閉後會停止此 SDK 往後的資料回傳，但不會自動刪除已傳送的資料；如需協助申請刪除，請透過第 10 節的聯絡方式與我們聯繫。</p>
+        <p>您可隨時在 App 設定中關閉安裝來源量測，不影響主要功能。這項設定與去廣告或專業版購買分開管理。關閉後會停止此 SDK 往後的資料回傳，但不會自動刪除已傳送的資料；如需協助申請刪除，請透過第 10 節的聯絡方式與我們聯繫。</p>
         <p>資料接收者的隱私說明：<a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyer 服務隱私權政策</a>、<a href="https://openai.com/policies/privacy-policy/">OpenAI 隱私權政策</a>。</p>
 
         <h2>4. 內購與付款</h2>
@@ -255,10 +255,10 @@
         <p>BiuLog uses Google AdMob to display ads. Google may process advertising identifiers, device information, ad interactions, coarse location, or other advertising-related data according to Google's policies. After a remove-ads or premium purchase, BiuLog uses purchase status to stop showing ads.</p>
 
         <h2>3.1 Advertising Measurement</h2>
-        <p>In versions that support this feature, BiuLog initializes the AppsFlyer attribution SDK only after your explicit consent, to understand which ads lead to app installations and opens. On iOS, authorization through the system's App Tracking Transparency (ATT) prompt is also required; the SDK is not enabled without both permissions.</p>
-        <p>Once enabled, AppsFlyer may process installation and app-open events, device and operating system information, IP addresses, advertising identifiers where available and permitted, and ad source and click identifiers. Currently, AppsFlyer sends OpenAI only installation events attributed to the ChatGPT advertising channel and the associated attribution data needed to measure advertising performance. Advanced matching is not enabled, and other in-app events are not sent to OpenAI.</p>
+        <p>In version 3.2.8 and later versions supporting this feature, BiuLog uses AppsFlyer to understand which ads lead to app installs and opens. Android install attribution is enabled by default without a separate consent page blocking access to the app. Previous refusals or off settings are preserved. On iOS, measurement starts only after system App Tracking Transparency (ATT) authorization.</p>
+        <p>AppsFlyer may process install and app-open events, device and operating system information, IP addresses, and advertising source and click information. This measurement feature disables collection of advertising identifiers, Android ID, IMEI and App Set ID on Android. On iOS, it may use the advertising identifier after system tracking authorization. AppsFlyer currently sends OpenAI only installs attributed to ChatGPT ads and the necessary attribution data. Advanced matching is disabled; other in-app events are not sent to OpenAI.</p>
         <p>BiuLog does not send baby care records, names, birthdays, photos, chat content, or family members' account or contact information to AppsFlyer or OpenAI for this advertising measurement.</p>
-        <p>You can decline or turn off advertising measurement at any time in the app settings without affecting the app's main features. This consent is separate from remove-ads or premium purchases; buying remove ads does not mean consenting to this measurement. Turning it off stops future data transmission by this SDK but does not automatically delete data already sent. For help requesting deletion, contact us using the details in section 10.</p>
+        <p>You can turn install attribution off in App Settings at any time without affecting the main features. This setting is separate from ad-removal or Premium purchases. Turning it off stops future data transmission by this SDK but does not automatically delete data already transmitted. For assistance with a deletion request, contact us using section 10.</p>
         <p>Privacy information from the data recipients: <a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyer Services Privacy Policy</a> and <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a>.</p>
 
         <h2>4. In-App Purchases and Payment</h2>
@@ -298,10 +298,10 @@
         <p>BiuLogはGoogle AdMobを使用して広告を表示します。Googleは、Googleのポリシーに従い、広告識別子、端末情報、広告の操作情報、おおよその位置情報、その他広告関連データを処理する場合があります。広告削除またはプレミアム版の購入後、BiuLogは購入状態に基づき広告表示を停止します。</p>
 
         <h2>3.1 広告効果の測定</h2>
-        <p>この機能に対応するバージョンでは、BiuLogは、どの広告がアプリのインストールや起動につながったかを把握するため、ユーザーの明示的な同意を得た後にのみAppsFlyerの計測SDKを初期化します。iOSでは、システムの「App Tracking Transparency」（ATT）による許可も必要です。両方の許可がない場合、このSDKは有効になりません。</p>
-        <p>有効にすると、AppsFlyerはインストール・起動イベント、端末・OS情報、IPアドレス、利用可能かつ使用を許可された広告識別子、広告の流入元やクリック識別情報を処理する場合があります。現在、AppsFlyerからOpenAIへ送信するのは、ChatGPT広告経由と判定されたインストールイベントと、広告効果の測定に必要な関連する流入元情報のみです。高度なマッチングは有効にしておらず、その他のアプリ内イベントはOpenAIへ送信しません。</p>
+        <p>バージョン3.2.8以降の対応版では、BiuLogはAppsFlyerで広告経由のインストールと起動を測定します。Androidでは標準で有効となり、専用の同意画面でアプリへのアクセスを遮りません。以前の拒否や無効設定は維持します。iOSではシステムのApp Tracking Transparency（ATT）で許可された後にのみ有効になります。</p>
+        <p>AppsFlyerはインストール・起動イベント、端末・OS情報、IPアドレス、広告の流入元やクリック情報を処理する場合があります。この測定機能はAndroidで広告識別子、Android ID、IMEI、App Set IDを収集しません。iOSではシステムの追跡許可後に広告識別子を使用する場合があります。OpenAIにはChatGPT広告経由のインストールと必要な流入元情報のみを送信します。高度なマッチングは無効で、その他のアプリ内イベントは送信しません。</p>
         <p>BiuLogは、この広告効果測定のために、赤ちゃんのケア記録、氏名、生年月日、写真、チャット内容、家族のアカウント情報や連絡先をAppsFlyerまたはOpenAIへ送信しません。</p>
-        <p>同意を拒否したり、アプリの設定からいつでも広告効果測定を無効にしたりできます。アプリの主要機能には影響しません。この同意は広告削除やプレミアム版の購入とは別に管理され、広告削除の購入は測定への同意を意味しません。無効にすると、このSDKによる今後のデータ送信を停止しますが、送信済みのデータは自動的には削除されません。削除申請のサポートについては、第10節の連絡先へお問い合わせください。</p>
+        <p>アプリの設定からいつでもインストール元の測定を無効にできます。主な機能には影響しません。この設定は広告削除やプレミアム購入とは別に管理します。無効にするとSDKによる今後の送信は停止しますが、送信済みデータは自動削除されません。削除申請については第10節の連絡先へお問い合わせください。</p>
         <p>データ受領者のプライバシーに関する説明：<a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyerサービスのプライバシーポリシー</a>、<a href="https://openai.com/policies/privacy-policy/">OpenAIプライバシーポリシー</a>。</p>
 
         <h2>4. アプリ内購入と支払い</h2>
@@ -341,10 +341,10 @@
         <p>BiuLog는 Google AdMob을 사용하여 광고를 표시합니다. Google은 Google 정책에 따라 광고 식별자, 기기 정보, 광고 상호작용, 대략적인 위치 또는 기타 광고 관련 데이터를 처리할 수 있습니다. 광고 제거 또는 프리미엄 구매 후 BiuLog는 구매 상태에 따라 광고 표시를 중지합니다.</p>
 
         <h2>3.1 광고 효과 측정</h2>
-        <p>이 기능을 지원하는 버전에서 BiuLog는 어떤 광고가 앱 설치와 실행으로 이어졌는지 파악하기 위해, 사용자가 명시적으로 동의한 후에만 AppsFlyer 기여도 측정 SDK를 초기화합니다. iOS에서는 시스템의 앱 추적 투명성(ATT) 허용도 필요합니다. 두 가지 허용을 모두 받은 경우에만 이 SDK를 활성화합니다.</p>
-        <p>활성화하면 AppsFlyer는 설치 및 앱 실행 이벤트, 기기와 운영체제 정보, IP 주소, 사용 가능하고 허용된 광고 식별자, 광고 유입 경로 및 클릭 식별 정보를 처리할 수 있습니다. 현재 AppsFlyer는 ChatGPT 광고 경로에 기여한 것으로 확인된 설치 이벤트와 광고 효과 측정에 필요한 관련 기여도 정보만 OpenAI에 전송합니다. 고급 매칭은 활성화하지 않으며, 다른 인앱 이벤트는 OpenAI에 전송하지 않습니다.</p>
+        <p>버전 3.2.8 이후 이 기능을 지원하는 버전에서 BiuLog는 AppsFlyer로 광고를 통한 설치와 실행을 측정합니다. Android에서는 기본적으로 켜져 있으며 별도 동의 화면으로 앱 진입을 막지 않습니다. 이전 거절이나 끄기 설정은 유지합니다. iOS에서는 시스템 앱 추적 투명성(ATT) 허용 후에만 활성화됩니다.</p>
+        <p>AppsFlyer는 설치 및 실행 이벤트, 기기와 운영체제 정보, IP 주소, 광고 유입 경로 및 클릭 정보를 처리할 수 있습니다. 이 측정 기능은 Android에서 광고 식별자, Android ID, IMEI, App Set ID를 수집하지 않습니다. iOS에서는 시스템 추적 허용 후 광고 식별자를 사용할 수 있습니다. OpenAI에는 ChatGPT 광고를 통한 설치와 필요한 기여도 정보만 전달합니다. 고급 매칭은 꺼져 있으며 다른 인앱 이벤트는 보내지 않습니다.</p>
         <p>BiuLog는 이 광고 효과 측정을 위해 아기 돌봄 기록, 이름, 생일, 사진, 채팅 내용, 가족 구성원의 계정 또는 연락처 정보를 AppsFlyer나 OpenAI에 전송하지 않습니다.</p>
-        <p>동의를 거부하거나 앱 설정에서 언제든지 광고 효과 측정을 끌 수 있으며, 앱의 주요 기능에는 영향을 주지 않습니다. 이 동의는 광고 제거 또는 프리미엄 구매와 별도로 관리되며, 광고 제거 구매가 측정 동의를 의미하지는 않습니다. 끄면 이 SDK의 이후 데이터 전송은 중단되지만, 이미 전송한 데이터가 자동으로 삭제되지는 않습니다. 삭제 요청에 도움이 필요하면 제10절의 연락처로 문의해 주세요.</p>
+        <p>앱 설정에서 설치 경로 측정을 언제든 끌 수 있으며 주요 기능에 영향이 없습니다. 이 설정은 광고 제거 또는 프리미엄 구매와 별도로 관리합니다. 끄면 SDK의 이후 전송은 중단되지만 이미 전송된 데이터가 자동 삭제되지는 않습니다. 삭제 요청 도움은 제10절의 연락처로 문의해 주세요.</p>
         <p>데이터 수신자의 개인정보 안내: <a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyer 서비스 개인정보 처리방침</a>, <a href="https://openai.com/policies/privacy-policy/">OpenAI 개인정보 처리방침</a>.</p>
 
         <h2>4. 인앱 구매와 결제</h2>
@@ -384,10 +384,10 @@
         <p>BiuLog verwendet Google AdMob zur Anzeige von Werbung. Google kann gemäß den eigenen Richtlinien Werbe-IDs, Geräteinformationen, Anzeigeninteraktionen, ungefähre Standortdaten und weitere werbebezogene Daten verarbeiten. Nach dem Kauf der Werbefreiheit oder der Premium-Version verwendet BiuLog den Kaufstatus, um keine Werbung mehr anzuzeigen.</p>
 
         <h2>3.1 Messung der Werbewirkung</h2>
-        <p>In Versionen, die diese Funktion unterstützen, initialisiert BiuLog das AppsFlyer-SDK zur Zuordnung von Installationen erst nach Ihrer ausdrücklichen Einwilligung. Damit wird ermittelt, welche Werbung zu Installationen und App-Starts führt. Unter iOS ist zusätzlich die Erlaubnis über App Tracking Transparency (ATT) des Betriebssystems erforderlich. Ohne beide Einwilligungen wird dieses SDK nicht aktiviert.</p>
-        <p>Nach der Aktivierung kann AppsFlyer Installations- und App-Start-Ereignisse, Geräte- und Betriebssysteminformationen, IP-Adressen, verfügbare und zulässige Werbe-IDs sowie Angaben zur Werbequelle und Klickkennungen verarbeiten. Derzeit übermittelt AppsFlyer nur Installationsereignisse, die ChatGPT-Werbung zugeordnet werden, und die zugehörigen erforderlichen Zuordnungsdaten an OpenAI, um die Werbewirkung zu messen. Der erweiterte Datenabgleich ist nicht aktiviert; andere In-App-Ereignisse werden nicht an OpenAI übermittelt.</p>
+        <p>Ab Version 3.2.8 nutzt BiuLog in unterstützten Versionen AppsFlyer zur Messung von Installationen und App-Starts aus Werbung. Unter Android ist die Messung standardmäßig aktiv, ohne den App-Zugang durch eine separate Einwilligungsseite zu blockieren. Frühere Ablehnungen und Aus-Einstellungen bleiben erhalten. Unter iOS startet sie nur nach der Systemfreigabe über App Tracking Transparency (ATT).</p>
+        <p>AppsFlyer kann Installations- und Start-Ereignisse, Geräte- und Betriebssysteminformationen, IP-Adressen sowie Werbequellen und Klickinformationen verarbeiten. Diese Messfunktion erfasst unter Android keine Werbe-IDs, Android ID, IMEI oder App Set ID. Unter iOS kann nach der Systemfreigabe die Werbe-ID verwendet werden. OpenAI erhält nur Installationen aus ChatGPT-Werbung und die nötigen Zuordnungsdaten. Erweiterter Datenabgleich ist deaktiviert; andere In-App-Ereignisse werden nicht an OpenAI gesendet.</p>
         <p>BiuLog übermittelt für diese Werbemessung keine Babybetreuungsdaten, Namen, Geburtsdaten, Fotos, Chatinhalte oder Konto- und Kontaktinformationen von Familienmitgliedern an AppsFlyer oder OpenAI.</p>
-        <p>Sie können die Einwilligung ablehnen oder die Werbemessung jederzeit in den App-Einstellungen deaktivieren, ohne die Hauptfunktionen der App einzuschränken. Diese Einwilligung wird getrennt vom Kauf der Werbefreiheit oder der Premium-Version verwaltet; der Kauf der Werbefreiheit gilt nicht als Einwilligung in die Messung. Das Deaktivieren stoppt künftige Datenübermittlungen durch dieses SDK, löscht aber bereits übermittelte Daten nicht automatisch. Für Unterstützung bei einem Löschantrag kontaktieren Sie uns bitte über die Angaben in Abschnitt 10.</p>
+        <p>Die Installationsmessung lässt sich jederzeit in den App-Einstellungen ausschalten, ohne die Hauptfunktionen zu beeinträchtigen. Die Einstellung ist von Werbefreiheit und Premium-Käufen getrennt. Das Ausschalten stoppt künftige SDK-Übertragungen, löscht bereits übertragene Daten aber nicht automatisch. Für Hilfe bei einer Löschanfrage nutzen Sie die Kontaktdaten in Abschnitt 10.</p>
         <p>Datenschutzhinweise der Datenempfänger: <a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyer Services Privacy Policy</a> und <a href="https://openai.com/policies/privacy-policy/">OpenAI-Datenschutzerklärung</a>.</p>
 
         <h2>4. In-App-Käufe und Zahlung</h2>
@@ -427,10 +427,10 @@
         <p>BiuLog utilizza Google AdMob per mostrare annunci. In base alle proprie norme, Google può trattare identificatori pubblicitari, informazioni sul dispositivo, interazioni con gli annunci, posizione approssimativa o altri dati collegati alla pubblicità. Dopo l'acquisto della rimozione degli annunci o della versione Premium, BiuLog utilizza lo stato dell'acquisto per interrompere la visualizzazione degli annunci.</p>
 
         <h2>3.1 Misurazione dell'efficacia pubblicitaria</h2>
-        <p>Nelle versioni che supportano questa funzione, BiuLog inizializza l'SDK di attribuzione AppsFlyer solo dopo il consenso esplicito dell'utente, per capire quali annunci portano a installazioni e aperture dell'app. Su iOS è richiesta anche l'autorizzazione di sistema tramite App Tracking Transparency (ATT). Senza entrambe le autorizzazioni, questo SDK non viene attivato.</p>
-        <p>Una volta attivato, AppsFlyer può trattare eventi di installazione e apertura dell'app, informazioni sul dispositivo e sul sistema operativo, indirizzi IP, identificatori pubblicitari disponibili e consentiti, nonché informazioni sulla fonte pubblicitaria e identificatori dei clic. Attualmente AppsFlyer invia a OpenAI solo gli eventi di installazione attribuiti agli annunci su ChatGPT e i relativi dati di attribuzione necessari per misurare l'efficacia pubblicitaria. La corrispondenza avanzata non è attiva e non vengono inviati a OpenAI altri eventi in-app.</p>
+        <p>Dalla versione 3.2.8, nelle versioni che supportano questa funzione, BiuLog usa AppsFlyer per misurare installazioni e aperture generate dagli annunci. Su Android la misurazione è attiva per impostazione predefinita, senza una pagina di consenso separata che blocchi l’accesso all’app. I precedenti rifiuti e le disattivazioni vengono mantenuti. Su iOS viene attivata solo dopo l’autorizzazione di sistema App Tracking Transparency (ATT).</p>
+        <p>AppsFlyer può trattare eventi di installazione e apertura, informazioni sul dispositivo e sul sistema operativo, indirizzi IP, fonte pubblicitaria e informazioni sui clic. Su Android questa funzione non raccoglie identificatori pubblicitari, Android ID, IMEI o App Set ID. Su iOS può usare l’identificatore pubblicitario dopo l’autorizzazione di sistema. OpenAI riceve solo installazioni attribuite ad annunci ChatGPT e i dati necessari all’attribuzione. La corrispondenza avanzata è disattivata; gli altri eventi in-app non vengono inviati a OpenAI.</p>
         <p>BiuLog non invia ad AppsFlyer o OpenAI, per questa misurazione pubblicitaria, registrazioni di cura del bebè, nomi, date di nascita, foto, contenuti delle chat o informazioni sugli account e sui contatti dei familiari.</p>
-        <p>È possibile rifiutare il consenso o disattivare la misurazione pubblicitaria in qualsiasi momento nelle impostazioni dell'app, senza compromettere le funzioni principali. Il consenso è gestito separatamente dagli acquisti di rimozione degli annunci o della versione premium; acquistare la rimozione degli annunci non equivale ad acconsentire alla misurazione. La disattivazione interrompe i successivi invii di dati da parte di questo SDK, ma non elimina automaticamente i dati già inviati. Per assistenza con una richiesta di eliminazione, contattarci tramite i recapiti nella sezione 10.</p>
+        <p>Puoi disattivare la misurazione delle installazioni in qualsiasi momento nelle impostazioni dell’app, senza limitare le funzioni principali. Questa impostazione è separata dagli acquisti Premium o di rimozione degli annunci. La disattivazione interrompe i futuri invii dell’SDK ma non elimina automaticamente i dati già trasmessi. Per assistenza con una richiesta di eliminazione, usa i contatti nella sezione 10.</p>
         <p>Informative dei destinatari dei dati: <a href="https://www.appsflyer.com/legal/services-privacy-policy/">AppsFlyer Services Privacy Policy</a> e <a href="https://openai.com/policies/privacy-policy/">Informativa sulla privacy di OpenAI</a>.</p>
 
         <h2>4. Acquisti in-app e pagamenti</h2>
