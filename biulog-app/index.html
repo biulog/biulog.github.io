@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="多位小兒科醫師推薦的 BiuLog 育兒 App，記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，選擇前先了解。立即下載 BiuLog，支援 iPhone 與 Android。">
+  <meta name="theme-color" content="#fbf7f1">
+  <meta name="application-name" content="BiuLog">
+  <meta property="og:site_name" content="BiuLog">
+  <meta property="og:title" content="BiuLog｜寶寶紀錄、家庭共享與育兒交流">
+  <meta property="og:description" content="多位小兒科醫師推薦的 BiuLog 育兒 App，記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，選擇前先了解。立即下載 BiuLog，支援 iPhone 與 Android。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biulog.github.io/biulog-app/">
+  <meta property="og:image" content="https://biulog.github.io/assets/biulog-icon.png">
+  <meta property="og:image:alt" content="BiuLog App 圖示">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BiuLog｜寶寶紀錄、家庭共享與育兒交流">
+  <meta name="twitter:description" content="多位小兒科醫師推薦的 BiuLog 育兒 App，記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，選擇前先了解。立即下載 BiuLog，支援 iPhone 與 Android。">
+  <meta name="twitter:image" content="https://biulog.github.io/assets/biulog-icon.png">
+  <link rel="canonical" href="https://biulog.github.io/biulog-app/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://biulog.github.io/biulog-app/?lang=zh">
+  <link rel="alternate" hreflang="en" href="https://biulog.github.io/biulog-app/?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://biulog.github.io/biulog-app/?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://biulog.github.io/biulog-app/?lang=ko">
+  <link rel="alternate" hreflang="de" href="https://biulog.github.io/biulog-app/?lang=de">
+  <link rel="alternate" hreflang="it" href="https://biulog.github.io/biulog-app/?lang=it">
+  <link rel="alternate" hreflang="x-default" href="https://biulog.github.io/biulog-app/">
+  <link rel="icon" href="/assets/biulog-icon.png">
+  <title>BiuLog｜寶寶紀錄、家庭共享與育兒交流</title>
+  <script type="application/ld+json" id="app-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://biulog.github.io/#organization",
+      "name": "BiuLog",
+      "url": "https://biulog.github.io/",
+      "logo": "https://biulog.github.io/assets/biulog-icon.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://biulog.github.io/#website",
+      "name": "BiuLog",
+      "url": "https://biulog.github.io/",
+      "publisher": {
+        "@id": "https://biulog.github.io/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://biulog.github.io/#app",
+      "name": "BiuLog",
+      "url": "https://biulog.github.io/biulog-app/",
+      "image": "https://biulog.github.io/assets/biulog-icon.png",
+      "description": "多位小兒科醫師推薦的 BiuLog 育兒 App，記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，選擇前先了解。立即下載 BiuLog，支援 iPhone 與 Android。",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Android",
+      "publisher": {
+        "@id": "https://biulog.github.io/#organization"
+      },
+      "featureList": [
+        "寶寶奶量、睡眠與尿布紀錄",
+        "成長里程碑",
+        "家人共享照顧資訊",
+        "爸媽聊天室與育兒經驗交流",
+        "台灣托育機構、托嬰中心與幼兒園官方公開裁罰紀錄查詢"
+      ],
+      "downloadUrl": [
+        "https://apps.apple.com/tw/app/biulog/id6766629143",
+        "https://play.google.com/store/apps/details?id=com.chy.biulog"
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fbf7f1;
+      --surface: rgba(255, 253, 250, .92);
+      --ink: #554c42;
+      --muted: #8c7f73;
+      --line: rgba(152, 121, 90, .17);
+      --gold: #d6af75;
+      --gold-deep: #8b6d51;
+      --shadow: 0 24px 72px rgba(84, 73, 62, .15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(233, 175, 189, .25), transparent 34%),
+        radial-gradient(circle at 88% 86%, rgba(202, 217, 232, .34), transparent 36%),
+        linear-gradient(145deg, #fff9f3 0%, #fbf7f1 54%, #f7f1eb 100%);
+    }
+
+    main {
+      width: min(100%, 520px);
+      padding: 34px 26px 28px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, .92);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .app-icon {
+      display: block;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 20px;
+      border-radius: 25px;
+      box-shadow: 0 12px 34px rgba(84, 73, 62, .17);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(29px, 7vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .recommendation {
+      display: inline-block;
+      margin: 0 auto 14px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #f6ece0;
+      color: #775639;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .care-info {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .care-info h2 {
+      margin: 0 0 9px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .care-info p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    h1, h2, p, .store-copy {
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      margin: 12px auto 24px;
+      color: #73665b;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 30px;
+      margin-bottom: 20px;
+      color: var(--gold-deep);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(214, 175, 117, .32);
+      border-top-color: var(--gold-deep);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+
+    .store-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .store-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 68px;
+      padding: 13px 18px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .store-link:hover,
+    .store-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(152, 121, 90, .4);
+      box-shadow: 0 10px 28px rgba(84, 73, 62, .11);
+      outline: none;
+    }
+
+    .store-copy {
+      display: grid;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .store-copy small {
+      color: #73665b;
+      font-size: 12px;
+    }
+
+    .store-copy strong {
+      font-size: 17px;
+    }
+
+    .arrow {
+      color: var(--gold-deep);
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .hint {
+      margin: 20px 0 0;
+      color: #73665b;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--gold-deep);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 420px) {
+      main {
+        padding: 28px 18px 24px;
+        border-radius: 26px;
+      }
+
+      .app-icon {
+        width: 84px;
+        height: 84px;
+        border-radius: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spinner {
+        animation: none;
+      }
+
+      .store-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="app-icon" id="app-icon" src="/assets/biulog-icon.png" alt="BiuLog App 圖示" width="96" height="96">
+    <p class="recommendation" id="recommendation">多位小兒科醫師推薦</p>
+    <h1 id="download-title">BiuLog 育兒紀錄 App</h1>
+    <p class="lead" id="download-lead">記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。</p>
+
+    <div class="status" id="status" aria-live="polite">
+      <span id="status-copy">請選擇你的手機商店</span>
+    </div>
+
+    <div class="store-links" id="store-links" aria-label="選擇 App 商店">
+      <a class="store-link" id="ios-link" href="https://apps.apple.com/tw/app/biulog/id6766629143">
+        <span class="store-copy">
+          <small id="ios-small">iPhone・iPad</small>
+          <strong id="ios-copy">前往 App Store</strong>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="store-link" id="android-link" href="https://play.google.com/store/apps/details?id=com.chy.biulog">
+        <span class="store-copy">
+          <small id="android-small">Android</small>
+          <strong id="android-copy">前往 Google Play</strong>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+
+    <section class="care-info" aria-labelledby="care-title">
+      <h2 id="care-title">找托育前，先查公開裁罰紀錄</h2>
+      <p id="care-copy">還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，依縣市、類型或關鍵字搜尋，查看處分內容、日期與官方來源，選擇前先了解。</p>
+    </section>
+
+    <p class="hint" id="download-hint">選擇你的手機商店，即可前往下載 BiuLog。</p>
+    <a class="home-link" id="home-copy" href="/">查看 BiuLog 官網</a>
+  </main>
+
+  <noscript>
+    <style>.status { display: none; }</style>
+  </noscript>
+
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const copy = {
+        zh: { htmlLang: "zh-Hant", title: "下載 BiuLog｜iOS・Android", description: "下載 BiuLog 寶寶生活記錄 App，支援 iPhone、iPad 與 Android。", alt: "BiuLog App 圖示", heading: "下載 BiuLog", lead: "寶寶作息、家庭共享與成長紀錄，一個 App 溫柔整理。", loading: "正在為你開啟適合的商店…", choose: "請選擇你的手機商店", opening: (name) => `正在開啟 ${name}…`, stores: "選擇 App 商店", iosSmall: "iPhone・iPad", ios: "前往 App Store", androidSmall: "Android", android: "前往 Google Play", hint: "選擇你的手機商店，即可前往下載 BiuLog。", home: "查看 BiuLog 官網" },
+        en: { htmlLang: "en", title: "Download BiuLog | iOS & Android", description: "Download the BiuLog baby tracker for iPhone, iPad and Android.", alt: "BiuLog app icon", heading: "Download BiuLog", lead: "Baby routines, family sharing and growth records—gently organized in one app.", loading: "Opening the right store for you…", choose: "Choose your mobile app store", opening: (name) => `Opening ${name}…`, stores: "Choose an app store", iosSmall: "iPhone · iPad", ios: "Open in the App Store", androidSmall: "Android", android: "Open in Google Play", hint: "Choose your app store above to download BiuLog.", home: "Visit the BiuLog website" },
+        ja: { htmlLang: "ja", title: "BiuLogをダウンロード｜iOS・Android", description: "iPhone、iPad、Android対応の育児記録アプリBiuLogをダウンロード。", alt: "BiuLogアプリアイコン", heading: "BiuLogをダウンロード", lead: "生活リズム、家族共有、成長記録を、ひとつのアプリでやさしく整理。", loading: "お使いの端末に合うストアを開いています…", choose: "アプリストアを選択してください", opening: (name) => `${name}を開いています…`, stores: "アプリストアを選択", iosSmall: "iPhone・iPad", ios: "App Storeで開く", androidSmall: "Android", android: "Google Playで開く", hint: "上のストアを選んでBiuLogをダウンロードしてください。", home: "BiuLog公式サイトを見る" },
+        ko: { htmlLang: "ko", title: "BiuLog 다운로드｜iOS·Android", description: "iPhone, iPad, Android에서 BiuLog 아기 기록 앱을 다운로드하세요.", alt: "BiuLog 앱 아이콘", heading: "BiuLog 다운로드", lead: "아기 생활 리듬, 가족 공유, 성장 기록을 하나의 앱에 다정하게 정리하세요.", loading: "사용 중인 기기에 맞는 스토어를 여는 중…", choose: "앱 스토어를 선택해 주세요", opening: (name) => `${name} 여는 중…`, stores: "앱 스토어 선택", iosSmall: "iPhone · iPad", ios: "App Store에서 열기", androidSmall: "Android", android: "Google Play에서 열기", hint: "위에서 앱 스토어를 선택하고 BiuLog를 다운로드하세요.", home: "BiuLog 공식 웹사이트 보기" },
+        de: { htmlLang: "de", title: "BiuLog herunterladen | iOS & Android", description: "BiuLog Baby Tracker für iPhone, iPad und Android herunterladen.", alt: "BiuLog App-Symbol", heading: "BiuLog herunterladen", lead: "Babyroutinen, Familienfreigabe und Entwicklung – liebevoll geordnet in einer App.", loading: "Der passende Store wird geöffnet…", choose: "Wähle deinen App-Store", opening: (name) => `${name} wird geöffnet…`, stores: "App-Store auswählen", iosSmall: "iPhone · iPad", ios: "Im App Store öffnen", androidSmall: "Android", android: "Bei Google Play öffnen", hint: "Wähle oben deinen App-Store, um BiuLog herunterzuladen.", home: "Zur BiuLog Website" },
+        it: { htmlLang: "it", title: "Scarica BiuLog | iOS e Android", description: "Scarica il diario del bebè BiuLog per iPhone, iPad e Android.", alt: "Icona dell'app BiuLog", heading: "Scarica BiuLog", lead: "Routine del bebè, condivisione in famiglia e crescita, custodite con cura in un'unica app.", loading: "Stiamo aprendo lo store giusto per te…", choose: "Scegli lo store del tuo telefono", opening: (name) => `Apertura di ${name}…`, stores: "Scegli un app store", iosSmall: "iPhone · iPad", ios: "Apri nell'App Store", androidSmall: "Android", android: "Apri in Google Play", hint: "Scegli il tuo app store qui sopra per scaricare BiuLog.", home: "Visita il sito di BiuLog" }
+      };
+      const productCopy = {
+  "zh": {
+    "title": "BiuLog｜寶寶紀錄、家庭共享與育兒交流",
+    "description": "多位小兒科醫師推薦的 BiuLog 育兒 App，記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，選擇前先了解。立即下載 BiuLog，支援 iPhone 與 Android。",
+    "heading": "BiuLog 育兒紀錄 App",
+    "recommendation": "多位小兒科醫師推薦",
+    "lead": "記錄寶寶奶量、睡眠、尿布與成長里程碑，和家人共享照顧資訊，到爸媽聊天室交流育兒經驗。",
+    "careTitle": "找托育前，先查公開裁罰紀錄",
+    "careCopy": "還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，依縣市、類型或關鍵字搜尋，查看處分內容、日期與官方來源，選擇前先了解。",
+    "features": [
+      "寶寶奶量、睡眠與尿布紀錄",
+      "成長里程碑",
+      "家人共享照顧資訊",
+      "爸媽聊天室與育兒經驗交流",
+      "台灣托育機構、托嬰中心與幼兒園官方公開裁罰紀錄查詢"
+    ]
+  },
+  "en": {
+    "title": "Download BiuLog | Baby Tracking, Family Sharing & Parent Chat",
+    "description": "Recommended by multiple pediatricians, BiuLog tracks feeding amounts, sleep, diapers and milestones. Share care records with family and exchange experiences in parent chat. You can also search publicly disclosed official penalty records for childcare centers and kindergartens in Taiwan. Available for iPhone and Android.",
+    "heading": "BiuLog Baby Tracker",
+    "recommendation": "Recommended by multiple pediatricians",
+    "lead": "Track feeding amounts, sleep, diapers and milestones. Share care records with family and exchange parenting experiences in parent chat.",
+    "careTitle": "Check public records before choosing childcare",
+    "careCopy": "Search publicly disclosed official penalty records for childcare centers and kindergartens in Taiwan. Filter by city, facility type or keyword, and view the penalty details, dates and official sources.",
+    "features": [
+      "Feeding, sleep and diaper records",
+      "Developmental milestones",
+      "Shared family care records",
+      "Parent chat",
+      "Publicly disclosed official childcare penalty records in Taiwan"
+    ]
+  },
+  "ja": {
+    "title": "BiuLogをダウンロード｜育児記録・家族共有・親同士の交流",
+    "description": "複数の小児科医が推薦する育児記録アプリBiuLog。授乳量、睡眠、おむつ、成長の節目を記録し、家族と共有。保護者チャットで育児の経験を話し合えます。台湾の保育施設・幼稚園について、行政機関が公開した処分記録も検索できます。iPhone・Android対応。",
+    "heading": "育児記録アプリ BiuLog",
+    "recommendation": "複数の小児科医が推薦",
+    "lead": "授乳量、睡眠、おむつ、成長の節目を記録して家族と共有。保護者チャットで育児の経験を話し合えます。",
+    "careTitle": "施設選びの前に、公開された処分記録を確認",
+    "careCopy": "台湾の保育施設・幼稚園について、行政機関が公開した処分記録を検索できます。地域、施設の種類、キーワードで絞り込み、処分内容・日付・公式の出典を確認できます。",
+    "features": [
+      "授乳・睡眠・おむつの記録",
+      "成長の節目",
+      "家族との育児記録共有",
+      "保護者チャット",
+      "台湾の保育施設に関する行政機関の公開処分記録検索"
+    ]
+  },
+  "ko": {
+    "title": "BiuLog 다운로드 | 아기 기록·가족 공유·부모 채팅",
+    "description": "여러 소아과 의사가 추천하는 육아 기록 앱 BiuLog. 수유량, 수면, 기저귀, 성장 이정표를 기록하고 가족과 돌봄 정보를 공유하세요. 부모 채팅에서 육아 경험을 나누고, 대만 보육시설과 유치원의 공식 공개 행정처분 기록도 검색할 수 있습니다. iPhone·Android 지원.",
+    "heading": "BiuLog 육아 기록 앱",
+    "recommendation": "여러 소아과 의사가 추천",
+    "lead": "수유량, 수면, 기저귀, 성장 이정표를 기록하고 가족과 돌봄 정보를 공유하세요. 부모 채팅에서 육아 경험도 나눌 수 있어요.",
+    "careTitle": "보육시설을 선택하기 전, 공개 처분 기록 확인",
+    "careCopy": "대만 보육시설과 유치원의 공식 공개 행정처분 기록을 검색할 수 있습니다. 지역, 시설 유형, 키워드로 검색하고 처분 내용, 날짜, 공식 출처를 확인하세요.",
+    "features": [
+      "수유·수면·기저귀 기록",
+      "성장 이정표",
+      "가족 돌봄 정보 공유",
+      "부모 채팅",
+      "대만 보육시설의 공식 공개 행정처분 기록 검색"
+    ]
+  },
+  "de": {
+    "title": "BiuLog herunterladen | Baby-Tagebuch, Familienfreigabe & Elternchat",
+    "description": "Von mehreren Kinderärzten empfohlen: Mit BiuLog Milchmengen, Schlaf, Windeln und Meilensteine festhalten, Betreuung mit der Familie teilen und im Elternchat Erfahrungen austauschen. Auch öffentlich zugängliche behördliche Sanktionsbescheide zu Betreuungseinrichtungen und Kindergärten in Taiwan lassen sich durchsuchen. Für iPhone und Android.",
+    "heading": "BiuLog Baby-Tagebuch",
+    "recommendation": "Von mehreren Kinderärzten empfohlen",
+    "lead": "Milchmengen, Schlaf, Windeln und Meilensteine festhalten, Betreuungsinformationen mit der Familie teilen und im Elternchat Erfahrungen austauschen.",
+    "careTitle": "Vor der Betreuungswahl öffentliche Bescheide prüfen",
+    "careCopy": "Öffentlich zugängliche behördliche Sanktionsbescheide zu Betreuungseinrichtungen und Kindergärten in Taiwan durchsuchen. Nach Ort, Einrichtungstyp oder Stichwort filtern und Details, Datum und amtliche Quelle einsehen.",
+    "features": [
+      "Milchmengen, Schlaf und Windeln dokumentieren",
+      "Entwicklungsmeilensteine",
+      "Betreuungsinformationen mit der Familie teilen",
+      "Elternchat",
+      "Öffentliche behördliche Sanktionsbescheide zu Betreuungseinrichtungen in Taiwan durchsuchen"
+    ]
+  },
+  "it": {
+    "title": "Scarica BiuLog | Diario del bebè, condivisione e chat genitori",
+    "description": "Consigliata da più pediatri, BiuLog registra quantità di latte, sonno, pannolini e tappe della crescita. Condividi le informazioni di cura in famiglia e le esperienze nella chat genitori. Puoi anche cercare i provvedimenti sanzionatori ufficiali pubblicati per strutture per l’infanzia e scuole dell’infanzia a Taiwan. Per iPhone e Android.",
+    "heading": "BiuLog, diario del bebè",
+    "recommendation": "Consigliata da più pediatri",
+    "lead": "Registra quantità di latte, sonno, pannolini e tappe della crescita. Condividi le informazioni di cura in famiglia e le esperienze nella chat genitori.",
+    "careTitle": "Prima di scegliere una struttura, consulta i provvedimenti pubblicati",
+    "careCopy": "Cerca i provvedimenti sanzionatori ufficiali pubblicati per strutture per l’infanzia e scuole dell’infanzia a Taiwan. Filtra per città, tipo di struttura o parola chiave e consulta dettagli, date e fonti ufficiali.",
+    "features": [
+      "Quantità di latte, sonno e pannolini",
+      "Tappe della crescita",
+      "Informazioni di cura condivise in famiglia",
+      "Chat genitori",
+      "Ricerca dei provvedimenti sanzionatori ufficiali pubblicati per le strutture per l’infanzia a Taiwan"
+    ]
+  }
+};
+      for (const [locale, product] of Object.entries(productCopy)) Object.assign(copy[locale], product);
+      const requestedLang = params.get("lang");
+      const lang = copy[requestedLang] ? requestedLang : "zh";
+      const text = copy[lang];
+      const IOS_URLS = { zh: "https://apps.apple.com/tw/app/biulog/id6766629143", en: "https://apps.apple.com/us/app/biulog/id6766629143", ja: "https://apps.apple.com/jp/app/biulog/id6766629143", ko: "https://apps.apple.com/kr/app/biulog/id6766629143", de: "https://apps.apple.com/de/app/biulog/id6766629143", it: "https://apps.apple.com/it/app/biulog/id6766629143" };
+      const ANDROID_URLS = { zh: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=zh_TW", en: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=en", ja: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ja", ko: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ko", de: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=de", it: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=it" };
+      const IOS_URL = IOS_URLS[lang];
+      const ANDROID_URL = ANDROID_URLS[lang];
+      const status = document.getElementById("status");
+
+      document.documentElement.lang = text.htmlLang;
+      document.title = text.title;
+      document.querySelector('meta[name="description"]').content = text.description;
+      document.querySelector('meta[property="og:title"]').content = text.title;
+      document.querySelector('meta[property="og:description"]').content = text.description;
+      document.querySelector('meta[property="og:image:alt"]').content = text.alt;
+      document.querySelector('meta[name="twitter:title"]').content = text.title;
+      document.querySelector('meta[name="twitter:description"]').content = text.description;
+      const schemaNode = document.getElementById("app-schema");
+      const schemaData = JSON.parse(schemaNode.textContent);
+      const appData = schemaData["@graph"].find(item => item["@type"] === "SoftwareApplication");
+      appData.description = text.description;
+      appData.featureList = text.features;
+      appData.downloadUrl = [IOS_URL, ANDROID_URL];
+      schemaNode.textContent = JSON.stringify(schemaData);
+      document.getElementById("app-icon").alt = text.alt;
+      document.getElementById("download-title").textContent = text.heading;
+      document.getElementById("download-lead").textContent = text.lead;
+      document.getElementById("recommendation").textContent = text.recommendation;
+      document.getElementById("care-title").textContent = text.careTitle;
+      document.getElementById("care-copy").textContent = text.careCopy;
+      document.getElementById("status-copy").textContent = text.loading;
+      document.getElementById("store-links").setAttribute("aria-label", text.stores);
+      document.getElementById("ios-small").textContent = text.iosSmall;
+      document.getElementById("ios-copy").textContent = text.ios;
+      document.getElementById("android-small").textContent = text.androidSmall;
+      document.getElementById("android-copy").textContent = text.android;
+      document.getElementById("download-hint").textContent = text.hint;
+      document.getElementById("home-copy").textContent = text.home;
+      document.getElementById("ios-link").href = IOS_URL;
+      document.getElementById("android-link").href = ANDROID_URL;
+
+      status.innerHTML = "<span></span>";
+      status.querySelector("span").textContent = text.choose;
+    })();
+  </script>
+</body>
+</html>
