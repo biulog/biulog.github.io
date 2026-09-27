@@ -454,6 +454,11 @@
       const ANDROID_URLS = { zh: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=zh_TW", en: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=en", ja: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ja", ko: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ko", de: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=de", it: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=it" };
       const IOS_URL = IOS_URLS[lang];
       const ANDROID_URL = ANDROID_URLS[lang];
+      const preview = params.get("preview") === "1";
+      const ua = navigator.userAgent || "";
+      const isIPadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+      const isIOS = /iPhone|iPad|iPod/i.test(ua) || isIPadOS;
+      const isAndroid = /Android/i.test(ua);
       const status = document.getElementById("status");
 
       document.documentElement.lang = text.htmlLang;
@@ -488,8 +493,23 @@
       document.getElementById("ios-link").href = IOS_URL;
       document.getElementById("android-link").href = ANDROID_URL;
 
-      status.innerHTML = "<span></span>";
-      status.querySelector("span").textContent = text.choose;
+      const target = isIOS ? IOS_URL : isAndroid ? ANDROID_URL : null;
+      const storeName = isIOS ? "App Store" : "Google Play";
+      if (target && !preview) {
+        const fallbackHints = {
+          zh: "手機將自動開啟對應商店；若未開啟，請點選上方下載按鈕。",
+          en: "Your app store will open automatically. If it does not, tap the matching download button above.",
+          ja: "お使いの端末に合うストアを自動で開きます。開かない場合は、上のダウンロードボタンを選んでください。",
+          ko: "기기에 맞는 스토어가 자동으로 열립니다. 열리지 않으면 위의 다운로드 버튼을 눌러 주세요.",
+          de: "Dein App-Store wird automatisch geöffnet. Falls nicht, tippe oben auf die passende Download-Schaltfläche.",
+          it: "Il tuo app store si aprirà automaticamente. In caso contrario, tocca il pulsante di download corrispondente qui sopra."
+        };
+        document.getElementById("download-hint").textContent = fallbackHints[lang];
+        status.querySelector("span").textContent = text.opening(storeName);
+        window.setTimeout(() => window.location.replace(target), 320);
+      } else {
+        status.querySelector("span").textContent = text.choose;
+      }
     })();
   </script>
 </body>
