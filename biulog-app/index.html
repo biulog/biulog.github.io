@@ -459,6 +459,33 @@
       const isIPadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
       const isIOS = /iPhone|iPad|iPod/i.test(ua) || isIPadOS;
       const isAndroid = /Android/i.test(ua);
+      // A store visit is not an install. Only preserve an actual ad click ID;
+      // AppsFlyer attributes the install after the mobile SDK first opens.
+      // Keep ordinary visitors on the direct store links.
+      const opprefs = params.getAll("oppref");
+      const oppref = opprefs.length === 1 ? opprefs[0] : "";
+      const validOppref = oppref && oppref.length <= 4096 &&
+        !/[\s@{}<>\u0000-\u001f\u007f]/.test(oppref);
+      let attributedDownload = null;
+      if (validOppref && (isIOS || isAndroid)) {
+        const attribution = new URL("https://biulog.onelink.me/Rxc9");
+        attribution.searchParams.set("pid", "openai_int");
+        attribution.searchParams.set("c", "BiuLog_ChatGPT_Installs");
+        attribution.searchParams.set("af_siteid", "chatgpt");
+        attribution.searchParams.set("af_click_lookback", "7d");
+        attribution.searchParams.set("clickid", oppref);
+        // Allow only the documented, opaque campaign identifiers. Never copy
+        // arbitrary query strings, redirect destinations, or personal data.
+        for (const key of ["af_partner_account_id", "af_c_id", "af_adset_id", "af_ad_id"]) {
+          const value = params.get(key);
+          if (value && /^[A-Za-z0-9_-]{1,200}$/.test(value)) {
+            attribution.searchParams.set(key, value);
+          }
+        }
+        attributedDownload = attribution.href;
+      }
+      const iosDownload = isIOS && attributedDownload ? attributedDownload : IOS_URL;
+      const androidDownload = isAndroid && attributedDownload ? attributedDownload : ANDROID_URL;
       const status = document.getElementById("status");
 
       document.documentElement.lang = text.htmlLang;
@@ -490,10 +517,10 @@
       document.getElementById("android-copy").textContent = text.android;
       document.getElementById("download-hint").textContent = text.hint;
       document.getElementById("home-copy").textContent = text.home;
-      document.getElementById("ios-link").href = IOS_URL;
-      document.getElementById("android-link").href = ANDROID_URL;
+      document.getElementById("ios-link").href = iosDownload;
+      document.getElementById("android-link").href = androidDownload;
 
-      const target = isIOS ? IOS_URL : isAndroid ? ANDROID_URL : null;
+      const target = isIOS ? iosDownload : isAndroid ? androidDownload : null;
       const storeName = isIOS ? "App Store" : "Google Play";
       if (target && !preview) {
         const fallbackHints = {
