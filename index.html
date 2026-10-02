@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="從第一口奶到第一顆牙，一鍵記錄、全家同步，也有爸媽聊天室陪你一起走。">
   <meta name="twitter:image" content="https://biulog.github.io/assets/biulog-og.png?v=20260904">
   <link rel="canonical" href="https://biulog.github.io/">
-  <link rel="alternate" hreflang="zh-Hant" href="https://biulog.github.io/?lang=zh">
+  <link rel="alternate" hreflang="zh-Hant" href="https://biulog.github.io/">
   <link rel="alternate" hreflang="en" href="https://biulog.github.io/?lang=en">
   <link rel="alternate" hreflang="ja" href="https://biulog.github.io/?lang=ja">
   <link rel="alternate" hreflang="ko" href="https://biulog.github.io/?lang=ko">
@@ -1684,15 +1684,8 @@
     function detectLanguage() {
       const urlLang = new URLSearchParams(window.location.search).get("lang");
       if (copy[urlLang]) return urlLang;
-      let stored;
-      try { stored = localStorage.getItem("biulog-site-lang"); } catch (_) { /* Storage can be unavailable in private contexts. */ }
-      if (copy[stored]) return stored;
-      const browser = (navigator.language || "").toLowerCase();
-      if (browser.startsWith("ja")) return "ja";
-      if (browser.startsWith("ko")) return "ko";
-      if (browser.startsWith("de")) return "de";
-      if (browser.startsWith("it")) return "it";
-      if (browser.startsWith("en")) return "en";
+      // Keep the canonical homepage stable for readers and search crawlers.
+      // Explicit language choices remain shareable through ?lang= URLs.
       return fallbackLang;
     }
 
