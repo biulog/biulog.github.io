@@ -1,5 +1,10 @@
 window.BIULOG_COPY = {
   zh: {
+    navGuides: "育兒指南",
+    guidesHeading: "育兒有疑問，從這裡慢慢理清",
+    guidesLead: "照顧交接、日常紀錄與托育查詢，三份可直接使用的繁體中文指南。",
+    guidesAll: "查看全部育兒指南 →",
+    linkAbout: "關於 BiuLog",
     htmlLang: "zh-Hant",
     title: "BiuLog 寶寶生活記錄｜餵奶、睡眠、成長與家庭共享",
     description: "BiuLog 寶寶生活記錄 App：一鍵記錄餵奶、睡眠、尿布與副食品，整合成長手冊、乳牙、發展檢核、疫苗、家庭健康、提醒、作息趨勢、家庭共享與爸媽聊天室。",
@@ -56,6 +61,11 @@ window.BIULOG_COPY = {
     ]
   },
   en: {
+    navGuides: "Guides (中文)",
+    guidesHeading: "Practical parenting guides",
+    guidesLead: "Care handoffs, daily logs and Taiwan childcare record checks. These guides are in Traditional Chinese.",
+    guidesAll: "View guides in Traditional Chinese →",
+    linkAbout: "About BiuLog (中文)",
     htmlLang: "en",
     title: "BiuLog Baby Tracker | Feeds, Sleep, Growth & Family Sharing",
     description: "Track feeds, sleep, diapers, solids, growth, milestones, vaccines, baby teeth and family health. Share with family, personalize Home and connect with parents.",
@@ -112,6 +122,11 @@ window.BIULOG_COPY = {
     ]
   },
   ja: {
+    navGuides: "ガイド（繁体字）",
+    guidesHeading: "育児の疑問を、使えるヒントに",
+    guidesLead: "お世話の引き継ぎ、日々の記録、台湾の保育施設情報。繁体字中国語のガイドです。",
+    guidesAll: "繁体字中国語のガイドを見る →",
+    linkAbout: "BiuLog について（繁体字）",
     htmlLang: "ja",
     title: "BiuLog ベビートラッカー｜授乳・睡眠・成長を家族で共有",
     description: "授乳、睡眠、おむつ、離乳食、成長、発達チェック、予防接種、乳歯、健康をかんたん記録。家族共有、ホームのカスタマイズ、保護者コミュニティにも対応。",
@@ -168,6 +183,11 @@ window.BIULOG_COPY = {
     ]
   },
   ko: {
+    navGuides: "가이드 (번체)",
+    guidesHeading: "육아에 바로 쓸 수 있는 가이드",
+    guidesLead: "돌봄 인계, 일상 기록, 대만 보육시설 정보 확인. 가이드는 중국어 번체로 제공됩니다.",
+    guidesAll: "중국어 번체 가이드 보기 →",
+    linkAbout: "BiuLog 소개 (번체)",
     htmlLang: "ko",
     title: "BiuLog 아기 기록｜수유·수면·성장을 가족과 함께",
     description: "수유, 수면, 기저귀, 이유식, 성장, 발달 확인, 예방접종, 유치와 가족 건강을 간편하게 기록하세요. 가족 공유, 홈 꾸미기, 부모 커뮤니티까지 한곳에.",
@@ -224,6 +244,11 @@ window.BIULOG_COPY = {
     ]
   },
   de: {
+    navGuides: "Ratgeber (中文)",
+    guidesHeading: "Praktische Ratgeber für Eltern",
+    guidesLead: "Betreuungsübergabe, Alltagsprotokolle und Kita-Informationen in Taiwan. Die Ratgeber sind auf traditionellem Chinesisch.",
+    guidesAll: "Ratgeber auf traditionellem Chinesisch →",
+    linkAbout: "Über BiuLog (中文)",
     htmlLang: "de",
     title: "BiuLog Baby Tracker | Füttern, Schlaf, Wachstum & Familie",
     description: "Füttern, Schlaf, Windeln, Beikost, Wachstum, Impfungen, Milchzähne und Gesundheit übersichtlich erfassen, mit der Familie teilen und Routinen verstehen.",
@@ -329,6 +354,11 @@ window.BIULOG_COPY = {
     proItems: ["Tagesdaten für Eltern sofort sichtbar", "Sichere Zusammenarbeit mit Betreuungspersonen", "Mehrere Kinder getrennt verwalten", "Nachvollziehbare Übergaben", "Routinen in Übersichten erkennen", "Wachstum und Impfungen bündeln", "Professionelle Kommunikation stärken", "Aufzeichnungen nach Betreuungsende fortführen"]
   },
   it: {
+    navGuides: "Guide (中文)",
+    guidesHeading: "Guide pratiche per genitori",
+    guidesLead: "Passaggi di consegne, registri quotidiani e strutture per l’infanzia a Taiwan. Le guide sono in cinese tradizionale.",
+    guidesAll: "Guide in cinese tradizionale →",
+    linkAbout: "Informazioni su BiuLog (中文)",
     htmlLang: "it",
     title: "BiuLog Diario del bebè | Poppate, sonno, crescita e famiglia",
     description: "Registra poppate, sonno, pannolini, pappa, crescita, vaccini, dentini e salute. Condividi con la famiglia, personalizza la home e parla con altri genitori.",

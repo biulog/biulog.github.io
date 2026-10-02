@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://biulog.github.io/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-02</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/institution.html</loc>
@@ -22,5 +22,25 @@
   <url>
     <loc>https://biulog.github.io/biulog-app/</loc>
     <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://biulog.github.io/guides/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://biulog.github.io/guides/shared-care-handoff/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://biulog.github.io/guides/baby-care-records/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://biulog.github.io/guides/childcare-penalty-check/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://biulog.github.io/about/</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
 </urlset>
