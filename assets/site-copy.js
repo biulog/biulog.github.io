@@ -1,5 +1,6 @@
 window.BIULOG_COPY = {
   zh: {
+    linkSupportHub: "支援中心與使用條款",
     navGuides: "育兒指南",
     guidesHeading: "育兒有疑問，從這裡慢慢理清",
     guidesLead: "照顧交接、日常紀錄與托育查詢，三份可直接使用的繁體中文指南。",
@@ -61,6 +62,7 @@ window.BIULOG_COPY = {
     ]
   },
   en: {
+    linkSupportHub: "Support center and terms",
     navGuides: "Guides (中文)",
     guidesHeading: "Practical parenting guides",
     guidesLead: "Care handoffs, daily logs and Taiwan childcare record checks. These guides are in Traditional Chinese.",
@@ -122,6 +124,7 @@ window.BIULOG_COPY = {
     ]
   },
   ja: {
+    linkSupportHub: "サポートセンター・利用規約",
     navGuides: "ガイド（繁体字）",
     guidesHeading: "育児の疑問を、使えるヒントに",
     guidesLead: "お世話の引き継ぎ、日々の記録、台湾の保育施設情報。繁体字中国語のガイドです。",
@@ -183,6 +186,7 @@ window.BIULOG_COPY = {
     ]
   },
   ko: {
+    linkSupportHub: "지원 센터 및 이용약관",
     navGuides: "가이드 (번체)",
     guidesHeading: "육아에 바로 쓸 수 있는 가이드",
     guidesLead: "돌봄 인계, 일상 기록, 대만 보육시설 정보 확인. 가이드는 중국어 번체로 제공됩니다.",
@@ -244,6 +248,7 @@ window.BIULOG_COPY = {
     ]
   },
   de: {
+    linkSupportHub: "Support und Nutzungsbedingungen",
     navGuides: "Ratgeber (中文)",
     guidesHeading: "Praktische Ratgeber für Eltern",
     guidesLead: "Betreuungsübergabe, Alltagsprotokolle und Kita-Informationen in Taiwan. Die Ratgeber sind auf traditionellem Chinesisch.",
@@ -354,6 +359,7 @@ window.BIULOG_COPY = {
     proItems: ["Tagesdaten für Eltern sofort sichtbar", "Sichere Zusammenarbeit mit Betreuungspersonen", "Mehrere Kinder getrennt verwalten", "Nachvollziehbare Übergaben", "Routinen in Übersichten erkennen", "Wachstum und Impfungen bündeln", "Professionelle Kommunikation stärken", "Aufzeichnungen nach Betreuungsende fortführen"]
   },
   it: {
+    linkSupportHub: "Assistenza e condizioni d’uso",
     navGuides: "Guide (中文)",
     guidesHeading: "Guide pratiche per genitori",
     guidesLead: "Passaggi di consegne, registri quotidiani e strutture per l’infanzia a Taiwan. Le guide sono in cinese tradizionale.",

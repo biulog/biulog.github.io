@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BiuLog 隱私權政策：了解育兒紀錄、家庭共享、爸媽聊天室、照片、廣告、購買、通知與備份資料如何處理。">
   <meta name="theme-color" content="#faf7f2">
-  <title>BiuLog Privacy Policy</title>
+  <title>BiuLog 隱私權政策</title>
   <link rel="icon" href="assets/biulog-icon.png">
   <link rel="canonical" href="https://biulog.github.io/biulog-legal/privacy-policy.html">
   <link rel="alternate" hreflang="zh-Hant" href="https://biulog.github.io/biulog-legal/privacy-policy.html?lang=zh">
@@ -186,7 +186,7 @@
       <span>BiuLog</span>
     </a>
     <div class="language" aria-label="Language selector">
-      <button type="button" data-lang="zh">繁中</button>
+      <button type="button" data-lang="zh" class="active" aria-pressed="true">繁中</button>
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="ja">日本語</button>
       <button type="button" data-lang="ko">한국어</button>
@@ -197,7 +197,7 @@
 
   <main class="wrap">
     <article class="document">
-      <section class="policy" data-panel="zh">
+      <section class="policy active" data-panel="zh">
         <h1>BiuLog 隱私權政策</h1>
         <p class="meta">最後更新日期：2026 年 9 月 28 日</p>
         <p>BiuLog 是一款提供給父母與照顧者使用的寶寶生活記錄 App。本政策說明 BiuLog 如何處理與保護使用者在 App 中建立或產生的資料。</p>
@@ -496,9 +496,11 @@
 
     function detectLanguage() {
       const urlLang = new URLSearchParams(window.location.search).get("lang");
-      if (titles[urlLang]) return urlLang;
-      const stored = localStorage.getItem("biulog-site-lang");
-      if (titles[stored]) return stored;
+      if (Object.prototype.hasOwnProperty.call(titles, urlLang)) return urlLang;
+      try {
+        const stored = localStorage.getItem("biulog-site-lang");
+        if (Object.prototype.hasOwnProperty.call(titles, stored)) return stored;
+      } catch (_) { /* Language selection still works when storage is unavailable. */ }
       const browser = (navigator.language || "").toLowerCase();
       if (browser.startsWith("ja")) return "ja";
       if (browser.startsWith("ko")) return "ko";
@@ -509,15 +511,17 @@
     }
 
     function setLanguage(lang, updateUrl = false) {
-      const next = titles[lang] ? lang : "zh";
-      localStorage.setItem("biulog-site-lang", next);
+      const next = Object.prototype.hasOwnProperty.call(titles, lang) ? lang : "zh";
+      try { localStorage.setItem("biulog-site-lang", next); } catch (_) { /* Optional preference only. */ }
       document.documentElement.lang = titles[next][0];
       document.title = titles[next][1];
       document.querySelector('meta[name="description"]').setAttribute("content", descriptions[next]);
       document.getElementById("privacyFooter").textContent = footers[next];
       panels.forEach((panel) => panel.classList.toggle("active", panel.dataset.panel === next));
       document.querySelectorAll("[data-lang]").forEach((button) => {
-        button.classList.toggle("active", button.getAttribute("data-lang") === next);
+        const selected = button.getAttribute("data-lang") === next;
+        button.classList.toggle("active", selected);
+        button.setAttribute("aria-pressed", String(selected));
       });
       if (updateUrl) {
         const url = new URL(window.location.href);

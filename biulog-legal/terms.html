@@ -171,7 +171,7 @@
       <span>BiuLog</span>
     </a>
     <div class="language" aria-label="Language selector">
-      <button type="button" data-lang="zh">繁中</button>
+      <button type="button" data-lang="zh" class="active" aria-pressed="true">繁中</button>
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="ja">日本語</button>
       <button type="button" data-lang="ko">한국어</button>
@@ -180,7 +180,7 @@
 
   <main class="wrap">
     <article class="document">
-      <section class="terms" data-panel="zh">
+      <section class="terms active" data-panel="zh">
         <h1>BiuLog 使用條款</h1>
         <p class="meta">最後更新日期：2026 年 8 月 19 日</p>
         <p>使用 BiuLog 即表示您同意本使用條款。若您不同意本條款，請停止使用本 App。</p>
@@ -285,9 +285,11 @@
 
     function detectLanguage() {
       const urlLang = new URLSearchParams(window.location.search).get("lang");
-      if (titles[urlLang]) return urlLang;
-      const stored = localStorage.getItem("biulog-site-lang");
-      if (titles[stored]) return stored;
+      if (Object.prototype.hasOwnProperty.call(titles, urlLang)) return urlLang;
+      try {
+        const stored = localStorage.getItem("biulog-site-lang");
+        if (Object.prototype.hasOwnProperty.call(titles, stored)) return stored;
+      } catch (_) { /* Language selection still works when storage is unavailable. */ }
       const browser = (navigator.language || "").toLowerCase();
       if (browser.startsWith("ja")) return "ja";
       if (browser.startsWith("ko")) return "ko";
@@ -296,13 +298,15 @@
     }
 
     function setLanguage(lang, updateUrl = false) {
-      const next = titles[lang] ? lang : "zh";
-      localStorage.setItem("biulog-site-lang", next);
+      const next = Object.prototype.hasOwnProperty.call(titles, lang) ? lang : "zh";
+      try { localStorage.setItem("biulog-site-lang", next); } catch (_) { /* Optional preference only. */ }
       document.documentElement.lang = titles[next][0];
       document.title = titles[next][1];
       panels.forEach((panel) => panel.classList.toggle("active", panel.dataset.panel === next));
       document.querySelectorAll("[data-lang]").forEach((button) => {
-        button.classList.toggle("active", button.getAttribute("data-lang") === next);
+        const selected = button.getAttribute("data-lang") === next;
+        button.classList.toggle("active", selected);
+        button.setAttribute("aria-pressed", String(selected));
       });
       if (updateUrl) {
         const url = new URL(window.location.href);
