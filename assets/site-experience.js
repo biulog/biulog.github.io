@@ -163,7 +163,10 @@
     const heroImage = document.getElementById('heroShot');
     if (['zh','en','ja','ko'].includes(lang)) heroImage.src = `/assets/showcase/${lang}/family-home.webp`;
     heroImage.alt = copy[lang].shots[0][0];
-    document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.lang === lang)));
+    document.querySelectorAll('a[data-lang]').forEach(link => {
+      if (link.dataset.lang === lang) link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    });
     buildExplorer(currentLang);
     updateMotion();
     decorateReveals();
