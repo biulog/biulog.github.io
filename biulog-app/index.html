@@ -337,6 +337,7 @@
     <style>.status { display: none; }</style>
   </noscript>
 
+  <script src="/assets/social-attribution.js?v=20261005"></script>
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
@@ -454,6 +455,11 @@
       const ANDROID_URLS = { zh: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=zh_TW", en: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=en", ja: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ja", ko: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ko", de: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=de", it: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=it" };
       const IOS_URL = IOS_URLS[lang];
       const ANDROID_URL = ANDROID_URLS[lang];
+      // Optional enhancement: a missing/failed attribution script never blocks downloading.
+      const socialStoreUrl = url => {
+        try { return window.BiuLogSocialAttribution ? window.BiuLogSocialAttribution.storeUrl(url) : url; }
+        catch (_) { return url; }
+      };
       const preview = params.get("preview") === "1";
       const ua = navigator.userAgent || "";
       const isIPadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
@@ -484,8 +490,8 @@
         }
         attributedDownload = attribution.href;
       }
-      const iosDownload = isIOS && attributedDownload ? attributedDownload : IOS_URL;
-      const androidDownload = isAndroid && attributedDownload ? attributedDownload : ANDROID_URL;
+      const iosDownload = isIOS && attributedDownload ? attributedDownload : socialStoreUrl(IOS_URL);
+      const androidDownload = isAndroid && attributedDownload ? attributedDownload : socialStoreUrl(ANDROID_URL);
       const status = document.getElementById("status");
 
       document.documentElement.lang = text.htmlLang;

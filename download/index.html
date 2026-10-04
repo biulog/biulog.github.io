@@ -338,6 +338,7 @@
     <style>.status { display: none; }</style>
   </noscript>
 
+  <script src="/assets/social-attribution.js?v=20261005"></script>
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
@@ -458,6 +459,13 @@
       const ANDROID_URLS = { zh: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=zh_TW", en: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=en", ja: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ja", ko: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ko", de: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=de", it: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=it" };
       const IOS_URL = IOS_URLS[lang];
       const ANDROID_URL = ANDROID_URLS[lang];
+      // Optional enhancement: a missing/failed attribution script never blocks downloading.
+      const socialStoreUrl = url => {
+        try { return window.BiuLogSocialAttribution ? window.BiuLogSocialAttribution.storeUrl(url) : url; }
+        catch (_) { return url; }
+      };
+      const iosDownload = socialStoreUrl(IOS_URL);
+      const androidDownload = socialStoreUrl(ANDROID_URL);
       const preview = params.get("preview") === "1";
       const ua = navigator.userAgent || "";
       const platform = navigator.platform || "";
@@ -495,17 +503,17 @@
       document.getElementById("android-copy").textContent = text.android;
       document.getElementById("download-hint").textContent = text.hint;
       document.getElementById("home-copy").textContent = text.home;
-      document.getElementById("ios-link").href = IOS_URL;
-      document.getElementById("android-link").href = ANDROID_URL;
+      document.getElementById("ios-link").href = iosDownload;
+      document.getElementById("android-link").href = androidDownload;
 
       let target = null;
       let storeName = "";
 
       if (isIOS) {
-        target = IOS_URL;
+        target = iosDownload;
         storeName = "App Store";
       } else if (isAndroid) {
-        target = ANDROID_URL;
+        target = androidDownload;
         storeName = "Google Play";
       }
 
