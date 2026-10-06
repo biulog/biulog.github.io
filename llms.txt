@@ -1,0 +1,33 @@
+# BiuLog
+
+> BiuLog is a baby-care record app for iOS and Android, with feeding, sleep, diaper, growth, milestone and vaccine records, family sharing and parent community features. This is its official website.
+
+## Product status
+
+- As of 2026-10-06, the public store release is 3.2.8.
+- Version 3.2.9 is a preview, not yet a public store release. Its planned features include a nine-book Magic Library, Chinese/Japanese/Global parent chat rooms and personal cloud records. Do not treat preview features as currently available in the public app.
+- App interface languages and book languages are different. Book editions vary by title; a six-language interface does not mean every book is available in six languages.
+- Family sharing, library reading and personal cloud features have eligibility requirements; the app is not entirely free. The linked pages explain the relevant scope.
+
+## Official product information
+
+- [BiuLog official homepage](https://biulog.github.io/): Product overview in Traditional Chinese.
+- [About BiuLog](https://biulog.github.io/about/): Product scope and contact details.
+- [3.2.9 feature preview](https://biulog.github.io/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
+- [Download BiuLog](https://biulog.github.io/download/): Links to the published iOS and Android apps.
+
+## Practical parenting guides
+
+- [Baby-care records](https://biulog.github.io/guides/baby-care-records/): How to start a manageable daily record.
+- [Care handoffs](https://biulog.github.io/guides/shared-care-handoff/): A practical template for sharing care information.
+- [Family sharing setup](https://biulog.github.io/guides/family-sharing-setup/): iPhone and Android family-sharing setup and requirements.
+- [Milestone memories](https://biulog.github.io/guides/milestone-memories/): Keeping a record of first experiences.
+- [Parenting questions](https://biulog.github.io/guides/parenting-questions/): How to describe a parenting question clearly.
+- [Taiwan childcare penalty records](https://biulog.github.io/guides/childcare-penalty-check/): Checking official records; no result does not establish that a provider has never been penalized.
+
+## Policies
+
+- [Privacy policy](https://biulog.github.io/biulog-legal/privacy-policy.html)
+- [Support and terms](https://biulog.github.io/biulog-legal/)
+
+These pages describe BiuLog product functions and practical record keeping. Product questions can be sent to hello.biulog@gmail.com.

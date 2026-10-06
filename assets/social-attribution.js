@@ -7,7 +7,7 @@
   const approvedMedia = new Set(['social', 'organic_social', 'referral']);
   const marketingKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
   const languages = new Set(['zh_TW', 'en', 'ja', 'ko', 'de', 'it']);
-  const ownedPaths = /^\/(?:$|(?:en|ja|ko|de|it|about|download|biulog-app)\/$|guides\/(?:[a-z0-9-]+\/)?)$/;
+  const ownedPaths = /^\/(?:$|(?:en|ja|ko|de|it|about|download|biulog-app)\/$|guides\/(?:[a-z0-9-]+\/)?|updates\/3-2-9\/)$/;
 
   function context() {
     const params = new URLSearchParams(window.location.search);
