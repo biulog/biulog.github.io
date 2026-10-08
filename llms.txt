@@ -18,6 +18,8 @@
 
 ## Practical parenting guides
 
+- [Choosing a baby tracker](https://biulog.github.io/guides/choose-baby-tracker/): Five practical checks with BiuLog app screenshots: one-handed recording, feeding methods, family sharing, multiple babies and export.
+
 - [Baby-care records](https://biulog.github.io/guides/baby-care-records/): How to start a manageable daily record.
 - [Care handoffs](https://biulog.github.io/guides/shared-care-handoff/): A practical template for sharing care information.
 - [Family sharing setup](https://biulog.github.io/guides/family-sharing-setup/): iPhone and Android family-sharing setup and requirements.

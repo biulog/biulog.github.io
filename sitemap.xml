@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://biulog.github.io/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/institution.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://biulog.github.io/guides/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/guides/shared-care-handoff/</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://biulog.github.io/guides/baby-care-records/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/guides/childcare-penalty-check/</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://biulog.github.io/about/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/guides/parenting-questions/</loc>
@@ -46,30 +46,34 @@
   </url>
   <url>
     <loc>https://biulog.github.io/guides/family-sharing-setup/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/en/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/ja/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/ko/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/de/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/it/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://biulog.github.io/updates/3-2-9/</loc>
     <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://biulog.github.io/guides/choose-baby-tracker/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
 </urlset>
