@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  // URL-only attribution for owned social posts. No network, cookies or storage.
+  // URL-only social attribution and website referrals. No network, cookies or storage.
   // Apple provider token was generated in App Store Connect on 2026-10-05.
   const campaigns = Object.freeze({ threads: 'threads_organic', x: 'x_organic', site: 'site_organic' });
   const approvedCampaigns = new Set([...Object.values(campaigns), 'handoff_20261005']);
@@ -9,12 +9,20 @@
   const languages = new Set(['zh_TW', 'en', 'ja', 'ko', 'de', 'it']);
   const ownedPaths = /^\/(?:$|(?:en|ja|ko|de|it|about|download|biulog-app)\/$|guides\/(?:[a-z0-9-]+\/)?|updates\/3-2-9\/)$/;
 
+  function hasAttribution(params) {
+    return [...params.keys()].some(key => /^(?:utm_|af_)|^(?:oppref|pt|ct|mt|at|itsct|itscg|referrer|campaign(?:_id)?|gclid|dclid|fbclid|msclkid)$/i.test(key));
+  }
+
   function context() {
     const params = new URLSearchParams(window.location.search);
     // Even a malformed/duplicate OpenAI click ID keeps the original route intact.
     if (params.has('oppref') || marketingKeys.some(key => params.getAll(key).length > 1)) return null;
     const source = params.get('utm_source');
-    if (!Object.hasOwn(campaigns, source)) return null;
+    if (!Object.hasOwn(campaigns, source)) {
+      // Absent markers are different from invalid, partial or other campaigns.
+      if (hasAttribution(params)) return null;
+      return { source: 'site', medium: 'referral', campaign: 'site_referral', websiteReferral: true };
+    }
     const medium = params.get('utm_medium');
     const campaign = params.get('utm_campaign');
     if ((medium !== null && !approvedMedia.has(medium)) ||
@@ -35,16 +43,25 @@
     }
   }
 
-  function storeUrl(raw) {
+  function willAutoRedirect() {
+    if (!/^\/(?:download|biulog-app)\/(?:index\.html)?$/.test(window.location.pathname) ||
+        new URLSearchParams(window.location.search).get('preview') === '1') return false;
+    // Match the two existing download pages; other pages never redirect here.
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || '') ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+
+  function storeUrl(raw, link) {
     const mark = context();
     if (!mark) return raw;
     const url = new URL(raw, window.location.origin);
     if (url.protocol !== 'https:' || url.username || url.password) return raw;
+    const campaign = mark.websiteReferral ? mark.campaign : campaigns[mark.source];
     let target;
     if (url.hostname === 'apps.apple.com' && /\/id6766629143$/.test(url.pathname)) {
       target = new URL(url.origin + url.pathname);
       target.searchParams.set('pt', '128852368');
-      target.searchParams.set('ct', campaigns[mark.source]);
+      target.searchParams.set('ct', campaign);
       target.searchParams.set('mt', '8');
     } else if (url.hostname === 'play.google.com' && url.pathname === '/store/apps/details' &&
         url.searchParams.getAll('id').length === 1 && url.searchParams.get('id') === 'com.chy.biulog') {
@@ -55,10 +72,15 @@
       // Same nested encoding as Google's official Play Campaign URL Builder.
       const referrer = new URLSearchParams({ utm_source: mark.source,
         utm_medium: mark.source === 'site' ? 'referral' : 'organic_social',
-        utm_campaign: campaigns[mark.source] });
+        utm_campaign: campaign });
       target.searchParams.set('referrer', referrer.toString());
     } else return raw;
-    protectReferrer();
+    if (mark.websiteReferral) {
+      // Preserve a destination's campaign; allow our exact URL on repeat passes.
+      if (hasAttribution(url.searchParams) && url.href !== target.href) return raw;
+      if (link) link.referrerPolicy = 'no-referrer';
+      else if (willAutoRedirect()) protectReferrer();
+    } else protectReferrer();
     return target.href;
   }
 
@@ -67,12 +89,14 @@
     if (!mark) return;
     const raw = link.getAttribute('href');
     if (!raw || raw.startsWith('#') || link.hasAttribute('download')) return;
-    const store = storeUrl(raw);
+    const store = storeUrl(raw, link);
     if (store !== raw) {
       link.href = store;
       link.referrerPolicy = 'no-referrer';
       return;
     }
+    // Generic website referrals label the store exit, never internal navigation.
+    if (mark.websiteReferral) return;
     const url = new URL(raw, window.location.origin);
     if (url.origin !== window.location.origin || !ownedPaths.test(url.pathname) || url.searchParams.has('oppref')) return;
     // Preserve a link's own explicit campaign. Never transfer arbitrary incoming query values.
