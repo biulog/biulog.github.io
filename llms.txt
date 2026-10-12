@@ -12,7 +12,7 @@
 ## Official product information
 
 - [BiuLog official homepage](https://biulog.github.io/): Product overview in Traditional Chinese.
-- [About BiuLog](https://biulog.github.io/about/): Product scope and contact details.
+- [About BiuLog](https://biulog.github.io/about/): Product scope and contact details, including how signed-in users can message the developer from parent chat for app help and feature suggestions.
 - [3.2.9 features and usage](https://biulog.github.io/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
 - [Download BiuLog](https://biulog.github.io/download/): Links to the published iOS and Android apps.
 
