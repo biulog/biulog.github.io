@@ -4,8 +4,8 @@
 
 ## Product status
 
-- As verified on 2026-10-11, BiuLog 3.2.9 is available on the App Store and Google Play.
-- Version 3.2.9 includes a nine-book Magic Library, Chinese/Japanese/Global parent chat rooms and personal cloud records. Book languages vary by title; feature access follows the availability shown in the app. Personal cloud records require sign-in and cover daily activities, growth, milestones and vaccinations, not photos, custom buttons or preferences.
+- As verified on 2026-10-15, BiuLog 3.2.10 is available on the App Store and Google Play.
+- Version 3.2.10 includes a 16-book Magic Library, Chinese/Japanese/Global parent chat rooms and personal cloud records. Book languages vary by title; feature access follows the availability shown in the app. Personal cloud records require sign-in and cover daily activities, growth, milestones and vaccinations, not photos, custom buttons or preferences.
 - App interface languages and book languages are different. Book editions vary by title; a six-language interface does not mean every book is available in six languages.
 - Available features depend on the app version and activation status shown in the app. Personal cloud recovery covers only records that were successfully saved. The linked pages explain the relevant scope.
 
@@ -13,7 +13,7 @@
 
 - [BiuLog official homepage](https://biulog.github.io/): Product overview in Traditional Chinese.
 - [About BiuLog](https://biulog.github.io/about/): Product scope and contact details, including how signed-in users can message the developer from parent chat for app help and feature suggestions.
-- [3.2.9 features and usage](https://biulog.github.io/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
+- [Library, parent chat and personal cloud features](https://biulog.github.io/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
 - [Download BiuLog](https://biulog.github.io/download/): Links to the published iOS and Android apps.
 
 ## Practical parenting guides
@@ -22,6 +22,7 @@
 
 - [Baby-care records](https://biulog.github.io/guides/baby-care-records/): How to start a manageable daily record.
 - [Care handoffs](https://biulog.github.io/guides/shared-care-handoff/): A practical template for sharing care information.
+- [Japanese family sharing guide](https://biulog.github.io/ja/guides/family-sharing-setup/): Complete Japanese instructions for sharing baby-care records between iPhone and Android, including activation conditions and data replacement before joining.
 - [Family sharing setup](https://biulog.github.io/guides/family-sharing-setup/): iPhone and Android family-sharing setup and requirements.
 - [Milestone memories](https://biulog.github.io/guides/milestone-memories/): Keeping a record of first experiences.
 - [Parenting questions](https://biulog.github.io/guides/parenting-questions/): How to describe a parenting question clearly.

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iPhoneとAndroidで育児記録を家族共有する方法｜BiuLog</title>
+  <meta name="description" content="BiuLogならiPhoneとAndroidを使う家族で授乳・睡眠・おむつの記録を共有できます。家族の作成、最大2人の招待、コードでの参加、機能の有効化条件、参加時のデータ置き換え、同期の確認と退出時の影響を説明します。">
+  <meta name="theme-color" content="#fffaf5">
+  <link rel="canonical" href="https://biulog.github.io/ja/guides/family-sharing-setup/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://biulog.github.io/guides/family-sharing-setup/">
+  <link rel="alternate" hreflang="ja" href="https://biulog.github.io/ja/guides/family-sharing-setup/">
+  <link rel="icon" href="/assets/biulog-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="BiuLog">
+  <meta property="og:title" content="iPhoneとAndroidで育児記録を家族共有する方法｜BiuLog">
+  <meta property="og:description" content="授乳・睡眠・おむつの記録を家族で共有するために。招待の手順、機能の有効化条件、参加前に確認したいデータの扱いをまとめました。">
+  <meta property="og:url" content="https://biulog.github.io/ja/guides/family-sharing-setup/">
+  <meta property="og:image" content="https://biulog.github.io/assets/biulog-og.png">
+  <meta property="og:image:alt" content="育児記録アプリBiuLog">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="iPhoneとAndroidで育児記録を家族共有する方法｜BiuLog">
+  <meta name="twitter:description" content="BiuLogの家族共有を始める手順と条件。招待コードでの参加、データの置き換え、同期の確認、退出時の影響を説明します。">
+  <meta name="twitter:image" content="https://biulog.github.io/assets/biulog-og.png">
+  <link rel="stylesheet" href="/assets/parent-guides.css?v=20261002">
+  <style>
+    .guide-page { font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif; }
+    .g-prose .g-app-preview { margin:32px 0; }
+    .g-app-preview img { display:block; width:100%; max-width:300px; height:auto; margin:0 auto; border:1px solid var(--g-line); border-radius:20px; }
+    .g-app-preview figcaption { max-width:480px; margin:14px auto 0; color:var(--g-muted); font-size:13px; line-height:1.8; }
+    .g-important { margin:24px 0; padding:18px 22px; border-left:4px solid #a36c4e; background:#f5e9df; border-radius:0 12px 12px 0; }
+    .g-important p:first-child { margin-top:0; }
+    .g-important p:last-child { margin-bottom:0; }
+    @media print { .g-app-preview img { max-width:180px; } }
+  </style>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://biulog.github.io/#brand",
+        "name": "BiuLog",
+        "url": "https://biulog.github.io/",
+        "logo": "https://biulog.github.io/assets/biulog-icon.png",
+        "email": "hello.biulog@gmail.com"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://biulog.github.io/ja/guides/family-sharing-setup/#page",
+        "url": "https://biulog.github.io/ja/guides/family-sharing-setup/",
+        "name": "iPhoneとAndroidで育児記録を家族共有できる？",
+        "description": "BiuLogの家族共有の手順、機能の有効化条件、参加時のデータ置き換え、同期の確認と退出時の影響を説明します。",
+        "inLanguage": "ja",
+        "publisher": { "@id": "https://biulog.github.io/#brand" },
+        "mainEntity": { "@id": "https://biulog.github.io/ja/guides/family-sharing-setup/#article" },
+        "breadcrumb": { "@id": "https://biulog.github.io/ja/guides/family-sharing-setup/#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://biulog.github.io/ja/guides/family-sharing-setup/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "BiuLog 日本語ホーム", "item": "https://biulog.github.io/ja/" },
+          { "@type": "ListItem", "position": 2, "name": "家族共有ガイド", "item": "https://biulog.github.io/ja/guides/family-sharing-setup/" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://biulog.github.io/ja/guides/family-sharing-setup/#article",
+        "headline": "iPhoneとAndroidで育児記録を家族共有できる？",
+        "description": "BiuLogで授乳・睡眠・おむつの記録を家族共有するための設定ガイド。招待、参加、データの扱いと同期の確認を説明します。",
+        "inLanguage": "ja",
+        "mainEntityOfPage": { "@id": "https://biulog.github.io/ja/guides/family-sharing-setup/#page" },
+        "author": { "@id": "https://biulog.github.io/#brand" },
+        "publisher": { "@id": "https://biulog.github.io/#brand" },
+        "about": { "@id": "https://biulog.github.io/#app" },
+        "image": "https://biulog.github.io/assets/showcase/ja/family-home.webp",
+        "datePublished": "2026-10-15",
+        "dateModified": "2026-10-15"
+      }
+    ]
+  }</script>
+  <script src="/assets/social-attribution.js?v=20261015" defer></script>
+</head>
+<body class="guide-page">
+  <a class="g-skip" href="#main">本文へ移動</a>
+  <header class="g-header">
+    <a class="g-brand" href="/ja/"><img src="/assets/biulog-icon.webp" width="44" height="44" alt=""><span>BiuLog</span></a>
+    <nav class="g-nav" aria-label="メインナビゲーション">
+      <a href="#section-1">共有の始め方</a>
+      <a href="#support">サポート</a>
+      <a class="g-button" href="/download/?lang=ja">ダウンロード <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="g-container">
+      <nav class="g-breadcrumb" aria-label="パンくずリスト"><a href="/ja/">日本語ホーム</a><span aria-hidden="true">/</span><span aria-current="page">家族共有ガイド</span></nav>
+      <header class="g-article-hero">
+        <span class="g-eyebrow">家族共有ガイド</span>
+        <h1>iPhoneとAndroidで育児記録を家族共有できる？</h1>
+        <p class="g-subtitle">招待コードでの参加から、同じ記録が見えることの確認まで</p>
+        <p class="g-byline"><a href="/ja/">BiuLogチーム</a><span aria-hidden="true">·</span>更新 <time datetime="2026-10-15">2026年10月15日</time><span aria-hidden="true">·</span><a href="/guides/family-sharing-setup/" hreflang="zh-Hant">繁体字中国語版</a></p>
+      </header>
+      <div class="g-article-grid">
+        <aside class="g-toc" aria-label="記事の目次">
+          <p>このガイドの内容</p>
+          <a href="#section-1">作成者と共有範囲を決める</a>
+          <a href="#section-2">作成者：家族を作り、招待する</a>
+          <a href="#section-3">家族：コードで参加する</a>
+          <a href="#section-4">同じ記録が見えるか確認する</a>
+          <a href="#section-5">共有をやめる前に確認する</a>
+          <a href="#section-6">よくある質問</a>
+          <a href="#section-7">ダウンロードと関連ガイド</a>
+        </aside>
+        <article class="g-prose" id="article">
+          <p><strong>はい。BiuLogの家族共有を使うと、iPhoneとAndroidを使う家族が、同じ赤ちゃんの育児記録を一緒に確認・追加できます。</strong> 家族共有を有効にできる人が家族を作成し、ほかの家族は招待コードで参加します。招待できる家族は最大2人です。利用を始める前に、作成者のアプリで機能の有効化条件を確認してください。</p>
+          <p>たとえば、授乳を記録したあとに別の家族が次のお世話を担当する、寝た時刻や起きた時刻を一緒に確認する、おむつ交換の記録を見ながら交代する、といった使い方ができます。誰が何を記録するかも決めておくと、同じお世話を二重に記録するのを避けやすくなります。</p>
+          <p>このページでは、家族を作成する人と招待される人の手順、参加時のデータの扱い、同期の確認方法を説明します。それぞれのスマートフォンにBiuLogをインストールし、インターネットに接続して進めてください。<a href="/download/?lang=ja">BiuLogをダウンロードする</a>。</p>
+
+          <figure class="g-app-preview">
+            <img src="/assets/showcase/ja/family-home.webp" width="1290" height="2796" loading="lazy" decoding="async" alt="授乳、おむつ、ねんね、離乳食の記録ボタンが並ぶBiuLogの日本語ホーム画面">
+            <figcaption>BiuLogの日本語ホーム画面。日々のお世話を記録するボタンと、その日の記録を確認できます。家族共有の設定手順は以下で説明します。</figcaption>
+          </figure>
+
+          <h2 id="section-1">1. 家族を作成する人と、共有する範囲を決める</h2>
+          <p>まず、誰が持っている赤ちゃんのデータを家族の記録として使うか相談します。すでに継続して記録している人など、残したいデータがそろっている人を作成者にすると、参加後に使う記録を決めやすくなります。両方のスマートフォンで別々の家族を作っても、自動で一つにまとまるわけではありません。</p>
+          <div class="g-table-wrap" role="region" aria-label="作成者と招待される家族の役割。横にスクロールできます" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">役割</th><th scope="col">行うこと</th><th scope="col">機能の有効化条件・参加人数</th></tr></thead>
+              <tbody>
+                <tr><td>家族の作成者</td><td>家族共有を作成し、招待コードを渡す</td><td>作成者の家族共有機能が有効であることを確認する</td></tr>
+                <tr><td>招待される家族</td><td>自分のBiuLogに招待コードを入力する</td><td>最大2人が参加し、家族の記録を確認・追加する</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>家族共有の対象は、その家族に含まれる赤ちゃん全員です。一人の赤ちゃんだけを選んで見せる招待ではありません。</strong> 複数の赤ちゃんを登録している場合は、この共有範囲でよいか先に確認してください。</p>
+          <p>シッターや保育施設などに特定の赤ちゃんだけを共有したい場合は、ケア担当者との共有機能と、その利用条件・権限を別に確認します。家族共有と同じものとして招待しないようにしてください。</p>
+
+          <h2 id="section-2">2. 作成者：家族を作り、招待コードを渡す</h2>
+          <ol>
+            <li>BiuLogの「設定」から「共有とお世話」を開きます。ログインを求められたら、自分のアカウントでログインします。</li>
+            <li>「家族共有」を選び、家族を作成する項目へ進みます。機能が有効な場合の表示は「家族同期を作成」です。有効化の案内が表示された場合は、内容と条件を確認してから進めます。</li>
+            <li>家族の管理画面で「家族招待コード」を確認し、コードの部分をタップしてコピーします。</li>
+            <li>参加してほしい家族に、個別の連絡で招待コードを伝えます。AppleやGoogleなどのアカウントのパスワードを共有する必要はありません。</li>
+          </ol>
+          <p>すでに家族を作成している場合は、既存の家族を使います。アカウントから共有を復元した端末では、元の招待コードが保存されていない旨の案内が表示されることがあります。<strong>元のコードを表示できないことと、同期が停止していることは別です。</strong> 元の端末にコードが残っていないか確認し、見つからない場合はサポートに相談してください。コードを得るためだけに家族を削除して作り直さないでください。</p>
+
+          <h2 id="section-3">3. 招待された家族：コードを入力し、データを確認する</h2>
+          <ol>
+            <li>自分のスマートフォンでBiuLogを開き、「設定」→「共有とお世話」に進みます。ログインを求められたら、自分のアカウントを使います。</li>
+            <li>「共有コードを入力（初回参加）」を選びます。</li>
+            <li>作成者から受け取った家族招待コードを入力し、「参加」を選びます。</li>
+            <li>参加先の家族や赤ちゃんのデータに関する確認が表示されたら、内容を読んでから進めます。</li>
+          </ol>
+          <div class="g-important">
+            <p><strong>「同じ赤ちゃんですか？」と表示されたときは、データの置き換えに注意してください。</strong></p>
+            <p>「はい、ファミリーデータを使用」を選ぶと、家族作成者のデータで、このスマートフォンの該当する赤ちゃんのデータを置き換えます。両方の過去の記録を自動的に統合する操作ではありません。</p>
+            <p>すでに記録がある場合は、残しておきたい内容を先に保存してください。エクスポート機能が有効な場合は、書き出して保管する方法もあります。どのデータを残すか判断できない間は置き換えを選ばず、サポートに相談してください。</p>
+          </div>
+          <p>すでに参加した家族を、機種変更や再インストール後に使う場合は、まず元のアカウントでログインするか、共有の復元を行います。初めて参加する人として、もう一度コードを入力する必要があるとは限りません。</p>
+          <p>ここで使う招待コードはBiuLog内のものです。Appleのファミリー共有への招待や、Google Playのファミリーグループ設定とは別の仕組みです。</p>
+
+          <h2 id="section-4">4. 同じ赤ちゃんの記録が見えるか確認する</h2>
+          <p>両方のスマートフォンで同じ赤ちゃんを開き、すでにある実際の記録を一つ選びます。日付、時刻、記録の種類、内容が一致しているか確認してください。次に実際のお世話をしたときは、担当した人が記録し、もう一人が更新を確認します。</p>
+          <p>赤ちゃんの名前だけでは判断できません。それぞれのスマートフォンに同じ名前の赤ちゃんを作っていても、同じ家族に参加しているとは限らないためです。新しい記録が見えない場合は、次の順に確認します。</p>
+          <ul>
+            <li>同じ家族に参加し、同じ赤ちゃんを選んでいるか。</li>
+            <li>インターネットに接続できているか。各ストアで提供されている現在のBiuLogを使っているか。</li>
+            <li>家族の管理画面で同期が完了しているか。「手動同期」を選んだあと、エラーや一時停止の案内が表示されていないか。</li>
+          </ul>
+          <p>共有を続けるには、作成者の家族共有機能が有効である必要があります。一時停止の案内がある場合は、作成者側でも有効化状態を確認してください。</p>
+          <p>同期の反映には通信状況などが関係します。表示をそろえるために同じお世話を何度も入力すると、二重の記録になることがあります。急ぎの引き継ぎは家族に直接連絡し、アプリの更新だけを待たないでください。</p>
+
+          <h2 id="section-5">5. 共有をやめる前に、役割ごとの影響を確認する</h2>
+          <p><strong>招待された家族が退出すると、そのメンバーの家族共有が停止します。一台のスマートフォンだけの設定変更とは考えないでください。</strong> 家族を作成した人が退出すると、家族全体の共有が停止します。</p>
+          <p>退出しても、端末にすでに保存されている記録は残ります。ただし、別の家族へのデータ移行まで完了するわけではありません。機種変更、共有の復元、管理する人の変更が目的なら、退出や削除を試す前に、画面の説明を確認するかサポートへ相談してください。</p>
+
+          <h2 id="section-6">よくある質問</h2>
+          <h3>家族で同じ種類のスマートフォンを使う必要がありますか？</h3>
+          <p>ありません。iPhoneとAndroidのそれぞれにBiuLogをインストールし、アプリ内の家族共有で同じ家族に参加します。設定後は、このページの手順に沿って実際の記録が一致するか確認してください。</p>
+          <h3>誰が家族共有を有効にすればよいですか？</h3>
+          <p>家族共有が有効な人が作成者となり、最大2人の家族を招待します。作成者と招待される人は、それぞれ自分のアカウントを使います。利用できる機能と有効化条件は、アプリの現在の案内で確認してください。</p>
+          <h3>参加すると、二人が別々に記録した履歴は一つになりますか？</h3>
+          <p>自動で統合されるとは考えないでください。「同じ赤ちゃんですか？」という確認で「はい、ファミリーデータを使用」を選ぶと、この端末にある該当する赤ちゃんのデータを家族のデータで置き換えます。残したい記録を先に確認してから参加してください。</p>
+          <h3>一人の赤ちゃんだけを共有できますか？</h3>
+          <p>このページで説明している家族共有は、家族に含まれる赤ちゃん全員が対象です。特定の赤ちゃんだけをケア担当者に共有したい場合は、別の共有機能と権限を確認してください。</p>
+          <h3>記録がすぐに相手のスマートフォンに表示されません。</h3>
+          <p>同じ家族・赤ちゃんを開いているか、通信状態、家族共有の有効化状態を確認し、管理画面の「手動同期」でエラーがないか見てください。直ちに反映されることを前提に、同じ記録を繰り返し追加しないようにします。</p>
+          <h3 id="support">操作で困ったときは、どこに連絡できますか？</h3>
+          <p><a href="mailto:hello.biulog@gmail.com">hello.biulog@gmail.com</a>へ、iPhoneかAndroidか、アプリのバージョン、家族の作成者か招待された人か、どの手順で止まったかをお知らせください。日本語で状況を書いていただけます。エラー画面を添える場合は個人情報を隠し、アカウントのパスワードや赤ちゃんの全記録は送らないでください。</p>
+          <p>アプリにログインし、チャット用プロフィールを設定すると、親同士のチャットルームからBiuLog宛てにプライベートメッセージを送ることもできます。画面が小さい場合は、その他の設定メニュー内に入口があります。返信まで時間がかかる場合があります。</p>
+
+          <h2 id="section-7">ダウンロードと関連ガイド</h2>
+          <p><a href="/download/?lang=ja">BiuLogをダウンロードする</a>。スマートフォンに合うストアへ進めます。自動で開かない場合は、表示されたApp StoreまたはGoogle Playのボタンを選んでください。</p>
+          <ul>
+            <li><a href="/ja/">BiuLogの機能と日本語の画面を見る</a></li>
+            <li><a href="/guides/choose-baby-tracker/" hreflang="zh-Hant">育児記録アプリを選ぶ五つのポイント（繁体字中国語）</a></li>
+            <li><a href="/guides/shared-care-handoff/" hreflang="zh-Hant">家族でお世話を交代するときの引き継ぎ（繁体字中国語）</a></li>
+            <li><a href="/guides/baby-care-records/" hreflang="zh-Hant">赤ちゃんの日常で残しておきたい記録（繁体字中国語）</a></li>
+          </ul>
+          <p class="g-editor-note">BiuLogチームが、既存の家族共有ガイドとアプリ内の日本語表示・機能を確認し、2026年10月15日に作成しました。アプリの更新により表示や利用条件が変わる場合は、現在の画面の案内を確認してください。</p>
+        </article>
+      </div>
+      <section class="g-cta" aria-labelledby="download-title">
+        <div><span class="g-eyebrow">次のお世話から、一緒に記録</span><h2 id="download-title">授乳や睡眠の記録を、家族で見返せるように。</h2><p>BiuLogはiPhone・Androidに対応し、日本語で使えます。共有の条件とデータの扱いを確認して、家族で準備を始めてください。</p></div>
+        <div class="g-cta-actions"><a class="g-button" href="/download/?lang=ja">BiuLogをダウンロード <span aria-hidden="true">↗</span></a><a href="#section-1">共有の条件をもう一度確認する</a></div>
+      </section>
+    </div>
+  </main>
+  <footer class="g-footer">
+    <div><a class="g-wordmark" href="/ja/">BiuLog</a><p>子育ての毎日に、そっと寄り添う。</p></div>
+    <nav aria-label="フッターリンク"><a href="/ja/">日本語ホーム</a><a href="#support">お問い合わせ</a><a href="/biulog-legal/privacy-policy.html?lang=ja">プライバシーポリシー</a><a href="/guides/family-sharing-setup/" hreflang="zh-Hant">このガイドの繁体字中国語版</a></nav>
+    <small>© 2026 BiuLog · 日本語</small>
+  </footer>
+</body>
+</html>

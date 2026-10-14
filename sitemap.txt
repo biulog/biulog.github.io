@@ -17,3 +17,4 @@ https://biulog.github.io/de/
 https://biulog.github.io/it/
 https://biulog.github.io/updates/3-2-9/
 https://biulog.github.io/guides/choose-baby-tracker/
+https://biulog.github.io/ja/guides/family-sharing-setup/
