@@ -456,11 +456,10 @@
 };
       for (const [locale, product] of Object.entries(productCopy)) Object.assign(copy[locale], product);
       const requestedLang = params.get("lang");
-      let storedLang;
-      try { storedLang = localStorage.getItem("biulog-site-lang"); } catch (_) { /* Browsing without storage is supported. */ }
+      // The shared URL follows the visitor's browser language, not old site preferences.
       const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
       const browserLang = browserLanguages.map(value => String(value).toLowerCase().split(/[-_]/)[0]).find(value => Object.hasOwn(copy, value));
-      const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : Object.hasOwn(copy, storedLang) ? storedLang : browserLang || "en";
+      const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : browserLang || "en";
       const text = copy[lang];
       // Language selects page copy only, not a customer's store country.
       // Let each store resolve its own account region and display language.
