@@ -329,10 +329,11 @@
       <p id="care-copy">還能查詢台灣托育機構、托嬰中心與幼兒園的官方公開裁罰紀錄，依縣市、類型或關鍵字搜尋，查看處分內容、日期與官方來源，選擇前先了解。</p>
     </section>
 
-    <section class="care-info" aria-labelledby="preview-title" lang="zh-Hant">
-      <h2 id="preview-title">3.2.9 新版功能：記錄之外，一起讀故事</h2>
-      <p>魔法圖書館收錄 9 本有聲故事、兒歌與互動動物書，還有中文／日本語／Global 爸媽聊天室，以及日常、成長、里程碑與疫苗的個人雲端紀錄。3.2.9 已於 App Store 與 Google Play 上線，現在可下載或更新。</p>
-      <p><a href="/updates/3-2-9/">查看新版功能、書單與使用方式 →</a></p>
+    <section class="care-info" id="library-info" aria-labelledby="preview-title">
+      <h2 id="preview-title">記下生活，也一起翻開故事。</h2>
+      <p id="library-lead">魔法圖書館、分語言爸媽聊天室與個人雲端紀錄，讓記錄之外的陪伴，也有自己的位置。</p>
+      <p id="library-detail">有聲故事、音樂書與互動動物，從《三隻小豬》到《農場裡的聲音》。書籍語言依各本提供的版本而異。 中文、日本語與 Global 聊天室，依想交流的語言自由切換。 把日常、成長、里程碑與疫苗紀錄，接續保存在自己的帳號。</p>
+      <p><a id="library-link" href="/updates/3-2-9/">看看新版功能與使用方式 →</a></p>
     </section>
 
     <p class="hint" id="download-hint">選擇你的手機商店，即可前往下載 BiuLog。</p>
@@ -455,7 +456,11 @@
 };
       for (const [locale, product] of Object.entries(productCopy)) Object.assign(copy[locale], product);
       const requestedLang = params.get("lang");
-      const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : "zh";
+      let storedLang;
+      try { storedLang = localStorage.getItem("biulog-site-lang"); } catch (_) { /* Browsing without storage is supported. */ }
+      const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+      const browserLang = browserLanguages.map(value => String(value).toLowerCase().split(/[-_]/)[0]).find(value => Object.hasOwn(copy, value));
+      const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : Object.hasOwn(copy, storedLang) ? storedLang : browserLang || "en";
       const text = copy[lang];
       // Language selects page copy only, not a customer's store country.
       // Let each store resolve its own account region and display language.
@@ -529,6 +534,52 @@
       document.getElementById("android-copy").textContent = text.android;
       document.getElementById("download-hint").textContent = text.hint;
       document.getElementById("home-copy").textContent = text.home;
+      const libraryCopy = {
+  "zh": {
+    "title": "記下生活，也一起翻開故事。",
+    "lead": "魔法圖書館、分語言爸媽聊天室與個人雲端紀錄，讓記錄之外的陪伴，也有自己的位置。",
+    "detail": "有聲故事、音樂書與互動動物，從《三隻小豬》到《農場裡的聲音》。書籍語言依各本提供的版本而異。 中文、日本語與 Global 聊天室，依想交流的語言自由切換。 把日常、成長、里程碑與疫苗紀錄，接續保存在自己的帳號。",
+    "link": "看看新版功能與使用方式 →"
+  },
+  "en": {
+    "title": "Keep the memories. Share a story.",
+    "lead": "A Magic Library, language-based parent chat rooms and personal cloud records bring more ways to connect around everyday care.",
+    "detail": "Discover audio stories, music books and interactive animals. Available languages vary by book. Choose Chinese, Japanese or Global chat independently of your app language. Keep daily care, growth, milestone and vaccine records in your personal account.",
+    "link": "Explore what's new and how to use it (Traditional Chinese) →"
+  },
+  "ja": {
+    "title": "日々を記録し、いっしょに物語をひらく。",
+    "lead": "魔法の図書館、言語別の子育てチャット、個人クラウド保存。記録する時間から、いっしょに楽しむ時間へ。",
+    "detail": "音声つきのお話、音楽の絵本、動物とのふれあい。対応言語は本によって異なります。 アプリの表示言語とは別に、中文・日本語・Globalのチャットルームを選べます。 日々のお世話・成長・マイルストーン・予防接種の記録を、自分のアカウントに保存。",
+    "link": "新機能と使い方を見る（繁体字中国語）→"
+  },
+  "ko": {
+    "title": "일상을 기록하고, 함께 이야기를 펼쳐요.",
+    "lead": "마법 도서관, 언어별 부모 채팅방, 개인 클라우드 기록으로 일상의 돌봄과 함께하는 시간을 연결해요.",
+    "detail": "오디오 이야기, 음악책, 동물과의 상호작용을 만나 보세요. 제공 언어는 책마다 달라요. 앱 표시 언어와 별개로 중국어, 일본어 또는 Global 채팅방을 선택할 수 있어요. 일상, 성장, 발달 이정표, 예방접종 기록을 개인 계정에 보관해요.",
+    "link": "새 기능과 이용 방법 보기 (번체 중국어) →"
+  },
+  "de": {
+    "title": "Den Alltag festhalten. Gemeinsam Geschichten entdecken.",
+    "lead": "Eine magische Bibliothek, Elternchats nach Sprache und persönliche Cloud-Aufzeichnungen ergänzen die täglichen Einträge.",
+    "detail": "Hörgeschichten, Musikbücher und interaktive Tierwelten. Die verfügbaren Sprachen unterscheiden sich je nach Buch. Chinesisch, Japanisch oder Global: Wählt den Chat unabhängig von der Sprache der App. Einträge zu Alltag, Wachstum, Meilensteinen und Impfungen im persönlichen Konto aufbewahren.",
+    "link": "Neue Funktionen und Nutzungshinweise (traditionelles Chinesisch) →"
+  },
+  "it": {
+    "title": "Custodisci i ricordi. Aprite insieme una storia.",
+    "lead": "Una biblioteca magica, chat per genitori divise per lingua e salvataggio personale nel cloud arricchiscono le attività quotidiane.",
+    "detail": "Storie da ascoltare, libri musicali e animali interattivi. Le lingue disponibili variano da libro a libro. Scegli le chat in cinese, giapponese o Global, indipendentemente dalla lingua dell’app. Conserva i dati su attività, crescita, tappe e vaccini nel tuo account personale.",
+    "link": "Scopri le novità e come usarle (cinese tradizionale) →"
+  }
+};
+      const library = libraryCopy[lang];
+      document.getElementById("library-info").setAttribute("lang", text.htmlLang);
+      document.getElementById("preview-title").textContent = library.title;
+      document.getElementById("library-lead").textContent = library.lead;
+      document.getElementById("library-detail").textContent = library.detail;
+      document.getElementById("library-link").textContent = library.link;
+      document.getElementById("home-copy").href = lang === "zh" ? "/" : "/" + lang + "/";
+
       document.getElementById("ios-link").href = iosDownload;
       document.getElementById("android-link").href = androidDownload;
 
