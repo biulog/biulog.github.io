@@ -67,7 +67,7 @@
         "台灣托育機構、托嬰中心與幼兒園官方公開裁罰紀錄查詢"
       ],
       "downloadUrl": [
-        "https://apps.apple.com/tw/app/biulog/id6766629143",
+        "https://apps.apple.com/app/biulog/id6766629143",
         "https://play.google.com/store/apps/details?id=com.chy.biulog"
       ]
     }
@@ -307,7 +307,7 @@
     </div>
 
     <div class="store-links" id="store-links" aria-label="選擇 App 商店">
-      <a class="store-link" id="ios-link" href="https://apps.apple.com/tw/app/biulog/id6766629143">
+      <a class="store-link" id="ios-link" href="https://apps.apple.com/app/biulog/id6766629143">
         <span class="store-copy">
           <small id="ios-small">iPhone・iPad</small>
           <strong id="ios-copy">前往 App Store</strong>
@@ -457,10 +457,10 @@
       const requestedLang = params.get("lang");
       const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : "zh";
       const text = copy[lang];
-      const IOS_URLS = { zh: "https://apps.apple.com/tw/app/biulog/id6766629143", en: "https://apps.apple.com/us/app/biulog/id6766629143", ja: "https://apps.apple.com/jp/app/biulog/id6766629143", ko: "https://apps.apple.com/kr/app/biulog/id6766629143", de: "https://apps.apple.com/de/app/biulog/id6766629143", it: "https://apps.apple.com/it/app/biulog/id6766629143" };
-      const ANDROID_URLS = { zh: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=zh_TW", en: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=en", ja: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ja", ko: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=ko", de: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=de", it: "https://play.google.com/store/apps/details?id=com.chy.biulog&hl=it" };
-      const IOS_URL = IOS_URLS[lang];
-      const ANDROID_URL = ANDROID_URLS[lang];
+      // Language selects page copy only, not a customer's store country.
+      // Let each store resolve its own account region and display language.
+      const IOS_URL = "https://apps.apple.com/app/biulog/id6766629143";
+      const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.chy.biulog";
       // Optional enhancement: a missing/failed attribution script never blocks downloading.
       const socialStoreUrl = url => {
         try { return window.BiuLogSocialAttribution ? window.BiuLogSocialAttribution.storeUrl(url) : url; }
