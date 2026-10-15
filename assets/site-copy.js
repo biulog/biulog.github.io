@@ -185,7 +185,7 @@ window.BIULOG_COPY = {
     faqDeveloperLink: "開発者への連絡方法を見る（繁体字中国語）→",
     faqGuideLink: "日本語の家族共有ガイドを読む →",
     linkSupportHub: "サポートセンター・利用規約",
-    navGuides: "ガイド（繁体字）",
+    navGuides: "家族共有ガイド",
     guidesHeading: "育児の疑問を、使えるヒントに",
     guidesLead: "家族共有の始め方を日本語で紹介します。日々の記録や保育施設については、繁体字中国語のガイドもご覧いただけます。",
     guidesAll: "繁体字中国語のガイドを見る →",

@@ -123,6 +123,11 @@
       -webkit-backdrop-filter: blur(16px);
     }
 
+    .download-languages { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 24px; }
+    .download-languages a { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); font-size: 13px; text-decoration: none; }
+    .download-languages a[aria-current="page"] { background: #f6ece0; font-weight: 700; }
+    .download-languages a:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+
     .app-icon {
       display: block;
       width: 96px;
@@ -297,6 +302,14 @@
 </head>
 <body>
   <main>
+    <nav class="download-languages" id="download-languages" aria-label="選擇語言">
+      <a data-download-language="zh" href="?lang=zh&amp;preview=1" lang="zh-Hant">繁體中文</a>
+      <a data-download-language="ja" href="/ja/download/?preview=1" lang="ja">日本語</a>
+      <a data-download-language="en" href="?lang=en&amp;preview=1" lang="en">English</a>
+      <a data-download-language="ko" href="?lang=ko&amp;preview=1" lang="ko">한국어</a>
+      <a data-download-language="de" href="?lang=de&amp;preview=1" lang="de">Deutsch</a>
+      <a data-download-language="it" href="?lang=it&amp;preview=1" lang="it">Italiano</a>
+    </nav>
     <img class="app-icon" id="app-icon" src="/assets/biulog-icon.png" alt="BiuLog App 圖示" width="96" height="96">
     <p class="recommendation" id="recommendation">多位小兒科醫師推薦</p>
     <h1 id="download-title">BiuLog 育兒紀錄 App</h1>
@@ -344,7 +357,7 @@
     <style>.status { display: none; }</style>
   </noscript>
 
-  <script src="/assets/social-attribution.js?v=20261011"></script>
+  <script src="/assets/social-attribution.js?v=20261015-ja-download"></script>
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
@@ -391,18 +404,18 @@
   },
   "ja": {
     "title": "BiuLogをダウンロード｜育児記録・家族共有・親同士の交流",
-    "description": "複数の小児科医が推薦する育児記録アプリBiuLog。授乳量、睡眠、おむつ、成長の節目を記録し、家族と共有。保護者チャットで育児の経験を話し合えます。保育施設・幼稚園について、行政機関が公開した処分記録も検索できます。iPhone・Android対応。",
+    "description": "複数の小児科医が推薦する育児記録アプリBiuLog。授乳量、睡眠、おむつ、成長の節目を記録し、家族と共有。保護者チャットで育児の経験を話し合えます。台湾の保育施設・幼稚園について、行政機関が公開した処分記録も検索できます。iPhone・Android対応。",
     "heading": "育児記録アプリ BiuLog",
     "recommendation": "複数の小児科医が推薦",
     "lead": "授乳量、睡眠、おむつ、成長の節目を記録して家族と共有。保護者チャットで育児の経験を話し合えます。",
-    "careTitle": "施設選びの前に、公開された処分記録を確認",
-    "careCopy": "保育施設・幼稚園について、行政機関が公開した処分記録を検索できます。地域、施設の種類、キーワードで絞り込み、処分内容・日付・公式の出典を確認できます。",
+    "careTitle": "台湾の保育施設の公開処分記録を確認",
+    "careCopy": "台湾の保育施設・幼稚園について、行政機関が公開した処分記録を検索できます。地域、施設の種類、キーワードで絞り込み、処分内容・日付・公式の出典を確認できます。",
     "features": [
       "授乳・睡眠・おむつの記録",
       "成長の節目",
       "家族との育児記録共有",
       "保護者チャット",
-      "保育施設に関する行政機関の公開処分記録検索"
+      "台湾の保育施設に関する行政機関の公開処分記録検索"
     ]
   },
   "ko": {
@@ -459,7 +472,8 @@
       // The shared URL follows the visitor's browser language, not old site preferences.
       const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
       const browserLang = browserLanguages.map(value => String(value).toLowerCase().split(/[-_]/)[0]).find(value => Object.hasOwn(copy, value));
-      const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : browserLang || "en";
+      const pageLang = document.documentElement.dataset?.downloadLang;
+      const lang = Object.hasOwn(copy, requestedLang) ? requestedLang : Object.hasOwn(copy, pageLang) ? pageLang : browserLang || "en";
       const text = copy[lang];
       // Language selects page copy only, not a customer's store country.
       // Let each store resolve its own account region and display language.
@@ -601,5 +615,6 @@
       }
     })();
   </script>
+  <script src="/assets/download-language.js?v=20261015"></script>
 </body>
 </html>
