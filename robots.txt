@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://biulog.github.io/sitemap.xml
-Sitemap: https://biulog.github.io/sitemap.txt
+Sitemap: https://biulog.com/sitemap.xml
+Sitemap: https://biulog.com/sitemap.txt

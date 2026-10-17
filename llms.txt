@@ -11,26 +11,26 @@
 
 ## Official product information
 
-- [BiuLog official homepage](https://biulog.github.io/): Product overview in Traditional Chinese.
-- [About BiuLog](https://biulog.github.io/about/): Product scope and contact details, including how signed-in users can message the developer from parent chat for app help and feature suggestions.
-- [Library, parent chat and personal cloud features](https://biulog.github.io/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
-- [Download BiuLog](https://biulog.github.io/download/): Links to the published iOS and Android apps.
+- [BiuLog official homepage](https://biulog.com/): Product overview in Traditional Chinese.
+- [About BiuLog](https://biulog.com/about/): Product scope and contact details, including how signed-in users can message the developer from parent chat for app help and feature suggestions.
+- [Library, parent chat and personal cloud features](https://biulog.com/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
+- [Download BiuLog](https://biulog.com/download/): Links to the published iOS and Android apps.
 
 ## Practical parenting guides
 
-- [Choosing a baby tracker](https://biulog.github.io/guides/choose-baby-tracker/): Five practical checks with BiuLog app screenshots: one-handed recording, feeding methods, family sharing, multiple babies and export.
+- [Choosing a baby tracker](https://biulog.com/guides/choose-baby-tracker/): Five practical checks with BiuLog app screenshots: one-handed recording, feeding methods, family sharing, multiple babies and export.
 
-- [Baby-care records](https://biulog.github.io/guides/baby-care-records/): How to start a manageable daily record.
-- [Care handoffs](https://biulog.github.io/guides/shared-care-handoff/): A practical template for sharing care information.
-- [Japanese family sharing guide](https://biulog.github.io/ja/guides/family-sharing-setup/): Complete Japanese instructions for sharing baby-care records between iPhone and Android, including activation conditions and data replacement before joining.
-- [Family sharing setup](https://biulog.github.io/guides/family-sharing-setup/): iPhone and Android family-sharing setup and requirements.
-- [Milestone memories](https://biulog.github.io/guides/milestone-memories/): Keeping a record of first experiences.
-- [Parenting questions](https://biulog.github.io/guides/parenting-questions/): How to describe a parenting question clearly.
-- [Taiwan childcare penalty records](https://biulog.github.io/guides/childcare-penalty-check/): Checking official records; no result does not establish that a provider has never been penalized.
+- [Baby-care records](https://biulog.com/guides/baby-care-records/): How to start a manageable daily record.
+- [Care handoffs](https://biulog.com/guides/shared-care-handoff/): A practical template for sharing care information.
+- [Japanese family sharing guide](https://biulog.com/ja/guides/family-sharing-setup/): Complete Japanese instructions for sharing baby-care records between iPhone and Android, including activation conditions and data replacement before joining.
+- [Family sharing setup](https://biulog.com/guides/family-sharing-setup/): iPhone and Android family-sharing setup and requirements.
+- [Milestone memories](https://biulog.com/guides/milestone-memories/): Keeping a record of first experiences.
+- [Parenting questions](https://biulog.com/guides/parenting-questions/): How to describe a parenting question clearly.
+- [Taiwan childcare penalty records](https://biulog.com/guides/childcare-penalty-check/): Checking official records; no result does not establish that a provider has never been penalized.
 
 ## Policies
 
-- [Privacy policy](https://biulog.github.io/biulog-legal/privacy-policy.html)
-- [Support and terms](https://biulog.github.io/biulog-legal/)
+- [Privacy policy](https://biulog.com/biulog-legal/privacy-policy.html)
+- [Support and terms](https://biulog.com/biulog-legal/)
 
 These pages describe BiuLog product functions and practical record keeping. Product questions can be sent to hello.biulog@gmail.com.
