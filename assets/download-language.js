@@ -9,9 +9,9 @@
     const chosen = link.getAttribute('data-download-language');
     const target = new URL(current.href);
     // Keep the advertising entry and its click ID intact. Other download links
-    // use the static Japanese page so shared Japanese URLs have Japanese previews.
+    // use static language pages so shared URLs have matching language previews.
     if (!/^\/biulog-app\//.test(current.pathname)) {
-      target.pathname = chosen === 'ja' ? '/ja/download/' : '/download/';
+      target.pathname = chosen === 'zh' ? '/download/' : '/' + chosen + '/download/';
     }
     target.searchParams.set('lang', chosen);
     // A deliberate language change should leave time to read the chosen page.

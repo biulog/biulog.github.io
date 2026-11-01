@@ -7,7 +7,7 @@
   const approvedMedia = new Set(['social', 'organic_social', 'referral']);
   const marketingKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
   const languages = new Set(['zh_TW', 'en', 'ja', 'ko', 'de', 'it']);
-  const ownedPaths = /^\/(?:$|(?:en|ja|ko|de|it|about|download|biulog-app)\/$|guides\/(?:[a-z0-9-]+\/)?|ja\/download\/|ja\/guides\/family-sharing-setup\/|updates\/3-2-9\/)$/;
+  const ownedPaths = /^\/(?:$|(?:en|ja|ko|de|it|about|download|biulog-app)\/$|guides\/(?:[a-z0-9-]+\/)?|(?:en|ja|ko|de|it)\/download\/|ja\/guides\/family-sharing-setup\/|updates\/3-2-9\/)$/;
 
   function hasAttribution(params) {
     return [...params.keys()].some(key => /^(?:utm_|af_)|^(?:oppref|pt|ct|mt|at|itsct|itscg|referrer|campaign(?:_id)?|gclid|dclid|fbclid|msclkid)$/i.test(key));
@@ -44,7 +44,7 @@
   }
 
   function willAutoRedirect() {
-    if (!/^\/(?:download|biulog-app|ja\/download)\/(?:index\.html)?$/.test(window.location.pathname) ||
+    if (!/^\/(?:download|biulog-app|(?:en|ja|ko|de|it)\/download)\/(?:index\.html)?$/.test(window.location.pathname) ||
         new URLSearchParams(window.location.search).get('preview') === '1') return false;
     // Match the download entry pages; other pages never redirect here.
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || '') ||
