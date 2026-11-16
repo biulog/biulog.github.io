@@ -87,15 +87,13 @@
     panel.id = 'screen-panel';
     panel.setAttribute('role','tabpanel');
     panel.tabIndex = 0;
-    const count = document.createElement('span');
-    count.className = 'explorer-index';
     const title = document.createElement('h3');
     title.className = 'explorer-title';
     const description = document.createElement('p');
     description.className = 'explorer-description';
     const more = document.createElement('a');
     more.className = 'cta secondary explorer-more';
-    more.href = '#features';
+    more.href = lang === 'zh' ? '/features/' : '#features';
     more.textContent = `${labels.detail} ↓`;
     const visual = document.createElement('div');
     visual.className = 'explorer-visual';
@@ -108,7 +106,7 @@
     img.decoding = 'async';
     frame.append(img);
     visual.append(frame);
-    panel.append(count,title,description,more);
+    panel.append(title,description,more);
     content.append(choices,panel);
     gallery.append(content,visual);
     function select(index,focus = false) {
@@ -118,7 +116,6 @@
         button.tabIndex = i === index ? 0 : -1;
       });
       const [name,body] = shots[index];
-      count.textContent = `${String(index+1).padStart(2,'0')} / ${String(shots.length).padStart(2,'0')}`;
       title.textContent = name;
       description.textContent = body;
       img.src = imagePath(lang,index+1);

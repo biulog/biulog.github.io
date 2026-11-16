@@ -99,3 +99,7 @@ html.motion-paused{scroll-behavior:auto!important}.motion-paused *, .motion-paus
 /* Visible care-guide shortcuts below the primary download buttons. */
 .hero-guide-links{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-top:18px;font-size:14px;line-height:1.6}.hero-guide-links span{color:var(--muted);margin-right:4px}.hero-guide-links a{display:inline-flex;align-items:center;min-height:44px;padding:6px 10px;color:var(--peach-ink);text-decoration:underline;text-underline-offset:4px;border-radius:8px}.hero-guide-links a:hover{background:#f5e9de}html:not([lang="zh-Hant"]) .hero-guide-links{display:none}
 @media(max-width:560px){.hero-guide-links span{flex-basis:100%}}
+.release-preview > .g-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.release-preview .g-card > a{display:inline-block;margin-top:12px;color:var(--peach-ink);text-decoration:underline;text-underline-offset:4px}
+.screen-guide-links{margin:0 0 24px}
+@media(max-width:560px){.release-preview > .g-cards{grid-template-columns:1fr}}

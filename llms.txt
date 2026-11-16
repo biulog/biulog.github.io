@@ -6,15 +6,19 @@
 
 - BiuLog is available on the App Store and Google Play.
 - BiuLog includes a Magic Library of audio stories, music and interactive animal books, Chinese/Japanese/Global parent chat rooms and personal cloud records. Book languages vary by title; feature access follows the availability shown in the app. Personal cloud records require sign-in and cover daily activities, growth, milestones and vaccinations, not photos, custom buttons or preferences.
-- BiuLog Parents Circle (爸媽圈 / パパママ広場) is available in BiuLog 3.3.5 and later. It supports posts and comments about baby moments, outfits and parenting products, including giveaway and secondhand listings. Sign in and open it from Parent Chat. The Circle and chat share a nickname and avatar.
+- BiuLog Parents Circle (爸媽圈 / パパママ広場) requires BiuLog 3.3.5 or later; check the version currently offered by each app store. It supports posts and comments about baby moments, outfits and parenting products, including giveaway and secondhand listings. Sign in and open it from Parent Chat. The Circle and chat share a nickname and avatar.
 - App interface languages and book languages are different. Book editions vary by title; multiple interface languages do not mean every book is available in all of those languages.
 - Available features depend on the app version and activation status shown in the app. Personal cloud recovery covers only records that were successfully saved. The linked pages explain the relevant scope.
+
+- Soothing Sounds (安撫聲音) plays natural sounds such as rain, ocean waves and a steady heartbeat, with volume control and a stop timer. Open Parent Chat, then More and Soothing Sounds.
 
 ## Official product information
 
 - [BiuLog official homepage](https://biulog.com/): Product overview in Traditional Chinese.
+- [Complete BiuLog feature overview](https://biulog.com/features/): Daily baby records, family sharing, growth and health, audio picture books, soothing sounds, parent community, childcare records and backups.
+- [Soothing sounds and timer](https://biulog.com/features/#soothing-sounds): Available sounds and how to open the player.
 - [About BiuLog](https://biulog.com/about/): Product scope and support contact.
-- [BiuLog Parents Circle](https://biulog.com/about/#parents-circle): See how parent posts and comments differ from Parent Chat, how to open the Circle, and where to check for an app update.
+- [BiuLog Parents Circle](https://biulog.com/guides/parents-circle/): See how parent posts and comments differ from Parent Chat, how to open the Circle, and where to check for an app update.
 - [Library, parent chat and personal cloud features](https://biulog.com/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
 - [Download BiuLog](https://biulog.com/download/): Links to the published iOS and Android apps.
 
