@@ -6,13 +6,15 @@
 
 - BiuLog is available on the App Store and Google Play.
 - BiuLog includes a Magic Library of audio stories, music and interactive animal books, Chinese/Japanese/Global parent chat rooms and personal cloud records. Book languages vary by title; feature access follows the availability shown in the app. Personal cloud records require sign-in and cover daily activities, growth, milestones and vaccinations, not photos, custom buttons or preferences.
+- BiuLog Parents Circle (爸媽圈 / パパママ広場) is available in BiuLog 3.3.5 and later. It supports posts and comments about baby moments, outfits and parenting products, including giveaway and secondhand listings. Sign in and open it from Parent Chat. The Circle and chat share a nickname and avatar.
 - App interface languages and book languages are different. Book editions vary by title; multiple interface languages do not mean every book is available in all of those languages.
 - Available features depend on the app version and activation status shown in the app. Personal cloud recovery covers only records that were successfully saved. The linked pages explain the relevant scope.
 
 ## Official product information
 
 - [BiuLog official homepage](https://biulog.com/): Product overview in Traditional Chinese.
-- [About BiuLog](https://biulog.com/about/): Product scope and contact details, including how signed-in users can message the developer from parent chat for app help and feature suggestions.
+- [About BiuLog](https://biulog.com/about/): Product scope and support contact.
+- [BiuLog Parents Circle](https://biulog.com/about/#parents-circle): See how parent posts and comments differ from Parent Chat, how to open the Circle, and where to check for an app update.
 - [Library, parent chat and personal cloud features](https://biulog.com/updates/3-2-9/): Book catalog and languages, parent chat rooms, personal cloud coverage and release status.
 - [Download BiuLog](https://biulog.com/download/): Links to the published iOS and Android apps.
 
@@ -26,7 +28,7 @@
 - [Family sharing setup](https://biulog.com/guides/family-sharing-setup/): iPhone and Android family-sharing setup and requirements.
 - [Milestone memories](https://biulog.com/guides/milestone-memories/): Keeping a record of first experiences.
 - [Parenting questions](https://biulog.com/guides/parenting-questions/): How to describe a parenting question clearly.
-- [Taiwan childcare penalty records](https://biulog.com/guides/childcare-penalty-check/): Checking official records; no result does not establish that a provider has never been penalized.
+- [Taiwan childcare penalty records](https://biulog.com/guides/childcare-penalty-check/): How to search Taiwan’s official public penalty records before choosing childcare.
 
 ## Policies
 
